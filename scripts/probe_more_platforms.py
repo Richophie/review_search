@@ -48,6 +48,14 @@ for source,(home,paths) in sites.items():
     if m:
      p=doc[max(0,m.start()-400):m.end()+700]
      print("SAMPLE",marker,repr(p)[:1050],flush=True)
+   if source=="ringble" and path=="/":
+    chunks=doc.split("store_list_wrap")[1:]
+    print("RINGBLE CHUNKS",len(chunks),flush=True)
+    for chunk in chunks[:3]:
+     raw=chunk[:11500]
+     text=re.sub(r'\s+',' ',html.unescape(re.sub(r'<[^>]*>',' ',raw))).strip()
+     print("RINGBLE TEXT",repr(text[:1750]),flush=True)
+     print("RINGBLE HTML",repr(raw[:7800]),flush=True)
    if source=="assaview":
     sample=re.search(r'(?:href=["\'](?:\./)?campaign\.php\?cp_id=\d+["\'])',doc,re.I)
     if sample:
