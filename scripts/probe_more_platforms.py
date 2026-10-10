@@ -55,3 +55,5 @@ for source,(home,paths) in sites.items():
      break
   except Exception as ex:print("FETCH FAIL",type(ex).__name__,str(ex)[:200],flush=True)
   time.sleep(.5)
+
+# Probe only public permitted pages; no login or endpoint discovery behind access controls.
