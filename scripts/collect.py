@@ -494,6 +494,7 @@ def assaview():
         "campaign_list.php?type=reporter",
         "campaign_list.php?type=assaview",
         "campaign_list.php?type=custom",
+        *[f"campaign_list.php?page={page}" for page in range(2,7)],
     ]
     out={}
     for path in paths:
@@ -670,9 +671,9 @@ def cometoplay():
 def cherrycook():
     """F&B campaign summaries on CherryCook public homepage (no protected APIs)."""
     base="https://cherry-cook.com/"
-    body=safe_fetch(base)
+    body=safe_fetch(urllib.parse.urljoin(base, "mission"))
     if not body:
-        raise RuntimeError("CherryCook public homepage unavailable")
+        raise RuntimeError("CherryCook public mission listing unavailable")
     out={}
     cards=re.findall(r'<a\s+href="/item/(\d+)"[^>]*>([\s\S]*?)</a>',body,re.I)
     for cid,fragment in cards:
@@ -763,7 +764,7 @@ def bqueens():
     """Read only openly listed recruitment cards of the Beauty Queen site."""
     base="https://bqueens.net/"
     out={}
-    for path in ("taste",):
+    for path in ("taste", *[f"taste?page={page}" for page in range(2,8)]):
         body=safe_fetch(urllib.parse.urljoin(base,path))
         if not body:
             continue
