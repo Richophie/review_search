@@ -30,6 +30,7 @@ jobs:
           python-version: "3.12"
       - name: Collect verified public listings
         run: python scripts/collect.py
+      # Include new source allowlist updates in the next full verified refresh.
       # All original URLs must pass the explicit source allowlist before publishing.
       # Validation must allow each linked original provider URL.
       - name: Verify public index integrity
