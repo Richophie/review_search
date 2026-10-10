@@ -39,7 +39,8 @@ for title,params in TESTS.items():
   if title=="all":
     assert int(headline.group(1).replace(",",""))>=100,(title,"Invalid total")
     assert "개 플랫폼을 한꺼번에 찾아 드릴게요." in body, (title,"Missing platform count")
-    assert re.search(r'<span[^>]*>11</span>개 플랫폼을 한꺼번에 찾아 드릴게요\.',body), (title,"Connected source count is not 11")
+    platforms=re.search(r'<span[^>]*>(\d+)</span>개 플랫폼을 한꺼번에 찾아 드릴게요\.',body)
+    assert platforms and int(platforms.group(1))>=11, (title,"Connected source count should be dynamic")
     assert "lg:grid-cols-4" in body,(title,"Card width adjustment missing")
   if title in ("search","sido","sigungu","cat"):
     assert int(headline.group(1).replace(",",""))>=100,(title,"Global total changed due to search filter")
