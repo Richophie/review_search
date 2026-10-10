@@ -1,0 +1,27 @@
+name: Probe new public campaign sources
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "40 1 * * *"
+
+permissions:
+  contents: read
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check public listings and robots.txt
+        run: python scripts/probe_new_sources.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: new-source-probe
+          path: public/data/source_probe.json
+          retention-days: 7
