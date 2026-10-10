@@ -41,3 +41,5 @@ for name,(root,paths) in SITES.items():
    if name=="미블" and "search" in path:
     print("SEARCH POHANG",body.find("포항"),"LOGIN",body.find("비밀번호"),flush=True)
   except Exception as ex:print("FAILED",path,type(ex).__name__,str(ex)[:210],flush=True)
+
+# Read-only public eligibility inspection; never request disallowed paths.
