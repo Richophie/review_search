@@ -9,6 +9,7 @@ path = Path("public/data/campaigns.json")
 campaigns = json.loads(path.read_text(encoding="utf-8"))
 assert isinstance(campaigns, list), "Campaign index must be a list"
 seen_ids, seen_urls = set(), set()
+valid_channels = {"블로그", "인스타그램", "유튜브", "쇼츠", "네이버클립", "틱톡", "스레드"}
 allowed_domains = {
     "dinnerqueen.net", "www.mrblog.net", "modan.kr", "www.modootogether.com", "4blog.net", "www.assaview.co.kr", "www.ringble.co.kr", "www.cometoplay.kr", "cherry-cook.com", "xn--o39a04kpnjo4k9hgflp.com", "bqueens.net", "huki.co.kr", "openreview.kr", "pavlovu.com", "tqueens.net", "storyn.kr"
 }
@@ -38,6 +39,13 @@ for item in campaigns:
         assert slots > 0 and applicants >= 0
         assert ratio is not None and abs(ratio-applicants/slots)<1e-6
         assert remaining == max(slots-applicants,0)
+    channels = item.get("channels")
+    assert isinstance(channels, list) and all(isinstance(ch, str) and ch in valid_channels for ch in channels), f"Invalid media: {cid}: {channels}"
+    assert len(channels) == len(set(channels)), f"Duplicate media labels: {cid}"
+    published = item.get("published_at")
+    if published is not None:
+        pdate = datetime.fromisoformat(published.replace("Z", "+00:00"))
+        assert pdate.tzinfo is not None, f"Publication date has no timezone: {cid}"
     first = datetime.fromisoformat(item["first_seen_at"].replace("Z","+00:00"))
     last = datetime.fromisoformat(item["last_seen_at"].replace("Z","+00:00"))
     assert first.tzinfo is not None and last.tzinfo is not None, f"Missing timestamps: {cid}"
