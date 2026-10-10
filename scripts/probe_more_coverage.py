@@ -53,3 +53,5 @@ for name,(base,paths) in sites.items():
     print("INTERESTING LINKS",interesting[:16],flush=True)
   except Exception as e:print("FAIL",path,type(e).__name__,str(e)[:140],flush=True)
   time.sleep(.8)
+
+# Read-only research of accessible listings, nothing authenticated.
