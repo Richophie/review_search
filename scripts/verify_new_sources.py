@@ -11,7 +11,8 @@ for name, fn in (
     ("gaboja",collect.gaboja),
     ("bqueens",collect.bqueens),
     ("huki",collect.huki),
-    ("openreview",collect.openreview)
+    ("openreview",collect.openreview),
+    ("pavlovu",collect.pavlovu)
 ):
  try:
   records=fn()
