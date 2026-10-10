@@ -40,3 +40,5 @@ for name,(home,paths) in SOURCES.items():
     sample=campaigns[0]; pos=body.find(sample)
     print("HTML SAMPLE",repr(body[max(0,pos-550):pos+2450])[:3150],flush=True)
   except Exception as e:print("FAILED",path,type(e).__name__,str(e)[:160],flush=True)
+
+# Only robots-allowed publicly visible pages.
