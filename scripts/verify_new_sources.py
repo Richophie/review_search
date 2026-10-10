@@ -9,7 +9,9 @@ for name, fn in (
     ("cometoplay",collect.cometoplay),
     ("cherrycook",collect.cherrycook),
     ("gaboja",collect.gaboja),
-    ("bqueens",collect.bqueens)
+    ("bqueens",collect.bqueens),
+    ("huki",collect.huki),
+    ("openreview",collect.openreview)
 ):
  try:
   records=fn()
