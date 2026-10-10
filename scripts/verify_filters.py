@@ -18,6 +18,9 @@ TESTS={
   "type": {"type":"방문형"},
   "channel": {"ch":"블로그"},
   "low": {"tab":"lowcomp"},
+  "assaview": {"q":"아싸뷰"},
+  "ringble": {"q":"링블"},
+  "cometoplay": {"q":"놀러와체험단"},
   "nonsense": {"q":"__no_exact_campaign_match_test_731650__"},
 }
 out={}
@@ -39,9 +42,11 @@ for title,params in TESTS.items():
   n=int(match.group(1).replace(",",""))
   out[title]=n
   print(title,"=>",n,flush=True)
-assert out["all"]>=100,("Missing real indexed results",out)
+assert out["all"]>=1700,("Missing real indexed results",out)
 for title in ("sido","sigungu","search","cat","cat_cafe","type","channel","low"):
   assert 0 < out[title] < out["all"],(title,"filter did not narrow or incorrectly empty",out)
+for source in ("assaview","ringble","cometoplay"):
+  assert out[source]>=20,(source,"new source missing from production search",out)
 assert out["nonsense"]==0,("Nonexistent keyword should not match",out)
 print("Verified live filters narrow actual results:",out)
 
