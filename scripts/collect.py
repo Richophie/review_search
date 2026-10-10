@@ -1232,6 +1232,8 @@ def reviewnote():
             continue
         parser=CardParser()
         parser.feed(body)
+        public_detail_links = set(re.findall(r'/campaigns/(\d+)', body))
+        print("리뷰노트 HTML audit",url,"bytes",len(body),"detail links",len(public_detail_links),"candidate cards",len(parser.candidates),flush=True)
         # Prefer smallest nested subtree for a given ID; this avoids mixing
         # adjacent cards and their independent media/application counters.
         candidates=sorted(parser.candidates,key=lambda n:len("".join(n["text"])))
