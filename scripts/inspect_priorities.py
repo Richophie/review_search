@@ -38,7 +38,7 @@ for name,(root,paths) in SITES.items():
      a=max(0,match.start()-400);b=min(len(body),match.end()+1250)
      print("FOURBLOG SAMPLE",repr(body[a:b])[:1700],flush=True)
     print("FOURBLOG LINKS",re.findall(r'href=["\']([^"\']*/campaign/\d+/?)[\'"]',body)[:12],flush=True)
-    chunks=re.findall(r'<a\s+class="nounderline"\s+href="/campaign/(\\d+)/">([\\s\\S]*?)</a>',body,re.I)
+    chunks=re.findall(r'<a\s+class="nounderline"\s+href="/campaign/(\d+)/">([\s\S]*?)</a>',body,re.I)
     print("FOURBLOG CARD MATCHES",len(chunks),flush=True)
     if chunks:
      print("FOURBLOG CARD BODY",repr(chunks[0][1])[:10000],flush=True)
