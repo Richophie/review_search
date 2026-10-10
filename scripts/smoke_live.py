@@ -28,5 +28,9 @@ for title,params in CASES:
  assert "전국 체험단" in body, (title,"search UI missing",len(body),body[:300])
  assert "An unexpected error has occurred" not in body, (title,"runtime error page")
  assert "페이지를 불러오지 못했어요" not in body, (title,"app error component")
+ if not params:
+  assert "원본 보기" in body or "원본 ↗" in body, (title,"No real campaign result cards rendered")
+ if params.get("q") == "__chehum_search_no_results_test__":
+  assert "원본 보기" not in body and "원본 ↗" not in body, (title,"Impossible query returned a campaign")
  print(title,"OK",status,"HTML bytes",len(body),"contains search UI")
 print("All production smoke checks passed.")
