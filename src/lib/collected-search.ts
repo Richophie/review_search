@@ -87,5 +87,5 @@ export function searchCollected(p:SearchParams) {
       status:subset.length?"connected":"not_connected",
       status_note:subset.length?"공개 모집 목록 자동 수집":"수집 데이터 없음",last_success_at};
   });
-  return {items,total:filtered.length,tabCounts,sources,today,error:null as string|null};
+  return {items,total:filtered.length,globalTotal:active.length,tabCounts,sources,today,error:null as string|null};
 }
