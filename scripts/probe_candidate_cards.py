@@ -43,3 +43,5 @@ for name,(base,paths) in targets.items():
    if name=="pavlovu":
     print("XML HEAD",repr(body[:1700]),flush=True)
   except Exception as e:print("FAIL",repr(e)[:270],flush=True)
+
+# Check only robots-permitted HTML/XML pages.
