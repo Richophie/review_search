@@ -127,11 +127,15 @@ def sido(region):
 
 def make(source, ext_id, title, url, region=None, desc=None, benefit=None,
          image=None, applicants=None, slots=None, days=None, channels=None, ctype=None,
-         exact_deadline=None, published_at=None, category_override=None):
-    if not title or not url.startswith("https://") or (exact_deadline is None and (days is None or days < 0)):
+         exact_deadline=None, published_at=None, category_override=None, open_verified=False):
+    if not title or not url.startswith("https://"):
         return None
-    deadline = exact_deadline or (TODAY + timedelta(days=days)).isoformat()
-    if deadline < TODAY.isoformat():
+    if days is not None and days < 0:
+        return None
+    if exact_deadline is None and days is None and not open_verified:
+        return None
+    deadline = exact_deadline or ((TODAY + timedelta(days=days)).isoformat() if days is not None else None)
+    if deadline is not None and deadline < TODAY.isoformat():
         return None
     channels = ["블로그"] if channels is None else channels
     cat = category_override or infer_category(title + " " + (desc or "") + " " + (benefit or ""))
@@ -148,7 +152,8 @@ def make(source, ext_id, title, url, region=None, desc=None, benefit=None,
         "image_url": image, "country_code": "KR", "region_sido": sido(region),
         "region_text": plain(region) or None, "category": cat, "campaign_type": ctype,
         "channels": channels, "slots": slots, "applicants": applicants,
-        "apply_deadline": deadline, "deadline_precision": "exact" if exact_deadline else "days_left",
+        "apply_deadline": deadline, "deadline_precision": "exact" if exact_deadline else "days_left" if days is not None else "unknown",
+        "open_verified": bool(open_verified and deadline is None),
         "first_seen_at": published_at or now, "last_seen_at": now, "timezone": "Asia/Seoul",
         "competition_ratio": ratio, "remaining_slots": remaining,
         "dedupe_key": re.sub(r"[^\w]", "", (region or "") + cleaned_title).lower(),
@@ -827,8 +832,8 @@ def huki():
             if not re.search(r'\b모집중\b',plain(card)):
                 continue
             dday=one(r'D-\s*(\d+)',card)
-            if dday is None:
-                continue
+            # The card explicitly says 모집중. When no deadline is shown,
+            # retain it only briefly with an unknown deadline.
             title=plain(one(r'<p\s+class="t_tit">([\s\S]*?)</p>',card))
             if not title:
                 continue
@@ -854,7 +859,8 @@ def huki():
             item=make(
                 "huki",cid,title,urllib.parse.urljoin(base,html.unescape(link)),
                 region=region,desc=desc,benefit=desc,image=image,
-                applicants=apps,slots=slots,days=int(dday),channels=media,ctype=typ
+                applicants=apps,slots=slots,days=int(dday) if dday is not None else None,
+                channels=media,ctype=typ,open_verified=dday is None
             )
             if item and (cid not in out or (out[cid]["campaign_type"] is None and typ)):
                 out[cid]=item
@@ -998,9 +1004,18 @@ def main():
         print("No verified new listings. Existing snapshot remains unchanged.")
         return
     cutoff = NOW - timedelta(days=21)
-    rows = [x for x in stored.values() if x.get("apply_deadline") and
-            x["apply_deadline"] >= TODAY.isoformat() and
-            datetime.fromisoformat(x["last_seen_at"]) >= cutoff]
+    unknown_cutoff = NOW - timedelta(hours=48)
+    rows = [
+        x for x in stored.values()
+        if (
+            (x.get("apply_deadline") and x["apply_deadline"] >= TODAY.isoformat()
+             and datetime.fromisoformat(x["last_seen_at"]) >= cutoff)
+            or
+            (x.get("apply_deadline") is None and x.get("deadline_precision") == "unknown"
+             and x.get("open_verified") is True
+             and datetime.fromisoformat(x["last_seen_at"]) >= unknown_cutoff)
+        )
+    ]
     rows.sort(key=lambda x: (x["source_id"], x["id"]))
     OUT.write_text(json.dumps(rows, ensure_ascii=False, indent=0) + "\n", encoding="utf-8")
     print("Snapshot saved: %s unique live campaigns (%s observed this run)" % (len(rows), found))

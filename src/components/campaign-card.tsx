@@ -74,7 +74,7 @@ export function CampaignCard({ c, today, sources }: { c: CampaignItem; today: st
           )}
           <div className="flex items-center justify-between gap-2">
             <span className="text-[11px] text-muted-foreground">
-              신청마감 {c.apply_deadline?.slice(5).replace("-", ".")}{c.deadline_precision === "days_left" ? " (남은 일수 기준)" : ""} · 갱신 {updated(c.last_seen_at)}
+              신청마감 {c.apply_deadline ? c.apply_deadline.slice(5).replace("-", ".") : "미확인"}{c.deadline_precision === "days_left" ? " (남은 일수 기준)" : ""} · 갱신 {updated(c.last_seen_at)}
             </span>
             <a href={c.original_url} target="_blank" rel="noopener noreferrer"
               className="shrink-0 rounded-lg bg-primary px-3 py-2 text-xs font-semibold text-primary-foreground hover:opacity-90"

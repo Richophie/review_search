@@ -8,7 +8,7 @@ type Campaign = {
   country_code:string; region_sido:string|null; region_text:string|null;
   category:string; campaign_type:string|null; channels:string[];
   slots:number|null; applicants:number|null; apply_deadline:string|null;
-  deadline_precision:string; first_seen_at:string; last_seen_at:string;
+  deadline_precision:string; open_verified?:boolean; first_seen_at:string; last_seen_at:string;
   timezone:string; competition_ratio:number|null; remaining_slots:number|null;
   dedupe_key:string; search_text:string;
 };
@@ -42,8 +42,10 @@ export function searchCollected(p:SearchParams) {
   const cutoff = Date.now()-21*DAY_MS;
   const active = campaigns.filter(c=>c && c.title &&
     c.original_url?.startsWith("https://") &&
-    c.apply_deadline && c.apply_deadline>=today &&
-    Date.parse(c.last_seen_at)>=cutoff);
+    ((c.apply_deadline !== null && c.apply_deadline>=today &&
+      Date.parse(c.last_seen_at)>=cutoff) ||
+     (c.apply_deadline === null && c.deadline_precision==="unknown" &&
+      c.open_verified===true && Date.parse(c.last_seen_at)>=Date.now()-48*60*60*1000)));
   const matching = active.filter(c=>{
     if (p.country === "INTL" ? c.country_code === "KR" : c.country_code !== "KR") return false;
     const haystack = [c.search_text, PLATFORM[c.source_id]?.[0]].filter(Boolean).join(" ").toLowerCase();
