@@ -24,6 +24,7 @@ for name, fn in (
    print("SAMPLE",c["title"][:85],c["apply_deadline"],c["original_url"],flush=True)
   if name == "bqueens": assert len(records) >= 90, (name,"pagination not covered")
   if name == "cherrycook": assert len(records) >= 18, (name,"mission-list parsing incomplete")
+  if name == "pavlovu": assert len(records) > 0, "Pavlovu public listings missing"
   assert unique==len(records),(name,"duplicates")
   assert all(r["title"] and r["original_url"] and r["apply_deadline"] for r in records),name
  except Exception as ex:
