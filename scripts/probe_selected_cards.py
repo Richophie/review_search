@@ -41,3 +41,5 @@ for name,(home,paths) in SITES.items():
    print("CARD",ix,repr(body[pre:end])[:9500],flush=True)
   for pat in [r"(\d+)일\s*남",r"D[- ]\d+",r"모집\s*\d+",r"신청\s*\d+",r"\d{4}-\d\d-\d\d",r"\d{4}/\d\d/\d\d"]:
    print("PAT",pat,len(re.findall(pat,body)),flush=True)
+
+# Read-only; public HTML, no authentication.
