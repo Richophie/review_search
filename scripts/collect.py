@@ -140,7 +140,7 @@ def make(source, ext_id, title, url, region=None, desc=None, benefit=None,
 
 def dinnerqueen():
     records = {}
-    for page in range(1, 13):
+    for page in range(1, 25):
         url = "https://dinnerqueen.net/taste" + ("?page=" + str(page) if page > 1 else "")
         body = safe_fetch(url)
         if not body:
@@ -161,7 +161,7 @@ def dinnerqueen():
             desc = one(r'color-placeholder[^"]*">([\s\S]*?)</p>', card)
             body_text = plain(card)
             days = one(r"(\d+)\s*일 남음", body_text)
-            days = int(days) if days is not None else 0 if re.search("오늘\\s*마감|D-?day", body_text, re.I) else None
+            days = int(days) if days is not None else 0 if re.search("오늘\\s*(?:마감|까지)|D-?day", body_text, re.I) else None
             stats = re.search(r"신청\s*([\d,]+)\s*/\s*([\d,]+)", body_text)
             channels = []
             for marker, channel in [("릴스", "인스타그램"), ("클립", "네이버클립"),
