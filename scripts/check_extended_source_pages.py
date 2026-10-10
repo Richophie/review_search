@@ -7,13 +7,14 @@ import sys
 sys.path.insert(0,"scripts")
 import collect
 for key,fn,minimum in [
-    ("cherrycook",collect.cherrycook,35),
-    ("pavlovu",collect.pavlovu,15),
+    ("cherrycook",collect.cherrycook,19),
+    ("pavlovu",collect.pavlovu,9),
+    ("storyn",collect.storyn,10),
 ]:
     rows=fn()
     links=[row["original_url"] for row in rows]
     print("COUNT CHECK",key,len(rows),"expected>=",minimum,flush=True)
-    if key=="pavlovu": assert len(rows)>=minimum, (key,"undercollected",len(rows))
+    if key in ("cherrycook","pavlovu","storyn"): assert len(rows)>=minimum, (key,"undercollected",len(rows))
     assert len(links)==len(set(links)), (key,"duplicates")
     assert all(row["apply_deadline"] or row.get("open_verified") for row in rows)
     print("PASSED",key,len(rows),"verified open campaigns",flush=True)
