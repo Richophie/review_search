@@ -24,7 +24,9 @@ const PLATFORM: Record<string, [string,string]> = {
   cometoplay:["놀러와체험단","https://www.cometoplay.kr/"],
   cherrycook:["체리쿡","https://cherry-cook.com/"],
   gaboja:["가보자체험단","https://xn--o39a04kpnjo4k9hgflp.com/"],
-  bqueens:["뷰티의여왕","https://bqueens.net/"]
+  bqueens:["뷰티의여왕","https://bqueens.net/"],
+  huki:["후키","https://huki.co.kr/"],
+  openreview:["오픈리뷰","https://openreview.kr/"]
 };
 const TABS = ["all","new","today","soon","lowcomp","zero"] as const;
 const DAY_MS = 86400000;
