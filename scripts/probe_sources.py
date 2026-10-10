@@ -7,6 +7,7 @@ SOURCES={
  "modan":"https://modan.kr/",
  "tble":"https://tble.kr/",
  "dailyview":"https://dailyview.kr/",
+ "reviewplace":"https://www.reviewplace.co.kr/",
 }
 AGENT="ChehumMoaBot/0.1 (+public listing index; respects robots.txt)"
 def fetch(url):
