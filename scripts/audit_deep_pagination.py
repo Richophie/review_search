@@ -4,7 +4,7 @@ import re,sys,time
 sys.path.insert(0,"scripts")
 import collect
 seen=set()
-for page in (1,48,49,72,96,120):
+for page in (120,150,200,250,300,350,400,500):
   url="https://dinnerqueen.net/taste"+(f"?page={page}" if page!=1 else "")
   try:
     text=collect.safe_fetch(url)
