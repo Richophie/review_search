@@ -10,7 +10,7 @@ campaigns = json.loads(path.read_text(encoding="utf-8"))
 assert isinstance(campaigns, list), "Campaign index must be a list"
 seen_ids, seen_urls = set(), set()
 allowed_domains = {
-    "dinnerqueen.net", "www.mrblog.net", "modan.kr", "www.modootogether.com", "4blog.net", "www.assaview.co.kr", "www.ringble.co.kr", "www.cometoplay.kr", "cherry-cook.com", "xn--o39a04kpnjo4k9hgflp.com", "bqueens.net", "huki.co.kr", "openreview.kr"
+    "dinnerqueen.net", "www.mrblog.net", "modan.kr", "www.modootogether.com", "4blog.net", "www.assaview.co.kr", "www.ringble.co.kr", "www.cometoplay.kr", "cherry-cook.com", "xn--o39a04kpnjo4k9hgflp.com", "bqueens.net", "huki.co.kr", "openreview.kr", "pavlovu.com"
 }
 today = date.today()
 for item in campaigns:
