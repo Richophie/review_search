@@ -155,7 +155,7 @@ def make(source, ext_id, title, url, region=None, desc=None, benefit=None,
         "channels": channels, "slots": slots, "applicants": applicants,
         "apply_deadline": deadline, "deadline_precision": "exact" if exact_deadline else "days_left" if days is not None else "unknown",
         "open_verified": bool(open_verified and deadline is None),
-        "first_seen_at": published_at or now, "last_seen_at": now, "timezone": "Asia/Seoul",
+        "first_seen_at": now, "published_at": published_at, "last_seen_at": now, "timezone": "Asia/Seoul",
         "competition_ratio": ratio, "remaining_slots": remaining,
         "dedupe_key": re.sub(r"[^\w]", "", (region or "") + cleaned_title).lower(),
         "search_text": " ".join(filter(None, [cleaned_title, plain(desc), plain(benefit), region or "", cat] + channels)).lower(),
@@ -199,16 +199,25 @@ def dinnerqueen():
             days = one(r"(\d+)\s*일 남음", body_text)
             days = int(days) if days is not None else 0 if re.search("오늘\\s*(?:마감|까지)|D-?day", body_text, re.I) else None
             stats = re.search(r"신청\s*([\d,]+)\s*/\s*([\d,]+)", body_text)
+            # Explicit provider media markers only. Never silently label a clip/reel as blog.
+            # The original listing contains [클립]/[릴스] markers in the title.
+            media_text = plain(card[:1400])
             channels = []
-            for marker, channel in [("릴스", "인스타그램"), ("클립", "네이버클립"),
-                                    ("유튜브", "유튜브"), ("쇼츠", "쇼츠")]:
-                if marker in plain(card[:450]):
-                    channels.append(channel)
+            if re.search(r"\[클립\]|클립형|네이버\s*클립", media_text):
+                channels.append("네이버클립")
+            if re.search(r"\[릴스\]|릴스형|인스타\s*릴스", media_text):
+                channels.append("인스타그램")
+            if re.search(r"\[쇼츠\]|유튜브\s*쇼츠", media_text):
+                channels.append("쇼츠")
+            if re.search(r"\[유튜브\]|유튜브\s*영상", media_text):
+                channels.append("유튜브")
+            if re.search(r"\[블로그\]|블로그형|블로그\s*포스팅", media_text):
+                channels.append("블로그")
             item = make("dinnerqueen", cid, title, "https://dinnerqueen.net/taste/" + cid,
                         region, desc, image=one(r'<img[^>]+src="([^"]+)"', card),
                         applicants=number(stats.group(1)) if stats else None,
                         slots=number(stats.group(2)) if stats else None, days=days,
-                        channels=channels or ["블로그"])
+                        channels=channels)
             if item:
                 records[cid] = item
                 added += 1
