@@ -2,7 +2,7 @@
 """Inspect only allowed public endpoints of the six priority providers."""
 import urllib.request,urllib.error,urllib.parse,urllib.robotparser,re
 SITES={
-  "강남맛집":("https://www.gangnammatzip.net/",["/"]),
+  "강남맛집":("https://xn--939au0g4vj8sq.net/",["/"]),
   "레뷰":("https://www.revu.net/",["/"]),
   "미블":("https://www.mrblog.net/",["/campaigns/search?query=%ED%8F%AC%ED%95%AD","/campaigns/region","/campaigns","/"]),
   "리뷰노트":("https://www.reviewnote.co.kr/",["/","/campaigns"]),
