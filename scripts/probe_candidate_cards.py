@@ -6,7 +6,7 @@ targets={
  "huki":("https://huki.co.kr/",["/","/theme/huki/skin/board/gallery/productCampaign.php","/theme/huki/skin/board/gallery/localCampaign.php"]),
  "openreview":("https://openreview.kr/",["/","/main/m/page/exp_list.php?ex_adver_type=area","/main/m/page/exp_list.php?ex_adver_type=product"]),
  "wereview":("https://www.wereview.fun/",["/campaign-list"]),
- "pavlovu":("https://pavlovu.com/",["/sitemap_campaign.php"]),
+ "pavlovu":("https://pavlovu.com/",["/review_campaign_list.php","/review_campaign_list.php?category_id=001A","/sitemap_campaign.php"]),
 }
 def get(url):
  r=urllib.request.Request(url,headers={"User-Agent":UA,"Accept":"text/html,application/xml"})
@@ -41,7 +41,13 @@ for name,(base,paths) in targets.items():
      m=list(re.finditer(pat,body,re.I));print("PAT",pat,len(m),flush=True)
      if m:print("PAT SAMPLE",repr(body[max(0,m[0].start()-220):m[0].start()+1400])[:1700],flush=True)
    if name=="pavlovu":
-    print("XML HEAD",repr(body[:1700]),flush=True)
+    if path.endswith(".php") and "sitemap" in path:
+     print("XML HEAD",repr(body[:550]),flush=True)
+    else:
+     print("TITLE",re.findall(r"<title[^>]*>([^<]+)",body,re.I)[:1],flush=True)
+     for pat in [r'href="([^"]*campaign[^"]*\.php[^"]*)"',r'campaign_view',r'campaign_detail',r'신청\s*\d+',r'\d+\s*일\s*남음',r'D-\d+']:
+      hits=list(re.finditer(pat,body,re.I));print("PAVLOV PAT",pat,len(hits),flush=True)
+      if hits:print("PAVLOV SAMPLE",repr(body[max(0,hits[0].start()-400):hits[0].start()+2600])[:3000],flush=True)
   except Exception as e:print("FAIL",repr(e)[:270],flush=True)
 
 # Check only robots-permitted HTML/XML pages.
