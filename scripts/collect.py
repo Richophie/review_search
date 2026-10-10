@@ -308,6 +308,83 @@ def modan():
     print("모두의체험단 RSS confirmed",len(output),"of",len(items))
     return list(output.values())
 
+def modootogether():
+    """Index the public category LIST pages only; no campaign detail pages."""
+    base = "https://www.modootogether.com/"
+    pages = [
+        "", "campaign_list.php",
+        "campaign_list.php?category_id=047A",  # 맛집
+        "campaign_list.php?category_id=051A",  # 뷰티
+        "campaign_list.php?category_id=001A",  # 지역
+        "campaign_list.php?category_id=002A",  # 제품
+        "campaign_list.php?category_id=003A",  # 서비스
+    ]
+    out = {}
+    for rel in pages:
+        url = urllib.parse.urljoin(base, rel)
+        try:
+            body = safe_fetch(url)
+            if not body:
+                continue
+        except Exception as exc:
+            print("모두모여 public listing failure", rel, str(exc)[:130])
+            continue
+        # Only match <li> cards with a direct campaign link, never nav items.
+        cards = re.findall(r'<li>\s*<div class="box">([\s\S]*?)</li>', body, re.I)
+        added = 0
+        for card in cards:
+            cid = one(r'campaign\.php\?cp_id=(\d+)', card)
+            if not cid or cid in out:
+                continue
+            title = plain(one(r'<span class="it_name">([\s\S]*?)</span>', card))
+            if not title:
+                continue
+            dday_tag = plain(one(r'<span[^>]*class="[^"]*\bdday\b[^"]*"[^>]*>([\s\S]*?)</span>', card))
+            if "모집마감" in dday_tag:
+                continue
+            days = one(r'D-?\s*[Dd]ay\s*(\d+)', dday_tag, re.I)
+            if days is None:
+                continue
+            applicants = number(one(r'<b[^>]*>([\d,]+)</b>\s*명\s*신청',card))
+            slots = number(one(r'<b[^>]*>([\d,]+)</b>\s*명\s*모집중',card))
+            # Both quantities must be present for reliable competition calculations.
+            badges = plain(one(r'<div class="top_info">([\s\S]*?)</div>', card))
+            channels = [
+                channel for keyword, channel in [
+                    ("블로그","블로그"),("인스타그램","인스타그램"),
+                    ("유튜브","유튜브"),("클립","네이버클립"),
+                    ("릴스","인스타그램"),("틱톡","틱톡"),
+                ] if keyword in badges
+            ]
+            channels = list(dict.fromkeys(channels))
+            # The shop-only medium is not among the requested review media.
+            if not channels and "쇼핑몰" in badges:
+                continue
+            desc = plain(one(r'<span class="it_description">([\s\S]*?)</span>', card))
+            point = plain(one(r'<span class="txt_num point_color4">(\+\s*[\d,]+P)</span>', card))
+            benefit = desc + ((" · " if desc else "") + point if point else "")
+            kind = plain(one(r'<div class="option2">([\s\S]*?)</div>', card))
+            ctype = next((k for k in ("방문형","배송형","기자단") if k in kind), None)
+            prefix = one(r'^\[([^\]]+)\]', title)
+            region = None
+            if prefix and re.match(r'^(서울|경기|인천|부산|대전|대구|광주|울산|세종|충북|충남|전북|전남|경북|경남|강원|제주)',prefix):
+                region = prefix.replace("/"," ")
+            image = one(r'<img[^>]+src="([^"]+)"', card)
+            image = urllib.parse.urljoin(base,html.unescape(image)) if image else None
+            item = make(
+                "modootogether",cid,title,
+                base + "campaign.php?cp_id=" + cid,
+                region=region, desc=desc, benefit=benefit,
+                image=image, applicants=applicants, slots=slots,
+                days=int(days), channels=channels, ctype=ctype
+            )
+            if item:
+                out[cid]=item
+                added+=1
+        print("모두모여 public listing",rel or "/",len(cards),"cards",added,"new")
+        time.sleep(1.2)
+    return list(out.values())
+
 def main():
     OUT.parent.mkdir(parents=True, exist_ok=True)
     try:
@@ -316,7 +393,7 @@ def main():
         current = []
     stored = {item["id"]: item for item in current if isinstance(item, dict) and "id" in item}
     found = 0
-    for name, collect in [("dinnerqueen", dinnerqueen), ("mrblog", mrblog), ("modan", modan)]:
+    for name, collect in [("dinnerqueen", dinnerqueen), ("mrblog", mrblog), ("modan", modan), ("modootogether", modootogether)]:
         try:
             items = collect()
             for item in items:
