@@ -3,6 +3,7 @@ import { createClient } from "@supabase/supabase-js";
 import type { Database } from "@/integrations/supabase/types";
 import { searchSchema, type SearchParams } from "./search-params";
 import { todayIn, addDays } from "./collector/normalize";
+import { searchCollected } from "./collected-search";
 
 export const PAGE_SIZE = 24;
 
@@ -36,6 +37,9 @@ const COLS = "id,source_id,original_url,title,description,benefit,image_url,coun
 export const searchCampaigns = createServerFn({ method: "GET" })
   .inputValidator((d: unknown) => searchSchema.parse(d))
   .handler(async ({ data: p }) => {
+    // Prefer the real-source public snapshot once collection has succeeded.
+    const collected = searchCollected(p);
+    if (collected) return collected;
     const db = publicClient();
     const today = todayIn("Asia/Seoul");
     // Seoul midnight as UTC instant for "오늘 올라옴"
