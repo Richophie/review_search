@@ -91,6 +91,7 @@ def infer_category(text):
         ("디지털", r"가전|전자제품|이어폰|충전기|스마트"),
         ("맛집", r"맛집|식당|고기|초밥|치킨|식사권|파스타|피자|쌀국수|국밥"),
         ("식품", r"식품|밀키트|건강식품|음료|간편식"),
+        ("생활", r"생활|수납|세제|청소|방향제|향초|침구|주방|가구|세탁|리빙|인테리어"),
     ]:
         if re.search(pat, text, re.I):
             return cat
@@ -106,7 +107,23 @@ def sido(region):
                  "경기", "강원", "충북", "충남", "전북", "전남", "경북", "경남", "제주"]:
         if region.startswith(name):
             return name
-    return next((short for long, short in aliases.items() if region.startswith(long)), None)
+    found = next((short for long, short in aliases.items() if region.startswith(long)), None)
+    if found:
+        return found
+    city_provinces = {
+        "경북": ("포항", "경주", "구미", "안동", "김천", "영주", "상주", "문경", "영천", "경산"),
+        "경남": ("창원", "김해", "진주", "양산", "통영", "거제", "밀양", "사천"),
+        "경기": ("수원", "성남", "부천", "안양", "안산", "용인", "화성", "평택", "시흥",
+                 "군포", "의왕", "과천", "광명", "광주", "하남", "고양", "파주", "김포", "광명", "남양주", "구리"),
+        "충북": ("청주", "충주", "제천", "증평", "음성"),
+        "충남": ("천안", "아산", "공주", "논산", "당진", "서산", "보령"),
+        "전북": ("전주", "군산", "익산", "정읍", "남원"),
+        "전남": ("목포", "여수", "순천", "광양", "나주"),
+        "강원": ("춘천", "원주", "강릉", "속초", "동해", "삼척"),
+        "제주": ("제주시", "서귀포"),
+    }
+    return next((province for province, cities in city_provinces.items()
+                 if any(region.startswith(city) for city in cities)), None)
 
 def make(source, ext_id, title, url, region=None, desc=None, benefit=None,
          image=None, applicants=None, slots=None, days=None, channels=None, ctype=None,
@@ -117,7 +134,7 @@ def make(source, ext_id, title, url, region=None, desc=None, benefit=None,
     if deadline < TODAY.isoformat():
         return None
     channels = ["블로그"] if channels is None else channels
-    cat = category_override or infer_category(title + " " + (desc or ""))
+    cat = category_override or infer_category(title + " " + (desc or "") + " " + (benefit or ""))
     if not ctype:
         ctype = "기자단" if "기자단" in title else "배송형" if re.search("배송|택배|제품 체험", title) else "방문형" if region and region != "전국" else None
     ratio = applicants / slots if applicants is not None and slots and slots > 0 else None
@@ -135,7 +152,7 @@ def make(source, ext_id, title, url, region=None, desc=None, benefit=None,
         "first_seen_at": published_at or now, "last_seen_at": now, "timezone": "Asia/Seoul",
         "competition_ratio": ratio, "remaining_slots": remaining,
         "dedupe_key": re.sub(r"[^\w]", "", (region or "") + cleaned_title).lower(),
-        "search_text": " ".join(filter(None, [cleaned_title, plain(desc), region or "", cat] + channels)).lower(),
+        "search_text": " ".join(filter(None, [cleaned_title, plain(desc), plain(benefit), region or "", cat] + channels)).lower(),
     }
 
 def dinnerqueen():
@@ -385,6 +402,75 @@ def modootogether():
         time.sleep(1.2)
     return list(out.values())
 
+def fourblog():
+    """Collect 4blog's public, robot-permitted all-campaign listing."""
+    base="https://4blog.net"
+    body=safe_fetch(base + "/list/all")
+    if not body:
+        raise RuntimeError("4blog public all-list unavailable")
+    cards=re.findall(
+        r'<a\s+class="nounderline"\s+href="/campaign/(\d+)/">([\s\S]*?)</a>',
+        body, re.I
+    )
+    output={}
+    for cid, fragment in cards:
+        title=plain(one(r'<span class="camp-name">([\s\S]*?)</span>',fragment))
+        if not title:
+            continue
+        region=one(r'^\[([^\]]+)\]',title)
+        if region:
+            region=region.replace("/"," ")
+        benefit=plain(one(r'<div class="emphasize">([\s\S]*?)</div>',fragment))
+        recruits=number(one(r'<span class="remainCnt">모집\s*([\d,]+)명</span>',fragment))
+        ctype=plain(one(r'<span[^>]*class="[^"]*campaign-type-badge[^"]*"[^>]*>([\s\S]*?)</span>',fragment))
+        if ctype not in ("방문형","배송형","기자단","구매평"):
+            ctype=None
+        src=one(r'<img[^>]+src="(https://[^"]+)"',fragment)
+        days_raw=one(r'<span class="fontcolor">D-(\d+)</span>',fragment)
+        days=int(days_raw) if days_raw is not None else 0 if re.search(r'D-Day',fragment,re.I) else None
+        if days is None:
+            continue
+        # Optional: verify the published recruitment END against the live D-day.
+        exact_deadline=None
+        m=re.search(r'모집\s+\d{1,2}\.\d{1,2}\s*~\s*(\d{1,2})\.(\d{1,2})',plain(fragment))
+        if m:
+            predicted=TODAY+timedelta(days=days)
+            try:
+                candidate=predicted.replace(month=int(m.group(1)),day=int(m.group(2)))
+                if abs((candidate-predicted).days) <= 1:
+                    exact_deadline=candidate.isoformat()
+            except ValueError:
+                pass
+        badges=re.findall(r'<span[^>]*class="[^"]*label[^"]*"[^>]*>([\s\S]*?)</span>',fragment)
+        badges=[plain(b) for b in badges]
+        channels=[]
+        for label in badges:
+            if label in ("블로그","blog"):
+                channels.append("블로그")
+            elif label in ("인스타","인스타그램","릴스"):
+                channels.append("인스타그램")
+            elif label in ("네이버클립","클립"):
+                channels.append("네이버클립")
+            elif label in ("유튜브",):
+                channels.append("유튜브")
+            elif label in ("쇼츠","숏츠"):
+                channels.append("쇼츠")
+            elif label=="틱톡":
+                channels.append("틱톡")
+            elif label=="스레드":
+                channels.append("스레드")
+        channels=list(dict.fromkeys(channels))
+        item=make(
+            "fourblog",cid,title,base+"/campaign/"+cid+"/",
+            region=region,desc=benefit,benefit=benefit,image=src,
+            applicants=None,slots=recruits,days=days,exact_deadline=exact_deadline,
+            channels=channels,ctype=ctype
+        )
+        if item:
+            output[cid]=item
+    print("포블로그 public all",len(cards),"cards",len(output),"verified",flush=True)
+    return list(output.values())
+
 def main():
     OUT.parent.mkdir(parents=True, exist_ok=True)
     try:
@@ -393,7 +479,7 @@ def main():
         current = []
     stored = {item["id"]: item for item in current if isinstance(item, dict) and "id" in item}
     found = 0
-    for name, collect in [("dinnerqueen", dinnerqueen), ("mrblog", mrblog), ("modan", modan), ("modootogether", modootogether)]:
+    for name, collect in [("dinnerqueen", dinnerqueen), ("mrblog", mrblog), ("modan", modan), ("modootogether", modootogether), ("fourblog", fourblog)]:
         try:
             items = collect()
             for item in items:
