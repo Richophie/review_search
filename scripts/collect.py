@@ -559,6 +559,57 @@ def assaview():
     print("아싸뷰 confirmed",len(out),"unique exact-deadline campaigns",flush=True)
     return list(out.values())
 
+
+def ringble():
+    """Index homepage-listed campaign cards only.
+
+    Ringble's robots.txt disallows /detail.php: never visit its detail
+    pages. Public homepage already exposes a campaign's title, applicants,
+    slots, relative application deadline and original link.
+    """
+    base="https://www.ringble.co.kr/"
+    html_page=safe_fetch(base)
+    if not html_page:
+        raise RuntimeError("Ringble public homepage blocked or not permitted")
+    out={}
+    fragments=html_page.split("store_list_wrap")[1:]
+    for fragment in fragments:
+        # A card terminates before the next store_list_wrap marker.
+        cid=one(r"detail\.php\?number=(\d+)&category=",fragment)
+        if not cid or cid in out:
+            continue
+        title=plain(one(r'<a\s+href=[\'"]detail\.php\?number=\d+&category=[\'"]\s+class="list_title"\s+style="font-size:14px;">([\s\S]*?)</a>',fragment))
+        if not title:
+            # A source update must not result in unlabelled results.
+            continue
+        days=one(r'class="list_title"[^>]*>\s*(\d+)\s*일\s*남음',fragment)
+        if days is None:
+            continue
+        stats=re.search(r'신청\s*([\d,]+)\s*</font>\s*/\s*<font[^>]*>\s*모집\s*([\d,]+)',fragment)
+        applicants=number(stats.group(1)) if stats else None
+        slots=number(stats.group(2)) if stats else None
+        description=plain(one(r'<td\s+style="padding-top:5px[^"]*">([\s\S]*?)</td>',fragment))
+        img=one(r'<img\s+src="([^"]+)"',fragment)
+        img=urllib.parse.urljoin(base,img) if img else None
+        channel=one(r'(블로그|인스타그램|인스타|유튜브|릴스|틱톡|클립|쇼츠)\s*</div>',fragment)
+        channel={"인스타":"인스타그램","릴스":"인스타그램","클립":"네이버클립"}.get(channel,channel) if channel else None
+        region=one(r'^\[([^\]]+)\]',title)
+        if region and not sido(region):
+            region=None
+        item=make(
+            "ringble",cid,title,
+            base+"detail.php?number="+cid+"&category=",
+            region=region,desc=description,
+            benefit=description,image=img,
+            applicants=applicants,slots=slots,days=int(days),
+            channels=[channel] if channel else [],
+            ctype="배송형" if "배송" in fragment[:950] else None
+        )
+        if item:
+            out[cid]=item
+    print("링블 public homepage",len(fragments),"segments",len(out),"campaigns",flush=True)
+    return list(out.values())
+
 def main():
     OUT.parent.mkdir(parents=True, exist_ok=True)
     try:
@@ -567,7 +618,7 @@ def main():
         current = []
     stored = {item["id"]: item for item in current if isinstance(item, dict) and "id" in item}
     found = 0
-    for name, collect in [("dinnerqueen", dinnerqueen), ("mrblog", mrblog), ("modan", modan), ("modootogether", modootogether), ("fourblog", fourblog), ("assaview", assaview)]:
+    for name, collect in [("dinnerqueen", dinnerqueen), ("mrblog", mrblog), ("modan", modan), ("modootogether", modootogether), ("fourblog", fourblog), ("assaview", assaview), ("ringble", ringble)]:
         try:
             items = collect()
             for item in items:
