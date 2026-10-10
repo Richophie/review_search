@@ -41,3 +41,5 @@ for title in ("sido","sigungu","search","cat","cat_cafe","type","channel","low")
   assert 0 < out[title] < out["all"],(title,"filter did not narrow or incorrectly empty",out)
 assert out["nonsense"]==0,("Nonexistent keyword should not match",out)
 print("Verified live filters narrow actual results:",out)
+
+# Regression check for real public source data and normalized search attributes.
