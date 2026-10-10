@@ -8,6 +8,8 @@ import html
 import json
 import re
 import time
+import xml.etree.ElementTree as ET
+from email.utils import parsedate_to_datetime
 import urllib.parse
 import urllib.request
 import urllib.robotparser
@@ -22,6 +24,7 @@ AGENT = "ChehumMoaBot/0.1 (+public listing index; respects robots.txt)"
 HOMES = {
     "dinnerqueen": "https://dinnerqueen.net/",
     "mrblog": "https://www.mrblog.net/",
+    "modan": "https://modan.kr/",
 }
 SPLIT = re.compile(r"\s+")
 
@@ -53,6 +56,8 @@ def robots_permit(url):
         robots_url = "https://" + host + "/robots.txt"
         try:
             raw = request(robots_url)
+            if not re.search(r"(?im)^\s*User-agent\s*:", raw):
+                raise RuntimeError("No valid robots.txt directives")
             rp = urllib.robotparser.RobotFileParser()
             rp.parse(raw.splitlines())
             ROBOTS[host] = rp
@@ -104,14 +109,17 @@ def sido(region):
     return next((short for long, short in aliases.items() if region.startswith(long)), None)
 
 def make(source, ext_id, title, url, region=None, desc=None, benefit=None,
-         image=None, applicants=None, slots=None, days=None, channels=None, ctype=None):
-    if not title or not url.startswith("https://") or days is None or days < 0:
+         image=None, applicants=None, slots=None, days=None, channels=None, ctype=None,
+         exact_deadline=None, published_at=None, category_override=None):
+    if not title or not url.startswith("https://") or (exact_deadline is None and (days is None or days < 0)):
         return None
-    deadline = (TODAY + timedelta(days=days)).isoformat()
-    channels = channels or ["블로그"]
-    cat = infer_category(title + " " + (desc or ""))
+    deadline = exact_deadline or (TODAY + timedelta(days=days)).isoformat()
+    if deadline < TODAY.isoformat():
+        return None
+    channels = ["블로그"] if channels is None else channels
+    cat = category_override or infer_category(title + " " + (desc or ""))
     if not ctype:
-        ctype = "방문형" if region else "배송형" if re.search("배송|택배", title) else None
+        ctype = "기자단" if "기자단" in title else "배송형" if re.search("배송|택배|제품 체험", title) else "방문형" if region and region != "전국" else None
     ratio = applicants / slots if applicants is not None and slots and slots > 0 else None
     remaining = max(slots - applicants, 0) if applicants is not None and slots and slots > 0 else None
     now = NOW.isoformat()
@@ -123,8 +131,8 @@ def make(source, ext_id, title, url, region=None, desc=None, benefit=None,
         "image_url": image, "country_code": "KR", "region_sido": sido(region),
         "region_text": plain(region) or None, "category": cat, "campaign_type": ctype,
         "channels": channels, "slots": slots, "applicants": applicants,
-        "apply_deadline": deadline, "deadline_precision": "days_left",
-        "first_seen_at": now, "last_seen_at": now, "timezone": "Asia/Seoul",
+        "apply_deadline": deadline, "deadline_precision": "exact" if exact_deadline else "days_left",
+        "first_seen_at": published_at or now, "last_seen_at": now, "timezone": "Asia/Seoul",
         "competition_ratio": ratio, "remaining_slots": remaining,
         "dedupe_key": re.sub(r"[^\w]", "", (region or "") + cleaned_title).lower(),
         "search_text": " ".join(filter(None, [cleaned_title, plain(desc), region or "", cat] + channels)).lower(),
@@ -203,6 +211,103 @@ def mrblog():
     print("미블 public home", len(out))
     return list(out.values())
 
+def modan():
+    """Consume the official publicly advertised 50-item RSS feed.
+
+    Only confirm exact recruitment deadlines from the linked public campaign
+    detail pages. No login, private API, or challenge bypass.
+    """
+    url = "https://modan.kr/rss/campaigns.xml"
+    rss = safe_fetch(url)
+    if not rss:
+        raise RuntimeError("Official Modan RSS unavailable or disallowed")
+    root = ET.fromstring(rss)
+    items = root.findall("./channel/item")
+    if not items:
+        raise RuntimeError("Official Modan RSS is empty")
+    output = {}
+    for idx, item in enumerate(items):
+        link = (item.findtext("link") or "").strip()
+        if not re.fullmatch(r"https://modan\.kr/campaigns/\d+", link):
+            continue
+        cid = link.rsplit("/",1)[-1]
+        title = (item.findtext("title") or "").strip()
+        category = (item.findtext("category") or "").strip()
+        region = (item.findtext("{http://purl.org/dc/elements/1.1/}creator") or "").strip()
+        description = (item.findtext("description") or "").strip()
+        pub = (item.findtext("pubDate") or "").strip()
+        published_at = None
+        if pub:
+            try:
+                published_at = parsedate_to_datetime(pub).isoformat()
+            except (ValueError, TypeError):
+                pass
+        try:
+            detail = safe_fetch(link)
+            if not detail:
+                continue
+            matches = re.findall(
+                r'<script\b[^>]*type=["\']application/ld\+json["\'][^>]*>([\s\S]*?)</script>',
+                detail, re.I,
+            )
+            exact_deadline = None
+            offer = None
+            image = None
+            for raw_script in matches:
+                try:
+                    ld = json.loads(html.unescape(raw_script))
+                except (ValueError, TypeError):
+                    continue
+                nodes = ld if isinstance(ld,list) else [ld]
+                for node in nodes:
+                    if not isinstance(node,dict):
+                        continue
+                    if node.get("@type") != "Event":
+                        continue
+                    ending = node.get("endDate")
+                    if ending:
+                        try:
+                            instant = datetime.fromisoformat(ending.replace("Z","+00:00"))
+                            exact_deadline = instant.astimezone(KST).date().isoformat()
+                        except (ValueError, AttributeError):
+                            pass
+                    offers = node.get("offers") or {}
+                    if isinstance(offers,dict):
+                        offer = offers.get("name")
+                    pic = node.get("image")
+                    if isinstance(pic, str) and pic.startswith("https://"):
+                        image = pic
+                    elif isinstance(pic,list) and pic:
+                        if isinstance(pic[0],str) and pic[0].startswith("https://"):
+                            image = pic[0]
+            # Never assign a fictional deadline when the original gives none.
+            if not exact_deadline:
+                continue
+            # The RSS exposes publisher dates; do not treat discovery time as
+            # publication time for the "new" tab.
+            title_clean = re.sub(r"^(\[[^\]]+\]\s*)+", "", title).strip() or title
+            campaign_type = (
+                "기자단" if "기자단" in title else
+                "배송형" if "배송" in title or category in ("제품","배송") else
+                "방문형" if region and region != "전국" else None
+            )
+            c = make(
+                "modan", cid, title_clean, link, region=region,
+                desc=description, benefit=offer or description, image=image,
+                applicants=None, slots=None, exact_deadline=exact_deadline,
+                published_at=published_at, category_override=category or None,
+                channels=[], ctype=campaign_type,
+            )
+            if c:
+                output[cid] = c
+        except Exception as exc:
+            print("모두의체험단 detail skipped",cid,str(exc)[:140])
+        # Be considerate to the source, and run well below rate limits.
+        if idx < len(items)-1:
+            time.sleep(0.55)
+    print("모두의체험단 RSS confirmed",len(output),"of",len(items))
+    return list(output.values())
+
 def main():
     OUT.parent.mkdir(parents=True, exist_ok=True)
     try:
@@ -211,7 +316,7 @@ def main():
         current = []
     stored = {item["id"]: item for item in current if isinstance(item, dict) and "id" in item}
     found = 0
-    for name, collect in [("dinnerqueen", dinnerqueen), ("mrblog", mrblog)]:
+    for name, collect in [("dinnerqueen", dinnerqueen), ("mrblog", mrblog), ("modan", modan)]:
         try:
             items = collect()
             for item in items:
