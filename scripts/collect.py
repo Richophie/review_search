@@ -140,7 +140,7 @@ def make(source, ext_id, title, url, region=None, desc=None, benefit=None,
 
 def dinnerqueen():
     records = {}
-    for page in range(1, 25):
+    for page in range(1, 49):
         url = "https://dinnerqueen.net/taste" + ("?page=" + str(page) if page > 1 else "")
         body = safe_fetch(url)
         if not body:
