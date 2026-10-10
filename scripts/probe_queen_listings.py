@@ -27,6 +27,10 @@ for name,base in SOURCES.items():
    ids=set(re.findall(r'href="/taste/(\d+)"',html))
    print("RESULT",page,"URL",final,"BYTES",len(html),"CARDS",len(cards),"LINKS",len(ids),"DAYLABELS",len(re.findall(r"\d+\s*일 남음",html)),flush=True)
    if cards:print("SAMPLE",repr(cards[0][:1100]),flush=True)
+   if name=="택배의여왕" and page==1:
+    idx=html.find('<div class="item">')
+    print("TQUEENS_ITEM_POS",idx,flush=True)
+    if idx>=0: print("TQUEENS_ITEM_SAMPLE",repr(html[idx:idx+4300]),flush=True)
   except Exception as ex:print("ERROR",page,repr(ex)[:180],flush=True)
   time.sleep(1.3)
 
