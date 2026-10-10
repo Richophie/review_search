@@ -9,6 +9,7 @@ on:
     paths:
       - "scripts/collect.py"
       - ".github/workflows/update-campaigns.yml"
+      - "scripts/audit_snapshot.py"
 
 permissions:
   contents: write
@@ -35,15 +36,17 @@ jobs:
       # Validation must allow each linked original provider URL.
       - name: Verify public index integrity
         run: python scripts/validate_snapshot.py
-      - name: Commit updated snapshot only when changed
+      - name: Audit source and media coverage
+        run: python scripts/audit_snapshot.py
+      - name: Commit updated snapshot and audit only when changed
         run: |
-          if git diff --quiet -- public/data/campaigns.json; then
+          if git diff --quiet -- public/data/campaigns.json public/data/collection_status.json && [ -z "$(git ls-files --others --exclude-standard public/data/collection_status.json)" ]; then
             echo "No new verified snapshot changes."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/data/campaigns.json
+          git add public/data/campaigns.json public/data/collection_status.json
           git commit -m "chore(data): refresh public campaign listings"
           git fetch origin main
           git rebase origin/main
