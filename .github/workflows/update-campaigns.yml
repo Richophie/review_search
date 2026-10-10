@@ -30,6 +30,7 @@ jobs:
           python-version: "3.12"
       - name: Collect verified public listings
         run: python scripts/collect.py
+      # Validation must allow each linked original provider URL.
       - name: Verify public index integrity
         run: python scripts/validate_snapshot.py
       - name: Commit updated snapshot only when changed
