@@ -28,6 +28,9 @@ for title,params in TESTS.items():
     assert r.status==200,(title,r.status)
     body=r.read(2500000).decode("utf-8","replace")
   assert "체험단 모아보기" in body,(title,"No brand")
+  if title=="all":
+    assert "aspect-square" in body, "Card thumbnail not square"
+    assert "사이트 전체" not in body, "Provider selector still visible"
   match=re.search(r'<strong[^>]*class="text-foreground"[^>]*>([\d,]+)</strong>\s*건',body)
   if not match:
     # Alternate SSR markup order/HTML encoding
