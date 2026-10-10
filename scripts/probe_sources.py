@@ -46,6 +46,17 @@ for name,base in SOURCES.items():
      print("RSS item count",len(items))
      for it in items[:3]:
       print("RSS sample",[(e.tag,e.text[:200] if e.text else "") for e in list(it)[:10]])
+     if items:
+      sample_link=items[0].findtext("link","")
+      print("DETAIL sample URL",sample_link)
+      if sample_link and rp.can_fetch(AGENT,sample_link):
+       detail=fetch(sample_link)
+       print("DETAIL HTML size",len(detail))
+       for pat in [r".{0,100}(?:모집마감|마감일|종료일|신청기간|deadline|endsAt|endDate|apply_end|closeDate|recruitEnd|모집인원|신청인원|지원인원|신청\s*\d+\s*/\s*\d+).{0,230}"]:
+        found=list(re.finditer(pat,detail,re.I))
+        print("DETAIL relevant matches",len(found))
+        for mm in found[:13]:print("DETAIL hit",repr(mm.group(0)[:330]))
+
     except Exception as ex:print("RSS parsing error",repr(ex))
   body=fetch(base)
   print("index bytes",len(body))
