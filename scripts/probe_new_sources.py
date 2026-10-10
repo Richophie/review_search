@@ -16,15 +16,15 @@ from collect import safe_fetch
 SOURCES = {
     "reviewnote": {
         "pages": ["https://www.reviewnote.co.kr/", "https://www.reviewnote.co.kr/campaigns"],
-        "detail": r"https?://(?:www\\.)?reviewnote\\.co\\.kr/campaigns/(\\d+)|(?:^|[\"'])/campaigns/(\\d+)",
+        "detail": r"https?://(?:www\.)?reviewnote\.co\.kr/campaigns/(\d+)|(?:^|[\"'])/campaigns/(\d+)",
     },
     "gangnam": {
         "pages": ["https://gangnam-review.net/", "https://gangnam-review.net/cp/"],
-        "detail": r"(?:https?://gangnam-review\\.net)?/cp/\\?id=(\\d+)",
+        "detail": r"(?:https?://gangnam-review\.net)?/cp/\?id=(\d+)",
     },
     "revu": {
         "pages": ["https://webview.revu.net/"],
-        "detail": r"(?:https?://[^\"' ]*revu\\.net)?/[^\"' ]*(?:campaign|experience)[^\"' ]*",
+        "detail": r"(?:https?://[^\"' ]*revu\.net)?/[^\"' ]*(?:campaign|experience)[^\"' ]*",
     },
 }
 RESULT = Path("public/data/source_probe.json")
