@@ -161,7 +161,7 @@ function Index() {
       {data.items.length === 0 ? (
         <EmptyState country={p.country} hasSources={connected.length > 0} filtered={activeFilters || !!p.tab} />
       ) : view === "card" ? (
-        <ul className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {data.items.map((c) => <li key={c.id}><CampaignCard c={c as CampaignItem} today={data.today!} sources={data.sources} /></li>)}
         </ul>
       ) : (
