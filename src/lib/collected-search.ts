@@ -20,7 +20,8 @@ const PLATFORM: Record<string, [string,string]> = {
   modootogether:["모두모여체험단","https://www.modootogether.com/"],
   fourblog:["포블로그","https://4blog.net/"],
   assaview:["아싸뷰","https://www.assaview.co.kr/"],
-  ringble:["링블","https://www.ringble.co.kr/"]
+  ringble:["링블","https://www.ringble.co.kr/"],
+  cometoplay:["놀러와체험단","https://www.cometoplay.kr/"]
 };
 const TABS = ["all","new","today","soon","lowcomp","zero"] as const;
 const DAY_MS = 86400000;
