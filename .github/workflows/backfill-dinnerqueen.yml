@@ -1,0 +1,47 @@
+name: One-time deep public campaign backfill
+
+on:
+  push:
+    paths:
+      - ".github/workflows/backfill-dinnerqueen.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: "deep-campaign-backfill"
+  cancel-in-progress: false
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Index remaining public listing pages, paced
+        env:
+          DQ_ONLY: "1"
+          DQ_PAGE_START: "85"
+          DQ_PAGE_END: "299"
+        run: python -u scripts/collect.py
+      - name: Verify all campaign data before release
+        run: python scripts/validate_snapshot.py
+      - name: Publish only the verified changed index
+        run: |
+          if git diff --quiet -- public/data/campaigns.json; then
+            echo "No additional open campaigns found."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data/campaigns.json
+          git commit -m "chore(data): complete bounded Dinner Queen public page backfill"
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main
