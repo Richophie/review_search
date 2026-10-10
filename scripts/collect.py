@@ -189,8 +189,8 @@ def dinnerqueen():
             cid = one(r'href="/taste/(\d+)"', card)
             if not cid or cid in records:
                 continue
-            title = plain(one(r'title="([^"]+?)\s*신청하기"', card))
-            title = re.sub(r"^(\[[^\]]+\]\s*)+", "", title).strip() or title
+            raw_title = plain(one(r'title="([^"]+?)\s*신청하기"', card))
+            title = re.sub(r"^(\[[^\]]+\]\s*)+", "", raw_title).strip() or raw_title
             region = one(r'title="\[([^\]]+)\]', card)
             if region and re.search(r"릴스|클립|배송|기자단|쇼츠", region):
                 region = None
@@ -201,7 +201,9 @@ def dinnerqueen():
             stats = re.search(r"신청\s*([\d,]+)\s*/\s*([\d,]+)", body_text)
             # Explicit provider media markers only. Never silently label a clip/reel as blog.
             # The original listing contains [클립]/[릴스] markers in the title.
-            media_text = plain(card[:1400])
+            # Use the original listing title before removing [클립]/[릴스] prefixes.
+            # Reading whole card text can pick up unrelated UI labels.
+            media_text = raw_title
             channels = []
             if re.search(r"\[클립\]|클립형|네이버\s*클립", media_text):
                 channels.append("네이버클립")
@@ -222,8 +224,7 @@ def dinnerqueen():
                 records[cid] = item
                 added += 1
         print("디너의여왕 page", page, "new", added)
-        if added == 0:
-            break
+        # Repeated IDs on a page do not mean later pages are empty.
         time.sleep(1.5)
     return list(records.values())
 
