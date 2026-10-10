@@ -18,3 +18,5 @@ print("IDS",ids[:20],flush=True)
 for cid in ids[:3]:
  m=re.search(r'href=["\'][^"\']*review_campaign\.php\?cp_id='+cid+r'[^"\']*["\']',doc,re.I)
  if m: print("CARD",cid,repr(doc[max(0,m.start()-800):m.end()+3500])[:5000],flush=True)
+
+# Homepage campaign-card inspection only.
