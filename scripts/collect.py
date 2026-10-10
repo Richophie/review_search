@@ -6,6 +6,7 @@ CAPTCHA bypass, no hidden endpoints. Keep verified attribution and original URLs
 """
 import html
 import json
+import os
 import re
 import time
 import xml.etree.ElementTree as ET
@@ -162,12 +163,19 @@ def make(source, ext_id, title, url, region=None, desc=None, benefit=None,
 
 def dinnerqueen():
     records = {}
-    # The public source has distinct listings beyond page 120 (verified through 120).
-    # Check the 12 newest pages on every run, and rotate other pages in three
-    # groups of 36. This revisits all 120 pages every 36 hours without making
-    # 120 sequential requests to the source in one run.
-    window = (int(NOW.timestamp() // (12*3600)) + 1) % 3
-    pages = list(range(1, 13)) + list(range(13 + window*36, 49 + window*36))
+    # Public page 250 has live listing cards, while page 300 does not.
+    # A one-time, rate-limited backfill can select an explicit page interval.
+    # Regular refresh revisits 12 newest pages plus 48 older pages per run.
+    explicit_start = os.environ.get("DQ_PAGE_START")
+    explicit_end = os.environ.get("DQ_PAGE_END")
+    if explicit_start is not None and explicit_end is not None:
+        start = max(1, int(explicit_start))
+        end = min(299, int(explicit_end))
+        pages = range(start, end + 1)
+    else:
+        window = (int(NOW.timestamp() // (12*3600)) + 1) % 6
+        start = 13 + window * 48
+        pages = list(range(1, 13)) + list(range(start, min(start + 48, 300)))
     for page in pages:
         url = "https://dinnerqueen.net/taste" + ("?page=" + str(page) if page > 1 else "")
         body = safe_fetch(url)
@@ -989,7 +997,10 @@ def main():
         current = []
     stored = {item["id"]: item for item in current if isinstance(item, dict) and "id" in item}
     found = 0
-    for name, collect in [("dinnerqueen", dinnerqueen), ("mrblog", mrblog), ("modan", modan), ("modootogether", modootogether), ("fourblog", fourblog), ("assaview", assaview), ("ringble", ringble), ("cometoplay", cometoplay), ("cherrycook", cherrycook), ("gaboja", gaboja), ("bqueens", bqueens), ("huki", huki), ("openreview", openreview), ("pavlovu", pavlovu)]:
+    collectors = [("dinnerqueen", dinnerqueen), ("mrblog", mrblog), ("modan", modan), ("modootogether", modootogether), ("fourblog", fourblog), ("assaview", assaview), ("ringble", ringble), ("cometoplay", cometoplay), ("cherrycook", cherrycook), ("gaboja", gaboja), ("bqueens", bqueens), ("huki", huki), ("openreview", openreview), ("pavlovu", pavlovu)]
+    if os.environ.get("DQ_ONLY") == "1":
+        collectors = [("dinnerqueen", dinnerqueen)]
+    for name, collect in collectors:
         try:
             items = collect()
             for item in items:
