@@ -19,7 +19,7 @@ export const searchSchema = z.object({
 export type SearchParams = z.infer<typeof searchSchema>;
 
 export const TAB_LABELS: Record<(typeof TABS)[number], string> = {
-  all: "전체", new: "오늘 올라옴", today: "오늘 마감", soon: "마감 임박 D-3",
+  all: "전체", new: "오늘 등록 확인", today: "오늘 마감", soon: "마감 임박 D-3",
   lowcomp: "경쟁 낮음", zero: "신청자 0명",
 };
 export const SORT_LABELS: Record<(typeof SORTS)[number], string> = {
