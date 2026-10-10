@@ -81,14 +81,15 @@ export const searchCampaigns = createServerFn({ method: "GET" })
     q = q.range((page - 1) * PAGE_SIZE, page * PAGE_SIZE - 1);
 
     const tabs = ["all", "new", "today", "soon", "lowcomp", "zero"] as const;
-    const [res, sources, ...counts] = await Promise.all([
+    const [res, allCount, sources, ...counts] = await Promise.all([
       q,
+      db.from("campaigns").select("id", { count: "exact", head: true }).eq("is_active", true).gte("apply_deadline", today)[p.country === "INTL" ? "neq" : "eq"]("country_code", "KR"),
       db.from("sources").select("id,name,homepage_url,status,status_note,last_success_at,country_code").order("name"),
       ...tabs.map((t) => applyTab(base("id", true), t)),
     ]);
     if (res.error) {
       console.error(res.error);
-      return { items: [], total: 0, tabCounts: null, sources: sources.data ?? [], error: "검색 중 오류가 발생했어요." };
+      return { items: [], total: 0, globalTotal: 0, tabCounts: null, sources: sources.data ?? [], error: "검색 중 오류가 발생했어요." };
     }
     type Row = Database["public"]["Tables"]["campaigns"]["Row"];
     const items = (res.data ?? []) as Row[];
@@ -110,7 +111,8 @@ export const searchCampaigns = createServerFn({ method: "GET" })
         ...i,
         related: (dupMap[i.dedupe_key ?? ""] ?? []).filter((d) => d.original_url !== i.original_url && d.source_id !== i.source_id),
       })),
-      total: res.count ?? 0,
+      total: (counts.find((_, i) => tabs[i] === (p.tab ?? "all")) as { count: number | null } | undefined)?.count ?? 0,
+      globalTotal: allCount.count ?? 0,
       tabCounts,
       sources: sources.data ?? [],
       today,
