@@ -45,7 +45,7 @@ def request(url, timeout=25):
             raise RuntimeError("HTTP %s" % resp.status)
         data = resp.read(4_000_000)
         text = data.decode("utf-8", "replace")
-        if re.search(r"captcha|cf-challenge|접근이 차단", text[:5000], re.I):
+        if re.search(r"cf-challenge|<title>\s*(?:Just a moment|Access denied)|verify you are human|captcha challenge|접근이 차단", text[:8000], re.I):
             raise RuntimeError("Anti-bot challenge, skipping")
         return text
 
