@@ -67,6 +67,14 @@ for name,base in SOURCES.items():
     if h not in output:output.append(h)
   print("campaign-like links",output[:35])
   print("link stats",len(hrefs),"unique",len(set(hrefs)))
+  if name == "modootogether":
+   cidmatch=re.search(r'<a\s+href="campaign\.php\?cp_id=\d+"',body,re.I)
+   if cidmatch:
+    start=body.rfind("<li",0,cidmatch.start())
+    end=body.find("</li>",cidmatch.end())
+    print("SAMPLE card HTML",repr(body[max(0,start):end+5][:5500]))
+   print("ALL campaign links", len(set(re.findall(r"campaign\.php\?cp_id=\d+",body))))
+
   for pat in [r"campaign[^<>]{0,80}",r"신청\s*[\d,]+\s*명",r"D-?Day\s*\d+",r'<a[^>]+href=["\'][^"\']*(?:campaign|view)[^"\']*']:
    m=re.search(pat,body,re.I)
    print("pattern",pat[:22],repr(body[max(0,m.start()-170):m.end()+250] if m else None)[:500])
