@@ -12,3 +12,5 @@ for item in items:
     assert item["title"] and item["apply_deadline"] and item["original_url"].startswith("https://tqueens.net/taste/")
     assert item["competition_ratio"] is None, "Unpublished competition ratio must not be fabricated"
 print(f"Verified {len(items)} distinct Parcel Queen public campaign listings",flush=True)
+
+# Only publicly permitted source pages.
