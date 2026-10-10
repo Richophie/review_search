@@ -1,0 +1,16 @@
+name: Audit deep public pagination
+on:
+  push:
+    paths: ["scripts/audit_deep_pagination.py"]
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python scripts/audit_deep_pagination.py
