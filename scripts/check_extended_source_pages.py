@@ -16,3 +16,5 @@ for key,fn,minimum in [
     assert len(links)==len(set(links)), (key,"duplicates")
     assert all(row["apply_deadline"] or row.get("open_verified") for row in rows)
     print("PASSED",key,len(rows),"verified open campaigns",flush=True)
+
+# Does not write campaign data or bypass access controls.
