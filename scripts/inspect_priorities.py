@@ -38,6 +38,12 @@ for name,(root,paths) in SITES.items():
      a=max(0,match.start()-400);b=min(len(body),match.end()+1250)
      print("FOURBLOG SAMPLE",repr(body[a:b])[:1700],flush=True)
     print("FOURBLOG LINKS",re.findall(r'href=["\']([^"\']*/campaign/\d+/?)[\'"]',body)[:12],flush=True)
+    chunks=re.findall(r'<a\s+class="nounderline"\s+href="/campaign/(\\d+)/">([\\s\\S]*?)</a>',body,re.I)
+    print("FOURBLOG CARD MATCHES",len(chunks),flush=True)
+    if chunks:
+     print("FOURBLOG CARD BODY",repr(chunks[0][1])[:10000],flush=True)
+    print("FOURBLOG PAGINATION",re.findall(r'(?:href|data-page)=["\\']([^"\\']*(?:page|pg|offset|limit)[^"\\']*)',body,re.I)[:20],flush=True)
+
    if name=="미블" and "search" in path:
     print("SEARCH POHANG",body.find("포항"),"LOGIN",body.find("비밀번호"),flush=True)
   except Exception as ex:print("FAILED",path,type(ex).__name__,str(ex)[:210],flush=True)
