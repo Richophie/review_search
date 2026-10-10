@@ -15,7 +15,7 @@ permissions:
 
 concurrency:
   group: campaign-snapshot
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   collect:
