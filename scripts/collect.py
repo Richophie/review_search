@@ -157,10 +157,12 @@ def make(source, ext_id, title, url, region=None, desc=None, benefit=None,
 
 def dinnerqueen():
     records = {}
-    # Scan fresh pages every run and rotate older pages across twice-daily jobs.
-    # All 48 page groups are revisited within three refreshes.
-    window = int(NOW.timestamp() // (12*3600)) % 3
-    pages = list(range(1,13)) + list(range(13 + window*12,25 + window*12))
+    # The public source has distinct listings beyond page 120 (verified through 120).
+    # Check the 12 newest pages on every run, and rotate other pages in three
+    # groups of 36. This revisits all 120 pages every 36 hours without making
+    # 120 sequential requests to the source in one run.
+    window = (int(NOW.timestamp() // (12*3600)) + 1) % 3
+    pages = list(range(1, 13)) + list(range(13 + window*36, 49 + window*36))
     for page in pages:
         url = "https://dinnerqueen.net/taste" + ("?page=" + str(page) if page > 1 else "")
         body = safe_fetch(url)
