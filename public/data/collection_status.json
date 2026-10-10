@@ -1,0 +1,98 @@
+{
+  "as_of_date_kst": "2026-10-10",
+  "snapshot_records": 9658,
+  "platforms_with_records": 16,
+  "media_counts": {
+    "네이버클립": 10,
+    "블로그": 7046,
+    "쇼츠": 1,
+    "유튜브": 3,
+    "인스타그램": 78
+  },
+  "media_unknown": 2520,
+  "deadline_unknown": 0,
+  "published_today_confirmed": 2,
+  "duplicate_id_or_original_url_count": 0,
+  "sources": {
+    "assaview": {
+      "records": 459,
+      "media_unknown": 441,
+      "deadline_unknown": 0
+    },
+    "bqueens": {
+      "records": 122,
+      "media_unknown": 122,
+      "deadline_unknown": 0
+    },
+    "cherrycook": {
+      "records": 19,
+      "media_unknown": 0,
+      "deadline_unknown": 0
+    },
+    "cometoplay": {
+      "records": 35,
+      "media_unknown": 0,
+      "deadline_unknown": 0
+    },
+    "dinnerqueen": {
+      "records": 8518,
+      "media_unknown": 1800,
+      "deadline_unknown": 0
+    },
+    "fourblog": {
+      "records": 101,
+      "media_unknown": 1,
+      "deadline_unknown": 0
+    },
+    "gaboja": {
+      "records": 15,
+      "media_unknown": 0,
+      "deadline_unknown": 0
+    },
+    "huki": {
+      "records": 65,
+      "media_unknown": 0,
+      "deadline_unknown": 0
+    },
+    "modan": {
+      "records": 45,
+      "media_unknown": 45,
+      "deadline_unknown": 0
+    },
+    "modootogether": {
+      "records": 11,
+      "media_unknown": 0,
+      "deadline_unknown": 0
+    },
+    "mrblog": {
+      "records": 71,
+      "media_unknown": 0,
+      "deadline_unknown": 0
+    },
+    "openreview": {
+      "records": 6,
+      "media_unknown": 2,
+      "deadline_unknown": 0
+    },
+    "pavlovu": {
+      "records": 9,
+      "media_unknown": 1,
+      "deadline_unknown": 0
+    },
+    "ringble": {
+      "records": 37,
+      "media_unknown": 4,
+      "deadline_unknown": 0
+    },
+    "storyn": {
+      "records": 14,
+      "media_unknown": 0,
+      "deadline_unknown": 0
+    },
+    "tqueens": {
+      "records": 131,
+      "media_unknown": 104,
+      "deadline_unknown": 0
+    }
+  }
+}
