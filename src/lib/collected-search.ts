@@ -28,7 +28,8 @@ const PLATFORM: Record<string, [string,string]> = {
   huki:["후키","https://huki.co.kr/"],
   openreview:["오픈리뷰","https://openreview.kr/"],
   pavlovu:["파블로체험단","https://pavlovu.com/"],
-  tqueens:["택배의여왕","https://tqueens.net/"]
+  tqueens:["택배의여왕","https://tqueens.net/"],
+  storyn:["스토리앤미디어","https://storyn.kr/"]
 };
 const TABS = ["all","new","today","soon","lowcomp","zero"] as const;
 const DAY_MS = 86400000;

@@ -1079,6 +1079,63 @@ def tqueens():
     return list(out.values())
 
 
+
+def storyn():
+    """Only publicly visible StoryN homepage recruitment cards.
+
+    The site's non-home pages may have separate robots rules. This adapter
+    never fetches campaign detail/listing paths or requires login.
+    """
+    base="https://storyn.kr/"
+    body=safe_fetch(base)
+    if not body:
+        raise RuntimeError("StoryN public homepage unavailable")
+    cards=re.findall(r'<li>\s*<div class="box">([\s\S]*?)</li>',body,re.I)
+    out={}
+    for card in cards:
+        cid=one(r'href="review_campaign\.php\?cp_id=(\d+)"',card)
+        if not cid or cid in out:
+            continue
+        title=plain(one(r'<span class="it_name">([\s\S]*?)</span>',card))
+        if not title:
+            continue
+        dday=one(r'<span class="dday">\s*D-Day\s*(\d+)\s*</span>',card)
+        if dday is None:
+            continue
+        desc=plain(one(r'<span class="it_description">([\s\S]*?)</span>',card))
+        status=one(r'<span>\s*신청\s*([\d,]+)\s*/\s*모집\s*<b[^>]*>([\d,]+)</b>',card)
+        counts=re.search(r'신청\s*([\d,]+)\s*/\s*모집\s*<b[^>]*>([\d,]+)</b>',card)
+        applicants=number(counts.group(1)) if counts else None
+        slots=number(counts.group(2)) if counts else None
+        meta=plain(one(r'<div class="sns_info">([\s\S]*?)</div>',card))
+        channels=[]
+        for marker,normalized in [
+            ("N클립","네이버클립"),("클립","네이버클립"),
+            ("블로그","블로그"),("인스타그램","인스타그램"),
+            ("유튜브","유튜브"),("쇼츠","쇼츠"),("틱톡","틱톡")
+        ]:
+            if marker in meta and normalized not in channels:
+                channels.append(normalized)
+        ctype=plain(one(r'<div class="option2">([\s\S]*?)</div>',card))
+        ctype=next((typ for typ in ("방문형","배송형","기자단") if typ in ctype),None)
+        reg=one(r'^\[([^\]]+)\]',title)
+        region=reg if reg and sido(reg) else None
+        point=plain(one(r'<span class="point_box[^"]*">([\s\S]*?)</span>',card))
+        benefit=(desc or "")+((" · "+point) if point else "")
+        image=one(r'<div class="thumb">[\s\S]*?<img src="([^"]+)"\s+class="it_img"',card)
+        image=urllib.parse.urljoin(base,html.unescape(image)) if image else None
+        item=make(
+            "storyn",cid,title,base+"review_campaign.php?cp_id="+cid,
+            region=region,desc=desc,benefit=benefit or None,
+            image=image,applicants=applicants,slots=slots,
+            days=int(dday),channels=channels,ctype=ctype
+        )
+        if item:
+            out[cid]=item
+    print("스토리앤미디어 public homepage",len(cards),"cards",len(out),"verified",flush=True)
+    return list(out.values())
+
+
 def main():
     OUT.parent.mkdir(parents=True, exist_ok=True)
     try:
@@ -1087,7 +1144,7 @@ def main():
         current = []
     stored = {item["id"]: item for item in current if isinstance(item, dict) and "id" in item}
     found = 0
-    collectors = [("dinnerqueen", dinnerqueen), ("mrblog", mrblog), ("modan", modan), ("modootogether", modootogether), ("fourblog", fourblog), ("assaview", assaview), ("ringble", ringble), ("cometoplay", cometoplay), ("cherrycook", cherrycook), ("gaboja", gaboja), ("bqueens", bqueens), ("huki", huki), ("openreview", openreview), ("pavlovu", pavlovu), ("tqueens", tqueens)]
+    collectors = [("dinnerqueen", dinnerqueen), ("mrblog", mrblog), ("modan", modan), ("modootogether", modootogether), ("fourblog", fourblog), ("assaview", assaview), ("ringble", ringble), ("cometoplay", cometoplay), ("cherrycook", cherrycook), ("gaboja", gaboja), ("bqueens", bqueens), ("huki", huki), ("openreview", openreview), ("pavlovu", pavlovu), ("tqueens", tqueens), ("storyn", storyn)]
     if os.environ.get("DQ_ONLY") == "1":
         collectors = [("dinnerqueen", dinnerqueen)]
     for name, collect in collectors:
