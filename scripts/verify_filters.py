@@ -46,3 +46,5 @@ assert out["nonsense"]==0,("Nonexistent keyword should not match",out)
 print("Verified live filters narrow actual results:",out)
 
 # Regression check for real public source data and normalized search attributes.
+
+# Recheck after verified 4blog source was added.
