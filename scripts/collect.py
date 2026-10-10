@@ -909,6 +909,70 @@ def openreview():
     return list(out.values())
 
 
+
+def pavlovu():
+    """Use only publicly listed Pavlovu campaigns; ignore login-only details."""
+    base="https://pavlovu.com/"
+    paths=[
+        "review_campaign_list.php",
+        "review_campaign_list.php?category_id=001A",
+        "review_campaign_list.php?category_id=002A",
+        "review_campaign_list.php?category_id=003A",
+        "review_campaign_list.php?category_id=004A",
+    ]
+    out={}
+    for path in paths:
+        try:
+            body=safe_fetch(urllib.parse.urljoin(base,path))
+        except Exception as exc:
+            print("파블로 public list unavailable",path,repr(exc)[:140],flush=True)
+            continue
+        if not body:
+            continue
+        # Only the explicit campaign cards; don't index nav links or adverts.
+        cards=re.findall(r'<li\s+class="pvli">([\s\S]*?)</li>',body,re.I)
+        added=0
+        for card in cards:
+            link_match=re.search(r'<a\s+href="(review_campaign\.php\?cp_id=(\d+))"\s+class="pvc_tx">([\s\S]*?)</a>',card,re.I)
+            if not link_match:
+                continue
+            link,cid,detail=link_match.groups()
+            if cid in out:
+                continue
+            dday=one(r'<span\s+class="pvc_deadline">\s*D-\s*(\d+)',detail)
+            if dday is None:
+                continue
+            store=plain(one(r'<span\s+class="pvc_store">([\s\S]*?)</span>',detail))
+            benefit=plain(one(r'<strong>([\s\S]*?)</strong>',detail))
+            title=" · ".join(x for x in (store,benefit) if x)
+            if not title:
+                continue
+            summary=plain(one(r'<span\s+class="pvc_pn">([\s\S]*?)</span>',detail))
+            region_part,_,cat_part=summary.partition("·")
+            region=region_part.strip() if region_part.strip()!="배송" else None
+            channel=plain(one(r'<span\s+class="pvc_pl">\s*<i[^>]*>([\s\S]*?)</i>',detail))
+            channel={"인스타":"인스타그램","릴스":"인스타그램",
+                     "클립":"네이버클립","숏츠":"쇼츠"}.get(channel,channel)
+            media=[channel] if channel in ("블로그","인스타그램","유튜브","네이버클립","쇼츠","틱톡","스레드") else []
+            slots=number(one(r'<span\s+class="pvc_mt">\s*모집\s*([\d,]+)\s*명',detail))
+            img=one(r'<a\s+class="pvc_im"[^>]*><img\s+src="([^"]+)"',card)
+            img=urllib.parse.urljoin(base,html.unescape(img)) if img else None
+            ctype="배송형" if region is None else "방문형"
+            item=make(
+                "pavlovu",cid,title,urllib.parse.urljoin(base,link),
+                region=region,desc=cat_part.strip() or None,benefit=benefit,
+                image=img,applicants=None,slots=slots,days=int(dday),
+                channels=media,ctype=ctype
+            )
+            if item:
+                out[cid]=item
+                added+=1
+        print("파블로 public",path,len(cards),"cards",added,"new",flush=True)
+        time.sleep(0.7)
+    print("파블로 public campaigns",len(out),flush=True)
+    return list(out.values())
+
+
 def main():
     OUT.parent.mkdir(parents=True, exist_ok=True)
     try:
@@ -917,7 +981,7 @@ def main():
         current = []
     stored = {item["id"]: item for item in current if isinstance(item, dict) and "id" in item}
     found = 0
-    for name, collect in [("dinnerqueen", dinnerqueen), ("mrblog", mrblog), ("modan", modan), ("modootogether", modootogether), ("fourblog", fourblog), ("assaview", assaview), ("ringble", ringble), ("cometoplay", cometoplay), ("cherrycook", cherrycook), ("gaboja", gaboja), ("bqueens", bqueens), ("huki", huki), ("openreview", openreview)]:
+    for name, collect in [("dinnerqueen", dinnerqueen), ("mrblog", mrblog), ("modan", modan), ("modootogether", modootogether), ("fourblog", fourblog), ("assaview", assaview), ("ringble", ringble), ("cometoplay", cometoplay), ("cherrycook", cherrycook), ("gaboja", gaboja), ("bqueens", bqueens), ("huki", huki), ("openreview", openreview), ("pavlovu", pavlovu)]:
         try:
             items = collect()
             for item in items:
