@@ -2,9 +2,9 @@
 """Test real, robots-allowed listing pagination for current under-collected sources."""
 import re,time,urllib.request,urllib.parse,urllib.robotparser
 sources={
- "modootogether":("https://www.modootogether.com/",["campaign_list.php","campaign_list.php?page=2","campaign_list.php?page=3","campaign_list.php?pg=2","campaign_list.php?pg=3","campaign_list.php?category_id=047A&page=2"]),
- "fourblog":("https://4blog.net/",["list/all","list/all?page=2","list/all?page=3","list/all?pg=2","list/all?pg=3"]),
- "assaview":("https://www.assaview.co.kr/",["campaign_list.php","campaign_list.php?page=7","campaign_list.php?page=15"]),
+ "modootogether":("https://www.modootogether.com/",["campaign_list.php","campaign_list.php?page=2","campaign_list.php?page=3","campaign_list.php?pg=2","campaign_list.php?pg=3","campaign_list.php?category_id=047A&page=2","campaign_list.php?page=10","campaign_list.php?page=20","campaign_list.php?page=40"]),
+ "fourblog":("https://4blog.net/",["list/all","list/all?page=2","list/all?page=3","list/all?pg=2","list/all?pg=3","list/all?pg=10","list/all?pg=20","list/all?pg=40"]),
+ "assaview":("https://www.assaview.co.kr/",["campaign_list.php","campaign_list.php?page=7","campaign_list.php?page=15","campaign_list.php?page=25","campaign_list.php?page=40"]),
 }
 UA="ReviewSearchBot/0.1 (+public campaign list coverage)"
 def fetch(url):
