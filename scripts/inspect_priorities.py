@@ -42,7 +42,7 @@ for name,(root,paths) in SITES.items():
     print("FOURBLOG CARD MATCHES",len(chunks),flush=True)
     if chunks:
      print("FOURBLOG CARD BODY",repr(chunks[0][1])[:10000],flush=True)
-    print("FOURBLOG PAGINATION",re.findall(r'(?:href|data-page)=["\\']([^"\\']*(?:page|pg|offset|limit)[^"\\']*)',body,re.I)[:20],flush=True)
+    print('FOURBLOG PAGINATION',re.findall(r'''(?:href|data-page)=["']([^"']*(?:page|pg|offset|limit)[^"']*)''',body,re.I)[:20],flush=True)
 
    if name=="미블" and "search" in path:
     print("SEARCH POHANG",body.find("포항"),"LOGIN",body.find("비밀번호"),flush=True)
