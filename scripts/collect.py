@@ -699,46 +699,57 @@ def cometoplay():
 def cherrycook():
     """F&B campaign summaries on CherryCook public homepage (no protected APIs)."""
     base="https://cherry-cook.com/"
-    body=safe_fetch(urllib.parse.urljoin(base, "mission"))
-    if not body:
-        raise RuntimeError("CherryCook public mission listing unavailable")
     out={}
-    cards=re.findall(r'<a\s+href="/item/(\d+)"[^>]*>([\s\S]*?)</a>',body,re.I)
-    for cid,fragment in cards:
-        if cid in out:
-            continue
-        title=plain(one(r'<div class="item-product">([\s\S]*?)</div>',fragment))
-        if not title:
-            continue
-        remain=one(r'<div class="item-deadline">\s*(\d+)\s*일\s*남음',fragment)
-        if remain is None:
-            continue
-        applicants=number(one(r'<span class="campaign-visit">\s*([\d,]+)\s*</span>',fragment))
-        slots=number(one(r'<span class="item-visit">\s*([\d,]+)\s*</span>',fragment))
-        image=one(r'<div class="image-box"[^>]*><img src="([^"]+)"',fragment)
-        image=urllib.parse.urljoin(base,html.unescape(image)) if image else None
-        cash=one(r'<div class="item-point">([\s\S]*?)</div>',fragment)
-        region=one(r'^\[([^\]]+)\]',title)
-        if region and region=="전체":
-            region=None
-        # Only map verified platform badges; never assume a review medium.
-        channels=[]
-        if re.search(r'class="item-blog"',fragment):
-            channels.append("블로그")
-        if re.search(r'class="item-instagram"',fragment):
-            channels.append("인스타그램")
-        if re.search(r'class="item-youtube"',fragment):
-            channels.append("유튜브")
-        benefit=plain(cash) or None
-        item=make(
-            "cherrycook",cid,title,base+"item/"+cid,
-            region=region,desc=None,benefit=benefit,
-            image=image,applicants=applicants,slots=slots,
-            days=int(remain),channels=channels,
-            ctype="배송형" if "배송" in title else "방문형" if region else None
-        )
-        if item:
-            out[cid]=item
+    for page in range(0,10):
+        path="mission"+("?page="+str(page) if page>0 else "")
+        try:
+            body=safe_fetch(urllib.parse.urljoin(base,path))
+        except Exception as exc:
+            print("체리쿡 list error",page,repr(exc)[:150],flush=True)
+            break
+        if not body:
+            break
+        cards=re.findall(r'<a\s+href="/item/(\d+)"[^>]*>([\s\S]*?)</a>',body,re.I)
+        if not cards:
+            break
+        before=len(out)
+        for cid,fragment in cards:
+            if cid in out:
+                continue
+            title=plain(one(r'<div class="item-product">([\s\S]*?)</div>',fragment))
+            if not title:
+                continue
+            remain=one(r'<div class="item-deadline">\s*(\d+)\s*일\s*남음',fragment)
+            if remain is None:
+                continue
+            applicants=number(one(r'<span class="campaign-visit">\s*([\d,]+)\s*</span>',fragment))
+            slots=number(one(r'<span class="item-visit">\s*([\d,]+)\s*</span>',fragment))
+            image=one(r'<div class="image-box"[^>]*><img src="([^"]+)"',fragment)
+            image=urllib.parse.urljoin(base,html.unescape(image)) if image else None
+            cash=one(r'<div class="item-point">([\s\S]*?)</div>',fragment)
+            region=one(r'^\[([^\]]+)\]',title)
+            if region and region=="전체":
+                region=None
+            # Only map verified platform badges; never assume a review medium.
+            channels=[]
+            if re.search(r'class="item-blog"',fragment):
+                channels.append("블로그")
+            if re.search(r'class="item-instagram"',fragment):
+                channels.append("인스타그램")
+            if re.search(r'class="item-youtube"',fragment):
+                channels.append("유튜브")
+            benefit=plain(cash) or None
+            item=make(
+                "cherrycook",cid,title,base+"item/"+cid,
+                region=region,desc=None,benefit=benefit,
+                image=image,applicants=applicants,slots=slots,
+                days=int(remain),channels=channels,
+                ctype="배송형" if "배송" in title else "방문형" if region else None
+            )
+            if item:
+                out[cid]=item
+        print("체리쿡 public page",page,"cards",len(cards),"new",len(out)-before,flush=True)
+        time.sleep(0.9)
     print("체리쿡 public homepage",len(cards),"cards",len(out),"campaigns",flush=True)
     return list(out.values())
 
@@ -948,6 +959,7 @@ def pavlovu():
         "review_campaign_list.php?category_id=002A",
         "review_campaign_list.php?category_id=003A",
         "review_campaign_list.php?category_id=004A",
+        *[f"review_campaign_list.php?page={page}" for page in range(2,13)],
     ]
     out={}
     for path in paths:
