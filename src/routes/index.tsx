@@ -50,7 +50,7 @@ function Index() {
   const pages = Math.max(1, Math.ceil(data.total / PAGE_SIZE));
   const page = p.page ?? 1;
   const view = p.view ?? "card";
-  const activeFilters = !!(p.q || p.sido || p.sigungu || p.cat || p.type || p.ch || p.src || p.country);
+  const activeFilters = !!(p.q || p.sido || p.sigungu || p.cat || p.type || p.ch || p.country);
   const intlSources = data.sources.filter((s) => s.country_code !== "KR" && s.status === "connected");
 
   return (
@@ -94,13 +94,13 @@ function Index() {
           </button>
           {activeFilters && <Link to="/" className="text-sm text-primary">초기화</Link>}
         </div>
-        <div className={`${showFilters ? "grid" : "hidden"} mt-3 grid-cols-2 gap-2 md:mt-0 md:grid md:grid-cols-7`}>
+        <div className={`${showFilters ? "grid" : "hidden"} mt-3 grid-cols-2 gap-2 md:mt-0 md:grid md:grid-cols-6`}>
           <Select label="국가" value={p.country ?? "KR"} onChange={(v) => set({ country: v === "KR" ? undefined : (v as "INTL") })}
             options={[["KR", "대한민국"], ["INTL", intlSources.length ? "해외" : "해외 (준비 중)"]]} />
           <label className="sr-only" htmlFor="sigungu">시군구·동</label>
-          <input id="sigungu" placeholder="시군구·동" defaultValue={p.sigungu ?? ""} key={p.sigungu}
-            onBlur={(e) => set({ sigungu: e.target.value.trim() || undefined })}
-            onKeyDown={(e) => { if (e.key === "Enter") set({ sigungu: (e.target as HTMLInputElement).value.trim() || undefined }); }}
+          <input id="sigungu" placeholder="시군구·동 (입력 후 Enter)" defaultValue={p.sigungu ?? ""} key={p.sigungu ?? ""}
+            onBlur={(e) => { const value = e.currentTarget.value.trim(); if(value !== (p.sigungu ?? "")) set({ sigungu: value || undefined }); }}
+            onKeyDown={(e) => { if (e.key === "Enter") { e.preventDefault(); (e.currentTarget as HTMLInputElement).blur(); } }}
             className={selectCls} />
           <Select label="분야" value={p.cat ?? ""} onChange={(v) => set({ cat: v || undefined })}
             options={[["", "분야 전체"], ...CATEGORIES.map((c) => [c, c] as [string, string])]} />
@@ -108,8 +108,6 @@ function Index() {
             options={[["", "유형 전체"], ...CAMPAIGN_TYPES.map((c) => [c, c] as [string, string])]} />
           <Select label="SNS 매체" value={p.ch ?? ""} onChange={(v) => set({ ch: v || undefined })}
             options={[["", "매체 전체"], ...CHANNELS.map((c) => [c, c] as [string, string])]} />
-          <Select label="원본 사이트" value={p.src ?? ""} onChange={(v) => set({ src: v || undefined })}
-            options={[["", "사이트 전체"], ...data.sources.map((s) => [s.id, s.status === "connected" ? s.name : `${s.name} (미연동)`] as [string, string])]} />
           <Link to="/" className="hidden h-10 items-center justify-center rounded-lg border border-border text-sm text-muted-foreground hover:text-foreground md:flex">
             초기화
           </Link>

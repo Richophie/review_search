@@ -11,7 +11,6 @@ export const searchSchema = z.object({
   cat: z.string().max(10).optional().catch(undefined),
   type: z.string().max(10).optional().catch(undefined),
   ch: z.string().max(10).optional().catch(undefined),
-  src: z.string().max(30).optional().catch(undefined),
   tab: z.enum(TABS).optional().catch(undefined),
   sort: z.enum(SORTS).optional().catch(undefined),
   view: z.enum(["card", "list"]).optional().catch(undefined),

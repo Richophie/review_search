@@ -52,8 +52,8 @@ export function CampaignCard({ c, today, sources }: { c: CampaignItem; today: st
   const name = (id: string) => sources.find((s) => s.id === id)?.name ?? id;
   return (
     <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-card">
-      <div className="relative aspect-[16/9] bg-muted">
-        {c.image_url && <img src={c.image_url} alt="" loading="lazy" className="h-full w-full object-cover" referrerPolicy="no-referrer" />}
+      <div className="relative aspect-square overflow-hidden bg-muted">
+        {c.image_url && <img src={c.image_url} alt="" loading="lazy" className="block h-full w-full object-cover object-center" referrerPolicy="no-referrer" />}
         <span className={`absolute left-2 top-2 rounded-md px-2 py-0.5 text-xs font-bold ${d.urgent ? "bg-urgent text-primary-foreground" : "bg-card text-foreground"}`}>
           {d.label}
         </span>
@@ -94,7 +94,7 @@ export function CampaignRow({ c, today, sources }: { c: CampaignItem; today: str
   return (
     <article className="flex gap-3 p-3">
       <div className="h-20 w-20 shrink-0 overflow-hidden rounded-lg bg-muted">
-        {c.image_url && <img src={c.image_url} alt="" loading="lazy" className="h-full w-full object-cover" referrerPolicy="no-referrer" />}
+        {c.image_url && <img src={c.image_url} alt="" loading="lazy" className="block h-full w-full object-cover object-center" referrerPolicy="no-referrer" />}
       </div>
       <div className="min-w-0 flex-1 space-y-1">
         <div className="flex items-center gap-2">

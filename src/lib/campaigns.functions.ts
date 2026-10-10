@@ -56,7 +56,6 @@ export const searchCampaigns = createServerFn({ method: "GET" })
       if (p.cat) q = q.eq("category", p.cat);
       if (p.type) q = q.eq("campaign_type", p.type);
       if (p.ch) q = q.contains("channels", [p.ch]);
-      if (p.src) q = q.eq("source_id", p.src);
       return q;
     };
     // eslint-disable-next-line @typescript-eslint/no-explicit-any

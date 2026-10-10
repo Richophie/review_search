@@ -43,7 +43,6 @@ export function searchCollected(p:SearchParams) {
     if (p.cat && c.category!==p.cat) return false;
     if (p.type && c.campaign_type!==p.type) return false;
     if (p.ch && !c.channels.includes(p.ch)) return false;
-    if (p.src && c.source_id!==p.src) return false;
     return true;
   });
   function inTab(c:Campaign,t:typeof TABS[number]):boolean {
