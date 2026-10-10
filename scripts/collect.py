@@ -358,6 +358,8 @@ def modootogether():
         "campaign_list.php?category_id=001A",  # 지역
         "campaign_list.php?category_id=002A",  # 제품
         "campaign_list.php?category_id=003A",  # 서비스
+        *[f"campaign_list.php?page={page}" for page in range(2,21)],
+        "campaign_list.php?category_id=047A&page=2",
     ]
     out = {}
     for rel in pages:
@@ -426,74 +428,85 @@ def modootogether():
     return list(out.values())
 
 def fourblog():
-    """Collect 4blog's public, robot-permitted all-campaign listing."""
+    """Index distinct, publicly available campaign pages without protected APIs."""
     base="https://4blog.net"
-    body=safe_fetch(base + "/list/all")
-    if not body:
-        raise RuntimeError("4blog public all-list unavailable")
-    cards=re.findall(
-        r'<a\s+class="nounderline"\s+href="/campaign/(\d+)/">([\s\S]*?)</a>',
-        body, re.I
-    )
     output={}
-    for cid, fragment in cards:
-        title=plain(one(r'<span class="camp-name">([\s\S]*?)</span>',fragment))
-        if not title:
-            continue
-        region=one(r'^\[([^\]]+)\]',title)
-        if region:
-            region=region.replace("/"," ")
-        benefit=plain(one(r'<div class="emphasize">([\s\S]*?)</div>',fragment))
-        recruits=number(one(r'<span class="remainCnt">모집\s*([\d,]+)명</span>',fragment))
-        ctype=plain(one(r'<span[^>]*class="[^"]*campaign-type-badge[^"]*"[^>]*>([\s\S]*?)</span>',fragment))
-        if ctype not in ("방문형","배송형","기자단","구매평"):
-            ctype=None
-        src=one(r'<img[^>]+src="(https://[^"]+)"',fragment)
-        days_raw=one(r'<span class="fontcolor">D-(\d+)</span>',fragment)
-        days=int(days_raw) if days_raw is not None else 0 if re.search(r'D-Day',fragment,re.I) else None
-        if days is None:
-            continue
-        # Optional: verify the published recruitment END against the live D-day.
-        exact_deadline=None
-        m=re.search(r'모집\s+\d{1,2}\.\d{1,2}\s*~\s*(\d{1,2})\.(\d{1,2})',plain(fragment))
-        if m:
-            predicted=TODAY+timedelta(days=days)
-            try:
-                candidate=predicted.replace(month=int(m.group(1)),day=int(m.group(2)))
-                if abs((candidate-predicted).days) <= 1:
-                    exact_deadline=candidate.isoformat()
-            except ValueError:
-                pass
-        badges=re.findall(r'<span[^>]*class="[^"]*label[^"]*"[^>]*>([\s\S]*?)</span>',fragment)
-        badges=[plain(b) for b in badges]
-        channels=[]
-        for label in badges:
-            if label in ("블로그","blog"):
-                channels.append("블로그")
-            elif label in ("인스타","인스타그램","릴스"):
-                channels.append("인스타그램")
-            elif label in ("네이버클립","클립"):
-                channels.append("네이버클립")
-            elif label in ("유튜브",):
-                channels.append("유튜브")
-            elif label in ("쇼츠","숏츠"):
-                channels.append("쇼츠")
-            elif label=="틱톡":
-                channels.append("틱톡")
-            elif label=="스레드":
-                channels.append("스레드")
-        channels=list(dict.fromkeys(channels))
-        item=make(
-            "fourblog",cid,title,base+"/campaign/"+cid+"/",
-            region=region,desc=benefit,benefit=benefit,image=src,
-            applicants=None,slots=recruits,days=days,exact_deadline=exact_deadline,
-            channels=channels,ctype=ctype
+    for page in range(1,11):
+        rel="/list/all"+("?pg="+str(page) if page>1 else "")
+        try:
+            body=safe_fetch(base+rel)
+        except Exception as exc:
+            print("포블로그 public page skipped",page,repr(exc)[:140],flush=True)
+            break
+        if not body:
+            break
+        cards=re.findall(
+            r'<a\s+class="nounderline"\s+href="/campaign/(\d+)/">([\s\S]*?)</a>',
+            body,re.I
         )
-        if item:
-            output[cid]=item
-    print("포블로그 public all",len(cards),"cards",len(output),"verified",flush=True)
+        if not cards:
+            break
+        before=len(output)
+        for cid, fragment in cards:
+            if cid in output:
+                continue
+            title=plain(one(r'<span class="camp-name">([\s\S]*?)</span>',fragment))
+            if not title:
+                continue
+            region=one(r'^\[([^\]]+)\]',title)
+            if region:
+                region=region.replace("/"," ")
+            benefit=plain(one(r'<div class="emphasize">([\s\S]*?)</div>',fragment))
+            recruits=number(one(r'<span class="remainCnt">모집\s*([\d,]+)명</span>',fragment))
+            ctype=plain(one(r'<span[^>]*class="[^"]*campaign-type-badge[^"]*"[^>]*>([\s\S]*?)</span>',fragment))
+            if ctype not in ("방문형","배송형","기자단","구매평"):
+                ctype=None
+            src=one(r'<img[^>]+src="(https://[^"]+)"',fragment)
+            days_raw=one(r'<span class="fontcolor">D-(\d+)</span>',fragment)
+            days=int(days_raw) if days_raw is not None else 0 if re.search(r'D-Day',fragment,re.I) else None
+            if days is None:
+                continue
+            # Optional: verify the published recruitment END against the live D-day.
+            exact_deadline=None
+            m=re.search(r'모집\s+\d{1,2}\.\d{1,2}\s*~\s*(\d{1,2})\.(\d{1,2})',plain(fragment))
+            if m:
+                predicted=TODAY+timedelta(days=days)
+                try:
+                    candidate=predicted.replace(month=int(m.group(1)),day=int(m.group(2)))
+                    if abs((candidate-predicted).days) <= 1:
+                        exact_deadline=candidate.isoformat()
+                except ValueError:
+                    pass
+            badges=re.findall(r'<span[^>]*class="[^"]*label[^"]*"[^>]*>([\s\S]*?)</span>',fragment)
+            badges=[plain(b) for b in badges]
+            channels=[]
+            for label in badges:
+                if label in ("블로그","blog"):
+                    channels.append("블로그")
+                elif label in ("인스타","인스타그램","릴스"):
+                    channels.append("인스타그램")
+                elif label in ("네이버클립","클립"):
+                    channels.append("네이버클립")
+                elif label in ("유튜브",):
+                    channels.append("유튜브")
+                elif label in ("쇼츠","숏츠"):
+                    channels.append("쇼츠")
+                elif label=="틱톡":
+                    channels.append("틱톡")
+                elif label=="스레드":
+                    channels.append("스레드")
+            channels=list(dict.fromkeys(channels))
+            item=make(
+                "fourblog",cid,title,base+"/campaign/"+cid+"/",
+                region=region,desc=benefit,benefit=benefit,image=src,
+                applicants=None,slots=recruits,days=days,exact_deadline=exact_deadline,
+                channels=channels,ctype=ctype
+            )
+            if item:
+                output[cid]=item
+        print("포블로그 public page",page,"cards",len(cards),"new",len(output)-before,flush=True)
+        time.sleep(1.0)
     return list(output.values())
-
 
 def assaview():
     """Index public Assaview campaign listing cards with exact stated deadline.
@@ -509,7 +522,7 @@ def assaview():
         "campaign_list.php?type=reporter",
         "campaign_list.php?type=assaview",
         "campaign_list.php?type=custom",
-        *[f"campaign_list.php?page={page}" for page in range(2,7)],
+        *[f"campaign_list.php?page={page}" for page in range(2,26)],
     ]
     out={}
     for path in paths:
