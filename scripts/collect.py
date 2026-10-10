@@ -431,7 +431,11 @@ def fourblog():
     """Index distinct, publicly available campaign pages without protected APIs."""
     base="https://4blog.net"
     output={}
-    for page in range(1,11):
+    # Revisit the newest 10 pages on every run, and rotate older public pages.
+    # Merge-by-ID in main() retains still-live previously indexed pages.
+    window = int(NOW.timestamp() // (12 * 3600)) % 4
+    pages = list(range(1, 11)) + list(range(11 + window * 10, 21 + window * 10))
+    for page in pages:
         rel="/list/all"+("?pg="+str(page) if page>1 else "")
         try:
             body=safe_fetch(base+rel)
