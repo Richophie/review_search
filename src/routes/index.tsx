@@ -56,9 +56,14 @@ function Index() {
   return (
     <div className="mx-auto max-w-6xl px-4 pb-16">
       <section className="py-6 md:py-10">
-        <h1 className="text-2xl font-bold tracking-tight md:text-3xl">전국 체험단, 한 번에 검색</h1>
-        <p className="mt-1 text-sm text-muted-foreground">
-          여러 체험단 사이트의 모집 중 공고를 모았어요. 신청은 원본 사이트에서 진행돼요.
+        <h1 className="text-2xl font-bold tracking-tight md:text-3xl">
+          현재 <span className="text-primary tabular-nums">{(data.globalTotal ?? data.total).toLocaleString()}</span>개의 체험이 있어요!
+        </h1>
+        <p className="mt-2 text-base font-semibold text-foreground md:text-lg">
+          <span className="text-primary tabular-nums">{connected.length}</span>개 플랫폼을 한꺼번에 찾아 드릴게요.
+        </p>
+        <p className="mt-1 text-xs text-muted-foreground">
+          실제 수집된 모집 중 공고 기준 · 중복 원본 링크 제외 · 신청은 각 원본 사이트에서 진행해요.
         </p>
         <form
           role="search"
