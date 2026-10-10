@@ -610,6 +610,54 @@ def ringble():
     print("링블 public homepage",len(fragments),"segments",len(out),"campaigns",flush=True)
     return list(out.values())
 
+
+def cometoplay():
+    """Read only ComeToPlay's public homepage campaign summaries."""
+    base="https://www.cometoplay.kr/"
+    body=safe_fetch(base)
+    if not body:
+        raise RuntimeError("ComeToPlay public homepage unavailable")
+    out={}
+    fragments=re.findall(r'<li>\s*<div class="thumb">([\s\S]*?)</li>',body,re.I)
+    for f in fragments:
+        cid=one(r'item\.php\?it_id=(\d+)',f)
+        if not cid or cid in out:
+            continue
+        title=plain(one(r'<span class="it_name">([\s\S]*?)</span>',f))
+        if not title:
+            continue
+        desc=plain(one(r'<span class="it_description">([\s\S]*?)</span>',f))
+        days=one(r'D-?day\s*(\d+)',f,re.I)
+        if days is None:
+            continue
+        stats=re.search(r'신청\s*<b[^>]*>([\d,]+)</b>\s*명\s*/\s*모집\s*<b[^>]*>([\d,]+)</b>\s*명',f,re.I)
+        applicants=number(stats.group(1)) if stats else None
+        slots=number(stats.group(2)) if stats else None
+        region=one(r'^\[([^\]]+)\]',title)
+        if region and not sido(region):
+            region=None
+        image=one(r'<img\s+src="([^"]+)"',f)
+        image=urllib.parse.urljoin(base,html.unescape(image)) if image else None
+        channels=[]
+        for media,normalized in (
+            ("blog","블로그"),("instagram","인스타그램"),
+            ("insta","인스타그램"),("youtube","유튜브"),
+            ("reels","인스타그램"),("clip","네이버클립"),
+            ("shorts","쇼츠"),("tiktok","틱톡")):
+            if re.search(r'<i\s+class="[^"]*\b'+media+r'\b',f,re.I) and normalized not in channels:
+                channels.append(normalized)
+        item=make(
+            "cometoplay",cid,title,
+            base+"item.php?it_id="+cid+"&category_id=",
+            region=region,desc=desc,benefit=desc,image=image,
+            applicants=applicants,slots=slots,days=int(days),
+            channels=channels,ctype="기자단" if "기자단" in title else None
+        )
+        if item:
+            out[cid]=item
+    print("놀러와체험단 public homepage",len(fragments),"cards",len(out),"campaigns",flush=True)
+    return list(out.values())
+
 def main():
     OUT.parent.mkdir(parents=True, exist_ok=True)
     try:
@@ -618,7 +666,7 @@ def main():
         current = []
     stored = {item["id"]: item for item in current if isinstance(item, dict) and "id" in item}
     found = 0
-    for name, collect in [("dinnerqueen", dinnerqueen), ("mrblog", mrblog), ("modan", modan), ("modootogether", modootogether), ("fourblog", fourblog), ("assaview", assaview), ("ringble", ringble)]:
+    for name, collect in [("dinnerqueen", dinnerqueen), ("mrblog", mrblog), ("modan", modan), ("modootogether", modootogether), ("fourblog", fourblog), ("assaview", assaview), ("ringble", ringble), ("cometoplay", cometoplay)]:
         try:
             items = collect()
             for item in items:
