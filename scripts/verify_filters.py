@@ -24,6 +24,9 @@ TESTS={
   "cherrycook": {"q":"체리쿡"},
   "gaboja": {"q":"가보자체험단"},
   "bqueens": {"q":"뷰티의여왕"},
+  "huki": {"q":"후키"},
+  "openreview": {"q":"오픈리뷰"},
+  "pavlovu": {"q":"파블로체험단"},
   "nonsense": {"q":"__no_exact_campaign_match_test_731650__"},
 }
 out={}
@@ -40,7 +43,7 @@ for title,params in TESTS.items():
     assert int(headline.group(1).replace(",",""))>=100,(title,"Invalid total")
     assert "개 플랫폼을 한꺼번에 찾아 드릴게요." in body, (title,"Missing platform count")
     platforms=re.search(r'<span[^>]*>(\d+)</span>개 플랫폼을 한꺼번에 찾아 드릴게요\.',body)
-    assert platforms and int(platforms.group(1))>=11, (title,"Connected source count should be dynamic")
+    assert platforms and int(platforms.group(1))>=14, (title,"Connected source count should be dynamic")
     assert "lg:grid-cols-4" in body,(title,"Card width adjustment missing")
   if title in ("search","sido","sigungu","cat"):
     assert int(headline.group(1).replace(",",""))>=100,(title,"Global total changed due to search filter")
@@ -55,11 +58,11 @@ for title,params in TESTS.items():
   n=int(match.group(1).replace(",",""))
   out[title]=n
   print(title,"=>",n,flush=True)
-assert out["all"]>=1900,("Missing real indexed results",out)
+assert out["all"]>=2076,("Missing real indexed results",out)
 for title in ("sido","sigungu","search","cat","cat_cafe","type","channel","low"):
   assert 0 < out[title] < out["all"],(title,"filter did not narrow or incorrectly empty",out)
-for source in ("assaview","ringble","cometoplay","cherrycook","gaboja","bqueens"):
-  assert out[source]>=12,(source,"new source missing from production search",out)
+for source in ("assaview","ringble","cometoplay","cherrycook","gaboja","bqueens","huki","openreview","pavlovu"):
+  assert out[source]>=(6 if source=="openreview" else 9 if source=="pavlovu" else 12),(source,"new source missing from production search",out)
 assert out["nonsense"]==0,("Nonexistent keyword should not match",out)
 print("Verified live filters narrow actual results:",out)
 
