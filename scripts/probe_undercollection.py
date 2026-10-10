@@ -38,3 +38,5 @@ for source,(base,urls) in sources.items():
     print("PAGINATION",pages[:35],flush=True)
   except Exception as ex:print("ERROR",path,repr(ex)[:150],flush=True)
   time.sleep(1.1)
+
+# No private or disallowed listing endpoints.
