@@ -40,7 +40,9 @@ export function searchCollected(p:SearchParams) {
     const haystack = [c.search_text, PLATFORM[c.source_id]?.[0]].filter(Boolean).join(" ").toLowerCase();
     if (!searchTerms(p.q).every(t=>haystack.includes(t))) return false;
     if (p.sido && c.region_sido !== p.sido && !(c.region_text||"").includes(p.sido)) return false;
-    if (p.sigungu && !(c.region_text||"").includes(p.sigungu)) return false;
+    // Some providers omit a separate region field but include the location in the
+    // listing title. Include that public title as a location fallback.
+    if (p.sigungu && ![c.region_text || "",c.title].some(x => x.includes(p.sigungu))) return false;
     if (p.cat && c.category!==p.cat) return false;
     if (p.type && c.campaign_type!==p.type) return false;
     if (p.ch && !c.channels.includes(p.ch)) return false;
