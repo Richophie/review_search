@@ -8,7 +8,7 @@ type Campaign = {
   country_code:string; region_sido:string|null; region_text:string|null;
   category:string; campaign_type:string|null; channels:string[];
   slots:number|null; applicants:number|null; apply_deadline:string|null;
-  deadline_precision:string; open_verified?:boolean; first_seen_at:string; last_seen_at:string;
+  deadline_precision:string; open_verified?:boolean; first_seen_at:string; published_at?:string|null; last_seen_at:string;
   timezone:string; competition_ratio:number|null; remaining_slots:number|null;
   dedupe_key:string; search_text:string;
 };
@@ -63,7 +63,7 @@ export function searchCollected(p:SearchParams) {
   });
   function inTab(c:Campaign,t:typeof TABS[number]):boolean {
     switch(t) {
-      case "new":return Date.parse(c.first_seen_at)>=firstToday;
+      case "new":return !!c.published_at && Date.parse(c.published_at)>=firstToday;
       case "today":return c.apply_deadline===today;
       case "soon":return c.apply_deadline!==null && c.apply_deadline<=addDays(today,3);
       case "lowcomp":return c.competition_ratio!==null && c.competition_ratio<1;
