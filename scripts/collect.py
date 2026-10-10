@@ -471,6 +471,94 @@ def fourblog():
     print("포블로그 public all",len(cards),"cards",len(output),"verified",flush=True)
     return list(output.values())
 
+
+def assaview():
+    """Index public Assaview campaign listing cards with exact stated deadline.
+
+    Do not index FCFS/recurring cards lacking a fixed application deadline,
+    and do not follow login- or account-restricted requests.
+    """
+    base="https://www.assaview.co.kr/"
+    paths=[
+        "campaign_list.php",
+        "campaign_list.php?type=area",
+        "campaign_list.php?type=product",
+        "campaign_list.php?type=reporter",
+        "campaign_list.php?type=assaview",
+        "campaign_list.php?type=custom",
+    ]
+    out={}
+    for path in paths:
+        url=urllib.parse.urljoin(base,path)
+        try:
+            body=safe_fetch(url)
+            if not body:
+                continue
+        except Exception as exc:
+            print("아싸뷰 listing skipped",path,repr(exc)[:140],flush=True)
+            continue
+        cards=re.findall(
+            r'<a\s+href="campaign\.php\?cp_id=(\d+)"[^>]*>([\s\S]*?)</a>',
+            body,re.I
+        )
+        added=0
+        for cid, fragment in cards:
+            if cid in out:
+                continue
+            # Public card lists the actual application deadline, not
+            # selection/review completion date.
+            date=re.search(r'(\d{4})/(\d{1,2})/(\d{1,2})\s+23:59:59',fragment)
+            if not date:
+                continue
+            try:
+                deadline=datetime(int(date.group(1)),int(date.group(2)),
+                                  int(date.group(3)),tzinfo=KST).date().isoformat()
+            except ValueError:
+                continue
+            rawtitle=one(r'<div class="subject">([\s\S]*?)</div>',fragment)
+            title=plain(rawtitle)
+            if not title:
+                continue
+            ctype=plain(one(r'<span class="rs_cp_type_chip">([\s\S]*?)</span>',fragment))
+            ctype={"구매형":"구매평","지역형":"방문형"}.get(ctype,ctype)
+            if ctype not in ("방문형","배송형","기자단","구매평"):
+                ctype=None
+            desc=plain(one(r'<span class="opt_name">([\s\S]*?)</span>',fragment))
+            reg=one(r'^\[([^\]]+)\]',title)
+            if reg and not re.search(r'서울|부산|대구|인천|광주|대전|울산|세종|경기|강원|충북|충남|전북|전남|경북|경남|제주',reg):
+                reg=None
+            stat=re.search(r'신청\s*</span>\s*<b>([\d,]+)</b>\s*<span>/</span>\s*<span>([\d,]+)명',fragment)
+            applicant=number(stat.group(1)) if stat else None
+            slots=number(stat.group(2)) if stat else None
+            point=one(r'\+?\s*([\d,]+)\s*P\b',plain(fragment))
+            benefit=desc
+            if point:
+                benefit=(desc+" · " if desc else "")+"+"+point+"P"
+            img=one(r'<img\s+src="([^"]+)"',fragment)
+            img=urllib.parse.urljoin(base,html.unescape(img)) if img else None
+            media=plain(fragment)
+            channels=[]
+            for marker,ch in (("블로그","블로그"),("인스타그램","인스타그램"),
+                ("유튜브","유튜브"),("네이버클립","네이버클립"),
+                ("클립","네이버클립"),("릴스","인스타그램"),
+                ("쇼츠","쇼츠"),("틱톡","틱톡"),("스레드","스레드")):
+                if marker in media and ch not in channels:
+                    channels.append(ch)
+            campaign=make(
+                "assaview",cid,title,
+                urllib.parse.urljoin(base,"campaign.php?cp_id="+cid),
+                region=reg,desc=desc,benefit=benefit,image=img,
+                slots=slots,applicants=applicant,channels=channels,
+                exact_deadline=deadline,ctype=ctype
+            )
+            if campaign:
+                out[cid]=campaign
+                added+=1
+        print("아싸뷰",path,len(cards),"cards",added,"new",flush=True)
+        time.sleep(1.2)
+    print("아싸뷰 confirmed",len(out),"unique exact-deadline campaigns",flush=True)
+    return list(out.values())
+
 def main():
     OUT.parent.mkdir(parents=True, exist_ok=True)
     try:
@@ -479,7 +567,7 @@ def main():
         current = []
     stored = {item["id"]: item for item in current if isinstance(item, dict) and "id" in item}
     found = 0
-    for name, collect in [("dinnerqueen", dinnerqueen), ("mrblog", mrblog), ("modan", modan), ("modootogether", modootogether), ("fourblog", fourblog)]:
+    for name, collect in [("dinnerqueen", dinnerqueen), ("mrblog", mrblog), ("modan", modan), ("modootogether", modootogether), ("fourblog", fourblog), ("assaview", assaview)]:
         try:
             items = collect()
             for item in items:
