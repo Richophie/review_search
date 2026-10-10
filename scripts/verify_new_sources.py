@@ -19,6 +19,8 @@ for name, fn in (
   print("CHECK",name,"total",len(records),"unique",unique,"exact_dates",accurate,"known_ratios",ratios,flush=True)
   for c in records[:2]:
    print("SAMPLE",c["title"][:85],c["apply_deadline"],c["original_url"],flush=True)
+  if name == "bqueens": assert len(records) >= 90, (name,"pagination not covered")
+  if name == "cherrycook": assert len(records) >= 18, (name,"mission-list parsing incomplete")
   assert unique==len(records),(name,"duplicates")
   assert all(r["title"] and r["original_url"] and r["apply_deadline"] for r in records),name
  except Exception as ex:
