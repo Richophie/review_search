@@ -795,6 +795,120 @@ def bqueens():
         print("뷰티의여왕 public",path,len(cards),"cards",added,"new",flush=True)
     return list(out.values())
 
+
+def huki():
+    """Collect Huki's publicly listed campaigns without using private endpoints."""
+    base="https://huki.co.kr/"
+    pages=[
+        ("", None),
+        ("theme/huki/skin/board/gallery/productCampaign.php","배송형"),
+        ("theme/huki/skin/board/gallery/localCampaign.php","방문형"),
+        ("theme/huki/skin/board/gallery/reviewCampaign.php","구매평"),
+        ("theme/huki/skin/board/gallery/newsCampaign.php","기자단"),
+    ]
+    out={}
+    for rel, page_type in pages:
+        try:
+            doc=safe_fetch(urllib.parse.urljoin(base,rel))
+        except Exception as exc:
+            print("후키 public listing unavailable",rel,repr(exc)[:130],flush=True)
+            continue
+        if not doc:
+            continue
+        doc=re.sub(r"<!--[\s\S]*?-->","",doc)
+        cards=re.findall(
+            r'<a\b[^>]*href="([^"]*/bbs/board\.php\?[^"]*wr_id=(\d+)[^"]*)"[^>]*>([\s\S]*?)</a>',
+            doc,re.I
+        )
+        added=0
+        for link,cid,card in cards:
+            if not re.search(r'\b모집중\b',plain(card)):
+                continue
+            dday=one(r'D-\s*(\d+)',card)
+            if dday is None:
+                continue
+            title=plain(one(r'<p\s+class="t_tit">([\s\S]*?)</p>',card))
+            if not title:
+                continue
+            desc=plain(one(r'<p\s+class="t_sub">([\s\S]*?)</p>',card))
+            bottom=plain(one(r'<p\s+class="t_bottom">([\s\S]*?)</p>',card))
+            stat=re.search(r'신청\s*([\d,]+)\s*/\s*([\d,]+)\s*명',bottom)
+            apps=number(stat.group(1)) if stat else None
+            slots=number(stat.group(2)) if stat else None
+            media=[]
+            for key,chan in [("blog","블로그"),("instagram","인스타그램"),
+                             ("insta","인스타그램"),("youtube","유튜브"),
+                             ("reels","인스타그램"),("clip","네이버클립"),
+                             ("tiktok","틱톡")]:
+                if re.search(r'<span\s+class="'+key+r'">',card,re.I) and chan not in media:
+                    media.append(chan)
+            region=one(r'^\[([^\]]+)\]',title)
+            if region and not sido(region):
+                region=None
+            image=one(r'<div\s+class="img">[\s\S]*?<img\s+src="([^"]+)"',card)
+            if image and not image.startswith("https://"):
+                image=None
+            typ="기자단" if "원고형" in title else page_type
+            item=make(
+                "huki",cid,title,urllib.parse.urljoin(base,html.unescape(link)),
+                region=region,desc=desc,benefit=desc,image=image,
+                applicants=apps,slots=slots,days=int(dday),channels=media,ctype=typ
+            )
+            if item and (cid not in out or (out[cid]["campaign_type"] is None and typ)):
+                out[cid]=item
+                added+=1
+        print("후키 listing",rel or "/",len(cards),"cards",added,"new",flush=True)
+        time.sleep(0.8)
+    print("후키 public",len(out),"unique open campaigns",flush=True)
+    return list(out.values())
+
+
+def openreview():
+    """Read OpenReview's public homepage recruitment cards only."""
+    base="https://openreview.kr/"
+    doc=safe_fetch(base)
+    if not doc:
+        raise RuntimeError("OpenReview homepage unavailable")
+    out={}
+    cards=doc.split('<div class="horizontal-card">')[1:]
+    for card in cards:
+        url_match=re.search(r'href="([^"]*exp_view\.php\?ex_idx=(\d+)[^"]*)"',card)
+        if not url_match:
+            continue
+        link,cid=url_match.groups()
+        if cid in out:
+            continue
+        title=plain(one(r'<div\s+class="card-title[^"]*">\s*<p[^>]*>([\s\S]*?)</p>',card))
+        if not title:
+            continue
+        dday=one(r'<div\s+class="dday-area">[\s\S]*?D-\s*<span>(\d+)</span>',card)
+        if dday is None:
+            continue
+        desc=plain(one(r'<div\s+class="card-text">[\s\S]*?<p[^>]*>([\s\S]*?)</p>',card))
+        applicants=number(one(r'<p\s+class="apply-num">신청\s*<span>([\d,]+)</span>',card))
+        slots=number(one(r'<p\s+class="apply-limit">\s*/\s*([\d,]+)\s*명',card))
+        image=one(r'<a\s+href="[^"]*exp_view\.php[^"]*"\s+class="campaign-img">[\s\S]*?<img[^>]*src="([^"]+)"',card)
+        image=urllib.parse.urljoin(base,html.unescape(image)) if image else None
+        media=[]
+        for key,channel in [("sns_blog.svg","블로그"),("sns_insta.svg","인스타그램"),
+                            ("sns_youtube.svg","유튜브"),("sns_tiktok.svg","틱톡")]:
+            if key in card:
+                media.append(channel)
+        region=one(r'^\[([^\]]+)\]',title)
+        if region and not sido(region):
+            region=None
+        item=make(
+            "openreview",cid,title,urllib.parse.urljoin(base,html.unescape(link)),
+            region=region,desc=desc,benefit=desc,image=image,
+            applicants=applicants,slots=slots,days=int(dday),
+            channels=media,ctype=None
+        )
+        if item:
+            out[cid]=item
+    print("오픈리뷰 public homepage",len(cards),"cards",len(out),"campaigns",flush=True)
+    return list(out.values())
+
+
 def main():
     OUT.parent.mkdir(parents=True, exist_ok=True)
     try:
@@ -803,7 +917,7 @@ def main():
         current = []
     stored = {item["id"]: item for item in current if isinstance(item, dict) and "id" in item}
     found = 0
-    for name, collect in [("dinnerqueen", dinnerqueen), ("mrblog", mrblog), ("modan", modan), ("modootogether", modootogether), ("fourblog", fourblog), ("assaview", assaview), ("ringble", ringble), ("cometoplay", cometoplay), ("cherrycook", cherrycook), ("gaboja", gaboja), ("bqueens", bqueens)]:
+    for name, collect in [("dinnerqueen", dinnerqueen), ("mrblog", mrblog), ("modan", modan), ("modootogether", modootogether), ("fourblog", fourblog), ("assaview", assaview), ("ringble", ringble), ("cometoplay", cometoplay), ("cherrycook", cherrycook), ("gaboja", gaboja), ("bqueens", bqueens), ("huki", huki), ("openreview", openreview)]:
         try:
             items = collect()
             for item in items:
