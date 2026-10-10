@@ -1050,7 +1050,11 @@ def tqueens():
     """
     base="https://tqueens.net/"
     out={}
-    for page in range(1,10):
+    # Newer pages are checked on every run; older public pages are rotated.
+    # Verify page availability and card markup before treating any result as live.
+    window = int(NOW.timestamp() // (12 * 3600)) % 4
+    pages = list(range(1, 10)) + list(range(10 + window * 5, 15 + window * 5))
+    for page in pages:
         url=base+"taste"+("?page="+str(page) if page>1 else "")
         try:
             body=safe_fetch(url)
