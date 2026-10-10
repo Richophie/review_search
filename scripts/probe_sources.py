@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Read only public index/robots pages for source feasibility analysis; no crawling."""
-import re,urllib.request,urllib.robotparser,urllib.parse
+import re,urllib.request,urllib.robotparser,urllib.parse,xml.etree.ElementTree as ET
 from html import unescape
 SOURCES={
  "modootogether":"https://www.modootogether.com/",
@@ -34,6 +34,19 @@ for name,base in SOURCES.items():
     "modan":["/","/campaigns"],"tble":["/","/campaign"],"dailyview":["/","/campaign"]}.get(name,[])
   print("path permits:",[(c,rp.can_fetch(AGENT,urllib.parse.urljoin(base,c))) for c in candidates])
   if not rp.can_fetch(AGENT,base):continue
+  if name == "modan":
+   feed="https://modan.kr/rss/campaigns.xml"
+   print("RSS permitted",rp.can_fetch(AGENT,feed))
+   if rp.can_fetch(AGENT,feed):
+    feed_text=fetch(feed)
+    print("RSS size",len(feed_text),"first800",repr(feed_text[:800]))
+    try:
+     feed_root=ET.fromstring(feed_text)
+     items=feed_root.findall(".//item")
+     print("RSS item count",len(items))
+     for it in items[:3]:
+      print("RSS sample",[(e.tag,e.text[:200] if e.text else "") for e in list(it)[:10]])
+    except Exception as ex:print("RSS parsing error",repr(ex))
   body=fetch(base)
   print("index bytes",len(body))
   hrefs=re.findall(r'(?:href|data-href)\s*=\s*["\']([^"\']{1,240})',body,re.I)
