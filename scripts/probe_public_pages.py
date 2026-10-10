@@ -39,3 +39,5 @@ for name,(base,paths) in CASES.items():
     print("CONTENT SAMPLE",repr(re.sub(r'\s+',' ',re.sub(r'<[^>]+>',' ',html.unescape(doc[:300000])))[:850]),flush=True)
   except Exception as e:print("FAIL",type(e).__name__,str(e)[:260],flush=True)
   time.sleep(.7)
+
+# Fetch only policy-permitted public lists.
