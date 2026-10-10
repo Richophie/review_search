@@ -1169,6 +1169,111 @@ def storyn():
     return list(out.values())
 
 
+def reviewnote():
+    """Index verifiable cards from Reviewnote's public HTML only.
+
+    Each accepted card must contain one unique /campaigns/<id> link, a
+    public days-left label, and its own applicant/recruitment count.
+    Missing fields cause a skip rather than invented data.
+    """
+    from html.parser import HTMLParser
+
+    class CardParser(HTMLParser):
+        def __init__(self):
+            super().__init__(convert_charrefs=True)
+            self.stack=[]
+            self.candidates=[]
+
+        def handle_starttag(self, tag, attrs):
+            attrs=dict(attrs)
+            if tag in ("div", "li", "article", "section", "a"):
+                self.stack.append({"tag":tag,"text":[],"links":set(),
+                                   "images":[],"labels":[]})
+            href=attrs.get("href","")
+            match=re.search(r"(?:^|/)campaigns/(\d+)(?:[/?#]|$)",href)
+            if match:
+                for node in self.stack:
+                    node["links"].add(match.group(1))
+            if tag=="img":
+                alt=attrs.get("alt","")
+                src=attrs.get("src","")
+                for node in self.stack:
+                    if alt: node["labels"].append(alt)
+                    if src and not node["images"]: node["images"].append(src)
+
+        def handle_data(self, data):
+            for node in self.stack:
+                node["text"].append(data)
+
+        def handle_endtag(self, tag):
+            if tag not in ("div","li","article","section","a"):
+                return
+            if not self.stack: return
+            # HTML cards can contain nested div/a nodes; only close a matching
+            # top-level element, rather than corrupting the nested stack.
+            if self.stack[-1]["tag"]!=tag: return
+            node=self.stack.pop()
+            value=plain(" ".join(node["text"]))
+            if len(node["links"])==1 and re.search(r"\d+\s*일\s*남음",value) and re.search(r"신청\s*[\d,]+\s*/\s*[\d,]+",value):
+                self.candidates.append(node)
+
+    urls=[
+        "https://www.reviewnote.co.kr/campaigns",
+        "https://www.reviewnote.co.kr/campaigns?channel=BLOG",
+        "https://www.reviewnote.co.kr/campaigns?channel=INSTAGRAM",
+    ]
+    out={}
+    for url in urls:
+        try:
+            body=safe_fetch(url)
+            if not body: continue
+        except Exception as ex:
+            print("리뷰노트 public page unavailable",url,repr(ex)[:150],flush=True)
+            continue
+        parser=CardParser()
+        parser.feed(body)
+        # Prefer smallest nested subtree for a given ID; this avoids mixing
+        # adjacent cards and their independent media/application counters.
+        candidates=sorted(parser.candidates,key=lambda n:len("".join(n["text"])))
+        added=0
+        for card in candidates:
+            cid=next(iter(card["links"]))
+            if cid in out: continue
+            line=plain(" ".join(card["text"]))
+            stats=re.search(r"신청\s*([\d,]+)\s*/\s*([\d,]+)",line)
+            dday=re.search(r"(\d+)\s*일\s*남음",line)
+            if not stats or not dday: continue
+            # A card title must explicitly carry a location/recruitment marker.
+            title_match=re.search(r"(\[(?:[^\]]{1,35})\]\s*[^\[\]]{2,110})",line)
+            if not title_match: continue
+            title=title_match.group(1).strip()
+            if title.startswith("[재택]"):
+                region=None
+            else:
+                region=one(r"^\[([^\]]+)\]",title)
+            labels=" ".join(card["labels"])
+            channels=[]
+            for marker,ch in (("블로그","블로그"),("클립","네이버클립"),
+                ("릴스","인스타그램"),("인스타그램","인스타그램"),
+                ("쇼츠","쇼츠"),("유튜브","유튜브"),("틱톡","틱톡"),
+                ("스레드","스레드")):
+                if marker in labels and ch not in channels: channels.append(ch)
+            # An image alt/name alone is not a sufficient basis for guessing
+            # Instagram feed vs reels; both are mapped to existing broad filter.
+            ctype=next((t for t in ("방문형","배송형","기자단","구매평") if t in line),None)
+            item=make("reviewnote",cid,title,
+                "https://www.reviewnote.co.kr/campaigns/"+cid,
+                region=region,slots=number(stats.group(2)),
+                applicants=number(stats.group(1)),days=int(dday.group(1)),
+                channels=channels,ctype=ctype)
+            if item:
+                out[cid]=item
+                added+=1
+        print("리뷰노트 public listing",url,"candidate cards",len(parser.candidates),"new",added,flush=True)
+        time.sleep(1.0)
+    return list(out.values())
+
+
 def main():
     OUT.parent.mkdir(parents=True, exist_ok=True)
     try:
@@ -1177,7 +1282,7 @@ def main():
         current = []
     stored = {item["id"]: item for item in current if isinstance(item, dict) and "id" in item}
     found = 0
-    collectors = [("dinnerqueen", dinnerqueen), ("mrblog", mrblog), ("modan", modan), ("modootogether", modootogether), ("fourblog", fourblog), ("assaview", assaview), ("ringble", ringble), ("cometoplay", cometoplay), ("cherrycook", cherrycook), ("gaboja", gaboja), ("bqueens", bqueens), ("huki", huki), ("openreview", openreview), ("pavlovu", pavlovu), ("tqueens", tqueens), ("storyn", storyn)]
+    collectors = [("dinnerqueen", dinnerqueen), ("mrblog", mrblog), ("modan", modan), ("modootogether", modootogether), ("fourblog", fourblog), ("assaview", assaview), ("ringble", ringble), ("cometoplay", cometoplay), ("cherrycook", cherrycook), ("gaboja", gaboja), ("bqueens", bqueens), ("huki", huki), ("openreview", openreview), ("pavlovu", pavlovu), ("tqueens", tqueens), ("storyn", storyn), ("reviewnote", reviewnote)]
     if os.environ.get("DQ_ONLY") == "1":
         collectors = [("dinnerqueen", dinnerqueen)]
     for name, collect in collectors:
