@@ -27,7 +27,8 @@ const PLATFORM: Record<string, [string,string]> = {
   bqueens:["뷰티의여왕","https://bqueens.net/"],
   huki:["후키","https://huki.co.kr/"],
   openreview:["오픈리뷰","https://openreview.kr/"],
-  pavlovu:["파블로체험단","https://pavlovu.com/"]
+  pavlovu:["파블로체험단","https://pavlovu.com/"],
+  tqueens:["택배의여왕","https://tqueens.net/"]
 };
 const TABS = ["all","new","today","soon","lowcomp","zero"] as const;
 const DAY_MS = 86400000;

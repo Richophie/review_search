@@ -989,6 +989,71 @@ def pavlovu():
     return list(out.values())
 
 
+
+def tqueens():
+    """Index only publicly exposed Parcel Queen /taste listing cards.
+
+    Original campaign URLs and deadline labels are public, but the source
+    does not expose applicant counts on these cards. Never invent them.
+    """
+    base="https://tqueens.net/"
+    out={}
+    for page in range(1,10):
+        url=base+"taste"+("?page="+str(page) if page>1 else "")
+        try:
+            body=safe_fetch(url)
+        except Exception as exc:
+            print("택배의여왕 public listing unavailable",page,repr(exc)[:160],flush=True)
+            break
+        if not body:
+            break
+        cards=body.split('class="qz-dq-card qz-button fluid hover"')[1:]
+        if not cards:
+            break
+        added=0
+        for c in cards:
+            cid=one(r'href="/taste/(\d+)"',c)
+            if not cid or cid in out:
+                continue
+            title=plain(one(r'title="([^"]+?)\s*신청하기"',c))
+            if not title:
+                continue
+            days=one(r'<strong>\s*D-\s*(\d+)\s*</strong>',c,re.I)
+            if days is None and re.search(r'<strong>\s*D-Day\s*</strong>',c,re.I):
+                days="0"
+            if days is None:
+                continue
+            benefit=plain(one(r'<p\s+class="qz-body2-kr--line[^"]*"[^>]*>([\s\S]*?)</p>',c))
+            img=one(r'<img\s+src="(https://[^"]+)"',c)
+            region=one(r'^\[([^\]]+)\]',title)
+            if region and not sido(region):
+                region=None
+            channels=[]
+            if "릴스" in title or "인스타그램" in title:
+                channels.append("인스타그램")
+            elif "쇼츠" in title:
+                channels.append("쇼츠")
+            elif "클립" in title:
+                channels.append("네이버클립")
+            elif "틱톡" in title:
+                channels.append("틱톡")
+            item=make(
+                "tqueens",cid,title,base+"taste/"+cid,
+                region=region,desc=benefit or None,benefit=benefit or None,
+                image=img,applicants=None,slots=None,days=int(days),
+                channels=channels,ctype="방문형" if region else "배송형"
+            )
+            if item:
+                out[cid]=item
+                added+=1
+        print("택배의여왕 public page",page,"cards",len(cards),"new",added,flush=True)
+        if added==0:
+            break
+        time.sleep(1.5)
+    print("택배의여왕 verified",len(out),flush=True)
+    return list(out.values())
+
+
 def main():
     OUT.parent.mkdir(parents=True, exist_ok=True)
     try:
@@ -997,7 +1062,7 @@ def main():
         current = []
     stored = {item["id"]: item for item in current if isinstance(item, dict) and "id" in item}
     found = 0
-    collectors = [("dinnerqueen", dinnerqueen), ("mrblog", mrblog), ("modan", modan), ("modootogether", modootogether), ("fourblog", fourblog), ("assaview", assaview), ("ringble", ringble), ("cometoplay", cometoplay), ("cherrycook", cherrycook), ("gaboja", gaboja), ("bqueens", bqueens), ("huki", huki), ("openreview", openreview), ("pavlovu", pavlovu)]
+    collectors = [("dinnerqueen", dinnerqueen), ("mrblog", mrblog), ("modan", modan), ("modootogether", modootogether), ("fourblog", fourblog), ("assaview", assaview), ("ringble", ringble), ("cometoplay", cometoplay), ("cherrycook", cherrycook), ("gaboja", gaboja), ("bqueens", bqueens), ("huki", huki), ("openreview", openreview), ("pavlovu", pavlovu), ("tqueens", tqueens)]
     if os.environ.get("DQ_ONLY") == "1":
         collectors = [("dinnerqueen", dinnerqueen)]
     for name, collect in collectors:
