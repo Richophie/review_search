@@ -157,7 +157,11 @@ def make(source, ext_id, title, url, region=None, desc=None, benefit=None,
 
 def dinnerqueen():
     records = {}
-    for page in range(1, 49):
+    # Scan fresh pages every run and rotate older pages across twice-daily jobs.
+    # All 48 page groups are revisited within three refreshes.
+    window = int(NOW.timestamp() // (12*3600)) % 3
+    pages = list(range(1,13)) + list(range(13 + window*12,25 + window*12))
+    for page in pages:
         url = "https://dinnerqueen.net/taste" + ("?page=" + str(page) if page > 1 else "")
         body = safe_fetch(url)
         if not body:
@@ -243,7 +247,11 @@ def modan():
     if not items:
         raise RuntimeError("Official Modan RSS is empty")
     output = {}
-    for idx, item in enumerate(items):
+    # Preserve new RSS entries and rotate the rest; avoid fetching 50 detail
+    # pages on every scheduled execution.
+    window = int(NOW.timestamp() // (12*3600)) % 3
+    selected = items[:10] + items[10 + 14*window : 10 + 14*(window+1)]
+    for idx, item in enumerate(selected):
         link = (item.findtext("link") or "").strip()
         if not re.fullmatch(r"https://modan\.kr/campaigns/\d+", link):
             continue
@@ -320,7 +328,7 @@ def modan():
         except Exception as exc:
             print("모두의체험단 detail skipped",cid,str(exc)[:140])
         # Be considerate to the source, and run well below rate limits.
-        if idx < len(items)-1:
+        if idx < len(selected)-1:
             time.sleep(0.55)
     print("모두의체험단 RSS confirmed",len(output),"of",len(items))
     return list(output.values())
