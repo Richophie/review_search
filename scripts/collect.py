@@ -241,15 +241,26 @@ def mrblog():
         days = one(r"(\d+)\s*일 남음", dday)
         days = int(days) if days is not None else 0 if "오늘" in dday else None
         icon = one(r"sns_icon\s+([a-z]+)", part)
+        # Never silently assume Blog when the medium badge is missing.
+        # Keep each original campaign ID so different media stay distinct.
         medium = {"blog": "블로그", "insta": "인스타그램", "instagram": "인스타그램",
-                  "reels": "인스타그램", "youtube": "유튜브", "shorts": "쇼츠",
-                  "clip": "네이버클립", "tiktok": "틱톡"}.get(icon, "블로그")
+                  "reels": "인스타그램", "reel": "인스타그램",
+                  "youtube": "유튜브", "shorts": "쇼츠", "short": "쇼츠",
+                  "clip": "네이버클립", "tiktok": "틱톡", "threads": "스레드"}.get(icon)
+        if not medium:
+            explicit = (area + " " + subject)
+            medium = next((label for pattern, label in [
+                (r"클립", "네이버클립"), (r"릴스", "인스타그램"),
+                (r"쇼츠", "쇼츠"), (r"틱톡", "틱톡"),
+                (r"스레드", "스레드"), (r"유튜브", "유튜브"),
+                (r"인스타", "인스타그램"), (r"블로그", "블로그")
+            ] if re.search(pattern, explicit, re.I)), None)
         slots = number(one(r"모집\s*([\d,]+)명", part))
         applicants = number(one(r"신청\s*<strong>([\d,]+)명", part))
         item = make("mrblog", cid, subject, "https://www.mrblog.net/campaigns/" + cid,
                     region=area if not re.search("배송|기자단|구매", area) else None,
                     desc=desc, benefit=desc, image=one(r'<img[^>]+src="([^"]+)"', part),
-                    applicants=applicants, slots=slots, days=days, channels=[medium],
+                    applicants=applicants, slots=slots, days=days, channels=[medium] if medium else [],
                     ctype="배송형" if "배송" in area else "기자단" if "기자단" in area else None)
         if item:
             out[cid] = item
