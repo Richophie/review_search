@@ -21,3 +21,5 @@ for path in ("/campaign","/campaign/","/campaign?sort=latest"):
    print("PAT",pat,"count",len(m),flush=True)
    if m:print("SAMPLE",repr(html[max(0,m[0].start()-250):m[0].start()+1600])[:1850],flush=True)
  except Exception as e:print("FAIL",repr(e)[:250],flush=True)
+
+# Does not visit /campaign/ detail pages.
