@@ -53,3 +53,5 @@ for name,(home,paths) in SOURCES.items():
   except Exception as ex:
    print("ERROR",type(ex).__name__,str(ex)[:260],flush=True)
   time.sleep(.5)
+
+# Probe observes site policies and stops at public HTML only.
