@@ -24,24 +24,38 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Index remaining public listing pages, paced
+      - name: Index previously missed public pages at a considerate rate
         env:
           DQ_ONLY: "1"
           DQ_PAGE_START: "85"
           DQ_PAGE_END: "299"
         run: python -u scripts/collect.py
-      - name: Verify all campaign data before release
+      - name: Validate collected data
         run: python scripts/validate_snapshot.py
-      - name: Publish only the verified changed index
+      - name: Merge latest GitHub data and safely publish
         run: |
-          if git diff --quiet -- public/data/campaigns.json; then
-            echo "No additional open campaigns found."
-            exit 0
-          fi
+          cp public/data/campaigns.json /tmp/deep_candidate.json
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/data/campaigns.json
-          git commit -m "chore(data): complete bounded Dinner Queen public page backfill"
-          git fetch origin main
-          git rebase origin/main
-          git push origin HEAD:main
+          for attempt in 1 2 3; do
+            echo "Safe merge attempt $attempt"
+            git fetch origin main
+            git show origin/main:public/data/campaigns.json > /tmp/remote_campaigns.json
+            python scripts/merge_snapshots.py /tmp/remote_campaigns.json /tmp/deep_candidate.json public/data/campaigns.json
+            python scripts/validate_snapshot.py
+            cp public/data/campaigns.json /tmp/merged_campaigns.json
+            git reset --hard origin/main
+            cp /tmp/merged_campaigns.json public/data/campaigns.json
+            git add public/data/campaigns.json
+            if git diff --cached --quiet; then
+              echo "Current GitHub data already includes all verified pages."
+              exit 0
+            fi
+            git commit -m "chore(data): merge verified deep public campaign backfill"
+            if git push origin HEAD:main; then
+              echo "Published verified backfill without dropping other sources."
+              exit 0
+            fi
+          done
+          echo "Could not publish without overwriting concurrent data." >&2
+          exit 1
