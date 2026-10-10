@@ -48,6 +48,21 @@ for source,(home,paths) in sites.items():
     if m:
      p=doc[max(0,m.start()-400):m.end()+700]
      print("SAMPLE",marker,repr(p)[:1050],flush=True)
+   if source=="assaview":
+    sample=re.search(r'(?:href=["\'](?:\./)?campaign\.php\?cp_id=\d+["\'])',doc,re.I)
+    if sample:
+     li=doc.rfind("<li",0,sample.start())
+     en=doc.find("</li>",sample.end())
+     start=li if li>0 and sample.start()-li<7000 else max(0,sample.start()-500)
+     end=en+5 if en>start and en-start<11000 else sample.end()+6500
+     print("ASSA CARD",repr(doc[start:end])[:9500],flush=True)
+    print("ASSA distinct campaigns",len(set(re.findall(r"campaign\.php\?cp_id=\d+",doc))),flush=True)
+    for field in ["campaign_list.php","campaign_list?","type=area","cp_id="]:
+     print("ASSA",field,doc.find(field),flush=True)
+   if source=="dilo" and path=="/trials":
+    for pat in [r'"trials"\s*:',r'"applyDeadline"\s*:',r'"applicationDeadline"\s*:',r'"title"\s*:',r'/trials/[0-9a-f-]{10,}',r'"trial_id"',r'"recruitmentEnd"',r'"deadline"']:
+     m=re.search(pat,doc,re.I)
+     if m:print("DILO DATA",pat,repr(doc[max(0,m.start()-500):m.start()+2000])[:2400],flush=True)
    for link in unique:
     if re.search(r"\d{3,}",link):
      ix=doc.find(link)
