@@ -31,7 +31,7 @@ for name,base in SOURCES.items():
     idx=html.find('<div class="item">')
     print("TQUEENS_ITEM_POS",idx,flush=True)
     if idx>=0: print("TQUEENS_ITEM_SAMPLE",repr(html[idx:idx+4300]),flush=True)
-    match=re.search(r'href="/taste/\\d+"',html)
+    match=re.search(r'href="/taste/\d+"',html)
     if match:
      print("TQUEENS_LINK_SAMPLE",repr(html[max(0,match.start()-3300):match.start()+2400])[:5900],flush=True)
   except Exception as ex:print("ERROR",page,repr(ex)[:180],flush=True)
