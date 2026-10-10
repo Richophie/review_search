@@ -666,6 +666,134 @@ def cometoplay():
     print("놀러와체험단 public homepage",len(fragments),"cards",len(out),"campaigns",flush=True)
     return list(out.values())
 
+
+def cherrycook():
+    """F&B campaign summaries on CherryCook public homepage (no protected APIs)."""
+    base="https://cherry-cook.com/"
+    body=safe_fetch(base)
+    if not body:
+        raise RuntimeError("CherryCook public homepage unavailable")
+    out={}
+    cards=re.findall(r'<a\s+href="/item/(\d+)"[^>]*>([\s\S]*?)</a>',body,re.I)
+    for cid,fragment in cards:
+        if cid in out:
+            continue
+        title=plain(one(r'<div class="item-product">([\s\S]*?)</div>',fragment))
+        if not title:
+            continue
+        remain=one(r'<div class="item-deadline">\s*(\d+)\s*일\s*남음',fragment)
+        if remain is None:
+            continue
+        applicants=number(one(r'<span class="campaign-visit">\s*([\d,]+)\s*</span>',fragment))
+        slots=number(one(r'<span class="item-visit">\s*([\d,]+)\s*</span>',fragment))
+        image=one(r'<div class="image-box"[^>]*><img src="([^"]+)"',fragment)
+        image=urllib.parse.urljoin(base,html.unescape(image)) if image else None
+        cash=one(r'<div class="item-point">([\s\S]*?)</div>',fragment)
+        region=one(r'^\[([^\]]+)\]',title)
+        if region and region=="전체":
+            region=None
+        # Only map verified platform badges; never assume a review medium.
+        channels=[]
+        if re.search(r'class="item-blog"',fragment):
+            channels.append("블로그")
+        if re.search(r'class="item-instagram"',fragment):
+            channels.append("인스타그램")
+        if re.search(r'class="item-youtube"',fragment):
+            channels.append("유튜브")
+        benefit=plain(cash) or None
+        item=make(
+            "cherrycook",cid,title,base+"item/"+cid,
+            region=region,desc=None,benefit=benefit,
+            image=image,applicants=applicants,slots=slots,
+            days=int(remain),channels=channels,
+            ctype="배송형" if "배송" in title else "방문형" if region else None
+        )
+        if item:
+            out[cid]=item
+    print("체리쿡 public homepage",len(cards),"cards",len(out),"campaigns",flush=True)
+    return list(out.values())
+
+
+def gaboja():
+    """Use Gaboja homepage only: its /cmp/ detail path is robots-disallowed."""
+    base="https://xn--o39a04kpnjo4k9hgflp.com/"
+    body=safe_fetch(base)
+    if not body:
+        raise RuntimeError("Gaboja public homepage unavailable")
+    out={}
+    pattern=r'<a\s+href="https://xn--o39a04kpnjo4k9hgflp\.com/cmp/\?id=(\d+)"[^>]*>([\s\S]*?)</a>'
+    cards=re.findall(pattern,body,re.I)
+    for cid,fragment in cards:
+        if cid in out:
+            continue
+        title=plain(one(r'<dt>([\s\S]*?)</dt>',fragment))
+        days=one(r'(\d+)\s*일\s*남음',fragment)
+        if not title or days is None:
+            continue
+        desc=plain(one(r'<dd>([\s\S]*?)</dd>',fragment))
+        stats=re.search(r'신청\s*([\d,]+)\s*</span>\s*/\s*모집\s*([\d,]+)',fragment,re.I)
+        applicants=number(stats.group(1)) if stats else None
+        slots=number(stats.group(2)) if stats else None
+        ctype=plain(one(r'<li[^>]*>\s*<i[^>]*></i>\s*<span>([^<]+)</span>',fragment))
+        if ctype not in ("방문형","배송형","기자단","구매평"):
+            ctype=None
+        region=one(r'^\[([^\]]+)\]',title)
+        if region and not sido(region):
+            region=None
+        image=one(r'<img\s+src="([^"]+)"',fragment)
+        image=urllib.parse.urljoin(base,html.unescape(image)) if image else None
+        media=[]
+        for marker,label in (("class=\"blog","블로그"),("class=\"insta","인스타그램"),
+                             ("class=\"youtube","유튜브"),("class=\"tiktok","틱톡")):
+            if marker in fragment:
+                media.append(label)
+        item=make(
+            "gaboja",cid,title,base+"cmp/?id="+cid,
+            region=region,desc=desc,benefit=desc,
+            image=image,applicants=applicants,slots=slots,days=int(days),
+            channels=media,ctype=ctype
+        )
+        if item:
+            out[cid]=item
+    print("가보자체험단 public homepage",len(cards),"cards",len(out),"campaigns",flush=True)
+    return list(out.values())
+
+
+def bqueens():
+    """Read only openly listed recruitment cards of the Beauty Queen site."""
+    base="https://bqueens.net/"
+    out={}
+    for path in ("taste",):
+        body=safe_fetch(urllib.parse.urljoin(base,path))
+        if not body:
+            continue
+        cards=body.split('<div class="item">')[1:]
+        added=0
+        for fragment in cards:
+            cid=one(r'<a\s+href="/taste/(\d+)"',fragment)
+            if not cid or cid in out:
+                continue
+            title=plain(one(r'<h5\s+class="ellipsis[^"]*"[^>]*>([\s\S]*?)</h5>',fragment))
+            days=one(r'신청\s*기간이\s*<span[^>]*>\s*(\d+)\s*일',fragment)
+            if days is None:
+                days=one(r'<h5>\s*<b>D\s*-\s*(\d+)</b>',fragment)
+            if not title or days is None:
+                continue
+            img=one(r'<div class="item-content-img">[\s\S]*?<img\s+src="([^"]+)"',fragment)
+            if img and not img.startswith("https://"):
+                img=None
+            item=make(
+                "bqueens",cid,title,base+"taste/"+cid,
+                region=None,benefit=None,desc=None,image=img,
+                days=int(days),channels=[],
+                ctype="배송형"
+            )
+            if item:
+                out[cid]=item
+                added+=1
+        print("뷰티의여왕 public",path,len(cards),"cards",added,"new",flush=True)
+    return list(out.values())
+
 def main():
     OUT.parent.mkdir(parents=True, exist_ok=True)
     try:
@@ -674,7 +802,7 @@ def main():
         current = []
     stored = {item["id"]: item for item in current if isinstance(item, dict) and "id" in item}
     found = 0
-    for name, collect in [("dinnerqueen", dinnerqueen), ("mrblog", mrblog), ("modan", modan), ("modootogether", modootogether), ("fourblog", fourblog), ("assaview", assaview), ("ringble", ringble), ("cometoplay", cometoplay)]:
+    for name, collect in [("dinnerqueen", dinnerqueen), ("mrblog", mrblog), ("modan", modan), ("modootogether", modootogether), ("fourblog", fourblog), ("assaview", assaview), ("ringble", ringble), ("cometoplay", cometoplay), ("cherrycook", cherrycook), ("gaboja", gaboja), ("bqueens", bqueens)]:
         try:
             items = collect()
             for item in items:
