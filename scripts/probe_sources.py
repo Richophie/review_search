@@ -75,6 +75,17 @@ for name,base in SOURCES.items():
     print("SAMPLE card HTML",repr(body[max(0,start):end+5][:5500]))
    print("ALL campaign links", len(set(re.findall(r"campaign\.php\?cp_id=\d+",body))))
 
+   listing_url="https://www.modootogether.com/campaign_list.php"
+   print("PUBLIC LIST permitted",rp.can_fetch(AGENT,listing_url))
+   if rp.can_fetch(AGENT,listing_url):
+    listing=fetch(listing_url)
+    print("PUBLIC LIST bytes",len(listing),"cards",len(set(re.findall(r"campaign\.php\?cp_id=\d+",listing))))
+    pages=[h for h in re.findall(r'(?:href|data-href)\s*=\s*["\']([^"\']+)',listing,re.I) if re.search(r"(?:pg=|page=|\?p=)",h)]
+    print("PUBLIC LIST page links",pages[:18])
+    onecard=re.search(r'<li>[\s\S]{0,12000}?campaign\.php\?cp_id=\d+[\s\S]{0,3000}?</li>',listing,re.I)
+    print("PUBLIC LIST sample card",repr(onecard.group(0)[:2400] if onecard else "")[:2600])
+
+
   for pat in [r"campaign[^<>]{0,80}",r"신청\s*[\d,]+\s*명",r"D-?Day\s*\d+",r'<a[^>]+href=["\'][^"\']*(?:campaign|view)[^"\']*']:
    m=re.search(pat,body,re.I)
    print("pattern",pat[:22],repr(body[max(0,m.start()-170):m.end()+250] if m else None)[:500])
