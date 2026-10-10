@@ -31,6 +31,14 @@ for title,params in TESTS.items():
     assert r.status==200,(title,r.status)
     body=r.read(2500000).decode("utf-8","replace")
   assert "체험단 모아보기" in body,(title,"No brand")
+  headline=re.search(r'현재\s*<span[^>]*>([\d,]+)</span>개의 체험이 있어요!',body)
+  assert headline is not None,(title,"Missing dynamic platform-style headline")
+  if title=="all":
+    assert int(headline.group(1).replace(",",""))>=100,(title,"Invalid total")
+    assert "개 플랫폼을 한꺼번에 찾아 드릴게요." in body, (title,"Missing platform count")
+    assert "lg:grid-cols-4" in body,(title,"Card width adjustment missing")
+  if title in ("search","sido","sigungu","cat"):
+    assert int(headline.group(1).replace(",",""))>=100,(title,"Global total changed due to search filter")
   if title=="all":
     assert "aspect-square" in body, "Card thumbnail not square"
     assert "사이트 전체" not in body, "Provider selector still visible"
