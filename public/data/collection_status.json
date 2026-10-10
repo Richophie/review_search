@@ -1,23 +1,23 @@
 {
-  "as_of_date_kst": "2026-10-10",
-  "snapshot_records": 9746,
+  "as_of_date_kst": "2026-10-11",
+  "snapshot_records": 9753,
   "platforms_with_records": 17,
   "media_counts": {
     "네이버클립": 640,
-    "블로그": 7089,
+    "블로그": 7093,
     "쇼츠": 3,
     "유튜브": 7,
     "인스타그램": 315,
     "틱톡": 4
   },
-  "media_unknown": 1716,
-  "deadline_unknown": 0,
-  "published_today_confirmed": 2,
+  "media_unknown": 1719,
+  "deadline_unknown": 5,
+  "published_today_confirmed": 0,
   "duplicate_id_or_original_url_count": 0,
   "sources": {
     "assaview": {
-      "records": 459,
-      "media_unknown": 441,
+      "records": 461,
+      "media_unknown": 443,
       "deadline_unknown": 0
     },
     "bqueens": {
@@ -53,11 +53,11 @@
     "huki": {
       "records": 65,
       "media_unknown": 0,
-      "deadline_unknown": 0
+      "deadline_unknown": 5
     },
     "modan": {
-      "records": 45,
-      "media_unknown": 45,
+      "records": 46,
+      "media_unknown": 46,
       "deadline_unknown": 0
     },
     "modootogether": {
@@ -81,7 +81,7 @@
       "deadline_unknown": 0
     },
     "reviewnote": {
-      "records": 88,
+      "records": 92,
       "media_unknown": 0,
       "deadline_unknown": 0
     },
