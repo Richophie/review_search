@@ -17,3 +17,5 @@ for page in (1,48,49,72,96,120):
     seen.update(ids)
   except Exception as e:print("PAGE",page,"ERROR",repr(e)[:180],flush=True)
   time.sleep(1.5)
+
+# Diagnostic only: no storage or production data updates.
