@@ -15,7 +15,8 @@ type Campaign = {
 const campaigns = archive as Campaign[];
 const PLATFORM: Record<string, [string,string]> = {
   dinnerqueen:["디너의여왕","https://dinnerqueen.net/"],
-  mrblog:["미블","https://www.mrblog.net/"]
+  mrblog:["미블","https://www.mrblog.net/"],
+  modan:["모두의체험단","https://modan.kr/"]
 };
 const TABS = ["all","new","today","soon","lowcomp","zero"] as const;
 const DAY_MS = 86400000;
