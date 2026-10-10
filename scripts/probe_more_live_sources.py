@@ -57,3 +57,5 @@ for name,home in SOURCES.items():
     mm=re.search(re.escape(marker),doc)
     if mm:print("TEXT",marker,repr(re.sub(r'\s+',' ',html.unescape(re.sub(r'<[^>]+>',' ',doc[max(0,mm.start()-300):mm.start()+370])))[:360]),flush=True)
   except Exception as e:print("FAIL",type(e).__name__,str(e)[:200],flush=True)
+
+# Run the audit using only normal publicly advertised pages.
