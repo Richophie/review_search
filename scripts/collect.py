@@ -461,9 +461,10 @@ def fourblog():
             body=safe_fetch(base+rel)
         except Exception as exc:
             print("포블로그 public page skipped",page,repr(exc)[:140],flush=True)
-            break
+            # A transient error on one page must not hide later public pages.
+            continue
         if not body:
-            break
+            continue
         cards=re.findall(
             r'<a\s+class="nounderline"\s+href="/campaign/(\d+)/">([\s\S]*?)</a>',
             body,re.I
@@ -547,6 +548,8 @@ def assaview():
         "campaign_list.php?type=assaview",
         "campaign_list.php?type=custom",
         *[f"campaign_list.php?page={page}" for page in range(2,26)],
+        # Probe a small rotating public tail without adding excessive requests.
+        *[f"campaign_list.php?page={page}" for page in range(26 + (int(NOW.timestamp() // (12 * 3600)) % 4) * 5, 31 + (int(NOW.timestamp() // (12 * 3600)) % 4) * 5)],
     ]
     out={}
     for path in paths:
