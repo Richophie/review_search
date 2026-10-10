@@ -8,6 +8,7 @@ sites={
  "seoulouba":("https://m.seoulouba.co.kr/",["/"]),
  "tble":("https://tble.kr/",["/"]),
  "dilo":("https://dilo.kr/",["/trials","/"]),
+ "cometoplay":("https://www.cometoplay.kr/",["/"]),
 }
 ua="ReviewSearchBot/0.1 (+public campaign index; obeys robots.txt)"
 def get(url):
@@ -48,6 +49,11 @@ for source,(home,paths) in sites.items():
     if m:
      p=doc[max(0,m.start()-400):m.end()+700]
      print("SAMPLE",marker,repr(p)[:1050],flush=True)
+   if source=="cometoplay":
+    print("COMETO ITEMLINK COUNT",len(set(re.findall(r"item\.php\?[^\"'\s>]*it_id=\d+",doc))),flush=True)
+    m=re.search(r'item\.php\?[^"\'\s>]*it_id=\d+',doc)
+    if m:
+     print("COMETO CARD HTML",repr(doc[max(0,m.start()-1700):m.start()+4600])[:6000],flush=True)
    if source=="ringble" and path=="/":
     chunks=doc.split("store_list_wrap")[1:]
     print("RINGBLE CHUNKS",len(chunks),flush=True)
