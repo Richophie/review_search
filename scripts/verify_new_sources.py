@@ -6,7 +6,10 @@ import collect
 for name, fn in (
     ("assaview",collect.assaview),
     ("ringble",collect.ringble),
-    ("cometoplay",collect.cometoplay)
+    ("cometoplay",collect.cometoplay),
+    ("cherrycook",collect.cherrycook),
+    ("gaboja",collect.gaboja),
+    ("bqueens",collect.bqueens)
 ):
  try:
   records=fn()
