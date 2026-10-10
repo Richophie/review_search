@@ -20,3 +20,5 @@ for name, fn in (
   assert all(r["title"] and r["original_url"] and r["apply_deadline"] for r in records),name
  except Exception as ex:
   print("SOURCE ERROR",name,type(ex).__name__,str(ex),flush=True)
+
+# No writes: checks public source lists and normalized fields only.
