@@ -29,3 +29,5 @@ for name,base in SOURCES.items():
    if cards:print("SAMPLE",repr(cards[0][:1100]),flush=True)
   except Exception as ex:print("ERROR",page,repr(ex)[:180],flush=True)
   time.sleep(1.3)
+
+# Public pages only; no authentication or bot-control workarounds.
