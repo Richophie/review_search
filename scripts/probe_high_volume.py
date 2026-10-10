@@ -46,3 +46,5 @@ for name,(origin,paths) in SITES.items():
     print("SCRIPT ASSET SAMPLES",re.findall(q,page,re.I)[:8],flush=True)
   except Exception as exc:
    print("ERROR",path,type(exc).__name__,str(exc)[:210],flush=True)
+
+# Research probe only; no unauthorized API calls.
