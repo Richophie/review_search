@@ -1096,8 +1096,9 @@ def tqueens():
                 out[cid]=item
                 added+=1
         print("택배의여왕 public page",page,"cards",len(cards),"new",added,flush=True)
-        if added==0:
-            break
+        # A page can contain only IDs already seen on an earlier page.
+        # Do not confuse zero *new* IDs with end-of-pagination; the empty
+        # card-list condition above is the actual stopping signal.
         time.sleep(1.5)
     print("택배의여왕 verified",len(out),flush=True)
     return list(out.values())
