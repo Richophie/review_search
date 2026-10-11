@@ -1759,6 +1759,130 @@ def realreview():
     return list(out.values())
 
 
+
+def odiya():
+    """Index robots-permitted Odiya public list cards with verified detail titles.
+
+    Read the explicit '리뷰어신청 D-day' field, not the later selection,
+    review-registration, or broad campaign-period deadlines. The category
+    pages have large lists; review only a small bounded batch per source.
+    The separate source-specific action refreshes this index daily.
+    """
+    base = "https://odiya.kr/"
+    pages = [
+        "category.php?category=829",  # 맛집
+        "category.php?category=832",  # 체험
+        "category.php?category=834",  # 기자단
+        "category.php?category=1016", # 제품
+    ]
+    out={}
+    for page in pages:
+        try:
+            doc=safe_fetch(urllib.parse.urljoin(base,page))
+            if not doc:
+                continue
+        except Exception as exc:
+            print("어디야 public page skipped",page,repr(exc)[:120],flush=True)
+            continue
+        # Each official campaign card has this dedicated wrapper and an
+        # onclick link to a specific public detail.php?number=<integer>.
+        parts=re.split(
+            r'<div\s+id=["\']["\']\s+class=["\']rows_margin["\']',
+            doc,re.I,
+        )[1:]
+        accepted=0
+        scanned=0
+        for p in parts:
+            if scanned>=35:
+                break
+            card=p[:14000]
+            m=re.search(
+                r'onclick\s*=\s*location\.href\s*=\s*["\']'
+                r'(detail\.php\?number=(\d+)&amp;category=(\d+)|'
+                r'detail\.php\?number=(\d+)&category=(\d+))["\']',
+                card,re.I,
+            )
+            if not m:
+                continue
+            link=html.unescape(m.group(1))
+            cid=m.group(2) or m.group(4)
+            if not cid or cid in out:
+                continue
+            dday=one(
+                r'<strong>\s*리뷰어신청\s*</strong>'
+                r'[\s\S]{0,450}?<strong>\s*D[-–]\s*(\d+)\s*</strong>',
+                card,re.I,
+            )
+            if dday is None:
+                continue
+            slots_txt=one(
+                r'<strong>\s*모집인원\s*</strong>'
+                r'[\s\S]{0,280}?<strong[^>]*>\s*([\d,]+)\s*명\s*</strong>',
+                card,re.I,
+            )
+            if slots_txt is None:
+                continue
+            scanned+=1
+            days=int(dday)
+            detail=urllib.parse.urljoin(base,link)
+            parsed=urllib.parse.urlparse(detail)
+            if parsed.scheme!="https" or parsed.netloc!="odiya.kr" or parsed.path!="/detail.php":
+                continue
+            try:
+                source=safe_fetch(detail)
+                if not source:
+                    continue
+                # Full title from official detail: list card titles are
+                # ellipsized by the original HTML and must not be copied.
+                full_title=one(
+                    r'캠페인명\s*</td>\s*<td\b[^>]*>([\s\S]*?)</td>',
+                    source,re.I,
+                )
+                title=plain(full_title)
+                detail_days=one(r'리뷰어신청\s*D[-–]\s*(\d+)',plain(source),re.I)
+                if not title or len(title)<5 or len(title)>250:
+                    continue
+                # Detail and listing represent one original application
+                # period, and should agree before we index its deadline.
+                if detail_days is None or int(detail_days)!=days:
+                    continue
+            except Exception as exc:
+                print("어디야 detail skipped",cid,repr(exc)[:120],flush=True)
+                continue
+            stats=re.search(
+                r'신청(?:\s|&nbsp;?)+([\d,]+)'
+                r'(?:\s|&nbsp;?|/)*모집(?:\s|&nbsp;?)+([\d,]+)',
+                card,re.I,
+            )
+            if not stats:
+                plain_card=plain(card)
+                stats=re.search(r'신청\s*([\d,]+)\s*/\s*모집\s*([\d,]+)',plain_card)
+            applicant=number(stats.group(1)) if stats else None
+            slots=number(slots_txt)
+            if not slots or slots<=0:
+                continue
+            region=one(r'^\[((?:서울|경기|인천|부산|대구|광주|대전|울산|세종|강원|충북|충남|전북|전남|경북|경남|제주)[^\]]*)\]',title)
+            pic=one(r'<img\b[^>]*src=["\']((?:\./)?mallimg/[^"\']+)["\']',card,re.I)
+            image=urllib.parse.urljoin(base,pic) if pic else None
+            ch=[]
+            if re.search(r'(?:src|data-src)=["\']/?img/blog\.png',card,re.I):
+                ch.append("블로그")
+            if re.search(r'(?:src|data-src)=["\']/?img/(?:insta|instagram)\.png',card,re.I):
+                ch.append("인스타그램")
+            ctype=("기자단" if "기자단" in title or "category=834" in link else
+                "배송형" if "category=1016" in link else "방문형")
+            item=make("odiya",cid,title,detail,region=region,
+                      image=image,slots=slots,applicants=applicant,
+                      days=days,channels=ch,ctype=ctype)
+            if item:
+                out[cid]=item
+                accepted+=1
+            time.sleep(0.55)
+        print("어디야 public",page,"cards",len(parts),"details verified",accepted,flush=True)
+        time.sleep(0.9)
+    return list(out.values())
+
+
 def main():
     OUT.parent.mkdir(parents=True, exist_ok=True)
     try:
