@@ -1,0 +1,56 @@
+name: Seed Modan paginated public campaigns
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/seed-modan-pages.yml"
+      - "scripts/seed_modan_pages.py"
+  schedule:
+    - cron: "50 0,12 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: modan-pages-seed
+  cancel-in-progress: true
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Syntax check
+        run: python -m py_compile scripts/collect.py scripts/seed_modan_pages.py scripts/merge_snapshot.py
+      - name: Fetch official paginated campaigns and check detail Event deadlines
+        run: python scripts/seed_modan_pages.py
+      - name: Validate campaigns
+        run: |
+          python scripts/validate_snapshot.py
+          python scripts/audit_snapshot.py
+      - name: Preserve concurrent campaign observations and commit
+        run: |
+          cp public/data/campaigns.json "$RUNNER_TEMP/modan-pages-verified.json"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3 4; do
+            git fetch origin main
+            git reset --hard origin/main
+            python scripts/merge_snapshot.py "$RUNNER_TEMP/modan-pages-verified.json"
+            python scripts/validate_snapshot.py
+            python scripts/audit_snapshot.py
+            if git diff --quiet -- public/data/campaigns.json public/data/collection_status.json; then
+              echo "No changes"
+              exit 0
+            fi
+            git add public/data/campaigns.json public/data/collection_status.json
+            git commit -m "chore(data): merge Modan paginated campaign observations"
+            if git push origin HEAD:main; then exit 0; fi
+            sleep 2
+          done
+          exit 1
