@@ -16,6 +16,10 @@ import time
 
 AGENT = "ChehumMoaBot/0.1 (+public listing index; respects robots.txt)"
 SITES = {
+    "odiya": ["https://odiya.kr/"],
+    "whogiup": ["https://www.whogiup.com/"],
+    "reviewjin": ["https://reviewjin.com/"],
+    "dailyview": ["https://dailyview.kr/"],
     "realreview": [
         "https://www.real-review.kr/",
         "https://www.real-review.kr/explore/?sort=started",
