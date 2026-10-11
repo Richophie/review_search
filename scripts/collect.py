@@ -1278,6 +1278,42 @@ def reviewnote():
                             page.wait_for_timeout(550)
                         browser_pages[url]="\n".join(fragments)
                         print("리뷰노트 browser",url,"visible IDs",len(ids),"scroll snapshots",len(fragments),flush=True)
+                    # Discover additional listings using the actual public
+                    # region selector, not speculative ?city= query strings.
+                    # If the site changes its UI, skip that region gracefully.
+                    regions = ["서울", "경기", "인천", "부산", "대구", "대전",
+                               "광주", "울산", "세종", "강원", "충북", "충남",
+                               "전북", "전남", "경북", "경남", "제주"]
+                    regional_html = []
+                    for region_name in regions:
+                        try:
+                            page.goto(base_url, wait_until="domcontentloaded", timeout=35000)
+                            page.wait_for_timeout(500)
+                            page.get_by_text("지역", exact=True).first.click(timeout=1800)
+                            page.get_by_text(region_name, exact=True).last.click(timeout=1800)
+                            page.wait_for_timeout(700)
+                            region_fragments=[]
+                            regional_ids=set()
+                            no_growth=0
+                            for step in range(16):
+                                snap=page.content()
+                                ids_now=set(re.findall(r'/campaigns/(\\d+)', snap))
+                                no_growth = no_growth + 1 if not (ids_now-regional_ids) else 0
+                                regional_ids.update(ids_now)
+                                region_fragments.append(snap)
+                                if no_growth>=4:
+                                    break
+                                page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
+                                page.wait_for_timeout(500)
+                            regional_html.extend(region_fragments)
+                            print("리뷰노트 UI region",region_name,"IDs",len(regional_ids),flush=True)
+                        except Exception as region_exc:
+                            print("리뷰노트 region selector unavailable",region_name,
+                                  type(region_exc).__name__,flush=True)
+                    if regional_html:
+                        # Join with a previously validated, accessible listing;
+                        # the CardParser still validates each record independently.
+                        browser_pages[base_url] += "\\n" + "\\n".join(regional_html)
                 finally:
                     browser.close()
         except Exception as exc:
