@@ -23,6 +23,10 @@ def main():
                 if m<0:m=body.find(v.replace(BASE,""))
                 if m<0:m=body.find(v)
                 print("ANCHOR_CONTEXT",re.sub(r"\s+"," ",body[max(m-1200,0):m+1200])[:2600],flush=True)
+            for mark in ("리뷰어신청", "신청&nbsp;", "모집인원", "신청\u00a0", "리뷰어발표"):
+                hit=body.find(mark)
+                if hit>=0:
+                    print("CARD_CONTEXT",mark,re.sub(r"\\s+"," ",body[max(0,hit-1300):hit+2700])[:3800],flush=True)
             for keyword in ("리뷰어신청","신청","모집","detail.php","D-"):
                 print("COUNT",keyword,body.count(keyword),flush=True)
         except Exception as e:print("ERROR",u,type(e).__name__,str(e)[:130],flush=True)
