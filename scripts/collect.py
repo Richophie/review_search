@@ -1883,6 +1883,105 @@ def odiya():
     return list(out.values())
 
 
+
+def bloglab():
+    """Official Bloglab public, recruiting LIST cards; no login or private APIs.
+
+    '상시모집' does not provide an application deadline. Such campaigns are
+    kept for only 48 hours after last live observation, never assigned a
+    speculative deadline. Marketplace-only purchase reviews are excluded.
+    """
+    base="https://www.bloglab.kr/"
+    pages=[
+        "",
+        "campaign_list.php",
+        "campaign_list.php?category_id=001A",
+        "campaign_list.php?category_id=002A",
+        "campaign_list.php?category_id=004A",
+        "campaign_list.php?category_id=046A",
+        "campaign_list.php?category_id=001A006A",
+        "campaign_list.php?category_id=001A005A",
+        "campaign_list.php?page=2",
+        "campaign_list.php?page=3",
+    ]
+    out={}
+    for rel in pages:
+        url=urllib.parse.urljoin(base,rel)
+        try:
+            body=safe_fetch(url)
+            if not body:
+                continue
+        except Exception as exc:
+            print("블로그랩 public list error",rel,repr(exc)[:100],flush=True)
+            continue
+        cards=re.findall(r'<li>\s*<div\s+class="box">([\s\S]*?)</li>',body,re.I)
+        added=0
+        for card in cards:
+            cid=one(r'campaign\.php\?cp_id=(\d+)',card,re.I)
+            if not cid or cid in out:
+                continue
+            title=plain(one(r'<span\s+class="it_name"[^>]*>([\s\S]*?)</span>',card,re.I))
+            if not title or len(title)<5 or len(title)>220:
+                continue
+            # Only include campaigns visibly accepting applications; these
+            # flags must occur inside THIS campaign card, never the footer.
+            remain=plain(one(r'<span[^>]*class="[^"]*\bdday\b[^"]*"[^>]*>([\s\S]*?)</span>',card,re.I))
+            if not remain or re.search("모집마감|신청마감|종료|선정|발표",remain):
+                continue
+            match=re.search(r'D\s*[-–]\s*(\d+)',remain,re.I)
+            is_today=bool(re.search(r'D\s*[-–]?\s*Day|오늘\s*마감',remain,re.I))
+            always_open="상시모집" in remain
+            days=int(match.group(1)) if match else 0 if is_today else None
+            if days is None and not always_open:
+                continue
+            if re.search(r'구매평|상품평|리뷰\s*구매|페이백',title,re.I):
+                continue
+            applicants=number(one(r'<b[^>]*>\s*([\d,]+)\s*</b>\s*명\s*신청',card,re.I))
+            slots=number(one(r'<b[^>]*>\s*([\d,]+)\s*</b>\s*명\s*모집중',card,re.I))
+            if slots is None or slots<=0 or applicants is None:
+                continue
+            desc=plain(one(r'<span[^>]*class="it_description"[^>]*>([\s\S]*?)</span>',card,re.I))
+            benefit=desc
+            channels=[]
+            badges=plain(one(r'<div[^>]*class="top_info"[^>]*>([\s\S]*?)</div>',card,re.I))
+            # A medium must appear explicitly in a badge or in the campaign
+            # title, not be inferred from the domain or generic label.
+            text_label=title+" "+badges
+            for pat,medium in ((r'인스타그램|인스타체험단|인스타\s*피드',"인스타그램"),
+                               (r'네이버\s*클립',"네이버클립"),
+                               (r'유튜브',"유튜브"),
+                               (r'블로그|블로그기자단',"블로그"),
+                               (r'틱톡',"틱톡")):
+                if re.search(pat,text_label,re.I) and medium not in channels:
+                    channels.append(medium)
+            card_media=(r'<img[^>]*src=["\'][^"\']*(?:blog|instagram|insta|youtube|tiktok|clip)'
+                        r'[^"\']*["\']')
+            img_media=re.search(card_media,card,re.I)
+            if not channels and img_media:
+                label=img_media.group(0).lower()
+                channels=[next((v for k,v in (("instagram","인스타그램"),("insta","인스타그램"),
+                    ("youtube","유튜브"),("tiktok","틱톡"),("clip","네이버클립"),
+                    ("blog","블로그")) if k in label),"블로그")]
+            typ=plain(one(r'<div\s+class="option2"[^>]*>([\s\S]*?)</div>',card,re.I))
+            ctype=next((k for k in ("방문형","배송형","기자단") if k in typ),None)
+            prefix=one(r'^\[([^\]]{2,80})\]',title)
+            region=prefix if prefix and re.search(r'^(?:서울|인천|경기|강원|충북|충남|대전|세종|경북|경남|대구|부산|울산|광주|전북|전남|제주|[가-힣]+시/)',prefix) else None
+            pic=one(r'<img[^>]*class="it_img"[^>]*src=["\']([^"\']+)',card,re.I)
+            if not pic:
+                pic=one(r'<img[^>]*src=["\']([^"\']+)["\'][^>]*class="it_img"',card,re.I)
+            image=urllib.parse.urljoin(base,html.unescape(pic)) if pic else None
+            item=make("bloglab",cid,title,base+"campaign.php?cp_id="+cid,
+                      region=region,desc=desc,benefit=benefit,image=image,
+                      applicants=applicants,slots=slots,days=days,
+                      open_verified=always_open,channels=channels,ctype=ctype)
+            if item:
+                out[cid]=item
+                added+=1
+        print("블로그랩 public",rel or "/",len(cards),"cards",added,"new",flush=True)
+        time.sleep(0.9)
+    return list(out.values())
+
+
 def main():
     OUT.parent.mkdir(parents=True, exist_ok=True)
     try:

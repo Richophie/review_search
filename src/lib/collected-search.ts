@@ -34,7 +34,8 @@ const PLATFORM: Record<string, [string,string]> = {
   reviewplace:["리뷰플레이스","https://reviewplace.co.kr/"],
   gangnammat:["강남맛집","https://gangnam-review.net/"],
   realreview:["리얼리뷰","https://www.real-review.kr/"],
-  odiya:["어디야","https://odiya.kr/"]
+  odiya:["어디야","https://odiya.kr/"],
+  bloglab:["블로그랩","https://www.bloglab.kr/"]
 };
 const TABS = ["all","new","today","soon","lowcomp","zero"] as const;
 const DAY_MS = 86400000;
