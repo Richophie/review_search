@@ -1788,7 +1788,7 @@ def odiya():
         # onclick link to a specific public detail.php?number=<integer>.
         parts=re.split(
             r'<div\s+id=["\']["\']\s+class=["\']rows_margin["\']',
-            doc,re.I,
+            doc,flags=re.I,
         )[1:]
         accepted=0
         scanned=0
