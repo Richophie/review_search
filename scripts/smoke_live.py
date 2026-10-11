@@ -5,7 +5,7 @@ import urllib.error
 import urllib.request
 from urllib.parse import urlencode
 
-BASE="https://review-search-pulim.vercel.app/"
+BASE="https://review-search-two.vercel.app/"
 CASES=[
   ("전국 기본",{}),
   ("경쟁률 낮은순",{"sort":"ratio","tab":"lowcomp"}),
