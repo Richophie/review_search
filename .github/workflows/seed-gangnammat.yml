@@ -1,0 +1,54 @@
+name: Seed Gangnam Matzip public campaigns
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/seed-gangnammat.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gangnammat-seed
+  cancel-in-progress: true
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify collector syntax
+        run: python -m py_compile scripts/collect.py scripts/seed_gangnammat.py scripts/merge_snapshot.py
+      - name: Collect verified public Gangnam listing cards
+        run: python scripts/seed_gangnammat.py
+      - name: Validate prior to commit
+        run: |
+          python scripts/validate_snapshot.py
+          python scripts/audit_snapshot.py
+      - name: Safely merge on latest main
+        run: |
+          cp public/data/campaigns.json "$RUNNER_TEMP/gangnam-seed.json"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            python scripts/merge_snapshot.py "$RUNNER_TEMP/gangnam-seed.json"
+            python scripts/validate_snapshot.py
+            python scripts/audit_snapshot.py
+            if git diff --quiet -- public/data/campaigns.json public/data/collection_status.json; then
+              echo "No verified changes"
+              exit 0
+            fi
+            git add public/data/campaigns.json public/data/collection_status.json
+            git commit -m "chore(data): seed verified Gangnam Matzip campaigns"
+            if git push origin HEAD:main; then exit 0; fi
+            sleep 2
+          done
+          echo "Seed publish failed after retries" >&2
+          exit 1
