@@ -1,18 +1,18 @@
 {
   "as_of_date_kst": "2026-10-11",
-  "snapshot_records": 12403,
+  "snapshot_records": 12407,
   "platforms_with_records": 22,
   "media_counts": {
     "네이버클립": 1851,
-    "블로그": 7856,
+    "블로그": 7860,
     "쇼츠": 7,
-    "유튜브": 11,
-    "인스타그램": 646,
+    "유튜브": 12,
+    "인스타그램": 647,
     "틱톡": 5
   },
   "media_unknown": 2373,
-  "deadline_unknown": 110,
-  "images_present": 12328,
+  "deadline_unknown": 114,
+  "images_present": 12332,
   "images_missing": 75,
   "published_today_confirmed": 1,
   "duplicate_id_or_original_url_count": 0,
@@ -95,11 +95,11 @@
       "deadline_unknown": 0
     },
     "modootogether": {
-      "records": 11,
-      "images_present": 11,
+      "records": 15,
+      "images_present": 15,
       "images_missing": 0,
       "media_unknown": 0,
-      "deadline_unknown": 0
+      "deadline_unknown": 4
     },
     "mrblog": {
       "records": 72,
