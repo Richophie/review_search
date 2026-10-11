@@ -1214,7 +1214,7 @@ def reviewnote():
             if self.stack[-1]["tag"]!=tag: return
             node=self.stack.pop()
             value=plain(" ".join(node["text"]))
-            if len(node["links"])==1 and re.search(r"\d+\s*일\s*남음",value) and re.search(r"신청\s*[\d,]+\s*/\s*[\d,]+",value):
+            if len(node["links"])==1 and re.search(r"\d+\s*일\s*남음",value) and re.search(r"(?:신청|선착순)\s*[\d,]+\s*/\s*[\d,]+",value):
                 self.candidates.append(node)
 
     # Public user-facing filter variants expose different candidate sets.
@@ -1263,7 +1263,7 @@ def reviewnote():
             cid=next(iter(card["links"]))
             if cid in out: continue
             line=plain(" ".join(card["text"]))
-            stats=re.search(r"신청\s*([\d,]+)\s*/\s*([\d,]+)",line)
+            stats=re.search(r"(?:신청|선착순)\s*([\d,]+)\s*/\s*([\d,]+)",line)
             dday=re.search(r"(\d+)\s*일\s*남음",line)
             if not stats or not dday: continue
             # A card title must explicitly carry a location/recruitment marker.
