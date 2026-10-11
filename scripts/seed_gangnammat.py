@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
 """Targeted, publicly permitted Gangnam Matzip snapshot enrichment."""
 import json
-from collect import OUT, gangnammat
+import re
+import time
+import html
+import urllib.parse
+from collect import OUT, gangnammat, safe_fetch
 
 def main():
     paths = [
@@ -11,6 +15,31 @@ def main():
         "https://gangnam-review.net/cp/?ca=40",
         "https://gangnam-review.net/cp/?ch=clip",
     ]
+    # Discover only category URLs that are directly linked from the
+    # provider's official public listing navigation. No generated IDs,
+    # guessing, or access to unadvertised endpoints.
+    discovered = []
+    for parent in paths[:4]:
+        try:
+            body = safe_fetch(parent)
+            if not body:
+                continue
+            for href in re.findall(r'href\s*=\s*["\x27]([^"\x27]+)',body,re.I):
+                href = html.unescape(href).replace("http://gangnam-review.net/", "https://gangnam-review.net/")
+                url=urllib.parse.urljoin(parent,href)
+                parts=urllib.parse.urlsplit(url)
+                if parts.scheme!="https" or parts.hostname!="gangnam-review.net" or parts.path!="/cp/":
+                    continue
+                ca=urllib.parse.parse_qs(parts.query).get("ca",[])
+                if len(ca)!=1 or not re.fullmatch(r"\d{2,5}",ca[0]):
+                    continue
+                canonical="https://gangnam-review.net/cp/?ca="+ca[0]
+                if canonical not in paths and canonical not in discovered:
+                    discovered.append(canonical)
+        except Exception as exc:
+            print("Gangnam public nav discovery skipped",parent,repr(exc)[:125],flush=True)
+    paths.extend(discovered[:28])
+    print("Gangnam official nav discovered",len(discovered),"following",len(paths),"public pages",flush=True)
     verified = {}
     for url in paths:
         try:
@@ -19,6 +48,7 @@ def main():
                 verified[item["id"]] = item
         except Exception as exc:
             print("Gangnam category not verified:", url, repr(exc)[:160], flush=True)
+        time.sleep(0.45)
     items = list(verified.values())
     print("Gangnam listing categories verified:", len(paths), "unique records:", len(items), flush=True)
     if not items:
