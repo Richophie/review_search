@@ -1,0 +1,58 @@
+name: Seed Odiya public campaigns
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/seed-odiya.yml"
+      - "scripts/seed_odiya.py"
+  schedule:
+    - cron: "45 0,12 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: odiya-seed
+  cancel-in-progress: true
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      ODIYA_MAX_DETAILS: "16"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify parser syntax
+        run: python -m py_compile scripts/collect.py scripts/seed_odiya.py scripts/merge_snapshot.py
+      - name: Verify public listing and original detail deadlines
+        run: python scripts/seed_odiya.py
+      - name: Verify snapshot integrity
+        run: |
+          python scripts/validate_snapshot.py
+          python scripts/audit_snapshot.py
+      - name: Publish after conflict-safe merge
+        run: |
+          cp public/data/campaigns.json "$RUNNER_TEMP/odiya-verified.json"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            python scripts/merge_snapshot.py "$RUNNER_TEMP/odiya-verified.json"
+            python scripts/validate_snapshot.py
+            python scripts/audit_snapshot.py
+            if git diff --quiet -- public/data/campaigns.json public/data/collection_status.json; then
+              echo "No new verified Odiya data"
+              exit 0
+            fi
+            git add public/data/campaigns.json public/data/collection_status.json
+            git commit -m "chore(data): seed verified Odiya campaigns"
+            if git push origin HEAD:main; then exit 0; fi
+            sleep 2
+          done
+          exit 1
