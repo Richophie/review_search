@@ -1,10 +1,10 @@
 {
   "as_of_date_kst": "2026-10-11",
-  "snapshot_records": 11775,
+  "snapshot_records": 11873,
   "platforms_with_records": 19,
   "media_counts": {
-    "네이버클립": 1768,
-    "블로그": 7414,
+    "네이버클립": 1786,
+    "블로그": 7494,
     "쇼츠": 6,
     "유튜브": 10,
     "인스타그램": 590,
@@ -12,7 +12,7 @@
   },
   "media_unknown": 2262,
   "deadline_unknown": 5,
-  "images_present": 11690,
+  "images_present": 11788,
   "images_missing": 85,
   "published_today_confirmed": 1,
   "duplicate_id_or_original_url_count": 0,
@@ -67,8 +67,8 @@
       "deadline_unknown": 0
     },
     "gangnammat": {
-      "records": 25,
-      "images_present": 25,
+      "records": 123,
+      "images_present": 123,
       "images_missing": 0,
       "media_unknown": 0,
       "deadline_unknown": 0
