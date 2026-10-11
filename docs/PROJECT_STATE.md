@@ -1,5 +1,16 @@
 # 체험단 모아보기 — 프로젝트 인수인계
 
+## 2026-10-11 14:26 KST 실측·연동 결과 (현재 우선 확인)
+
+- `public/data/collection_status.json`: **11,873건, 실제 공고 보유 19곳**; 원본 ID/URL 중복 0건. 이전 11,531건/17곳은 과거 기록.
+- 리뷰플레이스 0 → 20건, 리뷰노트 1,986건, 강남맛집 신규 123건. 강남맛집은 robots 허용된 공식 공개 목록 5곳에서 제목/마감/모집/신청/원본 링크 확인 후 자동 수집함.
+- 강남맛집 1회 공개 목록의 28개 링크 중 첫 페이지에서 검증 25개, 5개 분류 목록 통합 결과 서로 다른 123개 검증. 신청 완료/마감 불명확한 항목은 포함하지 않음.
+- `scripts/seed_gangnammat.py` + `.github/workflows/seed-gangnammat.yml`: 카테고리 목록 통합 및 중복 보존형 병합 성공, 1일 1회 갱신 설정. 수집 대상 추가 시 robots/원본 리스트/파서 확인 후 확장.
+- `scripts/probe_public_sources.py`로 신규 소스의 robots·공개 경로를 읽기 전용 조사: 클라우드리뷰는 robots.txt 유효 지시문 판정 불가하여 수집 중단, 레뷰 공식 webview는 기본 HTML에 캠페인 링크 없음. 확실하지 않은 외부 소스를 연결 완료로 표시하지 않음.
+- GitHub 데이터 저장 성공과 Vercel production 최신 배포 반영은 **별개**. 마지막 배포 SHA·READY 확인 후 방문자 노출을 확정할 것.
+
+---
+
 ## 2026-10-11 실제 GitHub/Vercel 확인 메모 (대화 보고치와 구분)
 
 - GitHub `main`의 `public/data/collection_status.json` 확인: **11,531건, 데이터 있는 플랫폼 17곳, Python 수집 함수 18개**, 소스별 현황은 [SOURCE_REGISTRY.md](./SOURCE_REGISTRY.md) 참고.
