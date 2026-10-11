@@ -23,6 +23,18 @@ def main():
                 if m<0:m=body.find(v.replace(BASE,""))
                 if m<0:m=body.find(v)
                 print("ANCHOR_CONTEXT",re.sub(r"\s+"," ",body[max(m-1200,0):m+1200])[:2600],flush=True)
+            if u==BASE:
+                dm=re.search(r'onclick=location.href=["\x27](detail\.php\?number=\d+[^"\x27]*)',body)
+                if dm:
+                    du=urljoin(BASE,html.unescape(dm.group(1)))
+                    if rp.can_fetch(AGENT,du):
+                        db=get(du)
+                        for key,pat in (("og:title",r'<meta[^>]+property=["\x27]og:title["\x27][^>]+content=["\x27]([^"\x27]+)'),("page title",r'<title[^>]*>([\s\S]*?)</title>'),("h1",r'<h1[^>]*>([\s\S]*?)</h1>')):
+                            m=re.search(pat,db,re.I)
+                            print("DETAIL_FIELD",key,html.unescape(m.group(1)[:250]) if m else "MISSING",flush=True)
+                        for marker in ("리뷰어신청","모집인원","신청","캠페인 기간"):
+                            p=db.find(marker)
+                            if p>=0: print("DETAIL_CONTEXT",marker,re.sub(r"\\s+"," ",db[max(0,p-550):p+700])[:1100],flush=True)
             for mark in ("리뷰어신청", "신청&nbsp;", "모집인원", "신청\u00a0", "리뷰어발표"):
                 hit=body.find(mark)
                 if hit>=0:
