@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { todayIn } from "@/lib/collector/normalize";
 
 export type CampaignItem = {
@@ -47,13 +48,32 @@ function Stats({ c }: { c: CampaignItem }) {
   );
 }
 
+function CampaignThumbnail({ url, title, compact = false }: { url: string | null; title: string; compact?: boolean }) {
+  const [failed, setFailed] = useState(false);
+  const safeUrl = url && /^https:\/\//i.test(url) ? url : null;
+  return (
+    <div className="relative h-full w-full overflow-hidden bg-muted">
+      {safeUrl && !failed ? (
+        <img src={safeUrl} alt={title} loading="lazy" decoding="async"
+          className="block h-full w-full object-cover object-center"
+          onError={() => setFailed(true)} />
+      ) : (
+        <div className="flex h-full w-full flex-col items-center justify-center gap-1 bg-muted px-3 text-center text-muted-foreground">
+          <span aria-hidden="true" className={compact ? "text-lg" : "text-3xl"}>📷</span>
+          {!compact && <span className="line-clamp-2 text-xs font-medium">{title}</span>}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export function CampaignCard({ c, today, sources }: { c: CampaignItem; today: string; sources: Src[] }) {
   const d = dday(c.apply_deadline, c.timezone, today);
   const name = (id: string) => sources.find((s) => s.id === id)?.name ?? id;
   return (
     <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-card">
       <div className="relative aspect-square overflow-hidden bg-muted">
-        {c.image_url && <img src={c.image_url} alt="" loading="lazy" className="block h-full w-full object-cover object-center" referrerPolicy="no-referrer" />}
+        <CampaignThumbnail url={c.image_url} title={c.title} />
         <span className={`absolute left-2 top-2 rounded-md px-2 py-0.5 text-xs font-bold ${d.urgent ? "bg-urgent text-primary-foreground" : "bg-card text-foreground"}`}>
           {d.label}
         </span>
@@ -94,7 +114,7 @@ export function CampaignRow({ c, today, sources }: { c: CampaignItem; today: str
   return (
     <article className="flex gap-3 p-3">
       <div className="h-20 w-20 shrink-0 overflow-hidden rounded-lg bg-muted">
-        {c.image_url && <img src={c.image_url} alt="" loading="lazy" className="block h-full w-full object-cover object-center" referrerPolicy="no-referrer" />}
+        <CampaignThumbnail url={c.image_url} title={c.title} compact />
       </div>
       <div className="min-w-0 flex-1 space-y-1">
         <div className="flex items-center gap-2">
