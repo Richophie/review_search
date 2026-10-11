@@ -1288,6 +1288,63 @@ def reviewnote():
                             }""")
                             page.mouse.wheel(0, 1400)
                             page.wait_for_timeout(750)
+                        # Reviewnote also has numbered pagination (1–10 and
+                        # subsequent page groups). Scroll alone misses it.
+                        # Click visible page numbers in the normal public UI,
+                        # verifying that campaign IDs actually change.
+                        page_number = 1
+                        repeated = 0
+                        for _ in range(75):
+                            next_number = page_number + 1
+                            candidates = page.locator("button, a").filter(
+                                has_text=re.compile(r"^\\s*" + str(next_number) + r"\\s*$"))
+                            clicked = False
+                            for j in range(min(candidates.count(), 12)):
+                                candidate = candidates.nth(j)
+                                if not candidate.is_visible():
+                                    continue
+                                try:
+                                    candidate.click(timeout=1800)
+                                    clicked = True
+                                    break
+                                except Exception:
+                                    continue
+                            if not clicked:
+                                # Page groups often show 1-10 then a > arrow.
+                                # Use a visibly named Next control only; never
+                                # synthesize or call a private endpoint.
+                                nav_next = page.get_by_role("button",name=re.compile(
+                                    r"^(다음|다음 페이지|Next|›|»|>)$"))
+                                try:
+                                    nav_next.first.click(timeout=1800)
+                                    page.wait_for_timeout(700)
+                                    candidates = page.locator("button, a").filter(
+                                        has_text=re.compile(r"^\\s*" + str(next_number) + r"\\s*$"))
+                                    for j in range(min(candidates.count(), 12)):
+                                        if candidates.nth(j).is_visible():
+                                            candidates.nth(j).click(timeout=1800)
+                                            clicked=True
+                                            break
+                                except Exception:
+                                    pass
+                            if not clicked:
+                                print("리뷰노트 numbered pagination ended",url,"at",page_number,flush=True)
+                                break
+                            page.wait_for_timeout(850)
+                            snapshot = page.content()
+                            current = set(re.findall(r'/campaigns/(\\d+)',snapshot))
+                            new_ids = current - ids
+                            fragments.append(snapshot)
+                            if not new_ids:
+                                repeated += 1
+                            else:
+                                repeated = 0
+                            ids.update(current)
+                            page_number = next_number
+                            print("리뷰노트 page",url,"number",page_number,
+                                  "new",len(new_ids),"unique total",len(ids),flush=True)
+                            if repeated >= 2:
+                                break
                         browser_pages[url]="\n".join(fragments)
                         print("리뷰노트 browser",url,"visible IDs",len(ids),"scroll snapshots",len(fragments),flush=True)
                     # Discover additional listings using the actual public
