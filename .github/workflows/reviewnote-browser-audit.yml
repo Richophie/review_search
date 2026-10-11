@@ -6,12 +6,12 @@ on:
     - cron: "20 2 * * *"
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   browser-audit:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -23,6 +23,28 @@ jobs:
           python -m playwright install --with-deps chromium
       - name: Count public reviewnote cards seen while scrolling
         run: python scripts/probe_reviewnote_browser.py
+      - name: Collect rendered public campaign cards
+        env:
+          REVIEWNOTE_ONLY: "1"
+          REVIEWNOTE_BROWSER: "1"
+        run: python scripts/collect.py
+      - name: Validate campaign snapshot
+        run: python scripts/validate_snapshot.py
+      - name: Update coverage report
+        run: python scripts/audit_snapshot.py
+      - name: Commit verified snapshot
+        run: |
+          if git diff --quiet -- public/data/campaigns.json public/data/collection_status.json; then
+            echo "No changes from browser-backed Reviewnote collector"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data/campaigns.json public/data/collection_status.json
+          git commit -m "chore(data): refresh browser-observed Reviewnote campaigns"
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main
       - uses: actions/upload-artifact@v4
         if: always()
         with:
