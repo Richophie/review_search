@@ -1,27 +1,27 @@
 {
   "as_of_date_kst": "2026-10-11",
-  "snapshot_records": 11982,
+  "snapshot_records": 11985,
   "platforms_with_records": 19,
   "media_counts": {
     "네이버클립": 1806,
     "블로그": 7578,
     "쇼츠": 6,
     "유튜브": 10,
-    "인스타그램": 615,
+    "인스타그램": 616,
     "틱톡": 5
   },
-  "media_unknown": 2262,
+  "media_unknown": 2264,
   "deadline_unknown": 5,
-  "images_present": 11907,
+  "images_present": 11910,
   "images_missing": 75,
   "published_today_confirmed": 1,
   "duplicate_id_or_original_url_count": 0,
   "sources": {
     "assaview": {
-      "records": 541,
-      "images_present": 541,
+      "records": 542,
+      "images_present": 542,
       "images_missing": 0,
-      "media_unknown": 522,
+      "media_unknown": 523,
       "deadline_unknown": 0
     },
     "bqueens": {
@@ -116,17 +116,17 @@
       "deadline_unknown": 0
     },
     "reviewnote": {
-      "records": 2095,
-      "images_present": 2020,
+      "records": 2096,
+      "images_present": 2021,
       "images_missing": 75,
       "media_unknown": 0,
       "deadline_unknown": 0
     },
     "reviewplace": {
-      "records": 20,
-      "images_present": 20,
+      "records": 21,
+      "images_present": 21,
       "images_missing": 0,
-      "media_unknown": 8,
+      "media_unknown": 9,
       "deadline_unknown": 0
     },
     "ringble": {
