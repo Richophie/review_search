@@ -2,9 +2,12 @@ name: Seed Gangnam Matzip public campaigns
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "30 1 * * *"
   push:
     paths:
       - ".github/workflows/seed-gangnammat.yml"
+      - "scripts/seed_gangnammat.py"
 
 permissions:
   contents: write
