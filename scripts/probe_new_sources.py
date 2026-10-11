@@ -19,8 +19,8 @@ SOURCES = {
         "detail": r"https?://(?:www\.)?reviewnote\.co\.kr/campaigns/(\d+)|(?:^|[\"'])/campaigns/(\d+)",
     },
     "gangnam": {
-        "pages": ["https://gangnam-review.net/", "https://gangnam-review.net/cp/"],
-        "detail": r"(?:https?://gangnam-review\.net)?/cp/\?id=(\d+)",
+        "pages": ["https://gangnam-review.net/cp/", "https://gangnam-review.net/"],
+        "detail": r"(?:https?://(?:gangnam-review\.net|xn--939au0g4vj8sq\.net))?/cp/\?id=(\d+)",
     },
     "revu": {
         "pages": ["https://webview.revu.net/"],
