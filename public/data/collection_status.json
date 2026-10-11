@@ -1,23 +1,23 @@
 {
   "as_of_date_kst": "2026-10-11",
-  "snapshot_records": 9753,
+  "snapshot_records": 9925,
   "platforms_with_records": 17,
   "media_counts": {
-    "네이버클립": 640,
-    "블로그": 7093,
-    "쇼츠": 3,
-    "유튜브": 7,
-    "인스타그램": 315,
-    "틱톡": 4
+    "네이버클립": 1555,
+    "블로그": 5834,
+    "쇼츠": 5,
+    "유튜브": 9,
+    "인스타그램": 330,
+    "틱톡": 5
   },
-  "media_unknown": 1719,
+  "media_unknown": 2254,
   "deadline_unknown": 5,
-  "published_today_confirmed": 0,
+  "published_today_confirmed": 1,
   "duplicate_id_or_original_url_count": 0,
   "sources": {
     "assaview": {
-      "records": 461,
-      "media_unknown": 443,
+      "records": 541,
+      "media_unknown": 522,
       "deadline_unknown": 0
     },
     "bqueens": {
@@ -37,11 +37,11 @@
     },
     "dinnerqueen": {
       "records": 8518,
-      "media_unknown": 996,
+      "media_unknown": 1451,
       "deadline_unknown": 0
     },
     "fourblog": {
-      "records": 101,
+      "records": 102,
       "media_unknown": 1,
       "deadline_unknown": 0
     },
@@ -56,8 +56,8 @@
       "deadline_unknown": 5
     },
     "modan": {
-      "records": 46,
-      "media_unknown": 46,
+      "records": 47,
+      "media_unknown": 47,
       "deadline_unknown": 0
     },
     "modootogether": {
@@ -66,7 +66,7 @@
       "deadline_unknown": 0
     },
     "mrblog": {
-      "records": 71,
+      "records": 72,
       "media_unknown": 0,
       "deadline_unknown": 0
     },
@@ -81,7 +81,7 @@
       "deadline_unknown": 0
     },
     "reviewnote": {
-      "records": 92,
+      "records": 181,
       "media_unknown": 0,
       "deadline_unknown": 0
     },
