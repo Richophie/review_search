@@ -1196,7 +1196,10 @@ def reviewnote():
                     node["links"].add(match.group(1))
             if tag=="img":
                 alt=attrs.get("alt","")
-                src=attrs.get("src","")
+                src=(attrs.get("src") or attrs.get("data-src") or
+                     attrs.get("data-original") or "")
+                if not src and attrs.get("srcset"):
+                    src=attrs["srcset"].split(",")[0].strip().split(" ")[0]
                 for node in self.stack:
                     if alt: node["labels"].append(alt)
                     if src and not node["images"]: node["images"].append(src)
@@ -1442,9 +1445,17 @@ def reviewnote():
             # An image alt/name alone is not a sufficient basis for guessing
             # Instagram feed vs reels; both are mapped to existing broad filter.
             ctype=next((t for t in ("방문형","배송형","기자단","구매평") if t in line),None)
+            # Preserve the public card's actual thumbnail, not the large
+            # category/logo images from adjacent cards.
+            image_url=None
+            for candidate_image in card["images"]:
+                resolved=urllib.parse.urljoin("https://www.reviewnote.co.kr/",html.unescape(candidate_image))
+                if resolved.startswith("https://") and not re.search(r"/(?:logo|favicon|icon)[./_-]",resolved,re.I):
+                    image_url=resolved
+                    break
             item=make("reviewnote",cid,title,
                 "https://www.reviewnote.co.kr/campaigns/"+cid,
-                region=region,slots=number(stats.group(2)),
+                region=region,image=image_url,slots=number(stats.group(2)),
                 applicants=number(stats.group(1)),days=int(dday.group(1)),
                 channels=channels,ctype=ctype)
             if item:
@@ -1480,6 +1491,10 @@ def main():
                 previous = stored.get(item["id"])
                 if previous:
                     item["first_seen_at"] = previous.get("first_seen_at", item["first_seen_at"])
+                    # Do not erase a previously captured photo if this run
+                    # encounters a card with no publicly exposed image.
+                    if not item.get("image_url") and previous.get("image_url"):
+                        item["image_url"] = previous["image_url"]
                 stored[item["id"]] = item
             found += len(items)
         except Exception as ex:
