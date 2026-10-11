@@ -22,7 +22,6 @@ SITES = {
         "https://www.cloudreview.co.kr/campaign/instagram",
     ],
     "gangnammat": [
-        "https://xn--939au0g4vj8sq.net/cp/",
         "https://gangnam-review.net/cp/",
     ],
     "revu": ["https://webview.revu.net/"],
