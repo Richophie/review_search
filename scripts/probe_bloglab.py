@@ -28,7 +28,9 @@ def main():
      print("ROBOTS BLOCKED",url,flush=True);continue
     try:
      final,doc=get(url)
-     if re.search(r"cf-challenge|verify you are human|captcha",doc[:2200],re.I):
+     title=re.findall(r'<title[^>]*>([^<]+)',doc,re.I)[:1]
+     print("PAGE_DIAGNOSTIC",url,"title",title,"start",re.sub(r"\\s+"," ",doc[:1300])[:1300],flush=True)
+     if re.search(r"cf-challenge|verify you are human|Just a moment",doc[:2200],re.I) and not re.search("모집중|상시모집|실시간 리뷰",doc,re.I):
       print("CHALLENGE",url,flush=True);continue
      links=[html.unescape(x) for x in re.findall(r'(?:href|data-href)\s*=\s*["\x27]([^"\x27]+)',doc,re.I)]
      hits=list(dict.fromkeys([urljoin(final,u) for u in links if re.search(r"(?i)(?:view|item|detail|campaign|experience|review|\bno=|\bidx=|\bnum=|\bid=)",u)]))
