@@ -1793,7 +1793,7 @@ def odiya():
         accepted=0
         scanned=0
         for p in parts:
-            if scanned>=35:
+            if scanned >= max(5, min(35, int(os.getenv("ODIYA_MAX_DETAILS", "16")))):
                 break
             card=p[:14000]
             m=re.search(
