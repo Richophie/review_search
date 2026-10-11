@@ -54,7 +54,7 @@ function CampaignThumbnail({ url, title, compact = false }: { url: string | null
   return (
     <div className="relative h-full w-full overflow-hidden bg-muted">
       {safeUrl && !failed ? (
-        <img src={safeUrl} alt={title} loading="lazy" decoding="async"
+        <img src={safeUrl} alt={title} loading="eager" decoding="async"
           className="block h-full w-full object-cover object-center"
           onError={() => setFailed(true)} />
       ) : (
