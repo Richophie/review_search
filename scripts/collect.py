@@ -1473,65 +1473,97 @@ def reviewnote():
 
 
 def reviewplace():
-    """Public ReviewPlace cards only; no account, internal API or guessed deadline."""
-    base = "https://reviewplace.co.kr/"
+    """Only public, verifiable ReviewPlace listing cards; no private endpoints."""
+    from html.parser import HTMLParser
+
+    class Anchors(HTMLParser):
+        def __init__(self):
+            super().__init__(convert_charrefs=True)
+            self.active = []
+            self.cards = []
+        def handle_starttag(self, tag, attrs):
+            attrs = dict(attrs)
+            if tag == "a":
+                href = html.unescape(attrs.get("href") or "")
+                url = urllib.parse.urljoin("https://www.reviewplace.co.kr/", href)
+                pu = urllib.parse.urlparse(url)
+                cid = urllib.parse.parse_qs(pu.query).get("id", [])
+                valid = (pu.hostname in ("www.reviewplace.co.kr", "reviewplace.co.kr")
+                         and pu.path.rstrip("/") == "/pr"
+                         and cid and cid[0].isdigit())
+                self.active.append({"id": cid[0] if valid else None,
+                                    "text": [], "image": None})
+            elif tag == "img" and self.active:
+                img = (attrs.get("data-src") or attrs.get("src") or
+                       attrs.get("data-original"))
+                if img and not self.active[-1]["image"]:
+                    self.active[-1]["image"] = urllib.parse.urljoin(
+                        "https://www.reviewplace.co.kr/", html.unescape(img))
+        def handle_data(self, data):
+            if self.active:
+                self.active[-1]["text"].append(data)
+        def handle_endtag(self, tag):
+            if tag == "a" and self.active:
+                node = self.active.pop()
+                if node["id"]:
+                    self.cards.append(node)
+                if self.active:
+                    self.active[-1]["text"].extend(node["text"])
+
+    base = "https://www.reviewplace.co.kr/"
     paths = ["/pr/?ct1=제품", "/pr/?ct1=지역",
-             "/pr/?ct1=기자단", "/pr/?ct1=구매평"]
+             "/pr/?ct1=기자단", "/pr/?ct1=구매평", "/"]
     out = {}
     for path in paths:
+        url = urllib.parse.urljoin(base, path)
         try:
-            doc = safe_fetch(urllib.parse.urljoin(base, path))
-        except Exception as ex:
-            print("reviewplace public list unavailable", path, repr(ex)[:120], flush=True)
+            doc = safe_fetch(url)
+            if not doc:
+                continue
+        except Exception as exc:
+            print("reviewplace fetch failed", url, repr(exc)[:120], flush=True)
             continue
-        # A public campaign's canonical identifying URL is /pr/?id=<number>.
-        links = re.findall(r'<a\b([^>]*\bhref\s*=\s*["\x27][^"\x27]*?/pr/\?id=\d+[^"\x27]*["\x27][^>]*)>([\s\S]*?)</a>', doc, re.I)
-        for attrs, inner in links:
-            href_match = re.search(r'href\s*=\s*["\x27]([^"\x27]+)', attrs, re.I)
-            if not href_match:
-                continue
-            url = urllib.parse.urljoin(base, html.unescape(href_match.group(1)))
-            parsed = urllib.parse.urlparse(url)
-            ids = urllib.parse.parse_qs(parsed.query).get("id", [])
-            if not ids or not ids[0].isdigit():
-                continue
-            cid = ids[0]
+        parser = Anchors()
+        parser.feed(doc)
+        added = 0
+        for node in parser.cards:
+            cid = node["id"]
             if cid in out:
                 continue
-            label = plain(inner)
-            d = re.search(r'(?:D\s*[-–]\s*(\d+)|오늘\s*마감)', label, re.I)
-            if not d:
+            raw = plain(" ".join(node["text"]))
+            match = re.search(r"(?:D\s*[-–]\s*(\d+)|오늘\s*마감)", raw, re.I)
+            stat = re.search(r"신청\s*([\d,]+)\s*/\s*([\d,]+)\s*명?", raw)
+            if not match or not stat:
                 continue
-            days = int(d.group(1)) if d.group(1) else 0
-            stats = re.search(r'신청\s*([\d,]+)\s*/\s*([\d,]+)\s*명?', label)
-            if not stats:
+            days = int(match.group(1)) if match.group(1) else 0
+            title = raw[:match.start()].strip()
+            if len(title) < 6 or len(title) > 280:
                 continue
-            # Reject ambiguous fragments: link text must include a real title.
-            title = re.split(r'D\s*[-–]\s*\d+|오늘\s*마감|신청\s*[\d,]+', label, maxsplit=1)[0].strip()
-            if len(title) < 5:
-                continue
-            channel = []
-            for term, value in (("블로그", "블로그"), ("인스타", "인스타그램"),
-                                ("릴스", "인스타그램"), ("유튜브", "유튜브"),
-                                ("쇼츠", "쇼츠"), ("클립", "네이버클립")):
-                if term in title and value not in channel:
-                    channel.append(value)
+            label = re.search(r"^\[([^\]]{1,60})\]", title)
+            chtext = label.group(1) if label else ""
+            channels = []
+            for marker, value in (("블로그", "블로그"), ("클립", "네이버클립"),
+                                  ("인스타", "인스타그램"), ("릴스", "인스타그램"),
+                                  ("유튜브", "유튜브"), ("쇼츠", "쇼츠")):
+                if marker in chtext and value not in channels:
+                    channels.append(value)
             typ = ("기자단" if "기자단" in path else
-                   "구매평" if "구매평" in path or "구매평" in title else
+                   "구매평" if ("구매평" in path or "쿠팡" in chtext or "스마트스토어" in chtext) else
                    "방문형" if "지역" in path else "배송형")
-            img = re.search(r'<img\b[^>]*?(?:data-src|src)\s*=\s*["\x27]([^"\x27]+)', inner, re.I)
-            image_url = urllib.parse.urljoin(base, html.unescape(img.group(1))) if img else None
-            if image_url and not image_url.startswith("https://"):
-                image_url = None
-            item = make("reviewplace", cid, title,
-                        base + "pr/?id=" + cid,
-                        image=image_url, applicants=number(stats.group(1)),
-                        slots=number(stats.group(2)), days=days,
-                        channels=channel, ctype=typ)
+            if path == "/" and typ == "배송형":
+                typ = None  # Homepage card type is not independently verified.
+            img = node["image"]
+            if img and not img.startswith("https://"):
+                img = None
+            item = make("reviewplace", cid, title, base + "pr/?id=" + cid,
+                        image=img, applicants=number(stat.group(1)),
+                        slots=number(stat.group(2)), days=days,
+                        channels=channels, ctype=typ)
             if item:
                 out[cid] = item
-        print("reviewplace verified public cards", path, len(out), flush=True)
-        time.sleep(0.8)
+                added += 1
+        print("reviewplace",path,"verified",added,"total",len(out),flush=True)
+        time.sleep(0.5)
     return list(out.values())
 
 def main():
