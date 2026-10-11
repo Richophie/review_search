@@ -1660,6 +1660,105 @@ def gangnammat(list_url="https://gangnam-review.net/cp/"):
     return list(out.values())
 
 
+
+def realreview():
+    """Index public RealReview cards only when the site explicitly says recruiting.
+
+    This provider's detail-page '마감일' is often the REVIEW TASK deadline,
+    not the application deadline. Never convert that date into apply_deadline.
+    Only keep explicitly recruiting public listing cards and expire entries
+    unless observed again within 48 hours. Purchase-review/payback offers
+    are excluded under the service's media-only scope.
+    """
+    base = "https://www.real-review.kr/"
+    pages = [base, base + "explore/?sort=started"] + [
+        base + "explore/?page=" + str(n) for n in range(2, 6)
+    ]
+    out = {}
+    for index, url in enumerate(pages):
+        try:
+            doc = safe_fetch(url)
+            if not doc:
+                print("리얼리뷰 list skipped, policy or access:", url, flush=True)
+                continue
+        except Exception as exc:
+            print("리얼리뷰 list error", url, repr(exc)[:130], flush=True)
+            continue
+        pieces = re.split(r'<div class="l-project-ls__li"\b', doc, flags=re.I)[1:]
+        accepted = 0
+        for chunk in pieces:
+            # Stop before any footer or follow-up content; each public card
+            # has one stable data-project-id and exactly one title.
+            card = chunk[:9000]
+            cid = one(r'\bdata-project-id="(\d+)"', card)
+            title_raw = one(
+                r'<a\b[^>]*class="_o-title"[^>]*href="[^"]+"[^>]*>([\s\S]*?)</a>',
+                card, re.I,
+            )
+            title = plain(title_raw)
+            href = one(
+                r'<a\b[^>]*class="_o-title"[^>]*href="([^"]+)"',card,re.I
+            )
+            if not cid or not title or not href or cid in out:
+                continue
+            detail = urllib.parse.urljoin(base, html.unescape(href))
+            if not re.fullmatch(
+                r'https://www\.real-review\.kr/project/[A-Za-z0-9_-]+/', detail
+            ):
+                continue
+            status = one(r'<span\b[^>]*class="[^"]*_o-recruitment-status[^"]*"[^>]*data-status="([^"]+)"', card, re.I)
+            if status not in ("today", "open", "last"):
+                continue
+            # Payback/marketplace purchase reviews aren't part of this index.
+            if re.search(r'_o-label--payback|_o-label--purchase|구매평|스마트스토어\s*리뷰|쿠팡\s*리뷰',card,re.I):
+                continue
+            slots_txt = one(r'모집\s*([\d,]+)\s*(?:명|<)', plain(card), re.I)
+            if slots_txt is None:
+                slots_txt = one(r'aria-label="모집인원"[^>]*>[\s\S]{0,120}?모집\s*([\d,]+)',card,re.I)
+            slots = number(slots_txt)
+            if not slots or slots <= 0:
+                continue
+            kind = (
+                "기자단" if re.search(r'_o-label--(?:reporter|press)|방문\s*기자단|원고료',card,re.I) else
+                "배송형" if '_o-label--shipping' in card else
+                "방문형" if re.search(r'_o-label--(?:visit|local|place)',card,re.I) else None
+            )
+            channel_label = plain(one(r'<span\b[^>]*class="[^"]*_o-label--(?:channel|sns)[^"]*"[^>]*>([\s\S]*?)</span>',card,re.I))
+            explicit_media = title + " " + channel_label
+            channels = []
+            for pattern, label in (
+                (r'인스타|릴스', "인스타그램"),
+                (r'네이버\s*클립|블로그\s*클립', "네이버클립"),
+                (r'유튜브\s*쇼츠|\b쇼츠\b', "쇼츠"),
+                (r'유튜브', "유튜브"),
+                (r'네이버\s*블로그|\b블로그\b', "블로그"),
+                (r'틱톡', "틱톡"),
+                (r'스레드', "스레드"),
+            ):
+                if re.search(pattern, explicit_media,re.I) and label not in channels:
+                    channels.append(label)
+            # Only include an explicit geographic prefix. No fabricated
+            # city from a brand name or guessed category.
+            region = one(r'^\[((?:서울|경기|인천|부산|대구|광주|대전|울산|세종|강원|충북|충남|전북|전남|경북|경남|제주)[^\]]*)\]',title)
+            pic = one(r'<img\b[^>]*src="([^"]+)"',card,re.I)
+            image = html.unescape(pic) if pic else None
+            if image and not image.startswith("https://"):
+                image = None
+            item = make(
+                "realreview", cid, title, detail, region=region,
+                image=image, slots=slots, applicants=None,
+                days=0 if status=="last" else None,
+                open_verified=status in ("open","today"),
+                channels=channels, ctype=kind,
+            )
+            if item:
+                out[cid]=item
+                accepted += 1
+        print("리얼리뷰 public list", index, "cards", len(pieces), "new verified", accepted, flush=True)
+        time.sleep(0.7)
+    return list(out.values())
+
+
 def main():
     OUT.parent.mkdir(parents=True, exist_ok=True)
     try:
@@ -1668,7 +1767,7 @@ def main():
         current = []
     stored = {item["id"]: item for item in current if isinstance(item, dict) and "id" in item}
     found = 0
-    collectors = [("dinnerqueen", dinnerqueen), ("mrblog", mrblog), ("modan", modan), ("modootogether", modootogether), ("fourblog", fourblog), ("assaview", assaview), ("ringble", ringble), ("cometoplay", cometoplay), ("cherrycook", cherrycook), ("gaboja", gaboja), ("bqueens", bqueens), ("huki", huki), ("openreview", openreview), ("pavlovu", pavlovu), ("tqueens", tqueens), ("storyn", storyn), ("reviewnote", reviewnote), ("reviewplace", reviewplace), ("gangnammat", gangnammat)]
+    collectors = [("dinnerqueen", dinnerqueen), ("mrblog", mrblog), ("modan", modan), ("modootogether", modootogether), ("fourblog", fourblog), ("assaview", assaview), ("ringble", ringble), ("cometoplay", cometoplay), ("cherrycook", cherrycook), ("gaboja", gaboja), ("bqueens", bqueens), ("huki", huki), ("openreview", openreview), ("pavlovu", pavlovu), ("tqueens", tqueens), ("storyn", storyn), ("reviewnote", reviewnote), ("reviewplace", reviewplace), ("gangnammat", gangnammat), ("realreview", realreview)]
     if os.environ.get("DQ_ONLY") == "1":
         collectors = [("dinnerqueen", dinnerqueen)]
     if os.environ.get("REVIEWNOTE_ONLY") == "1":
