@@ -1471,6 +1471,69 @@ def reviewnote():
     return list(out.values())
 
 
+
+def reviewplace():
+    """Public ReviewPlace cards only; no account, internal API or guessed deadline."""
+    base = "https://reviewplace.co.kr/"
+    paths = ["/pr/?ct1=제품", "/pr/?ct1=지역",
+             "/pr/?ct1=기자단", "/pr/?ct1=구매평"]
+    out = {}
+    for path in paths:
+        try:
+            doc = safe_fetch(urllib.parse.urljoin(base, path))
+        except Exception as ex:
+            print("reviewplace public list unavailable", path, repr(ex)[:120], flush=True)
+            continue
+        # A public campaign's canonical identifying URL is /pr/?id=<number>.
+        links = re.findall(r'<a\b([^>]*\bhref\s*=\s*["\x27][^"\x27]*?/pr/\?id=\d+[^"\x27]*["\x27][^>]*)>([\s\S]*?)</a>', doc, re.I)
+        for attrs, inner in links:
+            href_match = re.search(r'href\s*=\s*["\x27]([^"\x27]+)', attrs, re.I)
+            if not href_match:
+                continue
+            url = urllib.parse.urljoin(base, html.unescape(href_match.group(1)))
+            parsed = urllib.parse.urlparse(url)
+            ids = urllib.parse.parse_qs(parsed.query).get("id", [])
+            if not ids or not ids[0].isdigit():
+                continue
+            cid = ids[0]
+            if cid in out:
+                continue
+            label = plain(inner)
+            d = re.search(r'(?:D\s*[-–]\s*(\d+)|오늘\s*마감)', label, re.I)
+            if not d:
+                continue
+            days = int(d.group(1)) if d.group(1) else 0
+            stats = re.search(r'신청\s*([\d,]+)\s*/\s*([\d,]+)\s*명?', label)
+            if not stats:
+                continue
+            # Reject ambiguous fragments: link text must include a real title.
+            title = re.split(r'D\s*[-–]\s*\d+|오늘\s*마감|신청\s*[\d,]+', label, maxsplit=1)[0].strip()
+            if len(title) < 5:
+                continue
+            channel = []
+            for term, value in (("블로그", "블로그"), ("인스타", "인스타그램"),
+                                ("릴스", "인스타그램"), ("유튜브", "유튜브"),
+                                ("쇼츠", "쇼츠"), ("클립", "네이버클립")):
+                if term in title and value not in channel:
+                    channel.append(value)
+            typ = ("기자단" if "기자단" in path else
+                   "구매평" if "구매평" in path or "구매평" in title else
+                   "방문형" if "지역" in path else "배송형")
+            img = re.search(r'<img\b[^>]*?(?:data-src|src)\s*=\s*["\x27]([^"\x27]+)', inner, re.I)
+            image_url = urllib.parse.urljoin(base, html.unescape(img.group(1))) if img else None
+            if image_url and not image_url.startswith("https://"):
+                image_url = None
+            item = make("reviewplace", cid, title,
+                        base + "pr/?id=" + cid,
+                        image=image_url, applicants=number(stats.group(1)),
+                        slots=number(stats.group(2)), days=days,
+                        channels=channel, ctype=typ)
+            if item:
+                out[cid] = item
+        print("reviewplace verified public cards", path, len(out), flush=True)
+        time.sleep(0.8)
+    return list(out.values())
+
 def main():
     OUT.parent.mkdir(parents=True, exist_ok=True)
     try:
@@ -1479,7 +1542,7 @@ def main():
         current = []
     stored = {item["id"]: item for item in current if isinstance(item, dict) and "id" in item}
     found = 0
-    collectors = [("dinnerqueen", dinnerqueen), ("mrblog", mrblog), ("modan", modan), ("modootogether", modootogether), ("fourblog", fourblog), ("assaview", assaview), ("ringble", ringble), ("cometoplay", cometoplay), ("cherrycook", cherrycook), ("gaboja", gaboja), ("bqueens", bqueens), ("huki", huki), ("openreview", openreview), ("pavlovu", pavlovu), ("tqueens", tqueens), ("storyn", storyn), ("reviewnote", reviewnote)]
+    collectors = [("dinnerqueen", dinnerqueen), ("mrblog", mrblog), ("modan", modan), ("modootogether", modootogether), ("fourblog", fourblog), ("assaview", assaview), ("ringble", ringble), ("cometoplay", cometoplay), ("cherrycook", cherrycook), ("gaboja", gaboja), ("bqueens", bqueens), ("huki", huki), ("openreview", openreview), ("pavlovu", pavlovu), ("tqueens", tqueens), ("storyn", storyn), ("reviewnote", reviewnote), ("reviewplace", reviewplace)]
     if os.environ.get("DQ_ONLY") == "1":
         collectors = [("dinnerqueen", dinnerqueen)]
     if os.environ.get("REVIEWNOTE_ONLY") == "1":
