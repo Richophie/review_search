@@ -1243,10 +1243,49 @@ def reviewnote():
     page_urls = [base_url + "?" + urllib.parse.urlencode({"page": p}) for p in range(2, 16)]
     urls.extend(page_urls)
     missing_page_progress = 0
+    # Optional browser-backed expansion: public rendered listing cards are
+    # accumulated as HTML after each real page scroll. No private API calls.
+    browser_pages = {}
+    if os.environ.get("REVIEWNOTE_BROWSER") == "1":
+        try:
+            from playwright.sync_api import sync_playwright
+            with sync_playwright() as p:
+                browser = p.chromium.launch(headless=True)
+                page = browser.new_page(locale="ko-KR", timezone_id="Asia/Seoul")
+                try:
+                    for url in urls[:4]:
+                        # safe_fetch enforces the same robots/access rules as
+                        # every other source before the browser is opened.
+                        if not safe_fetch(url):
+                            continue
+                        page.goto(url, wait_until="domcontentloaded", timeout=45000)
+                        page.wait_for_timeout(1000)
+                        fragments=[]
+                        ids=set()
+                        stalled=0
+                        for step in range(24):
+                            snapshot=page.content()
+                            current=set(re.findall(r'/campaigns/(\\d+)', snapshot))
+                            if len(current - ids)==0:
+                                stalled+=1
+                            else:
+                                stalled=0
+                            ids.update(current)
+                            fragments.append(snapshot)
+                            if stalled>=5:
+                                break
+                            page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
+                            page.wait_for_timeout(550)
+                        browser_pages[url]="\n".join(fragments)
+                        print("리뷰노트 browser",url,"visible IDs",len(ids),"scroll snapshots",len(fragments),flush=True)
+                finally:
+                    browser.close()
+        except Exception as exc:
+            print("리뷰노트 browser unavailable; continuing public HTML only",repr(exc)[:200],flush=True)
     out={}
     for url in urls:
         try:
-            body=safe_fetch(url)
+            body=browser_pages.get(url) or safe_fetch(url)
             if not body: continue
         except Exception as ex:
             print("리뷰노트 public page unavailable",url,repr(ex)[:150],flush=True)
@@ -1313,6 +1352,8 @@ def main():
     collectors = [("dinnerqueen", dinnerqueen), ("mrblog", mrblog), ("modan", modan), ("modootogether", modootogether), ("fourblog", fourblog), ("assaview", assaview), ("ringble", ringble), ("cometoplay", cometoplay), ("cherrycook", cherrycook), ("gaboja", gaboja), ("bqueens", bqueens), ("huki", huki), ("openreview", openreview), ("pavlovu", pavlovu), ("tqueens", tqueens), ("storyn", storyn), ("reviewnote", reviewnote)]
     if os.environ.get("DQ_ONLY") == "1":
         collectors = [("dinnerqueen", dinnerqueen)]
+    if os.environ.get("REVIEWNOTE_ONLY") == "1":
+        collectors = [("reviewnote", reviewnote)]
     for name, collect in collectors:
         try:
             items = collect()
