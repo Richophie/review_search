@@ -100,7 +100,7 @@ def main():
                     normalized.append((href, text))
                 listing = [(href, label) for href, label in normalized
                            if re.search(r"/(?:campaign/detail/\d+|cp/\?id=\d+|campaign/\d+)", href)]
-                prefixes = Counter(urlparse(link).path.split("/")[1] for link, _ in normalized)
+                prefixes = Counter((urlparse(link).path.strip("/").split("/") or [""])[0] for link, _ in normalized)
                 print("PUBLIC", url, "bytes", len(html), "internal links", len(normalized),
                       "campaign detail links", len(set(x[0] for x in listing)),
                       "prefixes", prefixes.most_common(8), flush=True)
