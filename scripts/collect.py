@@ -1217,11 +1217,21 @@ def reviewnote():
             if len(node["links"])==1 and re.search(r"\d+\s*일\s*남음",value) and re.search(r"신청\s*[\d,]+\s*/\s*[\d,]+",value):
                 self.candidates.append(node)
 
-    urls=[
-        "https://www.reviewnote.co.kr/campaigns",
-        "https://www.reviewnote.co.kr/campaigns?channel=BLOG",
-        "https://www.reviewnote.co.kr/campaigns?channel=INSTAGRAM",
+    # Public user-facing filter variants expose different candidate sets.
+    # Never assume that the first listing is an exhaustive index.
+    # Only use regular browser listing URLs; no internal APIs or auth bypass.
+    base_url = "https://www.reviewnote.co.kr/campaigns"
+    queries = [
+        {},
+        {"channel": "BLOG"},
+        {"channel": "INSTAGRAM"},
+        {"channel": "ETC"},
+        {"sort": "VISIT"},
+        {"channel": "BLOG", "sort": "VISIT"},
+        {"channel": "INSTAGRAM", "sort": "VISIT"},
+        {"channel": "ETC", "sort": "VISIT"},
     ]
+    urls = [base_url + ("?" + urllib.parse.urlencode(q) if q else "") for q in queries]
     out={}
     for url in urls:
         try:
