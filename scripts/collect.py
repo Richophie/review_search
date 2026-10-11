@@ -1232,6 +1232,17 @@ def reviewnote():
         {"channel": "ETC", "sort": "VISIT"},
     ]
     urls = [base_url + ("?" + urllib.parse.urlencode(q) if q else "") for q in queries]
+    # Public URL variations observed in ordinary browser listings.
+    # These may overlap; campaign IDs provide the final deduplication.
+    urls.extend([
+        base_url + "?" + urllib.parse.urlencode({"city": "서울", "location": "135"}),
+        base_url + "?" + urllib.parse.urlencode({"city": "인천"}),
+    ])
+    # Probe ordinary paginated listing URLs conservatively. Stop probing
+    # after two consecutive pages add no verified unique campaign IDs.
+    page_urls = [base_url + "?" + urllib.parse.urlencode({"page": p}) for p in range(2, 16)]
+    urls.extend(page_urls)
+    missing_page_progress = 0
     out={}
     for url in urls:
         try:
@@ -1282,6 +1293,11 @@ def reviewnote():
                 out[cid]=item
                 added+=1
         print("리뷰노트 public listing",url,"candidate cards",len(parser.candidates),"new",added,flush=True)
+        if url in page_urls:
+            missing_page_progress = missing_page_progress + 1 if added == 0 else 0
+            if missing_page_progress >= 2:
+                print("리뷰노트 page probe halted: repeated/no additional verified IDs",flush=True)
+                break
         time.sleep(1.0)
     return list(out.values())
 
