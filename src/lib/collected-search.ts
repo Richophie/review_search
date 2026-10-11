@@ -96,7 +96,7 @@ export function searchCollected(p:SearchParams) {
     const last_success_at=subset.length?subset.map(c=>c.last_seen_at).sort().at(-1)??null:null;
     return {id,name,homepage_url,country_code:"KR",
       status:subset.length?"connected":"not_connected",
-      status_note:subset.length?"공개 모집 목록 자동 수집":"수집 데이터 없음",last_success_at};
+      status_note:subset.length?"공개 모집 목록 자동 수집":"수집 데이터 없음",last_success_at,record_count:subset.length};
   });
   return {items,total:filtered.length,globalTotal:active.length,tabCounts,sources,today,error:null as string|null};
 }
