@@ -1313,7 +1313,7 @@ def reviewnote():
                     if regional_html:
                         # Join with a previously validated, accessible listing;
                         # the CardParser still validates each record independently.
-                        browser_pages[base_url] += "\\n" + "\\n".join(regional_html)
+                        browser_pages[base_url] += "\n" + "\n".join(regional_html)
                 finally:
                     browser.close()
         except Exception as exc:
