@@ -1,13 +1,13 @@
 {
   "as_of_date_kst": "2026-10-11",
-  "snapshot_records": 9925,
+  "snapshot_records": 10191,
   "platforms_with_records": 17,
   "media_counts": {
     "네이버클립": 1555,
-    "블로그": 5834,
+    "블로그": 5944,
     "쇼츠": 5,
     "유튜브": 9,
-    "인스타그램": 330,
+    "인스타그램": 486,
     "틱톡": 5
   },
   "media_unknown": 2254,
@@ -81,7 +81,7 @@
       "deadline_unknown": 0
     },
     "reviewnote": {
-      "records": 181,
+      "records": 447,
       "media_unknown": 0,
       "deadline_unknown": 0
     },
