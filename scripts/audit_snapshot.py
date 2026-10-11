@@ -48,11 +48,15 @@ result = {
     "media_counts": dict(sorted(media.items())),
     "media_unknown": missing_media,
     "deadline_unknown": unknown_deadline,
+    "images_present": sum(bool(r.get("image_url")) for r in rows),
+    "images_missing": sum(not r.get("image_url") for r in rows),
     "published_today_confirmed": published_today,
     "duplicate_id_or_original_url_count": len(duplicates),
     "sources": {
         name: {
             "records": len(items),
+            "images_present": sum(bool(r.get("image_url")) for r in items),
+            "images_missing": sum(not r.get("image_url") for r in items),
             "media_unknown": sum(not (r.get("channels") or []) for r in items),
             "deadline_unknown": sum(r.get("apply_deadline") is None for r in items),
         }
