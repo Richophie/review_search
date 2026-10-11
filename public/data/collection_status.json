@@ -1,27 +1,27 @@
 {
   "as_of_date_kst": "2026-10-11",
-  "snapshot_records": 12754,
+  "snapshot_records": 12826,
   "platforms_with_records": 22,
   "media_counts": {
-    "네이버클립": 1930,
-    "블로그": 8154,
+    "네이버클립": 2282,
+    "블로그": 6718,
     "쇼츠": 8,
     "유튜브": 13,
-    "인스타그램": 692,
+    "인스타그램": 1214,
     "틱톡": 5
   },
-  "media_unknown": 2380,
+  "media_unknown": 3014,
   "deadline_unknown": 114,
-  "images_present": 12679,
+  "images_present": 12751,
   "images_missing": 75,
-  "published_today_confirmed": 1,
+  "published_today_confirmed": 2,
   "duplicate_id_or_original_url_count": 0,
   "sources": {
     "assaview": {
-      "records": 542,
-      "images_present": 542,
+      "records": 609,
+      "images_present": 609,
       "images_missing": 0,
-      "media_unknown": 523,
+      "media_unknown": 589,
       "deadline_unknown": 0
     },
     "bloglab": {
@@ -56,12 +56,12 @@
       "records": 8518,
       "images_present": 8518,
       "images_missing": 0,
-      "media_unknown": 1451,
+      "media_unknown": 2017,
       "deadline_unknown": 0
     },
     "fourblog": {
-      "records": 102,
-      "images_present": 102,
+      "records": 105,
+      "images_present": 105,
       "images_missing": 0,
       "media_unknown": 1,
       "deadline_unknown": 0
@@ -88,10 +88,10 @@
       "deadline_unknown": 5
     },
     "modan": {
-      "records": 47,
-      "images_present": 47,
+      "records": 48,
+      "images_present": 48,
       "images_missing": 0,
-      "media_unknown": 47,
+      "media_unknown": 48,
       "deadline_unknown": 0
     },
     "modootogether": {
@@ -144,10 +144,10 @@
       "deadline_unknown": 0
     },
     "reviewplace": {
-      "records": 21,
-      "images_present": 21,
+      "records": 22,
+      "images_present": 22,
       "images_missing": 0,
-      "media_unknown": 9,
+      "media_unknown": 10,
       "deadline_unknown": 0
     },
     "ringble": {
