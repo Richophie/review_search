@@ -1253,7 +1253,7 @@ def reviewnote():
                 browser = p.chromium.launch(headless=True)
                 page = browser.new_page(locale="ko-KR", timezone_id="Asia/Seoul")
                 try:
-                    for url in urls[:4]:
+                    for url in urls[:8]:
                         # safe_fetch enforces the same robots/access rules as
                         # every other source before the browser is opened.
                         if not safe_fetch(url):
@@ -1263,7 +1263,7 @@ def reviewnote():
                         fragments=[]
                         ids=set()
                         stalled=0
-                        for step in range(24):
+                        for step in range(36):
                             snapshot=page.content()
                             current=set(re.findall(r'/campaigns/(\\d+)', snapshot))
                             if len(current - ids)==0:
