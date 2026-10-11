@@ -1274,8 +1274,20 @@ def reviewnote():
                             fragments.append(snapshot)
                             if stalled>=5:
                                 break
-                            page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
-                            page.wait_for_timeout(550)
+                            # Scroll the viewport AND any independently scrollable
+                            # listing containers (the page may use an inner scroller).
+                            page.evaluate("""() => {
+                              window.scrollTo(0, document.documentElement.scrollHeight);
+                              for (const el of document.querySelectorAll('main, section, div, ul')) {
+                                const s = getComputedStyle(el);
+                                if (el.scrollHeight > el.clientHeight + 250 &&
+                                    /(auto|scroll)/.test(s.overflowY)) {
+                                  el.scrollTop = el.scrollHeight;
+                                }
+                              }
+                            }""")
+                            page.mouse.wheel(0, 1400)
+                            page.wait_for_timeout(750)
                         browser_pages[url]="\n".join(fragments)
                         print("리뷰노트 browser",url,"visible IDs",len(ids),"scroll snapshots",len(fragments),flush=True)
                     # Discover additional listings using the actual public
@@ -1303,8 +1315,16 @@ def reviewnote():
                                 region_fragments.append(snap)
                                 if no_growth>=4:
                                     break
-                                page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
-                                page.wait_for_timeout(500)
+                                page.evaluate("""() => {
+                                  window.scrollTo(0, document.documentElement.scrollHeight);
+                                  for (const el of document.querySelectorAll('main, section, div, ul')) {
+                                    const s = getComputedStyle(el);
+                                    if (el.scrollHeight > el.clientHeight + 250 &&
+                                        /(auto|scroll)/.test(s.overflowY)) el.scrollTop = el.scrollHeight;
+                                  }
+                                }""")
+                                page.mouse.wheel(0, 1200)
+                                page.wait_for_timeout(700)
                             regional_html.extend(region_fragments)
                             print("리뷰노트 UI region",region_name,"IDs",len(regional_ids),flush=True)
                         except Exception as region_exc:
