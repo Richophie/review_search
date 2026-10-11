@@ -39,6 +39,10 @@ def main():
                 hit=body.find(mark)
                 if hit>=0:
                     print("CARD_CONTEXT",mark,re.sub(r"\\s+"," ",body[max(0,hit-1300):hit+2700])[:3800],flush=True)
+            blocks=re.findall(r'<div[^>]*\bclass\s*=\s*["\x27][^"\x27]*rows_margin[^"\x27]*["\x27]',body,re.I)
+            click_links=re.findall(r'onclick\s*=\s*location\.href=["\x27](detail\.php\?number=\d+[^"\x27]*)',body,re.I)
+            print("CARD AUDIT",u,"rows_margin attrs",len(blocks),"samples",blocks[:12],
+                  "onclick unique",len(set(click_links)),"onclick first",click_links[:10],flush=True)
             for keyword in ("리뷰어신청","신청","모집","detail.php","D-"):
                 print("COUNT",keyword,body.count(keyword),flush=True)
         except Exception as e:print("ERROR",u,type(e).__name__,str(e)[:130],flush=True)
