@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { todayIn } from "@/lib/collector/normalize";
 
 export type CampaignItem = {
@@ -49,14 +49,19 @@ function Stats({ c }: { c: CampaignItem }) {
 }
 
 function CampaignThumbnail({ url, title, compact = false }: { url: string | null; title: string; compact?: boolean }) {
-  const [failed, setFailed] = useState(false);
+  const [attempt, setAttempt] = useState(0);
   const safeUrl = url && /^https:\/\//i.test(url) ? url : null;
+  // The same rendered card can receive a different campaign after tab/page navigation.
+  // Reset failures instead of carrying a broken-thumbnail state to the next item.
+  useEffect(() => setAttempt(0), [safeUrl]);
   return (
     <div className="relative h-full w-full overflow-hidden bg-muted">
-      {safeUrl && !failed ? (
-        <img src={safeUrl} alt={title} loading="eager" decoding="async"
+      {safeUrl && attempt < 2 ? (
+        <img key={safeUrl + ":" + attempt} src={safeUrl} alt={title}
+          loading="lazy" decoding="async"
+          referrerPolicy={attempt === 0 ? "no-referrer" : undefined}
           className="block h-full w-full object-cover object-center"
-          onError={() => setFailed(true)} />
+          onError={() => setAttempt((n) => Math.min(n + 1, 2))} />
       ) : (
         <div className="flex h-full w-full flex-col items-center justify-center gap-1 bg-muted px-3 text-center text-muted-foreground">
           <span aria-hidden="true" className={compact ? "text-lg" : "text-3xl"}>📷</span>
