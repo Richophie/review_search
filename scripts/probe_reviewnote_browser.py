@@ -42,10 +42,18 @@ def probe(page, url):
             rounds_without_growth = 0
         if rounds_without_growth >= 6:
             break
-        page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
-        page.wait_for_timeout(1000)
+        page.evaluate("""() => {
+          window.scrollTo(0, document.documentElement.scrollHeight);
+          for (const el of document.querySelectorAll('main, section, div, ul')) {
+            const s = getComputedStyle(el);
+            if (el.scrollHeight > el.clientHeight + 250 && /(auto|scroll)/.test(s.overflowY))
+              el.scrollTop = el.scrollHeight;
+          }
+        }""")
+        page.mouse.wheel(0, 1500)
+        page.wait_for_timeout(900)
         steps += 1
-    return {"page":url, "distinct_visible_campaign_ids":len(found),
+    return {"page":url, "end_url":page.url, "document_height":page.evaluate("document.documentElement.scrollHeight"), "distinct_visible_campaign_ids":len(found),
             "scroll_rounds":steps, "campaign_ids":sorted(found)}
 
 def main():
