@@ -1,0 +1,56 @@
+name: Seed RealReview public campaigns
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/seed-realreview.yml"
+      - "scripts/seed_realreview.py"
+  schedule:
+    - cron: "35 0,12 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: realreview-seed
+  cancel-in-progress: true
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate parser syntax
+        run: python -m py_compile scripts/collect.py scripts/seed_realreview.py scripts/merge_snapshot.py
+      - name: Collect public recruiting campaigns only
+        run: python scripts/seed_realreview.py
+      - name: Verify snapshot
+        run: |
+          python scripts/validate_snapshot.py
+          python scripts/audit_snapshot.py
+      - name: Preserve freshest main and publish
+        run: |
+          cp public/data/campaigns.json "$RUNNER_TEMP/realreview-verified.json"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            python scripts/merge_snapshot.py "$RUNNER_TEMP/realreview-verified.json"
+            python scripts/validate_snapshot.py
+            python scripts/audit_snapshot.py
+            if git diff --quiet -- public/data/campaigns.json public/data/collection_status.json; then
+              echo "No verified campaign changes"
+              exit 0
+            fi
+            git add public/data/campaigns.json public/data/collection_status.json
+            git commit -m "chore(data): add verified RealReview campaigns"
+            if git push origin HEAD:main; then exit 0; fi
+            sleep 2
+          done
+          exit 1
