@@ -1684,7 +1684,7 @@ def realreview():
         except Exception as exc:
             print("리얼리뷰 list error", url, repr(exc)[:130], flush=True)
             continue
-        pieces = re.split(r'<div class="l-project-ls__li"\b', doc, flags=re.I)[1:]
+        pieces = re.split(r'<div class="l-project-ls__li"', doc, flags=re.I)[1:]
         accepted = 0
         for chunk in pieces:
             # Stop before any footer or follow-up content; each public card
@@ -1712,7 +1712,7 @@ def realreview():
             # Payback/marketplace purchase reviews aren't part of this index.
             if re.search(r'_o-label--payback|_o-label--purchase|구매평|스마트스토어\s*리뷰|쿠팡\s*리뷰',card,re.I):
                 continue
-            slots_txt = one(r'모집\s*([\d,]+)\s*(?:명|<)', plain(card), re.I)
+            slots_txt = one(r'모집\s*([\d,]+)(?:\s*명|\s*$)', plain(card), re.I)
             if slots_txt is None:
                 slots_txt = one(r'aria-label="모집인원"[^>]*>[\s\S]{0,120}?모집\s*([\d,]+)',card,re.I)
             slots = number(slots_txt)
