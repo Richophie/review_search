@@ -23,6 +23,10 @@ SITES = {
     ],
     "gangnammat": [
         "https://gangnam-review.net/cp/",
+        "https://gangnam-review.net/cp/?ca=20",
+        "https://gangnam-review.net/cp/?ca=30",
+        "https://gangnam-review.net/cp/?ca=40",
+        "https://gangnam-review.net/cp/?ch=clip",
     ],
     "revu": ["https://webview.revu.net/"],
 }
