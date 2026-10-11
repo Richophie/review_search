@@ -4,7 +4,23 @@ import json
 from collect import OUT, gangnammat
 
 def main():
-    items = gangnammat()
+    paths = [
+        "https://gangnam-review.net/cp/",
+        "https://gangnam-review.net/cp/?ca=20",
+        "https://gangnam-review.net/cp/?ca=30",
+        "https://gangnam-review.net/cp/?ca=40",
+        "https://gangnam-review.net/cp/?ch=clip",
+    ]
+    verified = {}
+    for url in paths:
+        try:
+            batch = gangnammat(url)
+            for item in batch:
+                verified[item["id"]] = item
+        except Exception as exc:
+            print("Gangnam category not verified:", url, repr(exc)[:160], flush=True)
+    items = list(verified.values())
+    print("Gangnam listing categories verified:", len(paths), "unique records:", len(items), flush=True)
     if not items:
         raise SystemExit("No verified Gangnam Matzip public cards; preserve existing dataset.")
     stored = json.loads(OUT.read_text(encoding="utf-8"))
