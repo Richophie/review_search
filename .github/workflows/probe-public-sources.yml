@@ -1,0 +1,23 @@
+name: Inspect candidate public sources
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "scripts/probe_public_sources.py"
+      - ".github/workflows/probe-public-sources.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Inspect robots-permitted public listings (no data updates)
+        run: python scripts/probe_public_sources.py
