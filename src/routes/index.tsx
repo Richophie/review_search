@@ -136,7 +136,7 @@ function Index() {
 
       <div className="mt-4 flex flex-wrap items-center justify-between gap-2 text-sm">
         <p className="text-muted-foreground">
-          <strong className="text-foreground">{data.total.toLocaleString()}</strong>건 · 연결된 출처 {connected.map((s) => s.name).join(", ") || "없음"}
+          <strong className="text-foreground">{data.total.toLocaleString()}</strong>건 · 연결된 출처 {connected.map((s) => s.name + " (" + (typeof s.record_count === "number" ? s.record_count.toLocaleString() + "건" : "집계 전") + ")").join(", ") || "없음"}
           {lastUpdate && <> · 최근 갱신 {fmtDateTime(lastUpdate)}</>}
         </p>
         <div className="flex items-center gap-2">
