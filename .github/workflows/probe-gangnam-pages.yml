@@ -1,0 +1,23 @@
+name: Inspect Gangnam public pagination
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "scripts/probe_gangnam_pages.py"
+      - ".github/workflows/probe-gangnam-pages.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Inspect pagination links without exhaustive fetching
+        run: python scripts/probe_gangnam_pages.py
