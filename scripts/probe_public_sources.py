@@ -16,6 +16,12 @@ import time
 
 AGENT = "ChehumMoaBot/0.1 (+public listing index; respects robots.txt)"
 SITES = {
+    "realreview": [
+        "https://www.real-review.kr/",
+        "https://www.real-review.kr/explore/?sort=started",
+        "https://www.real-review.kr/explore/?page=2",
+        "https://www.real-review.kr/explore/tags/블로그/",
+    ],
     "cloudreview": [
         "https://www.cloudreview.co.kr/",
         "https://www.cloudreview.co.kr/campaign/blog",
@@ -103,7 +109,7 @@ def main():
                     text = " ".join(" ".join(entry["text"]).split())[:75]
                     normalized.append((href, text))
                 listing = [(href, label) for href, label in normalized
-                           if re.search(r"/(?:campaign/detail/\d+|cp/\?id=\d+|campaign/\d+)", href)]
+                           if re.search(r"/(?:campaign/detail/\d+|cp/\?id=\d+|campaign/\d+|project/[A-Za-z0-9_-]+/?)", href)]
                 prefixes = Counter((urlparse(link).path.strip("/").split("/") or [""])[0] for link, _ in normalized)
                 print("PUBLIC", url, "bytes", len(html), "internal links", len(normalized),
                       "campaign detail links", len(set(x[0] for x in listing)),
@@ -119,7 +125,7 @@ def main():
                     print("OTHER INTERNAL LINKS:", normalized[:12], flush=True)
                 # No full raw HTML; indicate only known campaign structural hints.
                 print("STRUCTURE:", {key: len(re.findall(re.escape(key), html, re.I))
-                      for key in ("campaign/detail/", "cp/?id=", "일남음", "D-Day",
+                      for key in ("campaign/detail/", "cp/?id=", "/project/", "모집중", "오늘 종료", "일남음", "D-Day",
                                   "인 모집", "신청자", "pagination", "__NEXT_DATA__")},
                       flush=True)
             except Exception as exc:
