@@ -1,18 +1,18 @@
 {
   "as_of_date_kst": "2026-10-11",
-  "snapshot_records": 11706,
+  "snapshot_records": 11730,
   "platforms_with_records": 17,
   "media_counts": {
-    "네이버클립": 1767,
-    "블로그": 7354,
+    "네이버클립": 1768,
+    "블로그": 7377,
     "쇼츠": 6,
     "유튜브": 10,
-    "인스타그램": 589,
+    "인스타그램": 590,
     "틱톡": 5
   },
   "media_unknown": 2254,
   "deadline_unknown": 5,
-  "images_present": 11621,
+  "images_present": 11645,
   "images_missing": 85,
   "published_today_confirmed": 1,
   "duplicate_id_or_original_url_count": 0,
@@ -109,8 +109,8 @@
       "deadline_unknown": 0
     },
     "reviewnote": {
-      "records": 1962,
-      "images_present": 1877,
+      "records": 1986,
+      "images_present": 1901,
       "images_missing": 85,
       "media_unknown": 0,
       "deadline_unknown": 0
