@@ -1567,7 +1567,7 @@ def reviewplace():
     return list(out.values())
 
 
-def gangnammat():
+def gangnammat(list_url="https://gangnam-review.net/cp/"):
     """Read robots-permitted, public Gangnam Matzip campaign LIST cards only.
 
     The site's visible /cp/ page contains li.list_item cards with an original
@@ -1575,7 +1575,7 @@ def gangnammat():
     No login, private APIs, speculative pagination, or detail-page traversal.
     """
     base = "https://gangnam-review.net/"
-    body = safe_fetch(base + "cp/")
+    body = safe_fetch(list_url)
     if not body:
         return []
     cards = re.findall(
