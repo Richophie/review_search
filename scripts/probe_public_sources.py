@@ -10,6 +10,7 @@ from collections import Counter
 from urllib.parse import urljoin, urlparse
 from urllib.request import Request, urlopen
 from urllib.robotparser import RobotFileParser
+import traceback
 import re
 import time
 
@@ -21,7 +22,7 @@ SITES = {
         "https://www.cloudreview.co.kr/campaign/instagram",
     ],
     "gangnammat": [
-        "https://gangnam-review.net/",
+        "https://xn--939au0g4vj8sq.net/cp/",
         "https://gangnam-review.net/cp/",
     ],
     "revu": ["https://webview.revu.net/"],
@@ -57,7 +58,10 @@ def read_public(url):
     with urlopen(req, timeout=15) as resp:
         if resp.status != 200:
             raise ValueError("status " + str(resp.status))
-        charset = resp.headers.get_content_charset() or "utf-8"
+        try:
+            charset = resp.headers.get_content_charset() or "utf-8"
+        except (ValueError, IndexError):
+            charset = "utf-8"
         return resp.read(MAX_BYTES).decode(charset, errors="replace")
 
 
@@ -102,6 +106,12 @@ def main():
                       "campaign detail links", len(set(x[0] for x in listing)),
                       "prefixes", prefixes.most_common(8), flush=True)
                 print("DETAIL SAMPLES:", list(dict.fromkeys(listing))[:8], flush=True)
+                if listing:
+                    first_href = listing[0][0]
+                    key = first_href.split(origin.netloc)[-1]
+                    at = html.find(key)
+                    if at >= 0:
+                        print("RAW FIRST CARD CONTEXT:", html[max(0,at-550):at+750].replace("\\n"," ")[:1300],flush=True)
                 if not listing:
                     print("OTHER INTERNAL LINKS:", normalized[:12], flush=True)
                 # No full raw HTML; indicate only known campaign structural hints.
@@ -110,7 +120,7 @@ def main():
                                   "인 모집", "신청자", "pagination", "__NEXT_DATA__")},
                       flush=True)
             except Exception as exc:
-                print("PUBLIC PAGE FAILED", url, type(exc).__name__, str(exc)[:160], flush=True)
+                print("PUBLIC PAGE FAILED", url, type(exc).__name__, str(exc)[:160], "\\n", traceback.format_exc(limit=3)[-750:], flush=True)
             time.sleep(1.2)
 
 
