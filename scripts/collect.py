@@ -1566,6 +1566,100 @@ def reviewplace():
         time.sleep(0.5)
     return list(out.values())
 
+
+def gangnammat():
+    """Read robots-permitted, public Gangnam Matzip campaign LIST cards only.
+
+    The site's visible /cp/ page contains li.list_item cards with an original
+    /cp/?id=<integer> link, D-day, applicant/slot counts, and a thumbnail.
+    No login, private APIs, speculative pagination, or detail-page traversal.
+    """
+    base = "https://gangnam-review.net/"
+    body = safe_fetch(base + "cp/")
+    if not body:
+        return []
+    cards = re.findall(
+        r"<li\b(?=[^>]*\bclass\s*=\s*['\"]list_item\b)[^>]*>[\s\S]*?</li>",
+        body, re.I,
+    )
+    out = {}
+    for card in cards:
+        cid = one(r"\bdata-product\s*=\s*['\"](\d+)['\"]", card, re.I)
+        if not cid or cid in out or not re.search(
+            r"href\s*=\s*['\"]/cp/\?id=" + re.escape(cid) + r"['\"]",
+            card, re.I,
+        ):
+            continue
+        title = plain(one(
+            r"<dt\b[^>]*class\s*=\s*['\"]tit['\"][^>]*>\s*"
+            r"<a\b[^>]*>([\s\S]*?)</a>", card, re.I,
+        ))
+        benefit = plain(one(
+            r"<dd\b[^>]*class\s*=\s*['\"]sub_tit['\"][^>]*>([\s\S]*?)</dd>",
+            card, re.I,
+        ))
+        if len(title) < 3 or len(title) > 200:
+            continue
+        dday = plain(one(
+            r"<em\b[^>]*class\s*=\s*['\"]day_c['\"][^>]*>([\s\S]*?)</em>",
+            card, re.I,
+        ))
+        remain = one(r"(\d+)\s*일\s*남음", dday)
+        days = int(remain) if remain is not None else 0 if re.search(
+            r"D\s*[-–]?\s*Day|오늘\s*(?:마감|까지)", dday, re.I,
+        ) else None
+        if days is None:
+            continue
+        counts = re.search(
+            r"신청\s*([\d,]+)\s*</b>\s*/\s*모집\s*([\d,]+)",
+            card, re.I,
+        )
+        if not counts:
+            continue
+        applicants = number(counts.group(1))
+        slots = number(counts.group(2))
+        if slots is None or slots <= 0 or applicants is None:
+            continue
+        image = one(r"<img\b[^>]*\bsrc\s*=\s*['\"]([^'\"]+)['\"]", card, re.I)
+        if image:
+            image = urllib.parse.urljoin(base, html.unescape(image))
+            if not image.startswith("https://"):
+                image = None
+        typ = plain(one(
+            r"<em\b[^>]*class\s*=\s*['\"]type['\"][^>]*>([\s\S]*?)</em>",
+            card, re.I,
+        ))
+        ctype = (
+            "기자단" if "기자단" in typ else
+            "배송형" if "배송형" in typ else
+            "방문형" if "방문형" in typ else None
+        )
+        channels = []
+        # Only derive channel from the publicly visible badge, not title text.
+        for pattern, label in (
+            (r"<em\b[^>]*class\s*=\s*['\"]blog['\"]", "블로그"),
+            (r"<em\b[^>]*class\s*=\s*['\"]clip['\"]", "네이버클립"),
+            (r"<em\b[^>]*class\s*=\s*['\"](?:insta|instagram|reels)['\"]", "인스타그램"),
+            (r"<em\b[^>]*class\s*=\s*['\"](?:youtube|yt)['\"]", "유튜브"),
+            (r"<em\b[^>]*class\s*=\s*['\"](?:shorts|short)['\"]", "쇼츠"),
+        ):
+            if re.search(pattern, card, re.I) and label not in channels:
+                channels.append(label)
+        region = one(r"^\[([^\]]{2,35})\]", title)
+        if region and region in ("재택", "배송", "페이백", "기자단"):
+            region = None
+        item = make(
+            "gangnammat", cid, title, base + "cp/?id=" + cid,
+            region=region, benefit=benefit, image=image,
+            applicants=applicants, slots=slots, days=days,
+            channels=channels, ctype=ctype,
+        )
+        if item:
+            out[cid] = item
+    print("강남맛집 public cards", len(cards), "verified", len(out), flush=True)
+    return list(out.values())
+
+
 def main():
     OUT.parent.mkdir(parents=True, exist_ok=True)
     try:
@@ -1574,7 +1668,7 @@ def main():
         current = []
     stored = {item["id"]: item for item in current if isinstance(item, dict) and "id" in item}
     found = 0
-    collectors = [("dinnerqueen", dinnerqueen), ("mrblog", mrblog), ("modan", modan), ("modootogether", modootogether), ("fourblog", fourblog), ("assaview", assaview), ("ringble", ringble), ("cometoplay", cometoplay), ("cherrycook", cherrycook), ("gaboja", gaboja), ("bqueens", bqueens), ("huki", huki), ("openreview", openreview), ("pavlovu", pavlovu), ("tqueens", tqueens), ("storyn", storyn), ("reviewnote", reviewnote), ("reviewplace", reviewplace)]
+    collectors = [("dinnerqueen", dinnerqueen), ("mrblog", mrblog), ("modan", modan), ("modootogether", modootogether), ("fourblog", fourblog), ("assaview", assaview), ("ringble", ringble), ("cometoplay", cometoplay), ("cherrycook", cherrycook), ("gaboja", gaboja), ("bqueens", bqueens), ("huki", huki), ("openreview", openreview), ("pavlovu", pavlovu), ("tqueens", tqueens), ("storyn", storyn), ("reviewnote", reviewnote), ("reviewplace", reviewplace), ("gangnammat", gangnammat)]
     if os.environ.get("DQ_ONLY") == "1":
         collectors = [("dinnerqueen", dinnerqueen)]
     if os.environ.get("REVIEWNOTE_ONLY") == "1":
