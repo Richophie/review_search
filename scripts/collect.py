@@ -1793,7 +1793,7 @@ def odiya():
         accepted=0
         scanned=0
         for p in parts:
-            if scanned >= max(5, min(35, int(os.getenv("ODIYA_MAX_DETAILS", "16")))):
+            if scanned >= max(5, min(80, int(os.getenv("ODIYA_MAX_DETAILS", "16")))):
                 break
             card=p[:14000]
             m=re.search(
@@ -1982,6 +1982,91 @@ def bloglab():
     return list(out.values())
 
 
+
+def modootogether_ajax():
+    """Use only ModooTogether's publicly advertised GET listing endpoint.
+
+    The site's own unprotected campaign_list.php JavaScript requests
+    json=list&category_id=...&page=... and displays these same cp_* fields.
+    Do not request non-public endpoints or treat finished cards as active.
+    """
+    base="https://www.modootogether.com/"
+    out={}
+    sections=["","047A","051A","001A","002A","003A"]
+    for cat in sections:
+        for page in range(1,4):
+            query=urllib.parse.urlencode({
+                "json":"list","category_id":cat,
+                "keyword":"","cp_media":"","orderby":"cp_id",
+                "page":str(page)
+            })
+            url=base+"campaign_list.php?"+query
+            try:
+                raw=safe_fetch(url)
+                if not raw:
+                    continue
+                data=json.loads(raw)
+                rows=data.get("list") if isinstance(data,dict) else None
+                if not isinstance(rows,list):
+                    print("모두모여 public json not a list",cat,page,flush=True)
+                    continue
+            except Exception as exc:
+                print("모두모여 public JSON error",cat,page,repr(exc)[:125],flush=True)
+                continue
+            added=0
+            for entry in rows:
+                if not isinstance(entry,dict):
+                    continue
+                cid=str(entry.get("cp_id") or "")
+                if not cid.isdigit() or cid in out:
+                    continue
+                title=plain(entry.get("cp_subject") or "")
+                if len(title)<5 or len(title)>250:
+                    continue
+                dday=str(entry.get("cp_day") or "").strip()
+                if not dday or re.search(r"모집마감|모집종료|선정|종료",dday):
+                    continue
+                m=re.fullmatch(r'D[-–]?\s*Day\s*(\d+)',dday,re.I)
+                always=(str(entry.get("cp_always"))=="1" and "상시모집" in dday)
+                if not m and not always:
+                    continue
+                channels=[]
+                for key,label in (("cp_media_blog","블로그"),("cp_media_instagram","인스타그램"),
+                                  ("cp_media_youtube","유튜브")):
+                    if str(entry.get(key))=="1":
+                        channels.append(label)
+                # Shop-only payback/product reviews do not meet current
+                # blog/Instagram/YouTube recruitment filters.
+                if not channels:
+                    continue
+                if re.search(r'^\[(?:상품평|구매평)\]|리뷰\s*구매',title,re.I):
+                    continue
+                desc=plain(entry.get("cp_description") or "")
+                applicants=number(entry.get("cp_order"))
+                slots=number(entry.get("cp_recruit"))
+                if slots is None or slots<=0 or applicants is None:
+                    continue
+                typ=plain(entry.get("cp_type") or "")
+                ctype=next((x for x in ("방문형","배송형","기자단") if x in typ),None)
+                prefix=one(r'^\[([^\]]{2,70})\]',title)
+                region=prefix if prefix and re.match(
+                    r'^(서울|경기|인천|부산|대구|광주|대전|울산|세종|강원|충북|충남|전북|전남|경북|경남|제주)',prefix) else None
+                pic=str(entry.get("cp_img") or "")
+                image=urllib.parse.urljoin(base,html.unescape(pic)) if pic else None
+                point=str(entry.get("cp_point") or "").strip()
+                benefit=desc+((" · +" + point + "P") if point not in ("","0") else "")
+                item=make("modootogether",cid,title,base+"campaign.php?cp_id="+cid,
+                          region=region,desc=desc,benefit=benefit,image=image,
+                          applicants=applicants,slots=slots,days=int(m.group(1)) if m else None,
+                          open_verified=always,channels=channels,ctype=ctype)
+                if item:
+                    out[cid]=item
+                    added+=1
+            print("모두모여 public AJAX",cat or "all",page,"rows",len(rows),"new",added,flush=True)
+            time.sleep(0.65)
+    return list(out.values())
+
+
 def main():
     OUT.parent.mkdir(parents=True, exist_ok=True)
     try:
@@ -1990,7 +2075,7 @@ def main():
         current = []
     stored = {item["id"]: item for item in current if isinstance(item, dict) and "id" in item}
     found = 0
-    collectors = [("dinnerqueen", dinnerqueen), ("mrblog", mrblog), ("modan", modan), ("modootogether", modootogether), ("fourblog", fourblog), ("assaview", assaview), ("ringble", ringble), ("cometoplay", cometoplay), ("cherrycook", cherrycook), ("gaboja", gaboja), ("bqueens", bqueens), ("huki", huki), ("openreview", openreview), ("pavlovu", pavlovu), ("tqueens", tqueens), ("storyn", storyn), ("reviewnote", reviewnote), ("reviewplace", reviewplace), ("gangnammat", gangnammat), ("realreview", realreview)]
+    collectors = [("dinnerqueen", dinnerqueen), ("mrblog", mrblog), ("modan", modan), ("modootogether", modootogether), ("modootogether-ajax", modootogether_ajax), ("fourblog", fourblog), ("assaview", assaview), ("ringble", ringble), ("cometoplay", cometoplay), ("cherrycook", cherrycook), ("gaboja", gaboja), ("bqueens", bqueens), ("huki", huki), ("openreview", openreview), ("pavlovu", pavlovu), ("tqueens", tqueens), ("storyn", storyn), ("reviewnote", reviewnote), ("reviewplace", reviewplace), ("gangnammat", gangnammat), ("realreview", realreview)]
     if os.environ.get("DQ_ONLY") == "1":
         collectors = [("dinnerqueen", dinnerqueen)]
     if os.environ.get("REVIEWNOTE_ONLY") == "1":
