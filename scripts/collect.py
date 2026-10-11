@@ -1300,10 +1300,16 @@ def reviewnote():
                     for region_name in regions:
                         try:
                             page.goto(base_url, wait_until="domcontentloaded", timeout=35000)
-                            page.wait_for_timeout(500)
-                            page.get_by_text("지역", exact=True).first.click(timeout=1800)
-                            page.get_by_text(region_name, exact=True).last.click(timeout=1800)
                             page.wait_for_timeout(700)
+                            before_ids=set(re.findall(r'/campaigns/(\\d+)', page.content()))
+                            page.get_by_text("지역", exact=True).first.click(timeout=2500)
+                            page.get_by_text(region_name, exact=True).last.click(timeout=2500)
+                            page.wait_for_timeout(1100)
+                            after_ids=set(re.findall(r'/campaigns/(\\d+)', page.content()))
+                            print("리뷰노트 region click audit",region_name,
+                                  "current URL",page.url,"initial IDs",len(before_ids),
+                                  "filtered IDs",len(after_ids),
+                                  "changed",before_ids!=after_ids,flush=True)
                             region_fragments=[]
                             regional_ids=set()
                             no_growth=0
