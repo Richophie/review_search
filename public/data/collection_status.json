@@ -7,10 +7,10 @@
     "블로그": 7136,
     "쇼츠": 9,
     "유튜브": 16,
-    "인스타그램": 1518,
+    "인스타그램": 1519,
     "틱톡": 6
   },
-  "media_unknown": 3151,
+  "media_unknown": 3150,
   "deadline_unknown": 102,
   "images_present": 13956,
   "images_missing": 75,
@@ -91,7 +91,7 @@
       "records": 50,
       "images_present": 50,
       "images_missing": 0,
-      "media_unknown": 50,
+      "media_unknown": 49,
       "deadline_unknown": 0
     },
     "modootogether": {
