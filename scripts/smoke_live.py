@@ -11,6 +11,9 @@ CASES=[
   ("경쟁률 낮은순",{"sort":"ratio","tab":"lowcomp"}),
   ("마감 임박",{"sort":"deadline","tab":"soon"}),
   ("지역 검색",{"sido":"서울","q":"서울"}),
+  ("새로 발견한 공고",{"tab":"new"}),
+  ("두 번째 페이지",{"page":"2"}),
+  ("깊은 페이지 직접 접근",{"page":"400"}),
   ("없는 검색어",{"q":"__chehum_search_no_results_test__"}),
 ]
 for title,params in CASES:
@@ -30,6 +33,8 @@ for title,params in CASES:
  assert "페이지를 불러오지 못했어요" not in body, (title,"app error component")
  if not params:
   assert "원본 보기" in body or "원본 ↗" in body, (title,"No real campaign result cards rendered")
+  assert "마지막" in body, (title,"Numbered pagination missing")
+  assert "오늘 새로 발견" in body, (title,"Discovery-day label missing")
  if params.get("q") == "__chehum_search_no_results_test__":
   assert "원본 보기" not in body and "원본 ↗" not in body, (title,"Impossible query returned a campaign")
  print(title,"OK",status,"HTML bytes",len(body),"contains search UI")

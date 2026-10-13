@@ -33,6 +33,38 @@ class MergeMediaEvidenceTest(unittest.TestCase):
         a=row("old",[],t)
         a["title"]="[뷰티] 클립 모양의 헤어핀"
         self.assertEqual(combined([a],[],NOW)[0]["channels"],[])
+    def test_assaview_icon_evidence_survives_equal_timestamp_merge(self):
+        stamp=NOW.isoformat()
+        previous=row("source",["블로그"],stamp)
+        previous.update({
+            "id":"assaview:1","source_id":"assaview",
+            "original_url":"https://www.assaview.co.kr/campaign.php?cp_id=1",
+            "title":"[서울 관악구] 공식 체험단",
+            "media_evidence":"assaview_review_type_icon:blog_icon.png",
+        })
+        stale=dict(previous)
+        stale["channels"]=[]
+        stale.pop("media_evidence")
+        restored=combined([previous],[stale],NOW)[0]
+        self.assertEqual(restored["channels"],["블로그"])
+        self.assertEqual(restored["media_evidence"],previous["media_evidence"])
+
+    def test_genuinely_newer_iconless_card_can_update_state(self):
+        stamp=NOW.isoformat()
+        previous=row("source",["블로그"],stamp)
+        previous.update({
+            "id":"assaview:1","source_id":"assaview",
+            "original_url":"https://www.assaview.co.kr/campaign.php?cp_id=1",
+            "title":"[서울 관악구] 공식 체험단",
+            "media_evidence":"assaview_review_type_icon:blog_icon.png",
+        })
+        newer=dict(previous)
+        newer["channels"]=[]
+        newer.pop("media_evidence")
+        newer["last_seen_at"]=(NOW+timedelta(seconds=30)).isoformat()
+        merged=combined([previous],[newer],NOW)[0]
+        self.assertEqual(merged["channels"],[])
+
     def test_future_deadline_only(self):
         t=NOW.isoformat()
         a=row("old",[],t)
