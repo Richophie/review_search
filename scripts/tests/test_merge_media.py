@@ -65,6 +65,20 @@ class MergeMediaEvidenceTest(unittest.TestCase):
         merged=combined([previous],[newer],NOW)[0]
         self.assertEqual(merged["channels"],[])
 
+    def test_expired_unknown_deadline_does_not_abort_valid_rows(self):
+        now=NOW.isoformat()
+        healthy=row("valid",["인스타그램"],now)
+        stale=row("expired",[],(NOW-timedelta(hours=49)).isoformat())
+        stale["id"]="bloglab:123"
+        stale["source_id"]="bloglab"
+        stale["original_url"]="https://www.bloglab.kr/campaign.php?cp_id=123"
+        stale["title"]="Official always-open campaign"
+        stale["apply_deadline"]=None
+        stale["deadline_precision"]="unknown"
+        stale["open_verified"]=True
+        observed=combined([stale,healthy],[],NOW)
+        self.assertEqual([r["id"] for r in observed],[healthy["id"]])
+
     def test_future_deadline_only(self):
         t=NOW.isoformat()
         a=row("old",[],t)
