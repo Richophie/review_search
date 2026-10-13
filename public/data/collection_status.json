@@ -3,14 +3,14 @@
   "snapshot_records": 11814,
   "platforms_with_records": 22,
   "media_counts": {
-    "네이버클립": 2382,
+    "네이버클립": 2411,
     "블로그": 5339,
     "쇼츠": 15,
     "유튜브": 21,
-    "인스타그램": 2085,
+    "인스타그램": 2117,
     "틱톡": 6
   },
-  "media_unknown": 2727,
+  "media_unknown": 2666,
   "deadline_unknown": 112,
   "images_present": 11739,
   "images_missing": 75,
@@ -35,7 +35,7 @@
       "records": 115,
       "images_present": 115,
       "images_missing": 0,
-      "media_unknown": 115,
+      "media_unknown": 54,
       "deadline_unknown": 0
     },
     "cherrycook": {

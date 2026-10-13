@@ -18913,7 +18913,9 @@
 "region_text": null,
 "category": "기타",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"인스타그램"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-14",
@@ -18926,7 +18928,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "릴스비에스티앤에코브릭샴푸바그린스타터키트",
-"search_text": "[릴스][비에스티앤] 에코브릭 샴푸바 그린 스타터 키트 기타"
+"search_text": "[릴스][비에스티앤] 에코브릭 샴푸바 그린 스타터 키트 기타 인스타그램"
 },
 {
 "id": "bqueens:1589791",
@@ -18997,7 +18999,9 @@
 "region_text": null,
 "category": "기타",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"네이버클립"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-14",
@@ -19010,7 +19014,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "충북청주클립salongbobos",
-"search_text": "[충북 청주][클립] salong bobos 기타"
+"search_text": "[충북 청주][클립] salong bobos 기타 네이버클립"
 },
 {
 "id": "bqueens:1589868",
@@ -19025,7 +19029,9 @@
 "region_text": null,
 "category": "기타",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"인스타그램"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-14",
@@ -19038,7 +19044,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "충북청주릴스salongbobos",
-"search_text": "[충북 청주][릴스] salong bobos 기타"
+"search_text": "[충북 청주][릴스] salong bobos 기타 인스타그램"
 },
 {
 "id": "bqueens:1589872",
@@ -19081,7 +19087,9 @@
 "region_text": null,
 "category": "뷰티",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"네이버클립"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-14",
@@ -19094,7 +19102,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "강원원주클립선우헤어스튜디오",
-"search_text": "[강원 원주][클립] 선우헤어스튜디오 뷰티"
+"search_text": "[강원 원주][클립] 선우헤어스튜디오 뷰티 네이버클립"
 },
 {
 "id": "bqueens:1589951",
@@ -19165,7 +19173,9 @@
 "region_text": null,
 "category": "뷰티",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"인스타그램"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-18",
@@ -19178,7 +19188,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "릴스스마트에버터치톡뷰티디바이스set",
-"search_text": "[릴스][스마트에버] 터치톡 뷰티디바이스 set 뷰티"
+"search_text": "[릴스][스마트에버] 터치톡 뷰티디바이스 set 뷰티 인스타그램"
 },
 {
 "id": "bqueens:1590991",
@@ -19249,7 +19259,9 @@
 "region_text": null,
 "category": "뷰티",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"인스타그램"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-19",
@@ -19262,7 +19274,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "강원원주릴스선우헤어스튜디오",
-"search_text": "[강원 원주][릴스] 선우헤어스튜디오 뷰티"
+"search_text": "[강원 원주][릴스] 선우헤어스튜디오 뷰티 인스타그램"
 },
 {
 "id": "bqueens:1591994",
@@ -19277,7 +19289,9 @@
 "region_text": null,
 "category": "기타",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"인스타그램"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-18",
@@ -19290,7 +19304,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "릴스카라디움샤이닝펄음영아이섀도우스틱3종",
-"search_text": "[릴스][카라디움] 샤이닝 펄 음영 아이섀도우스틱 3종 기타"
+"search_text": "[릴스][카라디움] 샤이닝 펄 음영 아이섀도우스틱 3종 기타 인스타그램"
 },
 {
 "id": "bqueens:1592259",
@@ -19305,7 +19319,9 @@
 "region_text": null,
 "category": "뷰티",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"네이버클립"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-19",
@@ -19318,7 +19334,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "서울강서클립네일만남",
-"search_text": "[서울 강서][클립] 네일만남 뷰티"
+"search_text": "[서울 강서][클립] 네일만남 뷰티 네이버클립"
 },
 {
 "id": "bqueens:1592261",
@@ -19333,7 +19349,9 @@
 "region_text": null,
 "category": "뷰티",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"인스타그램"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-19",
@@ -19346,7 +19364,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "서울강서릴스네일만남",
-"search_text": "[서울 강서][릴스] 네일만남 뷰티"
+"search_text": "[서울 강서][릴스] 네일만남 뷰티 인스타그램"
 },
 {
 "id": "bqueens:1592263",
@@ -19389,7 +19407,9 @@
 "region_text": null,
 "category": "뷰티",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"네이버클립"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-19",
@@ -19402,7 +19422,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "서울서초클립더풋샵마사지강남역아라타워점",
-"search_text": "[서울 서초][클립] 더풋샵마사지 강남역아라타워점 뷰티"
+"search_text": "[서울 서초][클립] 더풋샵마사지 강남역아라타워점 뷰티 네이버클립"
 },
 {
 "id": "bqueens:1592288",
@@ -19417,7 +19437,9 @@
 "region_text": null,
 "category": "뷰티",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"인스타그램"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-19",
@@ -19430,7 +19452,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "서울서초릴스더풋샵마사지강남역아라타워점",
-"search_text": "[서울 서초][릴스] 더풋샵마사지 강남역아라타워점 뷰티"
+"search_text": "[서울 서초][릴스] 더풋샵마사지 강남역아라타워점 뷰티 인스타그램"
 },
 {
 "id": "bqueens:1592290",
@@ -19501,7 +19523,9 @@
 "region_text": null,
 "category": "뷰티",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"네이버클립"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-19",
@@ -19514,7 +19538,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "서울강남클립준오헤어압구정로데오2호점",
-"search_text": "[서울 강남][클립] 준오헤어 압구정로데오 2호점 뷰티"
+"search_text": "[서울 강남][클립] 준오헤어 압구정로데오 2호점 뷰티 네이버클립"
 },
 {
 "id": "bqueens:1592303",
@@ -19529,7 +19553,9 @@
 "region_text": null,
 "category": "뷰티",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"인스타그램"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-19",
@@ -19542,7 +19568,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "서울강남릴스준오헤어압구정로데오2호점",
-"search_text": "[서울 강남][릴스] 준오헤어 압구정로데오 2호점 뷰티"
+"search_text": "[서울 강남][릴스] 준오헤어 압구정로데오 2호점 뷰티 인스타그램"
 },
 {
 "id": "bqueens:1592305",
@@ -19585,7 +19611,9 @@
 "region_text": null,
 "category": "기타",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"네이버클립"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-19",
@@ -19598,7 +19626,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "충남천안클립kivo",
-"search_text": "[충남 천안][클립] kivo 기타"
+"search_text": "[충남 천안][클립] kivo 기타 네이버클립"
 },
 {
 "id": "bqueens:1592558",
@@ -19613,7 +19641,9 @@
 "region_text": null,
 "category": "기타",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"인스타그램"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-19",
@@ -19626,7 +19656,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "충남천안릴스kivo",
-"search_text": "[충남 천안][릴스] kivo 기타"
+"search_text": "[충남 천안][릴스] kivo 기타 인스타그램"
 },
 {
 "id": "bqueens:1592566",
@@ -19669,7 +19699,9 @@
 "region_text": null,
 "category": "기타",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"네이버클립"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-19",
@@ -19682,7 +19714,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "경기성남클립라꾸서현",
-"search_text": "[경기 성남][클립] 라꾸서현 기타"
+"search_text": "[경기 성남][클립] 라꾸서현 기타 네이버클립"
 },
 {
 "id": "bqueens:1592687",
@@ -19725,7 +19757,9 @@
 "region_text": null,
 "category": "기타",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"인스타그램"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-19",
@@ -19738,7 +19772,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "대전서구릴스나만의휴일",
-"search_text": "[대전 서구][릴스] 나만의휴일 기타"
+"search_text": "[대전 서구][릴스] 나만의휴일 기타 인스타그램"
 },
 {
 "id": "bqueens:1592814",
@@ -19781,7 +19815,9 @@
 "region_text": null,
 "category": "기타",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"네이버클립"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-19",
@@ -19794,7 +19830,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "경남진주클립이태리세신샵",
-"search_text": "[경남 진주][클립] 이태리세신샵 기타"
+"search_text": "[경남 진주][클립] 이태리세신샵 기타 네이버클립"
 },
 {
 "id": "bqueens:1592991",
@@ -19809,7 +19845,9 @@
 "region_text": null,
 "category": "기타",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"인스타그램"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-19",
@@ -19822,7 +19860,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "경남진주릴스이태리세신샵",
-"search_text": "[경남 진주][릴스] 이태리세신샵 기타"
+"search_text": "[경남 진주][릴스] 이태리세신샵 기타 인스타그램"
 },
 {
 "id": "bqueens:1592993",
@@ -19865,7 +19903,9 @@
 "region_text": null,
 "category": "기타",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"네이버클립"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-19",
@@ -19878,7 +19918,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "경기화성클립웨이브",
-"search_text": "[경기 화성][클립] 웨이브 기타"
+"search_text": "[경기 화성][클립] 웨이브 기타 네이버클립"
 },
 {
 "id": "bqueens:1593032",
@@ -19893,7 +19933,9 @@
 "region_text": null,
 "category": "기타",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"인스타그램"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-19",
@@ -19906,7 +19948,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "경기화성릴스웨이브",
-"search_text": "[경기 화성][릴스] 웨이브 기타"
+"search_text": "[경기 화성][릴스] 웨이브 기타 인스타그램"
 },
 {
 "id": "bqueens:1593036",
@@ -19977,7 +20019,9 @@
 "region_text": null,
 "category": "기타",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"네이버클립"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-19",
@@ -19990,7 +20034,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "서울강북클립라브래쉬",
-"search_text": "[서울 강북][클립] 라브래쉬 기타"
+"search_text": "[서울 강북][클립] 라브래쉬 기타 네이버클립"
 },
 {
 "id": "bqueens:1594469",
@@ -20061,7 +20105,9 @@
 "region_text": null,
 "category": "뷰티",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"네이버클립"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-20",
@@ -20074,7 +20120,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "경기파주클립금손네일파고드는발톱문제성발톱발각질",
-"search_text": "[경기 파주][클립] 금손네일 파고드는발톱 문제성발톱 발각질 뷰티"
+"search_text": "[경기 파주][클립] 금손네일 파고드는발톱 문제성발톱 발각질 뷰티 네이버클립"
 },
 {
 "id": "bqueens:1594987",
@@ -20089,7 +20135,9 @@
 "region_text": null,
 "category": "뷰티",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"인스타그램"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-20",
@@ -20102,7 +20150,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "경기파주릴스금손네일파고드는발톱문제성발톱발각질",
-"search_text": "[경기 파주][릴스] 금손네일 파고드는발톱 문제성발톱 발각질 뷰티"
+"search_text": "[경기 파주][릴스] 금손네일 파고드는발톱 문제성발톱 발각질 뷰티 인스타그램"
 },
 {
 "id": "bqueens:1595000",
@@ -20145,7 +20193,9 @@
 "region_text": null,
 "category": "기타",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"인스타그램"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-20",
@@ -20158,7 +20208,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "인천부평릴스온랑에스테틱",
-"search_text": "[인천 부평][릴스] 온랑에스테틱 기타"
+"search_text": "[인천 부평][릴스] 온랑에스테틱 기타 인스타그램"
 },
 {
 "id": "bqueens:1595049",
@@ -20201,7 +20251,9 @@
 "region_text": null,
 "category": "뷰티",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"네이버클립"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-20",
@@ -20214,7 +20266,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "전북전주클립온시선헤어전주효천점",
-"search_text": "[전북 전주][클립] 온시선헤어 전주효천점 뷰티"
+"search_text": "[전북 전주][클립] 온시선헤어 전주효천점 뷰티 네이버클립"
 },
 {
 "id": "bqueens:1595113",
@@ -20229,7 +20281,9 @@
 "region_text": null,
 "category": "뷰티",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"인스타그램"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-20",
@@ -20242,7 +20296,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "전북전주릴스온시선헤어전주효천점",
-"search_text": "[전북 전주][릴스] 온시선헤어 전주효천점 뷰티"
+"search_text": "[전북 전주][릴스] 온시선헤어 전주효천점 뷰티 인스타그램"
 },
 {
 "id": "bqueens:1595131",
@@ -20313,7 +20367,9 @@
 "region_text": null,
 "category": "기타",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"네이버클립"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-20",
@@ -20326,7 +20382,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "경남창원클립있는그대로",
-"search_text": "[경남 창원][클립] 있는그대로 기타"
+"search_text": "[경남 창원][클립] 있는그대로 기타 네이버클립"
 },
 {
 "id": "bqueens:1595466",
@@ -20341,7 +20397,9 @@
 "region_text": null,
 "category": "기타",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"인스타그램"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-20",
@@ -20354,7 +20412,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "경남창원릴스있는그대로",
-"search_text": "[경남 창원][릴스] 있는그대로 기타"
+"search_text": "[경남 창원][릴스] 있는그대로 기타 인스타그램"
 },
 {
 "id": "bqueens:1595612",
@@ -20369,7 +20427,9 @@
 "region_text": null,
 "category": "기타",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"네이버클립"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-20",
@@ -20382,7 +20442,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "경기안양클립더하노이풋앤바디평촌점",
-"search_text": "[경기 안양][클립] 더하노이풋앤바디 평촌점 기타"
+"search_text": "[경기 안양][클립] 더하노이풋앤바디 평촌점 기타 네이버클립"
 },
 {
 "id": "bqueens:1595615",
@@ -20397,7 +20457,9 @@
 "region_text": null,
 "category": "기타",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"인스타그램"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-20",
@@ -20410,7 +20472,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "경기안양릴스더하노이풋앤바디평촌점",
-"search_text": "[경기 안양][릴스] 더하노이풋앤바디 평촌점 기타"
+"search_text": "[경기 안양][릴스] 더하노이풋앤바디 평촌점 기타 인스타그램"
 },
 {
 "id": "bqueens:1595626",
@@ -20453,7 +20515,9 @@
 "region_text": null,
 "category": "뷰티",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"네이버클립"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-20",
@@ -20466,7 +20530,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "경기양주클립so네일",
-"search_text": "[경기 양주][클립] so네일 뷰티"
+"search_text": "[경기 양주][클립] so네일 뷰티 네이버클립"
 },
 {
 "id": "bqueens:1595806",
@@ -20481,7 +20545,9 @@
 "region_text": null,
 "category": "뷰티",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"인스타그램"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-20",
@@ -20494,7 +20560,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "경기양주릴스so네일",
-"search_text": "[경기 양주][릴스] so네일 뷰티"
+"search_text": "[경기 양주][릴스] so네일 뷰티 인스타그램"
 },
 {
 "id": "bqueens:1595840",
@@ -20537,7 +20603,9 @@
 "region_text": null,
 "category": "뷰티",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"네이버클립"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-20",
@@ -20550,7 +20618,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "충남천안클립존헤어살롱",
-"search_text": "[충남 천안][클립] 존헤어살롱 뷰티"
+"search_text": "[충남 천안][클립] 존헤어살롱 뷰티 네이버클립"
 },
 {
 "id": "bqueens:1596068",
@@ -20565,7 +20633,9 @@
 "region_text": null,
 "category": "뷰티",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"인스타그램"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-20",
@@ -20578,7 +20648,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "충남천안릴스존헤어살롱",
-"search_text": "[충남 천안][릴스] 존헤어살롱 뷰티"
+"search_text": "[충남 천안][릴스] 존헤어살롱 뷰티 인스타그램"
 },
 {
 "id": "bqueens:1596070",
@@ -20677,7 +20747,9 @@
 "region_text": null,
 "category": "뷰티",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"인스타그램"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-20",
@@ -20690,7 +20762,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "경기성남릴스진뷰티눈썹",
-"search_text": "[경기 성남][릴스] 진 뷰티눈썹 뷰티"
+"search_text": "[경기 성남][릴스] 진 뷰티눈썹 뷰티 인스타그램"
 },
 {
 "id": "bqueens:1596321",
@@ -20733,7 +20805,9 @@
 "region_text": null,
 "category": "뷰티",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"네이버클립"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-20",
@@ -20746,7 +20820,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "울산남구클립헤어오프닝울산삼산점",
-"search_text": "[울산 남구][클립] 헤어오프닝 울산삼산점 뷰티"
+"search_text": "[울산 남구][클립] 헤어오프닝 울산삼산점 뷰티 네이버클립"
 },
 {
 "id": "bqueens:1596367",
@@ -20761,7 +20835,9 @@
 "region_text": null,
 "category": "뷰티",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"인스타그램"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-20",
@@ -20774,7 +20850,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "울산남구릴스헤어오프닝울산삼산점",
-"search_text": "[울산 남구][릴스] 헤어오프닝 울산삼산점 뷰티"
+"search_text": "[울산 남구][릴스] 헤어오프닝 울산삼산점 뷰티 인스타그램"
 },
 {
 "id": "bqueens:1596374",
@@ -20817,7 +20893,9 @@
 "region_text": null,
 "category": "기타",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"네이버클립"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-20",
@@ -20830,7 +20908,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "경기부천클립풋밸런스랩_내성무좀각질_문제성발관리",
-"search_text": "[경기 부천][클립] 풋밸런스랩_내성무좀각질_문제성발관리 기타"
+"search_text": "[경기 부천][클립] 풋밸런스랩_내성무좀각질_문제성발관리 기타 네이버클립"
 },
 {
 "id": "bqueens:1596404",
@@ -20845,7 +20923,9 @@
 "region_text": null,
 "category": "기타",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"인스타그램"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-20",
@@ -20858,7 +20938,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "경기부천릴스풋밸런스랩_내성무좀각질_문제성발관리",
-"search_text": "[경기 부천][릴스] 풋밸런스랩_내성무좀각질_문제성발관리 기타"
+"search_text": "[경기 부천][릴스] 풋밸런스랩_내성무좀각질_문제성발관리 기타 인스타그램"
 },
 {
 "id": "bqueens:1596408",
@@ -20901,7 +20981,9 @@
 "region_text": null,
 "category": "뷰티",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"인스타그램"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-20",
@@ -20914,7 +20996,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "경기하남릴스아르떼뷰티앤레푸스하남1호점",
-"search_text": "[경기 하남][릴스] 아르떼뷰티앤 레푸스 하남1호점 뷰티"
+"search_text": "[경기 하남][릴스] 아르떼뷰티앤 레푸스 하남1호점 뷰티 인스타그램"
 },
 {
 "id": "bqueens:1596449",
@@ -20929,7 +21011,9 @@
 "region_text": null,
 "category": "뷰티",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"네이버클립"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-20",
@@ -20942,7 +21026,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "전북군산클립눈부신네일",
-"search_text": "[전북 군산][클립] 눈부신네일 뷰티"
+"search_text": "[전북 군산][클립] 눈부신네일 뷰티 네이버클립"
 },
 {
 "id": "bqueens:1596458",
@@ -20985,7 +21069,9 @@
 "region_text": null,
 "category": "뷰티",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"인스타그램"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-20",
@@ -20998,7 +21084,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "전북군산릴스눈부신네일",
-"search_text": "[전북 군산][릴스] 눈부신네일 뷰티"
+"search_text": "[전북 군산][릴스] 눈부신네일 뷰티 인스타그램"
 },
 {
 "id": "bqueens:1596481",
@@ -21069,7 +21155,9 @@
 "region_text": null,
 "category": "기타",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"네이버클립"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-20",
@@ -21082,7 +21170,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "부산금정클립1인세신샵벨르",
-"search_text": "[부산 금정][클립] 1인 세신샵 벨르 기타"
+"search_text": "[부산 금정][클립] 1인 세신샵 벨르 기타 네이버클립"
 },
 {
 "id": "bqueens:1596618",
@@ -21097,7 +21185,9 @@
 "region_text": null,
 "category": "기타",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"인스타그램"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-20",
@@ -21110,7 +21200,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "부산금정릴스1인세신샵벨르",
-"search_text": "[부산 금정][릴스] 1인 세신샵 벨르 기타"
+"search_text": "[부산 금정][릴스] 1인 세신샵 벨르 기타 인스타그램"
 },
 {
 "id": "bqueens:1596724",
@@ -21153,7 +21243,9 @@
 "region_text": null,
 "category": "기타",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"네이버클립"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-20",
@@ -21166,7 +21258,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "충남계룡클립맨즈플레이스",
-"search_text": "[충남 계룡][클립] 맨즈플레이스 기타"
+"search_text": "[충남 계룡][클립] 맨즈플레이스 기타 네이버클립"
 },
 {
 "id": "bqueens:1596894",
@@ -21181,7 +21273,9 @@
 "region_text": null,
 "category": "기타",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"인스타그램"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-20",
@@ -21194,7 +21288,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "충남계룡릴스맨즈플레이스",
-"search_text": "[충남 계룡][릴스] 맨즈플레이스 기타"
+"search_text": "[충남 계룡][릴스] 맨즈플레이스 기타 인스타그램"
 },
 {
 "id": "bqueens:1596916",
@@ -21265,7 +21359,9 @@
 "region_text": null,
 "category": "뷰티",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"네이버클립"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-20",
@@ -21278,7 +21374,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "대구서구클립노드맨즈헤어",
-"search_text": "[대구 서구][클립] 노드맨즈헤어 뷰티"
+"search_text": "[대구 서구][클립] 노드맨즈헤어 뷰티 네이버클립"
 },
 {
 "id": "bqueens:1597081",
@@ -21293,7 +21389,9 @@
 "region_text": null,
 "category": "뷰티",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"인스타그램"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-20",
@@ -21306,7 +21404,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "대구서구릴스노드맨즈헤어",
-"search_text": "[대구 서구][릴스] 노드맨즈헤어 뷰티"
+"search_text": "[대구 서구][릴스] 노드맨즈헤어 뷰티 인스타그램"
 },
 {
 "id": "bqueens:1597092",
@@ -21349,7 +21447,9 @@
 "region_text": null,
 "category": "기타",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"네이버클립"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-20",
@@ -21362,7 +21462,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "제주제주시클립영블리왁싱",
-"search_text": "[제주 제주시][클립] 영블리왁싱 기타"
+"search_text": "[제주 제주시][클립] 영블리왁싱 기타 네이버클립"
 },
 {
 "id": "bqueens:1597170",
@@ -21377,7 +21477,9 @@
 "region_text": null,
 "category": "기타",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"인스타그램"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-20",
@@ -21390,7 +21492,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "제주제주시릴스영블리왁싱",
-"search_text": "[제주 제주시][릴스] 영블리왁싱 기타"
+"search_text": "[제주 제주시][릴스] 영블리왁싱 기타 인스타그램"
 },
 {
 "id": "bqueens:1597177",
@@ -21433,7 +21535,9 @@
 "region_text": null,
 "category": "뷰티",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"네이버클립"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-20",
@@ -21446,7 +21550,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "서울동대문클립제오헤어외대점",
-"search_text": "[서울 동대문][클립] 제오헤어 외대점 뷰티"
+"search_text": "[서울 동대문][클립] 제오헤어 외대점 뷰티 네이버클립"
 },
 {
 "id": "bqueens:1597206",
@@ -21461,7 +21565,9 @@
 "region_text": null,
 "category": "뷰티",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"인스타그램"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-20",
@@ -21474,7 +21580,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "서울동대문릴스제오헤어외대점",
-"search_text": "[서울 동대문][릴스] 제오헤어 외대점 뷰티"
+"search_text": "[서울 동대문][릴스] 제오헤어 외대점 뷰티 인스타그램"
 },
 {
 "id": "bqueens:1597208",
@@ -21517,7 +21623,9 @@
 "region_text": null,
 "category": "뷰티",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"네이버클립"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-20",
@@ -21530,7 +21638,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "서울서초클립디올속눈썹",
-"search_text": "[서울 서초][클립] 디올속눈썹 뷰티"
+"search_text": "[서울 서초][클립] 디올속눈썹 뷰티 네이버클립"
 },
 {
 "id": "bqueens:1597446",
@@ -21545,7 +21653,9 @@
 "region_text": null,
 "category": "뷰티",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"인스타그램"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-20",
@@ -21558,7 +21668,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "서울서초릴스디올속눈썹",
-"search_text": "[서울 서초][릴스] 디올속눈썹 뷰티"
+"search_text": "[서울 서초][릴스] 디올속눈썹 뷰티 인스타그램"
 },
 {
 "id": "bqueens:1597452",
@@ -21657,7 +21767,9 @@
 "region_text": null,
 "category": "뷰티",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"네이버클립"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-20",
@@ -21670,7 +21782,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "경기수원클립에스떼이브뷰티케어수원점",
-"search_text": "[경기 수원][클립] 에스떼이브 뷰티케어 수원점 뷰티"
+"search_text": "[경기 수원][클립] 에스떼이브 뷰티케어 수원점 뷰티 네이버클립"
 },
 {
 "id": "bqueens:1598968",
@@ -21685,7 +21797,9 @@
 "region_text": null,
 "category": "뷰티",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"인스타그램"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-20",
@@ -21698,7 +21812,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "경기수원릴스에스떼이브뷰티케어수원점",
-"search_text": "[경기 수원][릴스] 에스떼이브 뷰티케어 수원점 뷰티"
+"search_text": "[경기 수원][릴스] 에스떼이브 뷰티케어 수원점 뷰티 인스타그램"
 },
 {
 "id": "bqueens:1598974",
@@ -21741,7 +21855,9 @@
 "region_text": null,
 "category": "기타",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"네이버클립"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-20",
@@ -21754,7 +21870,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "서울강남클립바이수",
-"search_text": "[서울 강남][클립] 바이수 기타"
+"search_text": "[서울 강남][클립] 바이수 기타 네이버클립"
 },
 {
 "id": "bqueens:1599188",
@@ -21825,7 +21941,9 @@
 "region_text": null,
 "category": "기타",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"네이버클립"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-20",
@@ -21838,7 +21956,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "경남창원클립오브백",
-"search_text": "[경남 창원][클립] 오브백 기타"
+"search_text": "[경남 창원][클립] 오브백 기타 네이버클립"
 },
 {
 "id": "bqueens:1599418",
@@ -21853,7 +21971,9 @@
 "region_text": null,
 "category": "기타",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"인스타그램"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-20",
@@ -21866,7 +21986,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "경남창원릴스오브백",
-"search_text": "[경남 창원][릴스] 오브백 기타"
+"search_text": "[경남 창원][릴스] 오브백 기타 인스타그램"
 },
 {
 "id": "bqueens:1599474",
@@ -21909,7 +22029,9 @@
 "region_text": null,
 "category": "뷰티",
 "campaign_type": "배송형",
-"channels": [],
+"channels": [
+"네이버클립"
+],
 "slots": null,
 "applicants": null,
 "apply_deadline": "2026-10-20",
@@ -21922,7 +22044,7 @@
 "competition_ratio": null,
 "remaining_slots": null,
 "dedupe_key": "인천미추홀클립수다움헤어",
-"search_text": "[인천 미추홀][클립] 수다움헤어 뷰티"
+"search_text": "[인천 미추홀][클립] 수다움헤어 뷰티 네이버클립"
 },
 {
 "id": "bqueens:1599545",
