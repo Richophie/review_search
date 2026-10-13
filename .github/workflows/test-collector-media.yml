@@ -1,0 +1,24 @@
+name: Validate collector media rules
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "scripts/collect.py"
+      - "scripts/merge_snapshot.py"
+      - "scripts/tests/test_*media.py"
+      - ".github/workflows/test-collector-media.yml"
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check Python collector syntax
+        run: python -m py_compile scripts/collect.py scripts/merge_snapshot.py scripts/seed_assaview_icons.py
+      - name: Test original icon evidence and concurrent merges
+        run: python -m unittest discover -s scripts/tests -p 'test_*media.py' -v
