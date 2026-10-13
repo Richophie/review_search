@@ -1,0 +1,23 @@
+name: Probe Reviewnote missing rendered thumbnails
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "scripts/probe_reviewnote_missing_images.py"
+      - ".github/workflows/probe-reviewnote-missing-images.yml"
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Playwright browser
+        run: |
+          python -m pip install playwright
+          python -m playwright install --with-deps chromium
+      - run: python scripts/probe_reviewnote_missing_images.py
