@@ -48,7 +48,7 @@ function Stats({ c }: { c: CampaignItem }) {
   );
 }
 
-function CampaignThumbnail({ url, title, compact = false }: { url: string | null; title: string; compact?: boolean }) {
+function CampaignThumbnail({ url, title, sourceName, category, compact = false }: { url: string | null; title: string; sourceName: string; category: string; compact?: boolean }) {
   const [attempt, setAttempt] = useState(0);
   const safeUrl = url && /^https:\/\//i.test(url) ? url : null;
   // The same rendered card can receive a different campaign after tab/page navigation.
@@ -63,9 +63,24 @@ function CampaignThumbnail({ url, title, compact = false }: { url: string | null
           className="block h-full w-full object-cover object-center"
           onError={() => setAttempt((n) => Math.min(n + 1, 2))} />
       ) : (
-        <div className="flex h-full w-full flex-col items-center justify-center gap-1 bg-muted px-3 text-center text-muted-foreground">
-          <span aria-hidden="true" className={compact ? "text-lg" : "text-3xl"}>📷</span>
-          {!compact && <span className="line-clamp-2 text-xs font-medium">{title}</span>}
+        <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-primary-soft via-card to-muted p-3 text-center">
+          {compact ? (
+            <span className="rounded-md border border-border/70 bg-card/70 px-1.5 py-1 text-[10px] font-semibold text-foreground">
+              {sourceName}
+            </span>
+          ) : (
+            <div className="flex max-w-full flex-col items-center gap-3 px-2">
+              <span className="rounded-full border border-border/70 bg-card/80 px-3 py-1 text-[11px] font-semibold text-primary">
+                {sourceName}
+              </span>
+              <span className="line-clamp-3 break-keep text-base font-bold leading-snug text-foreground md:text-lg">
+                {title}
+              </span>
+              <span className="rounded-md bg-muted/75 px-2 py-1 text-[11px] font-medium text-muted-foreground">
+                {category}
+              </span>
+            </div>
+          )}
         </div>
       )}
     </div>
@@ -78,7 +93,7 @@ export function CampaignCard({ c, today, sources }: { c: CampaignItem; today: st
   return (
     <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-card">
       <div className="relative aspect-square overflow-hidden bg-muted">
-        <CampaignThumbnail url={c.image_url} title={c.title} />
+        <CampaignThumbnail url={c.image_url} title={c.title} sourceName={name(c.source_id)} category={c.category} />
         <span className={`absolute left-2 top-2 rounded-md px-2 py-0.5 text-xs font-bold ${d.urgent ? "bg-urgent text-primary-foreground" : "bg-card text-foreground"}`}>
           {d.label}
         </span>
@@ -119,7 +134,7 @@ export function CampaignRow({ c, today, sources }: { c: CampaignItem; today: str
   return (
     <article className="flex gap-3 p-3">
       <div className="h-20 w-20 shrink-0 overflow-hidden rounded-lg bg-muted">
-        <CampaignThumbnail url={c.image_url} title={c.title} compact />
+        <CampaignThumbnail url={c.image_url} title={c.title} sourceName={name} category={c.category} compact />
       </div>
       <div className="min-w-0 flex-1 space-y-1">
         <div className="flex items-center gap-2">
