@@ -12,7 +12,7 @@ type Campaign = {
   timezone:string; competition_ratio:number|null; remaining_slots:number|null;
   dedupe_key:string; search_text:string;
 };
-const campaigns = archive as Campaign[];
+const bundledCampaigns = archive as Campaign[];
 const PLATFORM: Record<string, [string,string]> = {
   dinnerqueen:["디너의여왕","https://dinnerqueen.net/"],
   mrblog:["미블","https://www.mrblog.net/"],
@@ -37,13 +37,82 @@ const PLATFORM: Record<string, [string,string]> = {
   odiya:["어디야","https://odiya.kr/"],
   bloglab:["블로그랩","https://www.bloglab.kr/"]
 };
+/**
+ * Prefer the current, validated GitHub snapshot rather than a copy embedded
+ * in the most recent Vercel deployment. This code runs inside createServerFn.
+ *
+ * A short in-memory cache prevents downloading a large JSON file on each
+ * filter/page change. A network error or malformed response always falls
+ * back to the last bundled, verified dataset; the homepage still works.
+ * No user input is inserted into the remote URL.
+ */
+const SNAPSHOT_URL =
+  "https://raw.githubusercontent.com/Richophie/review_search/main/public/data/campaigns.json";
+const LIVE_TTL_MS = 10 * 60 * 1000;
+const FAILURE_TTL_MS = 90 * 1000;
+let cached: { rows: Campaign[]; until: number } | null = null;
+let inFlight: Promise<Campaign[]> | null = null;
+
+async function getCampaigns(): Promise<Campaign[]> {
+  const now = Date.now();
+  if (cached && cached.until > now) return cached.rows;
+  if (inFlight) return inFlight;
+
+  inFlight = (async () => {
+    try {
+      const response = await fetch(SNAPSHOT_URL, {
+        headers: { Accept: "application/json" },
+        cache: "no-store",
+        signal: AbortSignal.timeout(10_000),
+      });
+      if (!response.ok) throw new Error("Public snapshot HTTP " + response.status);
+      const data: unknown = await response.json();
+      if (!Array.isArray(data) || data.length < 1000 || data.length > 150_000) {
+        throw new Error("Unexpected public snapshot record count");
+      }
+      // Validate the shape and official source registry before swapping the
+      // entire cache. Never partially replace known-good campaign data.
+      const ids = new Set<string>();
+      const urls = new Set<string>();
+      for (const row of data) {
+        if (!row || typeof row !== "object") throw new Error("Malformed campaign");
+        const c = row as Campaign;
+        if (
+          typeof c.id !== "string" || !c.id ||
+          typeof c.title !== "string" || !c.title ||
+          typeof c.source_id !== "string" || !(c.source_id in PLATFORM) ||
+          typeof c.original_url !== "string" ||
+          !c.original_url.startsWith("https://") ||
+          typeof c.last_seen_at !== "string" ||
+          !Array.isArray(c.channels) ||
+          ids.has(c.id) || urls.has(c.original_url)
+        ) {
+          throw new Error("Public snapshot integrity check failed");
+        }
+        ids.add(c.id);
+        urls.add(c.original_url);
+      }
+      const rows = data as Campaign[];
+      cached = { rows, until: Date.now() + LIVE_TTL_MS };
+      return rows;
+    } catch (error) {
+      console.warn("Live public snapshot unavailable, using last verified bundled data", error);
+      const rows = cached?.rows ?? bundledCampaigns;
+      cached = { rows, until: Date.now() + FAILURE_TTL_MS };
+      return rows;
+    }
+  })().finally(() => { inFlight = null; });
+  return inFlight;
+}
+
 const TABS = ["all","new","today","soon","lowcomp","zero"] as const;
 const DAY_MS = 86400000;
 function searchTerms(q?:string) {
   return Array.from((q || "").matchAll(/"([^"]+)"|(\S+)/g))
     .map(m => (m[1] || m[2] || "").toLowerCase()).filter(Boolean).slice(0,8);
 }
-export function searchCollected(p:SearchParams) {
+export async function searchCollected(p:SearchParams) {
+  const campaigns = await getCampaigns();
   if (!campaigns.length) return null;
   const today = todayIn("Asia/Seoul");
   const firstToday = Date.parse(today+"T00:00:00+09:00");

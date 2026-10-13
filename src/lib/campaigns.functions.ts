@@ -38,7 +38,7 @@ export const searchCampaigns = createServerFn({ method: "GET" })
   .inputValidator((d: unknown) => searchSchema.parse(d))
   .handler(async ({ data: p }) => {
     // Prefer the real-source public snapshot once collection has succeeded.
-    const collected = searchCollected(p);
+    const collected = await searchCollected(p);
     if (collected) return collected;
     const db = publicClient();
     const today = todayIn("Asia/Seoul");
