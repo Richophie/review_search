@@ -1,0 +1,49 @@
+name: Backfill verified media tags
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "scripts/seed_explicit_media.py"
+      - "scripts/tests/test_explicit_media.py"
+      - ".github/workflows/seed-explicit-media.yml"
+permissions:
+  contents: write
+concurrency:
+  group: media-tags-backfill
+  cancel-in-progress: true
+jobs:
+  enrich:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify exact source media badges
+        run: python -m unittest discover -s scripts/tests -p 'test_explicit_media.py' -v
+      - name: Backfill observed original-title media labels
+        run: python scripts/seed_explicit_media.py
+      - name: Validate source snapshot
+        run: |
+          python scripts/validate_snapshot.py
+          python scripts/audit_snapshot.py
+      - name: Conflict-safe merge and publish
+        run: |
+          cp public/data/campaigns.json "$RUNNER_TEMP/media-tag-verified.json"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            python scripts/merge_snapshot.py "$RUNNER_TEMP/media-tag-verified.json"
+            python scripts/seed_explicit_media.py
+            python scripts/validate_snapshot.py
+            python scripts/audit_snapshot.py
+            if git diff --quiet -- public/data/campaigns.json public/data/collection_status.json; then exit 0; fi
+            git add public/data/campaigns.json public/data/collection_status.json
+            git commit -m "chore(data): apply source-evidenced media tags"
+            if git push origin HEAD:main; then exit 0; fi
+            sleep 2
+          done
+          exit 1
