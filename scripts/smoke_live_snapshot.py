@@ -14,6 +14,7 @@ if not m:
  print("SSR total snippet:",body[at:at+700],flush=True)
  raise AssertionError("Cannot find campaign total in production SSR")
 shown=int(m.group(1).replace(",",""))
+print("SSR verified count marker found",flush=True)
 _,raw=get(MANIFEST,"application/json")
 data=json.loads(raw)
 expected=data["snapshot_records"]
