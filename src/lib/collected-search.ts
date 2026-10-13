@@ -138,7 +138,7 @@ export async function searchCollected(p:SearchParams) {
   });
   function inTab(c:Campaign,t:typeof TABS[number]):boolean {
     switch(t) {
-      case "new":return !!c.published_at && Date.parse(c.published_at)>=firstToday;
+      case "new":return Date.parse(c.first_seen_at)>=firstToday;
       case "today":return c.apply_deadline===today;
       case "soon":return c.apply_deadline!==null && c.apply_deadline<=addDays(today,3);
       case "lowcomp":return c.competition_ratio!==null && c.competition_ratio<1;

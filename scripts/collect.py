@@ -81,6 +81,28 @@ def one(pattern, value, flags=0):
 def number(s):
     return int(s.replace(",", "")) if s is not None else None
 
+def media_from_bracketed_title(title):
+    """Only use explicit leading media badges preserved in official titles."""
+    m = re.match(r"^\s*((?:\[[^\]]{1,50}\]\s*){1,6})", title or "")
+    if not m:
+        return []
+    mapping = {
+        "릴스": "인스타그램", "인스타 릴스": "인스타그램",
+        "인스타그램": "인스타그램", "인스타": "인스타그램",
+        "클립": "네이버클립", "네이버클립": "네이버클립",
+        "네이버 클립": "네이버클립", "쇼츠": "쇼츠",
+        "유튜브 쇼츠": "쇼츠", "유튜브": "유튜브",
+        "블로그": "블로그", "네이버블로그": "블로그",
+        "네이버 블로그": "블로그", "틱톡": "틱톡", "스레드": "스레드",
+    }
+    found = []
+    for label in re.findall(r"\[([^\]]+)\]", m.group(1)):
+        channel = mapping.get(label.strip())
+        if channel and channel not in found:
+            found.append(channel)
+    return found
+
+
 def infer_category(text):
     for cat, pat in [
         ("카페", r"카페|커피|베이커리|디저트|케이크"),
@@ -357,7 +379,7 @@ def modan():
                 desc=description, benefit=offer or description, image=image,
                 applicants=None, slots=None, exact_deadline=exact_deadline,
                 published_at=published_at, category_override=category or None,
-                channels=[], ctype=campaign_type,
+                channels=media_from_bracketed_title(title), ctype=campaign_type,
             )
             if c:
                 output[cid] = c
@@ -853,7 +875,7 @@ def bqueens():
             item=make(
                 "bqueens",cid,title,base+"taste/"+cid,
                 region=None,benefit=None,desc=None,image=img,
-                days=int(days),channels=[],
+                days=int(days),channels=media_from_bracketed_title(title),
                 ctype="배송형"
             )
             if item:

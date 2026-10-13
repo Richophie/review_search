@@ -34,6 +34,7 @@ function Meta({ c, srcName }: { c: CampaignItem; srcName: string }) {
       <span className="rounded bg-muted px-1.5 py-0.5 text-muted-foreground">{c.category}</span>
       {c.campaign_type && <span className="rounded bg-muted px-1.5 py-0.5 text-muted-foreground">{c.campaign_type}</span>}
       {c.channels.map((ch) => <span key={ch} className="rounded bg-muted px-1.5 py-0.5 text-muted-foreground">{ch}</span>)}
+      {c.channels.length === 0 && <span className="rounded border border-border bg-card px-1.5 py-0.5 text-muted-foreground">매체 미확인</span>}
     </div>
   );
 }
