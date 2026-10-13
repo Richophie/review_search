@@ -14,12 +14,13 @@ if [[ -z "$changed" ]]; then
   exit 1
 fi
 
-# Only verified data snapshots and documentation may skip a deployment.
-# Any source code, workflow, frontend, config or package change MUST build.
-if printf '%s\n' "$changed" | grep -Eqv '^(public/data/(campaigns|collection_status)\.json|docs/.*)$'; then
-  echo "Application or automation files changed; build required"
+# Runtime JSON, collector-only Python tools and GitHub workflows do not
+# affect the TanStack Start production bundle. Always build for src/,
+# package/config, public assets outside the live JSON snapshot and other files.
+if printf '%s\n' "$changed" | grep -Eqv '^(public/data/(campaigns|collection_status)\.json|docs/.*|scripts/.*|\.github/workflows/.*)$'; then
+  echo "App/UI, asset or build config changed; build required"
   exit 1
 fi
 
-echo "Only verified snapshot/docs changed; runtime fetch refreshes without rebuild"
+echo "Only data/collector/workflow/docs changed; live snapshot refreshes without rebuild"
 exit 0

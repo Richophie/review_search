@@ -2,10 +2,6 @@ name: Reviewnote browser coverage audit
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - "scripts/collect.py"
-      - ".github/workflows/reviewnote-browser-audit.yml"
   schedule:
     - cron: "20 2 * * *"
 
