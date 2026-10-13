@@ -1,0 +1,19 @@
+name: Audit public media and images
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "scripts/audit_media_image_evidence.py"
+      - ".github/workflows/audit-media-image-evidence.yml"
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python scripts/audit_media_image_evidence.py
