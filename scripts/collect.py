@@ -560,10 +560,10 @@ def assaview_media_icons(fragment):
     """Exact public reviewer icons only; shop_icon is a payment type, NOT media."""
     mapping = {"blog_icon.png": "블로그", "reels_icon.png": "인스타그램"}
     labels, evidence = [], []
-    for tag in re.findall(r"<img\\b[^>]*>", fragment or "", re.I):
-        if not re.search(r'\\bclass=["\\x27][^"\\x27]*\\breview_type_icon\\b', tag, re.I):
+    for tag in re.findall(r"<img\b[^>]*>", fragment or "", re.I):
+        if not re.search(r'\bclass=["\x27][^"\x27]*\breview_type_icon\b', tag, re.I):
             continue
-        src = one(r'\\bsrc=["\\x27]([^"\\x27]+)', tag, re.I)
+        src = one(r'\bsrc=["\x27]([^"\x27]+)', tag, re.I)
         if not src:
             continue
         name = urllib.parse.urlsplit(src).path.rsplit("/", 1)[-1].lower()
