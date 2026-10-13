@@ -31,7 +31,7 @@ for source,url in targets:
             cards=[v for _,v in re.findall(
                 r'<a\s+href="campaign\.php\?cp_id=(\d+)"[^>]*>([\s\S]*?)</a>',
                 body,re.I)]
-                elif source=="dinnerqueen":
+        elif source=="dinnerqueen":
             cards=body.split('class="qz-dq-card campaign')[1:]
         elif source=="bqueens":
             cards=body.split('<div class="item">')[1:]
