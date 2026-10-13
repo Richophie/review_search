@@ -38,6 +38,16 @@ for source,url in targets:
         else:
             cards=body.split('class="qz-dq-card qz-button fluid hover"')[1:]
         print("LIST_CARD_COUNT",source,len(cards),flush=True)
+        if source=="assaview":
+            import collections
+            icons=collections.Counter()
+            for c in cards:
+                for tag in re.findall(r'<img\b[^>]*>',c,re.I):
+                    if "review_type_icon" not in tag:
+                        continue
+                    m=re.search(r'\bsrc=["\']([^"\']+)',tag,re.I)
+                    if m:icons[m.group(1).split("/")[-1].lower()]+=1
+            print("ASSAVIEW_MEDIA_ICON_COUNTS",dict(icons),flush=True)
         for c in cards[:3]:
             print("LIST_CARD_HTML",source,re.sub(r'\s+',' ',c[:5500])[:5000],flush=True)
     except Exception as e:print("LIST_ERROR",source,type(e).__name__,str(e)[:200],flush=True)
