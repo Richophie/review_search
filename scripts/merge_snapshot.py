@@ -52,6 +52,23 @@ def combined(existing, incoming, now):
         else:
             winner, loser = dict(old), row
 
+        # A concurrent collector using the older parser may submit the
+        # identical observation with its explicit media metadata omitted.
+        # Preserve the source-icon evidence ONLY for the same observed
+        # campaign title at the same timestamp; a newer live observation can
+        # legitimately supersede it.
+        if (winner.get("source_id") == "assaview"
+                and not winner.get("channels")
+                and loser.get("channels")
+                and str(loser.get("media_evidence") or "").startswith("assaview_review_type_icon:")
+                and winner.get("title") == loser.get("title")
+                and timestamp(winner.get("last_seen_at")) == timestamp(loser.get("last_seen_at"))):
+            winner["channels"] = list(loser["channels"])
+            winner["media_evidence"] = loser["media_evidence"]
+            winner["search_text"] = " ".join(
+                [winner.get("search_text") or "", *winner["channels"]]
+            ).strip().lower()
+
         first = min(
             (v for v in (winner.get("first_seen_at"), loser.get("first_seen_at"))
              if v and timestamp(v) != datetime.min.replace(tzinfo=timezone.utc)),

@@ -556,6 +556,24 @@ def fourblog():
         time.sleep(1.0)
     return list(output.values())
 
+def assaview_media_icons(fragment):
+    """Exact public reviewer icons only; shop_icon is a payment type, NOT media."""
+    mapping = {"blog_icon.png": "블로그", "reels_icon.png": "인스타그램"}
+    labels, evidence = [], []
+    for tag in re.findall(r"<img\\b[^>]*>", fragment or "", re.I):
+        if not re.search(r'\\bclass=["\\x27][^"\\x27]*\\breview_type_icon\\b', tag, re.I):
+            continue
+        src = one(r'\\bsrc=["\\x27]([^"\\x27]+)', tag, re.I)
+        if not src:
+            continue
+        name = urllib.parse.urlsplit(src).path.rsplit("/", 1)[-1].lower()
+        channel = mapping.get(name)
+        if channel and channel not in labels:
+            labels.append(channel)
+            evidence.append(name)
+    return labels, evidence
+
+
 def assaview():
     """Index public Assaview campaign listing cards with exact stated deadline.
 
@@ -631,6 +649,10 @@ def assaview():
                 ("쇼츠","쇼츠"),("틱톡","틱톡"),("스레드","스레드")):
                 if marker in media and ch not in channels:
                     channels.append(ch)
+            observed_channels, media_icons = assaview_media_icons(fragment)
+            for observed in observed_channels:
+                if observed not in channels:
+                    channels.append(observed)
             campaign=make(
                 "assaview",cid,title,
                 urllib.parse.urljoin(base,"campaign.php?cp_id="+cid),
@@ -639,6 +661,8 @@ def assaview():
                 exact_deadline=deadline,ctype=ctype
             )
             if campaign:
+                if media_icons:
+                    campaign["media_evidence"] = "assaview_review_type_icon:" + ",".join(media_icons)
                 out[cid]=campaign
                 added+=1
         print("아싸뷰",path,len(cards),"cards",added,"new",flush=True)
