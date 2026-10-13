@@ -18,6 +18,7 @@ for source in ("dinnerqueen","assaview","bqueens","modan","tqueens","reviewnote"
         print("IMAGE_SAMPLE",source,r["id"],repr(r["title"][:100]),r["original_url"],flush=True)
 
 targets=[
+    ("assaview","https://www.assaview.co.kr/campaign_list.php"),
     ("dinnerqueen","https://dinnerqueen.net/taste"),
     ("bqueens","https://bqueens.net/taste"),
     ("tqueens","https://tqueens.net/taste"),
@@ -26,7 +27,11 @@ for source,url in targets:
     try:
         body=safe_fetch(url)
         if not body: print("UNAVAILABLE",source,url,flush=True);continue
-        if source=="dinnerqueen":
+        if source=="assaview":
+            cards=[v for _,v in re.findall(
+                r'<a\\s+href="campaign\\.php\\?cp_id=(\\d+)"[^>]*>([\\s\\S]*?)</a>',
+                body,re.I)]
+        elif source=="dinnerqueen":
             cards=body.split('class="qz-dq-card campaign')[1:]
         elif source=="bqueens":
             cards=body.split('<div class="item">')[1:]
