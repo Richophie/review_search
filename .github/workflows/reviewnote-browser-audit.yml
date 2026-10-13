@@ -28,6 +28,11 @@ jobs:
           REVIEWNOTE_ONLY: "1"
           REVIEWNOTE_BROWSER: "1"
         run: python scripts/collect.py
+      # A browser run can span the 48-hour unknown-deadline boundary.
+      # Remove records whose verification window has expired before validation.
+      # The merger also keeps media fields evidenced by official public cards.
+      - name: Prune expired observations before validation
+        run: python scripts/merge_snapshot.py public/data/campaigns.json
       - name: Validate campaign snapshot
         run: python scripts/validate_snapshot.py
       - name: Update coverage report
