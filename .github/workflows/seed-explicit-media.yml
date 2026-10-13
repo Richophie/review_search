@@ -21,7 +21,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Verify exact source media badges
-        run: python -m unittest discover -s scripts/tests -p 'test_explicit_media.py' -v
+        run: python -m unittest discover -s scripts/tests -p 'test_*media.py' -v
       - name: Backfill observed original-title media labels
         run: python scripts/seed_explicit_media.py
       - name: Validate source snapshot
