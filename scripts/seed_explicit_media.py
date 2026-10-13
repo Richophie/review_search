@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Backfill media only from exact original-title badges, never guess blog."""
+"""Backfill media from original-title badges; merge also preserves the evidence."""
 import json
 from pathlib import Path
 from collect import media_from_bracketed_title

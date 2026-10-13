@@ -10,6 +10,8 @@ import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
+from collect import media_from_bracketed_title
+
 KST = timezone(timedelta(hours=9))
 DEST = Path("public/data/campaigns.json")
 
@@ -88,6 +90,21 @@ def combined(existing, incoming, now):
             by_url[url] = row
 
     rows = sorted(by_url.values(), key=lambda r: (r["source_id"], r["id"]))
+    # Concurrent workflows can finish with an older copy of a source row.
+    # Restore ONLY the media evidence explicitly encoded in its canonical
+    # original title, never guess based on site name or campaign category.
+    for row in rows:
+        if row.get("source_id") not in {"bqueens", "modan"}:
+            continue
+        if row.get("channels"):
+            continue
+        verified = media_from_bracketed_title(row.get("title") or "")
+        if not verified:
+            continue
+        row["channels"] = verified
+        row["search_text"] = " ".join(
+            [row.get("search_text") or "", *verified]
+        ).strip().lower()
     return rows
 
 
