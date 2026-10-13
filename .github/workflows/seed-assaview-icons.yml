@@ -1,0 +1,50 @@
+name: Seed official Assaview reviewer icons
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "scripts/seed_assaview_icons.py"
+      - "scripts/tests/test_assaview_media.py"
+      - ".github/workflows/seed-assaview-icons.yml"
+  schedule:
+    - cron: "55 1,13 * * *"
+permissions:
+  contents: write
+concurrency:
+  group: assaview-media-seed
+  cancel-in-progress: true
+jobs:
+  seed:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify explicit reviewer icons and merge invariants
+        run: python -m unittest discover -s scripts/tests -p 'test_*media.py' -v
+      - name: Collect public campaign media icons
+        run: python scripts/seed_assaview_icons.py
+      - name: Validate updated snapshot
+        run: |
+          python scripts/validate_snapshot.py
+          python scripts/audit_snapshot.py
+      - name: Conflict-safe merge and commit
+        run: |
+          cp public/data/campaigns.json "$RUNNER_TEMP/assaview-verified.json"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            python scripts/merge_snapshot.py "$RUNNER_TEMP/assaview-verified.json"
+            python scripts/validate_snapshot.py
+            python scripts/audit_snapshot.py
+            if git diff --quiet -- public/data/campaigns.json public/data/collection_status.json; then exit 0; fi
+            git add public/data/campaigns.json public/data/collection_status.json
+            git commit -m "chore(data): refresh verified Assaview blog/reels media icons"
+            if git push origin HEAD:main; then exit 0; fi
+            sleep 2
+          done
+          exit 1
