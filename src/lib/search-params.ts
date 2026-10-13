@@ -14,7 +14,7 @@ export const searchSchema = z.object({
   tab: z.enum(TABS).optional().catch(undefined),
   sort: z.enum(SORTS).optional().catch(undefined),
   view: z.enum(["card", "list"]).optional().catch(undefined),
-  page: z.number().int().min(1).max(500).optional().catch(undefined),
+  page: z.number().int().min(1).max(5000).optional().catch(undefined),
 });
 export type SearchParams = z.infer<typeof searchSchema>;
 

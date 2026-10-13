@@ -49,6 +49,11 @@ function Index() {
   const lastUpdate = connected.map((s) => s.last_success_at).filter(Boolean).sort().at(-1);
   const pages = Math.max(1, Math.ceil(data.total / PAGE_SIZE));
   const page = p.page ?? 1;
+  const pageWindowStart = Math.max(1, Math.min(page - 2, pages - 4));
+  const pageNumbers = Array.from(
+    { length: Math.min(5, pages) },
+    (_, i) => pageWindowStart + i,
+  );
   const view = p.view ?? "card";
   const activeFilters = !!(p.q || p.sido || p.sigungu || p.cat || p.type || p.ch || p.country);
   const intlSources = data.sources.filter((s) => s.country_code !== "KR" && s.status === "connected");
@@ -171,12 +176,25 @@ function Index() {
       )}
 
       {pages > 1 && (
-        <nav aria-label="페이지" className="mt-8 flex items-center justify-center gap-2">
+        <nav aria-label="페이지" className="mt-8 flex flex-wrap items-center justify-center gap-1.5">
+          <button disabled={page <= 1} onClick={() => set({ page: undefined })}
+            className="rounded-lg border border-border bg-card px-2.5 py-2 text-xs disabled:opacity-40">처음</button>
           <button disabled={page <= 1} onClick={() => set({ page: page - 1 > 1 ? page - 1 : undefined })}
-            className="rounded-lg border border-border bg-card px-3 py-2 text-sm disabled:opacity-40">이전</button>
-          <span className="text-sm text-muted-foreground">{page} / {pages}</span>
+            className="rounded-lg border border-border bg-card px-2.5 py-2 text-xs disabled:opacity-40">이전</button>
+          {pageNumbers[0] > 1 && <span aria-hidden="true" className="px-1 text-muted-foreground">…</span>}
+          {pageNumbers.map((n) => (
+            <button key={n} aria-label={`${n}페이지`} aria-current={n === page ? "page" : undefined}
+              onClick={() => set({ page: n === 1 ? undefined : n })}
+              className={`min-w-9 rounded-lg border px-2.5 py-2 text-sm tabular-nums ${n === page ? "border-primary bg-primary font-semibold text-primary-foreground" : "border-border bg-card text-foreground hover:border-primary"}`}>
+              {n.toLocaleString()}
+            </button>
+          ))}
+          {pageNumbers[pageNumbers.length - 1] < pages && <span aria-hidden="true" className="px-1 text-muted-foreground">…</span>}
           <button disabled={page >= pages} onClick={() => set({ page: page + 1 })}
-            className="rounded-lg border border-border bg-card px-3 py-2 text-sm disabled:opacity-40">다음</button>
+            className="rounded-lg border border-border bg-card px-2.5 py-2 text-xs disabled:opacity-40">다음</button>
+          <button disabled={page >= pages} onClick={() => set({ page: pages })}
+            className="rounded-lg border border-border bg-card px-2.5 py-2 text-xs disabled:opacity-40">마지막</button>
+          <span className="ml-1 text-xs text-muted-foreground">총 {pages.toLocaleString()}페이지</span>
         </nav>
       )}
     </div>
