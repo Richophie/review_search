@@ -56,10 +56,20 @@ def main():
                     if not response or response.status!=200:continue
                     page.wait_for_timeout(2400)
                     cards=page.evaluate(DOM,name)
-                    for _ in range(3):
-                        page.mouse.wheel(0,2600)
-                        page.wait_for_timeout(850)
-                        cards.extend(page.evaluate(DOM,name))
+                    # Advance only through the site's displayed public cards.
+                    # Stop when scrolling no longer exposes distinct campaign URLs.
+                    seen_urls={c["url"] for c in cards}
+                    stagnant=0
+                    for _ in range(16):
+                        page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
+                        page.wait_for_timeout(950)
+                        visible=page.evaluate(DOM,name)
+                        fresh={c["url"] for c in visible}-seen_urls
+                        cards.extend(c for c in visible if c["url"] in fresh)
+                        seen_urls.update(fresh)
+                        stagnant=stagnant+1 if not fresh else 0
+                        if stagnant>=3:
+                            break
                 except Exception as e:
                     print("Public page unavailable:",name,type(e).__name__,str(e)[:180],flush=True)
                     continue
