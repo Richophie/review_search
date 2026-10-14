@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - ".github/workflows/seed-modootogether-ajax.yml"
+
       - "scripts/seed_modootogether_ajax.py"
   schedule:
     - cron: "40 1,13 * * *"
@@ -29,6 +29,9 @@ jobs:
         run: python -m py_compile scripts/collect.py scripts/seed_modootogether_ajax.py scripts/merge_snapshot.py
       - name: Read public AJAX listings
         run: python scripts/seed_modootogether_ajax.py
+      # Avoid letting an unrelated expired 48h-unknown campaign block this source.
+      - name: Prune expired observations before validation
+        run: python scripts/merge_snapshot.py public/data/campaigns.json
       - name: Validate
         run: |
           python scripts/validate_snapshot.py

@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - ".github/workflows/seed-odiya.yml"
+
       - "scripts/seed_odiya.py"
   schedule:
     - cron: "45 0,12 * * *"
@@ -31,6 +31,9 @@ jobs:
         run: python -m py_compile scripts/collect.py scripts/seed_odiya.py scripts/merge_snapshot.py
       - name: Verify public listing and original detail deadlines
         run: python scripts/seed_odiya.py
+      # Avoid letting an unrelated expired 48h-unknown campaign block this source.
+      - name: Prune expired observations before validation
+        run: python scripts/merge_snapshot.py public/data/campaigns.json
       - name: Verify snapshot integrity
         run: |
           python scripts/validate_snapshot.py

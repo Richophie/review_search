@@ -8,7 +8,7 @@ on:
   push:
     paths:
       - "scripts/collect.py"
-      - ".github/workflows/update-campaigns.yml"
+
       - "scripts/audit_snapshot.py"
 
 permissions:
@@ -34,6 +34,9 @@ jobs:
       # Include new source allowlist updates in the next full verified refresh.
       # All original URLs must pass the explicit source allowlist before publishing.
       # Validation must allow each linked original provider URL.
+      # Avoid letting an unrelated expired 48h-unknown campaign block this source.
+      - name: Prune expired observations before validation
+        run: python scripts/merge_snapshot.py public/data/campaigns.json
       - name: Verify public index integrity
         run: python scripts/validate_snapshot.py
       - name: Audit source and media coverage

@@ -6,7 +6,7 @@ on:
     - cron: "30 1 * * *"
   push:
     paths:
-      - ".github/workflows/seed-gangnammat.yml"
+
       - "scripts/seed_gangnammat.py"
 
 permissions:
@@ -29,6 +29,9 @@ jobs:
         run: python -m py_compile scripts/collect.py scripts/seed_gangnammat.py scripts/merge_snapshot.py
       - name: Collect verified public Gangnam listing cards
         run: python scripts/seed_gangnammat.py
+      # Avoid letting an unrelated expired 48h-unknown campaign block this source.
+      - name: Prune expired observations before validation
+        run: python scripts/merge_snapshot.py public/data/campaigns.json
       - name: Validate prior to commit
         run: |
           python scripts/validate_snapshot.py
