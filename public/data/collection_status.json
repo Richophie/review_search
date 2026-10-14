@@ -1,21 +1,21 @@
 {
   "as_of_date_kst": "2026-10-14",
-  "snapshot_records": 14435,
+  "snapshot_records": 14445,
   "target_records": 20000,
-  "records_to_target": 5565,
-  "target_progress_pct": 72.17,
+  "records_to_target": 5555,
+  "target_progress_pct": 72.22,
   "platforms_with_records": 27,
   "media_counts": {
     "네이버클립": 3152,
-    "블로그": 6753,
+    "블로그": 6762,
     "쇼츠": 17,
     "유튜브": 23,
     "인스타그램": 2291,
     "틱톡": 6
   },
-  "media_unknown": 2999,
+  "media_unknown": 3000,
   "deadline_unknown": 135,
-  "images_present": 14327,
+  "images_present": 14337,
   "images_missing": 108,
   "images_missing_sources": {
     "chvu": 21,
@@ -35,7 +35,7 @@
     "realreview": 47,
     "reviewplace": 4,
     "ringble": 11,
-    "tqueens": 52
+    "tqueens": 53
   },
   "published_today_confirmed": 2,
   "duplicate_id_or_original_url_count": 0,
@@ -97,8 +97,8 @@
       "deadline_unknown": 0
     },
     "fourblog": {
-      "records": 230,
-      "images_present": 230,
+      "records": 236,
+      "images_present": 236,
       "images_missing": 0,
       "media_unknown": 1,
       "deadline_unknown": 0
@@ -139,8 +139,8 @@
       "deadline_unknown": 4
     },
     "mrblog": {
-      "records": 23,
-      "images_present": 23,
+      "records": 26,
+      "images_present": 26,
       "images_missing": 0,
       "media_unknown": 0,
       "deadline_unknown": 0
@@ -223,10 +223,10 @@
       "deadline_unknown": 0
     },
     "tqueens": {
-      "records": 80,
-      "images_present": 80,
+      "records": 81,
+      "images_present": 81,
       "images_missing": 0,
-      "media_unknown": 52,
+      "media_unknown": 53,
       "deadline_unknown": 0
     }
   }
