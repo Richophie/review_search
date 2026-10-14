@@ -3,6 +3,8 @@
 import json, tempfile
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+import sys
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from merge_snapshot import combined
 
 now=datetime.now(timezone(timedelta(hours=9)))
