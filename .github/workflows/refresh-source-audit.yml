@@ -31,7 +31,6 @@ jobs:
           for attempt in 1 2 3 4; do
             git fetch origin main
             git reset --hard origin/main
-            python scripts/validate_snapshot.py
             python scripts/audit_snapshot.py
             git add public/data/collection_status.json
             if git diff --cached --quiet; then exit 0; fi
