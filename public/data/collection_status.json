@@ -1,18 +1,18 @@
 {
   "as_of_date_kst": "2026-10-14",
-  "snapshot_records": 11818,
+  "snapshot_records": 11816,
   "platforms_with_records": 22,
   "media_counts": {
     "네이버클립": 2411,
-    "블로그": 5660,
+    "블로그": 5659,
     "쇼츠": 15,
     "유튜브": 21,
     "인스타그램": 2193,
     "틱톡": 6
   },
-  "media_unknown": 2276,
-  "deadline_unknown": 112,
-  "images_present": 11743,
+  "media_unknown": 2275,
+  "deadline_unknown": 110,
+  "images_present": 11741,
   "images_missing": 75,
   "published_today_confirmed": 0,
   "duplicate_id_or_original_url_count": 0,
@@ -25,11 +25,11 @@
       "deadline_unknown": 0
     },
     "bloglab": {
-      "records": 39,
-      "images_present": 39,
+      "records": 38,
+      "images_present": 38,
       "images_missing": 0,
       "media_unknown": 0,
-      "deadline_unknown": 39
+      "deadline_unknown": 38
     },
     "bqueens": {
       "records": 115,
@@ -130,11 +130,11 @@
       "deadline_unknown": 0
     },
     "realreview": {
-      "records": 57,
-      "images_present": 57,
+      "records": 56,
+      "images_present": 56,
       "images_missing": 0,
-      "media_unknown": 45,
-      "deadline_unknown": 56
+      "media_unknown": 44,
+      "deadline_unknown": 55
     },
     "reviewnote": {
       "records": 4702,
