@@ -111185,7 +111185,9 @@
 "region_text": "경기 성남",
 "category": "뷰티",
 "campaign_type": "방문형",
-"channels": [],
+"channels": [
+"블로그"
+],
 "slots": 5,
 "applicants": 0,
 "apply_deadline": "2026-10-20",
@@ -111198,7 +111200,8 @@
 "competition_ratio": 0.0,
 "remaining_slots": 5,
 "dedupe_key": "경기성남아이엘라운지분당서현점",
-"search_text": "아이엘라운지 분당서현점 ★ 속눈썹 연장 시술 경기 성남 뷰티"
+"search_text": "아이엘라운지 분당서현점 ★ 속눈썹 연장 시술 경기 성남 뷰티 블로그",
+"media_evidence": "dinnerqueen_detail:mandatory_blog_mission"
 },
 {
 "id": "dinnerqueen:1594281",
