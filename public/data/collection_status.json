@@ -1,19 +1,19 @@
 {
   "as_of_date_kst": "2026-10-14",
-  "snapshot_records": 13388,
-  "platforms_with_records": 22,
+  "snapshot_records": 13449,
+  "platforms_with_records": 24,
   "media_counts": {
-    "네이버클립": 3105,
-    "블로그": 5803,
+    "네이버클립": 3111,
+    "블로그": 5842,
     "쇼츠": 15,
     "유튜브": 21,
-    "인스타그램": 2237,
+    "인스타그램": 2250,
     "틱톡": 6
   },
-  "media_unknown": 2968,
-  "deadline_unknown": 108,
-  "images_present": 13313,
-  "images_missing": 75,
+  "media_unknown": 2971,
+  "deadline_unknown": 131,
+  "images_present": 13362,
+  "images_missing": 87,
   "published_today_confirmed": 0,
   "duplicate_id_or_original_url_count": 0,
   "sources": {
@@ -53,10 +53,10 @@
       "deadline_unknown": 0
     },
     "dinnerqueen": {
-      "records": 6096,
-      "images_present": 6096,
+      "records": 6104,
+      "images_present": 6104,
       "images_missing": 0,
-      "media_unknown": 2545,
+      "media_unknown": 2548,
       "deadline_unknown": 0
     },
     "fourblog": {
@@ -129,6 +129,13 @@
       "media_unknown": 1,
       "deadline_unknown": 0
     },
+    "popomon": {
+      "records": 12,
+      "images_present": 12,
+      "images_missing": 0,
+      "media_unknown": 0,
+      "deadline_unknown": 0
+    },
     "realreview": {
       "records": 58,
       "images_present": 58,
@@ -149,6 +156,13 @@
       "images_missing": 0,
       "media_unknown": 4,
       "deadline_unknown": 0
+    },
+    "revu": {
+      "records": 41,
+      "images_present": 29,
+      "images_missing": 12,
+      "media_unknown": 0,
+      "deadline_unknown": 23
     },
     "ringble": {
       "records": 102,
