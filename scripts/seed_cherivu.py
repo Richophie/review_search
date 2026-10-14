@@ -33,9 +33,19 @@ def main():
                     page.wait_for_function("document.querySelectorAll('a.campaign_common_item').length>4",timeout=18000)
                     page.wait_for_timeout(250)
                     current=page.evaluate(JS)
-                    page.mouse.wheel(0,2300)
-                    page.wait_for_timeout(850)
-                    current.extend(page.evaluate(JS))
+                    # Follow only new cards displayed by the official list.
+                    seen_urls={c["url"] for c in current}
+                    stagnant=0
+                    for _ in range(16):
+                        page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
+                        page.wait_for_timeout(950)
+                        visible=page.evaluate(JS)
+                        new=[c for c in visible if c["url"] not in seen_urls]
+                        current.extend(new)
+                        seen_urls.update(c["url"] for c in new)
+                        stagnant=stagnant+1 if not new else 0
+                        if stagnant>=3:
+                            break
                     cards.extend(current)
                     print("Cherivu public page",url,"observed cards",len(current),flush=True)
                 except Exception as exc:
