@@ -1,9 +1,6 @@
 name: One-time deep public campaign backfill
 
 on:
-  push:
-    paths:
-
   workflow_dispatch:
 
 permissions:
