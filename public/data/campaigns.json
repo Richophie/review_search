@@ -138328,7 +138328,9 @@
 "region_text": "서울 마포",
 "category": "기타",
 "campaign_type": "방문형",
-"channels": [],
+"channels": [
+"블로그"
+],
 "slots": 1,
 "applicants": 1,
 "apply_deadline": "2026-10-20",
@@ -138341,7 +138343,8 @@
 "competition_ratio": 1.0,
 "remaining_slots": 0,
 "dedupe_key": "서울마포이엘스튜디오",
-"search_text": "이엘스튜디오 취업/프로필/여권/증명사진/승무원/사원증 中 택 1 체험권 서울 마포 기타"
+"search_text": "이엘스튜디오 취업/프로필/여권/증명사진/승무원/사원증 中 택 1 체험권 서울 마포 기타 블로그",
+"media_evidence": "dinnerqueen_detail:mandatory_blog_mission"
 },
 {
 "id": "dinnerqueen:1595202",
