@@ -44,12 +44,17 @@ for r in rows:
 result = {
     "as_of_date_kst": today,
     "snapshot_records": len(rows),
+    "target_records": 20000,
+    "records_to_target": max(0, 20000 - len(rows)),
+    "target_progress_pct": round(min(100.0, 100 * len(rows) / 20000), 2),
     "platforms_with_records": len(sources),
     "media_counts": dict(sorted(media.items())),
     "media_unknown": missing_media,
     "deadline_unknown": unknown_deadline,
     "images_present": sum(bool(r.get("image_url")) for r in rows),
     "images_missing": sum(not r.get("image_url") for r in rows),
+    "images_missing_sources": {name: sum(not r.get("image_url") for r in items) for name, items in sorted(sources.items()) if any(not r.get("image_url") for r in items)},
+    "media_unknown_sources": {name: sum(not (r.get("channels") or []) for r in items) for name, items in sorted(sources.items()) if any(not (r.get("channels") or []) for r in items)},
     "published_today_confirmed": published_today,
     "duplicate_id_or_original_url_count": len(duplicates),
     "sources": {
