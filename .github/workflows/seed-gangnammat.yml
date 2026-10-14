@@ -51,7 +51,8 @@ jobs:
             cp "$RUNNER_TEMP/gangnam-scan.json" public/data/scans/gangnammat.json
             python scripts/validate_snapshot.py
             python scripts/audit_snapshot.py
-            if git diff --quiet -- public/data/campaigns.json public/data/collection_status.json public/data/scans/gangnammat.json; then
+            git add public/data/campaigns.json public/data/collection_status.json public/data/scans/gangnammat.json
+            if git diff --cached --quiet; then
               echo "No verified changes"
               exit 0
             fi
