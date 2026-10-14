@@ -23,6 +23,7 @@ print("Live GitHub snapshot",expected,flush=True)
 print("Platforms",data["platforms_with_records"],flush=True)
 print("Popomon records",data.get("sources",{}).get("popomon",{}).get("records",0),flush=True)
 print("Revu records",data.get("sources",{}).get("revu",{}).get("records",0),flush=True)
+print("Source count expected",27,flush=True)
 for provider in ("ohmyblog","chvu","cherivu"):
  print("Newest source",provider,data.get("sources",{}).get(provider,{}).get("records",0),flush=True)
 # A small difference is acceptable during a 10-minute live cache period.
