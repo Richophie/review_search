@@ -89,7 +89,7 @@
     },
     "gangnammat": {
       "retained_records": 1158,
-      "seen_last_24h": 701,
+      "seen_last_24h": 498,
       "seen_last_48h": 738,
       "not_reverified_last_48h": 420,
       "full_coverage_proven": false
@@ -166,9 +166,9 @@
     },
     "reviewnote": {
       "retained_records": 5551,
-      "seen_last_24h": 2727,
-      "seen_last_48h": 3584,
-      "not_reverified_last_48h": 1967,
+      "seen_last_24h": 2676,
+      "seen_last_48h": 2734,
+      "not_reverified_last_48h": 2817,
       "full_coverage_proven": false
     },
     "reviewplace": {
