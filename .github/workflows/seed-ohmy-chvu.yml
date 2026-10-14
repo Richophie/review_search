@@ -1,0 +1,56 @@
+name: Seed Ohmyblog and Chvu public campaigns
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "scripts/seed_ohmy_chvu.py"
+      - "scripts/parse_ohmy_chvu.py"
+  schedule:
+    - cron: "35 1,13 * * *"
+permissions:
+  contents: write
+concurrency:
+  group: ohmyblog-chvu-public-seed
+  cancel-in-progress: true
+jobs:
+  seed:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify official card parsing
+        run: |
+          python -m py_compile scripts/parse_ohmy_chvu.py scripts/seed_ohmy_chvu.py
+          python -m unittest discover -s scripts/tests -p 'test_ohmy_chvu.py' -v
+      - name: Install public browser
+        run: |
+          python -m pip install playwright
+          python -m playwright install --with-deps chromium
+      - name: Collect publicly visible campaigns
+        run: python scripts/seed_ohmy_chvu.py
+      - name: Prune expired records and validate
+        run: |
+          python scripts/prune_live_snapshot.py
+          python scripts/validate_snapshot.py
+          python scripts/audit_snapshot.py
+      - name: Conflict-safe merge and publish
+        run: |
+          cp public/data/campaigns.json "$RUNNER_TEMP/ohmy-chvu-verified.json"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3 4; do
+            git fetch origin main
+            git reset --hard origin/main
+            python scripts/merge_snapshot.py "$RUNNER_TEMP/ohmy-chvu-verified.json"
+            python scripts/validate_snapshot.py
+            python scripts/audit_snapshot.py
+            if git diff --quiet -- public/data/campaigns.json public/data/collection_status.json; then exit 0; fi
+            git add public/data/campaigns.json public/data/collection_status.json
+            git commit -m "chore(data): merge verified Ohmyblog and Chvu public campaigns"
+            if git push origin HEAD:main; then exit 0; fi
+            sleep 3
+          done
+          exit 1

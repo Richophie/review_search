@@ -37,7 +37,9 @@ const PLATFORM: Record<string, [string,string]> = {
   odiya:["어디야","https://odiya.kr/"],
   bloglab:["블로그랩","https://www.bloglab.kr/"],
   popomon:["포포몬","https://popomon.com/"],
-  revu:["레뷰","https://webview.revu.net/"]
+  revu:["레뷰","https://webview.revu.net/"],
+  ohmyblog:["오마이블로그","https://www.ohmyblog.co.kr/"],
+  chvu:["체험뷰","https://chvu.co.kr/"]
 };
 /**
  * Prefer the current, validated GitHub snapshot rather than a copy embedded
