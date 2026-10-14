@@ -11,7 +11,7 @@ assert isinstance(campaigns, list), "Campaign index must be a list"
 seen_ids, seen_urls = set(), set()
 valid_channels = {"블로그", "인스타그램", "유튜브", "쇼츠", "네이버클립", "틱톡", "스레드"}
 allowed_domains = {
-    "dinnerqueen.net", "www.mrblog.net", "modan.kr", "www.modootogether.com", "4blog.net", "www.assaview.co.kr", "www.ringble.co.kr", "www.cometoplay.kr", "cherry-cook.com", "xn--o39a04kpnjo4k9hgflp.com", "bqueens.net", "huki.co.kr", "openreview.kr", "pavlovu.com", "tqueens.net", "storyn.kr", "www.reviewnote.co.kr", "reviewplace.co.kr", "www.reviewplace.co.kr", "gangnam-review.net", "www.real-review.kr", "odiya.kr", "www.bloglab.kr", "popomon.com", "webview.revu.net", "www.revu.net", "www.ohmyblog.co.kr", "chvu.co.kr"
+    "dinnerqueen.net", "www.mrblog.net", "modan.kr", "www.modootogether.com", "4blog.net", "www.assaview.co.kr", "www.ringble.co.kr", "www.cometoplay.kr", "cherry-cook.com", "xn--o39a04kpnjo4k9hgflp.com", "bqueens.net", "huki.co.kr", "openreview.kr", "pavlovu.com", "tqueens.net", "storyn.kr", "www.reviewnote.co.kr", "reviewplace.co.kr", "www.reviewplace.co.kr", "gangnam-review.net", "www.real-review.kr", "odiya.kr", "www.bloglab.kr", "popomon.com", "webview.revu.net", "www.revu.net", "www.ohmyblog.co.kr", "chvu.co.kr", "cherivu.co.kr"
 }
 today = datetime.now(timezone(timedelta(hours=9))).date()
 for item in campaigns:
