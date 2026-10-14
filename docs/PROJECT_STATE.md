@@ -9,7 +9,8 @@
 - 마감일 미확인 **135건**: 리얼리뷰 59, 블로그랩 38, 레뷰 23 등이 우선 재검증 대상.
 - `scripts/audit_snapshot.py`에 2만 건 목표 진행률과 누락 항목의 플랫폼별 현황을 **추가 필드**로 저장하도록 개선(`target_records`, `records_to_target`, `target_progress_pct`, `images_missing_sources`, `media_unknown_sources`). 기존 필드 호환 유지.
 - 다음 실제 수집 증량 후보는 강남맛집/리뷰노트의 허용된 공개 목록 심화, 디너의여왕 최신 갱신, 체험뷰/체리뷰 공식 카테고리 추가 검증. 접근 제한 우회 금지.
-- **아직 미검증**: 위 코드 변경 후 GitHub Actions 실행 성공 여부, 최신 Vercel Production 배포 SHA/운영 데이터 일치.
+- **Vercel 확인:** 최신 READY 프로덕션 배포는 `6b2b9435`(체리뷰 27번째 연결). 최근 데이터/문서/감사 전용 커밋은 Vercel에서 CANCELED 상태이며 새 앱 빌드가 되지 않음. 배포된 웹 앱이 GitHub 최신 JSON(14,146건)을 실시간 읽는지는 별도 운영 HTTP 검증 필요.
+- **아직 미검증**: 감사 코드 갱신 후 GitHub Actions 실행 성공 여부, 실제 서비스 검색 SSR 총계.
 
 ---
 
