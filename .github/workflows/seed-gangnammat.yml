@@ -8,6 +8,7 @@ on:
     paths:
 
       - "scripts/seed_gangnammat.py"
+      - ".github/workflows/seed-gangnammat.yml"
 
 permissions:
   contents: write
