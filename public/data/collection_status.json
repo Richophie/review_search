@@ -125,8 +125,8 @@
     "odiya": {
       "retained_records": 142,
       "seen_last_24h": 120,
-      "seen_last_48h": 128,
-      "not_reverified_last_48h": 14,
+      "seen_last_48h": 123,
+      "not_reverified_last_48h": 19,
       "full_coverage_proven": false
     },
     "ohmyblog": {
@@ -160,8 +160,8 @@
     "realreview": {
       "retained_records": 58,
       "seen_last_24h": 45,
-      "seen_last_48h": 58,
-      "not_reverified_last_48h": 0,
+      "seen_last_48h": 56,
+      "not_reverified_last_48h": 2,
       "full_coverage_proven": false
     },
     "reviewnote": {
