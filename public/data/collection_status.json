@@ -1,18 +1,18 @@
 {
   "as_of_date_kst": "2026-10-14",
-  "snapshot_records": 11816,
+  "snapshot_records": 13208,
   "platforms_with_records": 22,
   "media_counts": {
-    "네이버클립": 2411,
+    "네이버클립": 3092,
     "블로그": 5659,
     "쇼츠": 15,
     "유튜브": 21,
-    "인스타그램": 2193,
+    "인스타그램": 2209,
     "틱톡": 6
   },
-  "media_unknown": 2275,
+  "media_unknown": 2970,
   "deadline_unknown": 110,
-  "images_present": 11741,
+  "images_present": 13133,
   "images_missing": 75,
   "published_today_confirmed": 0,
   "duplicate_id_or_original_url_count": 0,
@@ -53,10 +53,10 @@
       "deadline_unknown": 0
     },
     "dinnerqueen": {
-      "records": 4701,
-      "images_present": 4701,
+      "records": 6093,
+      "images_present": 6093,
       "images_missing": 0,
-      "media_unknown": 1850,
+      "media_unknown": 2545,
       "deadline_unknown": 0
     },
     "fourblog": {
