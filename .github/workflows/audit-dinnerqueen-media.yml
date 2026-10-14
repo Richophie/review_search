@@ -1,0 +1,22 @@
+name: Audit Dinnerqueen channels and expiry recovery
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "scripts/probe_dinnerqueen_media.py"
+      - ".github/workflows/audit-dinnerqueen-media.yml"
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Confirm expired-record pruning is safe
+        run: python scripts/tests/test_existing_expiry_prune.py
+      - name: Inspect official provider media icons and detail labels
+        run: python scripts/probe_dinnerqueen_media.py
