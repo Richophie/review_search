@@ -21,6 +21,8 @@ expected=data["snapshot_records"]
 print("Production SSR total",shown,flush=True)
 print("Live GitHub snapshot",expected,flush=True)
 print("Platforms",data["platforms_with_records"],flush=True)
+print("Popomon records",data.get("sources",{}).get("popomon",{}).get("records",0),flush=True)
+print("Revu records",data.get("sources",{}).get("revu",{}).get("records",0),flush=True)
 # A small difference is acceptable during a 10-minute live cache period.
 tolerance=max(15,round(expected*0.025))
 assert abs(shown-expected)<=tolerance,(shown,expected,tolerance)
