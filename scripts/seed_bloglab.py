@@ -17,6 +17,9 @@ def main():
         by_id[row["id"]]=row
     result=sorted(by_id.values(),key=lambda x:(x["source_id"],x["id"]))
     OUT.write_text(json.dumps(result,ensure_ascii=False,indent=0)+"\n",encoding="utf-8")
-    print("Bloglab verified:",len(entries),"snapshot:",len(result),flush=True)
+    print("Bloglab verified:",len(entries),
+          "open-end campaigns:",sum(bool(x.get("open_verified")) for x in entries),
+          "classified media:",sum(bool(x.get("channels")) for x in entries),
+          "snapshot:",len(result),flush=True)
 if __name__=="__main__":
     main()
