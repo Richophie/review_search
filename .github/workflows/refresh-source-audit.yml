@@ -1,0 +1,42 @@
+name: Refresh source coverage audit
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 * * * *"
+  push:
+    paths:
+      - "scripts/audit_snapshot.py"
+      - "public/data/scans/**"
+      - ".github/workflows/refresh-source-audit.yml"
+permissions:
+  contents: write
+concurrency:
+  group: source-coverage-audit
+  cancel-in-progress: false
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Publish latest verified audit independently of slow crawlers
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3 4; do
+            git fetch origin main
+            git reset --hard origin/main
+            python scripts/validate_snapshot.py
+            python scripts/audit_snapshot.py
+            git add public/data/collection_status.json
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m "chore(audit): refresh source coverage status"
+            if git push origin HEAD:main; then exit 0; fi
+            sleep 3
+          done
+          exit 1
