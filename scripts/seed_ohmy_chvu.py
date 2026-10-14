@@ -5,7 +5,17 @@ from collect import OUT,robots_permit
 from parse_ohmy_chvu import parse_card
 from playwright.sync_api import sync_playwright
 
-SITES=[("ohmyblog","https://www.ohmyblog.co.kr/"),("chvu","https://chvu.co.kr/campaign")]
+SITES=[
+    ("ohmyblog","https://www.ohmyblog.co.kr/"),
+    ("ohmyblog","https://www.ohmyblog.co.kr/user/search?app_cate_detail=A"),
+    ("ohmyblog","https://www.ohmyblog.co.kr/user/search?app_cate_detail=B"),
+    ("ohmyblog","https://www.ohmyblog.co.kr/user/search?app_cate_detail=C"),
+    ("ohmyblog","https://www.ohmyblog.co.kr/user/search?app_cate_detail=D"),
+    ("ohmyblog","https://www.ohmyblog.co.kr/user/search?app_cate_detail=E"),
+    ("ohmyblog","https://www.ohmyblog.co.kr/user/search?app_cate_detail=F"),
+    ("chvu","https://chvu.co.kr/campaign"),
+    ("chvu","https://chvu.co.kr/campaign?sort=latest"),
+]
 DOM=r"""(source) => {
  const elems=source==='ohmyblog'
    ? [...document.querySelectorAll('a[href*="productDetail.apsl?app_seq="]')]
@@ -32,6 +42,7 @@ DOM=r"""(source) => {
 def main():
     byid={r["id"]:r for r in json.loads(OUT.read_text(encoding="utf-8"))}
     counts={}
+    distinct={}
     with sync_playwright() as p:
         browser=p.chromium.launch(headless=True)
         page=browser.new_page(locale="ko-KR",timezone_id="Asia/Seoul",viewport={"width":1200,"height":900})
@@ -45,9 +56,10 @@ def main():
                     if not response or response.status!=200:continue
                     page.wait_for_timeout(2400)
                     cards=page.evaluate(DOM,name)
-                    page.mouse.wheel(0,2400)
-                    page.wait_for_timeout(850)
-                    cards.extend(page.evaluate(DOM,name))
+                    for _ in range(3):
+                        page.mouse.wheel(0,2600)
+                        page.wait_for_timeout(850)
+                        cards.extend(page.evaluate(DOM,name))
                 except Exception as e:
                     print("Public page unavailable:",name,type(e).__name__,str(e)[:180],flush=True)
                     continue
@@ -62,8 +74,10 @@ def main():
                         if not row.get("image_url") and prev.get("image_url"):row["image_url"]=prev["image_url"]
                         if not row.get("published_at") and prev.get("published_at"):row["published_at"]=prev["published_at"]
                     byid[row["id"]]=row
-                counts[name]=len(verified)
-                print("Verified public:",name,"displayed",len(cards),"unique",len(verified),flush=True)
+                distinct.setdefault(name,set()).update(verified)
+                counts[name]=len(distinct[name])
+                print("Verified public:",name,"url",url,"displayed",len(cards),
+                      "page unique",len(verified),"source unique",counts[name],flush=True)
                 time.sleep(.7)
         finally:
             browser.close()

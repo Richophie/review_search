@@ -6,6 +6,7 @@ from parse_cherivu import parse_card
 from playwright.sync_api import sync_playwright
 
 HOME="https://cherivu.co.kr/"
+PAGES=[HOME,"https://cherivu.co.kr/campaigns"]
 JS=r"""() => [...document.querySelectorAll('a.campaign_common_item[href]')].map(a=>({
     url:a.href,
     title:a.querySelector('h4.title')?.innerText?.trim()||'',
@@ -15,23 +16,31 @@ JS=r"""() => [...document.querySelectorAll('a.campaign_common_item[href]')].map(
     icons:[...a.querySelectorAll('.sns_wrap img.sns')].map(n=>n.getAttribute('src')||'')
 })).filter(x=>x.url&&x.title)"""
 def main():
-    if not robots_permit(HOME):
-        raise SystemExit("Cherivu robots restrictions prevent public collection")
     previous=json.loads(OUT.read_text(encoding="utf-8"))
     existing={r["id"]:r for r in previous}
+    cards=[]
     with sync_playwright() as pw:
         browser=pw.chromium.launch(headless=True)
         page=browser.new_page(locale="ko-KR",timezone_id="Asia/Seoul",viewport={"width":1280,"height":940})
         try:
-            resp=page.goto(HOME,wait_until="domcontentloaded",timeout=38000)
-            if not resp or resp.status!=200:
-                raise SystemExit("Cherivu home did not respond as public")
-            page.wait_for_function("document.querySelectorAll('a.campaign_common_item').length>4",timeout=18000)
-            page.wait_for_timeout(300)
-            cards=page.evaluate(JS)
-            page.mouse.wheel(0,2300)
-            page.wait_for_timeout(850)
-            cards.extend(page.evaluate(JS))
+            for url in PAGES:
+                if not robots_permit(url):
+                    print("Cherivu listing not permitted:",url,flush=True)
+                    continue
+                try:
+                    resp=page.goto(url,wait_until="domcontentloaded",timeout=38000)
+                    if not resp or resp.status!=200:continue
+                    page.wait_for_function("document.querySelectorAll('a.campaign_common_item').length>4",timeout=18000)
+                    page.wait_for_timeout(250)
+                    current=page.evaluate(JS)
+                    page.mouse.wheel(0,2300)
+                    page.wait_for_timeout(850)
+                    current.extend(page.evaluate(JS))
+                    cards.extend(current)
+                    print("Cherivu public page",url,"observed cards",len(current),flush=True)
+                except Exception as exc:
+                    print("Cherivu public list unavailable",url,type(exc).__name__,str(exc)[:140],flush=True)
+                time.sleep(.6)
         finally:
             browser.close()
     observations={}

@@ -29,7 +29,7 @@ def safe_image(value,source):
 
 def parse_card(card,source):
     u=str(card.get("url") or "")
-    pattern=(r"https://www\.ohmyblog\.co\.kr/productDetail\.apsl\?app_seq=(\d+)"
+    pattern=(r"https://www\.ohmyblog\.co\.kr/(?:user/)?productDetail\.apsl\?app_seq=(\d+)"
              if source=="ohmyblog" else r"https://chvu\.co\.kr/campaign/(\d+)")
     m=re.fullmatch(pattern,u)
     if not m:return None
