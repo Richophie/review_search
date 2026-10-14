@@ -39,19 +39,22 @@ jobs:
       - name: Safely merge on latest main
         run: |
           cp public/data/campaigns.json "$RUNNER_TEMP/gangnam-seed.json"
+          cp public/data/scans/gangnammat.json "$RUNNER_TEMP/gangnam-scan.json"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           for attempt in 1 2 3; do
             git fetch origin main
             git reset --hard origin/main
             python scripts/merge_snapshot.py "$RUNNER_TEMP/gangnam-seed.json"
+            mkdir -p public/data/scans
+            cp "$RUNNER_TEMP/gangnam-scan.json" public/data/scans/gangnammat.json
             python scripts/validate_snapshot.py
             python scripts/audit_snapshot.py
-            if git diff --quiet -- public/data/campaigns.json public/data/collection_status.json; then
+            if git diff --quiet -- public/data/campaigns.json public/data/collection_status.json public/data/scans/gangnammat.json; then
               echo "No verified changes"
               exit 0
             fi
-            git add public/data/campaigns.json public/data/collection_status.json
+            git add public/data/campaigns.json public/data/collection_status.json public/data/scans/gangnammat.json
             git commit -m "chore(data): seed verified Gangnam Matzip campaigns"
             if git push origin HEAD:main; then exit 0; fi
             sleep 2
