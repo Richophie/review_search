@@ -34,12 +34,20 @@ for page in (1,2,10,30,60,120,200,260):
     except Exception as e:
         print("ERROR",page,type(e).__name__,str(e)[:170],flush=True)
     time.sleep(0.65)
-for cid,r in list(unknown.items())[:4]:
-    url=r["original_url"]
+detail_samples=[(cid,r["original_url"],r["title"]) for cid,r in list(unknown.items())[:2]]
+detail_samples.append(("1597713","https://dinnerqueen.net/taste/1597713","official reels reference"))
+for cid,url,title in detail_samples:
     try:
         body=safe_fetch(url)
         if not body:continue
-        print("DETAIL",cid,"bytes",len(body),"actual_title",r["title"][:60],flush=True)
+        print("DETAIL",cid,"bytes",len(body),"actual_title",title[:60],flush=True)
+        content_text=plain(body)
+        for phrase in ("리뷰어 미션","매체","블로그","인스타그램 릴스","네이버 클립","리뷰 작성"):
+            found=re.search(re.escape(phrase),content_text,re.I)
+            if found:
+                print("DETAIL_CONTEXT",cid,phrase,
+                      repr(content_text[max(0,found.start()-100):found.start()+460]),flush=True)
+
         for word in ("리뷰어 미션","블로그 포스팅","인스타그램 릴스","네이버 클립","유튜브 쇼츠","체험단 미션","리뷰 작성"):
             occ=[m.start() for m in list(re.finditer(re.escape(word),plain(body)))[:3]]
             print("DETAIL_MARKER",cid,word,"positions",occ,flush=True)
