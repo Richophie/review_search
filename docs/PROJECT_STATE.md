@@ -1,5 +1,16 @@
 # 체험단 모아보기 — 프로젝트 인수인계
 
+## 2026-10-14: 수집 기록을 플랫폼별 감사 데이터로 연결
+
+- `scripts/audit_snapshot.py`에서 `public/data/scans/*.json`의 공식 수집 기록을 읽어 `collection_status.json.source_scan_status`로 발행하게 변경 (`c3a6b16f`).
+- 각 출처의 `last_scan_at`, `verified_during_last_scan`, `discovered_list_urls`, `scan_complete`, `traversal_capped`, 실패한 탐색/수집 URL 수를 누적 공고 수와 분리. 기록 파일이 없는 출처에는 **완료 상태를 추정해서 생성하지 않음**.
+- 강남맛집 기록은 19개 목록, 당시 실제 확인 272건, `complete=false`. 누적 강남맛집 1,041건과 동일한 수치로 취급 금지.
+- [감사 자동 실행](https://github.com/Richophie/review_search/actions/runs/38518033298)은 트리거됨. 성공 및 배포 내용은 실행 후 별도 확인.
+- 향후 수집기별 `scan_manifest` 출력 확대, 증분 수집과 완전한 전체 수집의 구별, 종료 확정용 명시적 원본 근거 필요.
+
+---
+
+
 ## 2026-10-14: 수집 완료 기록 확인 및 플랫폼별 최신 관측 노출
 
 - [강남맛집 수집 실행 38516608408](https://github.com/Richophie/review_search/actions/runs/38516608408)은 성공, `public/data/scans/gangnammat.json` 실제 저장 확인.
