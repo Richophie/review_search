@@ -1,6 +1,9 @@
 {
   "as_of_date_kst": "2026-10-14",
   "snapshot_records": 14146,
+  "target_records": 20000,
+  "records_to_target": 5854,
+  "target_progress_pct": 70.73,
   "platforms_with_records": 27,
   "media_counts": {
     "네이버클립": 3147,
@@ -14,6 +17,25 @@
   "deadline_unknown": 135,
   "images_present": 14059,
   "images_missing": 87,
+  "images_missing_sources": {
+    "reviewnote": 75,
+    "revu": 12
+  },
+  "media_unknown_sources": {
+    "assaview": 204,
+    "bqueens": 57,
+    "chvu": 1,
+    "dinnerqueen": 2553,
+    "fourblog": 1,
+    "modan": 53,
+    "ohmyblog": 13,
+    "openreview": 2,
+    "pavlovu": 1,
+    "realreview": 47,
+    "reviewplace": 4,
+    "ringble": 11,
+    "tqueens": 52
+  },
   "published_today_confirmed": 2,
   "duplicate_id_or_original_url_count": 0,
   "sources": {
