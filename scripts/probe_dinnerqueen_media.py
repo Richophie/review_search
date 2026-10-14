@@ -42,6 +42,13 @@ for cid,url,title in detail_samples:
         if not body:continue
         print("DETAIL",cid,"bytes",len(body),"actual_title",title[:60],flush=True)
         content_text=plain(body)
+        idx=content_text.find("캠페인 배너")
+        if idx>=0:
+            print("DETAIL_BANNER",cid,repr(content_text[idx:idx+900]),flush=True)
+        for found in list(re.finditer(r"캠페인 이에요|캠페인이에요",content_text))[:4]:
+            print("DETAIL_CAMPAIGN_LABEL",cid,
+                  repr(content_text[max(0,found.start()-135):found.end()+140]),flush=True)
+
         for phrase in ("리뷰어 미션","매체","블로그","인스타그램 릴스","네이버 클립","리뷰 작성"):
             found=re.search(re.escape(phrase),content_text,re.I)
             if found:
