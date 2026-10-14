@@ -1,0 +1,19 @@
+name: Probe Popomon Revu and MiBL public source lists
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "scripts/probe_popomon_revu_mrblog.py"
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Observe official robots-allowed campaign entry points
+        run: python scripts/probe_popomon_revu_mrblog.py
