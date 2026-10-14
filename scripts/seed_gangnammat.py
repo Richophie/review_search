@@ -5,6 +5,8 @@ import re
 import time
 import html
 import urllib.parse
+from datetime import datetime, timezone
+from campaign_lifecycle import reconcile
 from collect import OUT, gangnammat, safe_fetch
 
 def main():
@@ -53,7 +55,7 @@ def main():
             body = safe_fetch(parent)
             if not body:
                 continue
-            for href in re.findall(r'href\\s*=\\s*["\\x27]([^"\\x27]+)', body, re.I):
+            for href in re.findall(r'href\s*=\s*["\x27]([^"\x27]+)', body, re.I):
                 url = urllib.parse.urljoin(parent, html.unescape(href))
                 parts = urllib.parse.urlsplit(url)
                 if parts.scheme != "https" or parts.hostname != "gangnam-review.net" or parts.path != "/cp/":
@@ -61,7 +63,7 @@ def main():
                 params = urllib.parse.parse_qs(parts.query)
                 if "page" not in params or any(k not in {"page", "ca", "ch"} for k in params):
                     continue
-                if len(params["page"]) != 1 or not re.fullmatch(r"\\d{1,3}", params["page"][0]):
+                if len(params["page"]) != 1 or not re.fullmatch(r"\d{1,3}", params["page"][0]):
                     continue
                 if not 1 <= int(params["page"][0]) <= 100:
                     continue
@@ -92,6 +94,18 @@ def main():
         raise SystemExit("No verified Gangnam Matzip public cards; preserve existing dataset.")
     stored = json.loads(OUT.read_text(encoding="utf-8"))
     by_id = {r["id"]: r for r in stored}
+    # A bounded scan is not proof of exhaustive coverage.
+    # Track starts and updates without marking missing records closed.
+    previous_source = [r for r in stored if r.get("source_id") == "gangnammat"]
+    _, events = reconcile(
+        previous_source, items,
+        source_id="gangnammat", complete=False,
+        observed_at=datetime.now(timezone.utc).isoformat(),
+    )
+    print("Gangnam partial scan lifecycle events:", {
+        name: sum(event["event"] == name for event in events)
+        for name in ("started", "updated", "reappeared")
+    }, flush=True)
     for item in items:
         old = by_id.get(item["id"])
         if old:
