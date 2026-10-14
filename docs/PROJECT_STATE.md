@@ -2,6 +2,16 @@
 
 ## 2026-10-14: 공개 화면 스크롤 심화 수집 적용 및 자동화 실행 추적
 
+### 세 출처 심화 수집 최종 성공 — 14,262건
+
+- [Ohmyblog/Chvu run 38514630216](https://github.com/Richophie/review_search/actions/runs/38514630216) **success**.
+- [Cherivu run 38514634171](https://github.com/Richophie/review_search/actions/runs/38514634171) **success**.
+- GitHub `public/data/collection_status.json` 재확인: **14,262건, 27곳**, 기존 14,146건보다 **순증 116건**.
+- 오마이블로그 **371→385(+14)**, 체험뷰 **85→173(+88)**, 체리뷰 **74→88(+14)**. 20,000건까지 **5,738건** 남음.
+- Vercel `review-search-two.vercel.app` production alias는 `6b2b9435` 배포에 연결된 **READY** 상태. GitHub 스냅샷이 앱 SSR에 14,262건으로 표시되는지는 네트워크 확인 불가로 아직 미확정. 수집기/데이터 변경은 배포 빌드 생략 정책에 따라 별도 앱 빌드를 요구하지 않음.
+
+
+
 - `scripts/seed_ohmy_chvu.py` (commit `5205e3c`) 및 `scripts/seed_cherivu.py` (commit `74b76c1`) 변경: 기존 짧은 공개 화면 스크롤을 **최대 16회, 새 원본 URL 3회 연속 0건이면 종료**하는 상한형 공개 카드 탐색으로 확장.
 - 원본 robots 검사, 각 출처별 카드 파서, 신규 URL 중복 제거, 기존 이미지 및 첫 발견일 보존, 마감/중복/스냅샷 검증과 충돌 안전 병합을 그대로 유지함.
 - 두 workflow가 push에 의해 실제 시작됨: 오마이블로그/체험뷰 [run 38514630216](https://github.com/Richophie/review_search/actions/runs/38514630216), 체리뷰 [run 38514634171](https://github.com/Richophie/review_search/actions/runs/38514634171). 초기 파서 검증 성공, 브라우저 수집·병합 최종 완료는 후속 실행 결과 확인 필요.
