@@ -1,8 +1,8 @@
 {
   "as_of_date_kst": "2026-10-15",
-  "snapshot_records": 14418,
+  "snapshot_records": 14419,
   "target_records": 20000,
-  "records_to_target": 5582,
+  "records_to_target": 5581,
   "target_progress_pct": 72.09,
   "platforms_with_records": 27,
   "source_scan_status": {
@@ -19,7 +19,7 @@
   "source_observation_freshness": {
     "assaview": {
       "retained_records": 588,
-      "seen_last_24h": 515,
+      "seen_last_24h": 452,
       "seen_last_48h": 581,
       "not_reverified_last_48h": 7,
       "full_coverage_proven": false
@@ -102,9 +102,9 @@
       "full_coverage_proven": false
     },
     "modan": {
-      "retained_records": 51,
-      "seen_last_24h": 41,
-      "seen_last_48h": 50,
+      "retained_records": 52,
+      "seen_last_24h": 51,
+      "seen_last_48h": 51,
       "not_reverified_last_48h": 1,
       "full_coverage_proven": false
     },
@@ -220,7 +220,7 @@
     "gaboja": "2026-10-14T23:27:49.834120+09:00",
     "gangnammat": "2026-10-14T23:27:49.834120+09:00",
     "huki": "2026-10-14T23:27:49.834120+09:00",
-    "modan": "2026-10-14T23:27:49.834120+09:00",
+    "modan": "2026-10-15T02:38:14.348190+09:00",
     "modootogether": "2026-10-14T23:27:49.834120+09:00",
     "mrblog": "2026-10-14T23:27:49.834120+09:00",
     "odiya": "2026-10-14T14:22:13.347934+09:00",
@@ -244,9 +244,9 @@
     "인스타그램": 2163,
     "틱톡": 6
   },
-  "media_unknown": 2653,
+  "media_unknown": 2654,
   "deadline_unknown": 134,
-  "images_present": 14310,
+  "images_present": 14311,
   "images_missing": 108,
   "images_missing_sources": {
     "chvu": 21,
@@ -259,7 +259,7 @@
     "chvu": 1,
     "dinnerqueen": 2298,
     "fourblog": 2,
-    "modan": 51,
+    "modan": 52,
     "ohmyblog": 11,
     "openreview": 2,
     "pavlovu": 1,
@@ -356,10 +356,10 @@
       "deadline_unknown": 7
     },
     "modan": {
-      "records": 51,
-      "images_present": 51,
+      "records": 52,
+      "images_present": 52,
       "images_missing": 0,
-      "media_unknown": 51,
+      "media_unknown": 52,
       "deadline_unknown": 0
     },
     "modootogether": {
