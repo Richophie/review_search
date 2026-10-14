@@ -48,6 +48,7 @@ result = {
     "records_to_target": max(0, 20000 - len(rows)),
     "target_progress_pct": round(min(100.0, 100 * len(rows) / 20000), 2),
     "platforms_with_records": len(sources),
+    "source_last_observed": {name: max((str(r.get("last_seen_at") or "") for r in items), default="") for name, items in sorted(sources.items())},
     "media_counts": dict(sorted(media.items())),
     "media_unknown": missing_media,
     "deadline_unknown": unknown_deadline,
