@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "scripts/probe_dinnerqueen_media.py"
+      - "scripts/tests/test_existing_expiry_prune.py"
       - ".github/workflows/audit-dinnerqueen-media.yml"
 permissions:
   contents: read
