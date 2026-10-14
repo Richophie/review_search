@@ -39,6 +39,43 @@ def main():
         except Exception as exc:
             print("Gangnam public nav discovery skipped",parent,repr(exc)[:125],flush=True)
     paths.extend(discovered[:60])
+    # Traverse page links actually advertised by each public listing.
+    # Do not invent page numbers or use private/internal endpoints.
+    queue = list(paths)
+    visited = set()
+    page_links = []
+    while queue and len(visited) < 160:
+        parent = queue.pop(0)
+        if parent in visited:
+            continue
+        visited.add(parent)
+        try:
+            body = safe_fetch(parent)
+            if not body:
+                continue
+            for href in re.findall(r'href\\s*=\\s*["\\x27]([^"\\x27]+)', body, re.I):
+                url = urllib.parse.urljoin(parent, html.unescape(href))
+                parts = urllib.parse.urlsplit(url)
+                if parts.scheme != "https" or parts.hostname != "gangnam-review.net" or parts.path != "/cp/":
+                    continue
+                params = urllib.parse.parse_qs(parts.query)
+                if "page" not in params or any(k not in {"page", "ca", "ch"} for k in params):
+                    continue
+                if len(params["page"]) != 1 or not re.fullmatch(r"\\d{1,3}", params["page"][0]):
+                    continue
+                if not 1 <= int(params["page"][0]) <= 100:
+                    continue
+                canonical = "https://gangnam-review.net/cp/?" + urllib.parse.urlencode(
+                    [(k, params[k][0]) for k in ("ca", "ch", "page") if k in params]
+                )
+                if canonical not in visited and canonical not in queue:
+                    queue.append(canonical)
+                    page_links.append(canonical)
+        except Exception as exc:
+            print("Gangnam public pagination skipped", parent, repr(exc)[:110], flush=True)
+        time.sleep(0.2)
+    paths = list(dict.fromkeys([*paths, *page_links]))
+    print("Gangnam advertised paginated lists", len(page_links), flush=True)
     print("Gangnam official nav discovered",len(discovered),"following",len(paths),"public pages",flush=True)
     verified = {}
     for url in paths:
