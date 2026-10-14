@@ -11,6 +11,25 @@ with sync_playwright() as p:
  try:
   response=page.goto(url,wait_until="domcontentloaded",timeout=40000)
   page.wait_for_timeout(2700)
+  try:
+   page.wait_for_function("document.body.innerText.includes('D-')",timeout=14000)
+   page.wait_for_timeout(350)
+  except Exception:
+   print("CAMPAIGNS_NOT_RENDERED",flush=True)
+  inspect=page.evaluate("""() => {
+    const leaf=[...document.querySelectorAll('*')].find(e=>e.children.length===0 &&
+      /(신라호텔|기프트인포|D-7)/.test(e.textContent||''));
+    if(!leaf)return {found:false,body:document.body.innerText.slice(0,260)};
+    const output=[];let n=leaf;
+    for(let i=0;n&&i<6;i++,n=n.parentElement){
+      output.push({tag:n.tagName,class:n.className?.toString().slice(0,150),
+       id:n.id,href:n.getAttribute('href'),role:n.getAttribute('role'),
+       cursor:getComputedStyle(n).cursor,
+       outer:n.outerHTML.slice(0,7000)});
+    }
+    return {found:true,parents:output};
+  }""")
+  print("CARD_ANCESTORS",json.dumps(inspect,ensure_ascii=False)[:15000],flush=True)
   data=page.evaluate("""() => ({
     page:location.href, text:document.body.innerText.slice(0,9000),
     links:[...document.querySelectorAll('a[href]')].map(a=>({
