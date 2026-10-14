@@ -19,7 +19,7 @@ def main():
     # provider's official public listing navigation. No generated IDs,
     # guessing, or access to unadvertised endpoints.
     discovered = []
-    for parent in paths[:4]:
+    for parent in paths:
         try:
             body = safe_fetch(parent)
             if not body:
@@ -38,7 +38,7 @@ def main():
                     discovered.append(canonical)
         except Exception as exc:
             print("Gangnam public nav discovery skipped",parent,repr(exc)[:125],flush=True)
-    paths.extend(discovered[:28])
+    paths.extend(discovered[:60])
     print("Gangnam official nav discovered",len(discovered),"following",len(paths),"public pages",flush=True)
     verified = {}
     for url in paths:
