@@ -5,6 +5,7 @@ import re
 import time
 import html
 import urllib.parse
+from pathlib import Path
 from datetime import datetime, timezone
 from campaign_lifecycle import reconcile
 from collect import OUT, gangnammat, safe_fetch
@@ -46,6 +47,7 @@ def main():
     queue = list(paths)
     visited = set()
     page_links = []
+    discovery_failures = []
     while queue and len(visited) < 160:
         parent = queue.pop(0)
         if parent in visited:
@@ -74,21 +76,40 @@ def main():
                     queue.append(canonical)
                     page_links.append(canonical)
         except Exception as exc:
+            discovery_failures.append(parent)
             print("Gangnam public pagination skipped", parent, repr(exc)[:110], flush=True)
         time.sleep(0.2)
     paths = list(dict.fromkeys([*paths, *page_links]))
     print("Gangnam advertised paginated lists", len(page_links), flush=True)
     print("Gangnam official nav discovered",len(discovered),"following",len(paths),"public pages",flush=True)
     verified = {}
+    collection_failures = []
     for url in paths:
         try:
             batch = gangnammat(url)
             for item in batch:
                 verified[item["id"]] = item
         except Exception as exc:
+            collection_failures.append(url)
             print("Gangnam category not verified:", url, repr(exc)[:160], flush=True)
         time.sleep(0.45)
     items = list(verified.values())
+    manifest = {
+        "source_id": "gangnammat",
+        "scanned_at": datetime.now(timezone.utc).isoformat(),
+        "discovered_list_urls": len(paths),
+        "discovery_pages_attempted": len(visited),
+        "failed_discovery_urls": discovery_failures,
+        "failed_collection_urls": collection_failures,
+        "unique_verified": len(items),
+        "traversal_capped": bool(queue),
+        "complete": False,
+        "reason": "Bounded traversal and empty/blocked responses not yet independently verified",
+    }
+    manifest_path = Path("public/data/scans/gangnammat.json")
+    manifest_path.parent.mkdir(parents=True, exist_ok=True)
+    manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print("SCAN_MANIFEST", json.dumps(manifest, ensure_ascii=False), flush=True)
     print("Gangnam listing categories verified:", len(paths), "unique records:", len(items), flush=True)
     if not items:
         raise SystemExit("No verified Gangnam Matzip public cards; preserve existing dataset.")
