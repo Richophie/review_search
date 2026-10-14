@@ -41,6 +41,19 @@ for r in rows:
         except (TypeError, ValueError):
             pass
 
+def observed_recently(value, hours):
+    if not isinstance(value, str):
+        return False
+    try:
+        when = datetime.fromisoformat(value.replace("Z", "+00:00"))
+        if when.tzinfo is None:
+            return False
+        age = datetime.now(timezone.utc) - when.astimezone(timezone.utc)
+        return timedelta(0) <= age <= timedelta(hours=hours)
+    except (ValueError, TypeError, OverflowError):
+        return False
+
+
 scan_meta = {}
 scan_dir = Path("public/data/scans")
 if scan_dir.exists():
@@ -69,6 +82,16 @@ result = {
     "target_progress_pct": round(min(100.0, 100 * len(rows) / 20000), 2),
     "platforms_with_records": len(sources),
     "source_scan_status": scan_meta,
+    "source_observation_freshness": {
+        name: {
+            "retained_records": len(items),
+            "seen_last_24h": sum(observed_recently(r.get("last_seen_at"), 24) for r in items),
+            "seen_last_48h": sum(observed_recently(r.get("last_seen_at"), 48) for r in items),
+            "not_reverified_last_48h": sum(not observed_recently(r.get("last_seen_at"), 48) for r in items),
+            "full_coverage_proven": scan_meta.get(name, {}).get("scan_complete") is True,
+        }
+        for name, items in sorted(sources.items())
+    },
     "source_last_observed": {name: max((str(r.get("last_seen_at") or "") for r in items), default="") for name, items in sorted(sources.items())},
     "media_counts": dict(sorted(media.items())),
     "media_unknown": missing_media,
