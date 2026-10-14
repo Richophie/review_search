@@ -1,5 +1,16 @@
 # 체험단 모아보기 — 프로젝트 인수인계
 
+## 2026-10-14: 27개 소스 관측 최신성 감사 완료
+
+- `scripts/audit_snapshot.py`에 `source_observation_freshness` 필드를 추가. 출처별 보존 공고, 최근 24시간 재관측, 최근 48시간 재관측, 최근 48시간 미재관측, 전체 수집 증명 여부를 분리 (`da21ee36`).
+- [독립 감사 GitHub Actions](https://github.com/Richophie/review_search/actions/runs/38519884886) **success**, GitHub `collection_status.json`에 27개 출처 모두 새 항목 저장 확인.
+- 저장본 **14,562건 / 27개 소스 / 중복 0건**. 강남맛집 저장 1,067·24시간 관측 624·48시간 미관측 210, 리뷰노트 4,863·2,041·1,967, 미블 26·20·2.
+- 시간내 재관측과 전체 목록 수집은 전혀 다르다. `full_coverage_proven=false`는 목록을 온전히 읽었는지 증명할 수 없음을 나타낸다. 미관측은 곧 마감이 아니므로 자동 종료로 취급하지 않는다.
+- 우선순위: 리뷰노트 미재관측 집중 재수집, 강남맛집 탐색 완주 증명, 미블 공식 전체 목록 접근 확인. 결과를 운영 UI에 표시하려면 별도의 화면 연결·배포 검증이 필요하다.
+
+---
+
+
 ## 2026-10-14: 수집 기록을 플랫폼별 감사 데이터로 연결
 
 - `scripts/audit_snapshot.py`에서 `public/data/scans/*.json`의 공식 수집 기록을 읽어 `collection_status.json.source_scan_status`로 발행하게 변경 (`c3a6b16f`).
