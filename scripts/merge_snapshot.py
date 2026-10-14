@@ -69,6 +69,21 @@ def combined(existing, incoming, now):
                 [winner.get("search_text") or "", *winner["channels"]]
             ).strip().lower()
 
+        # Do not discard a directly observed source-detail mission merely
+        # because a newer shortened list card does not repeat the media badge.
+        # Preserve only when canonical title and source URL are identical.
+        if (winner.get("source_id") == "dinnerqueen"
+                and not winner.get("channels")
+                and loser.get("channels")
+                and str(loser.get("media_evidence") or "").startswith("dinnerqueen_detail:")
+                and winner.get("title") == loser.get("title")
+                and winner.get("original_url") == loser.get("original_url")):
+            winner["channels"] = list(loser["channels"])
+            winner["media_evidence"] = loser["media_evidence"]
+            winner["search_text"] = " ".join(
+                [winner.get("search_text") or "", *winner["channels"]]
+            ).strip().lower()
+
         first = min(
             (v for v in (winner.get("first_seen_at"), loser.get("first_seen_at"))
              if v and timestamp(v) != datetime.min.replace(tzinfo=timezone.utc)),

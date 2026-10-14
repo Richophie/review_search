@@ -1,0 +1,53 @@
+name: Enrich Dinnerqueen media from public detail missions
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "scripts/dinnerqueen_media.py"
+      - "scripts/seed_dinnerqueen_detail_media.py"
+      - ".github/workflows/seed-dinnerqueen-detail-media.yml"
+  schedule:
+    - cron: "35 2,14 * * *"
+permissions:
+  contents: write
+concurrency:
+  group: dinnerqueen-detail-media
+  cancel-in-progress: true
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 11
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check explicit media rules
+        run: |
+          python -m unittest discover -s scripts/tests -p 'test_dinnerqueen_media.py' -v
+          python -m py_compile scripts/collect.py scripts/merge_snapshot.py scripts/seed_dinnerqueen_detail_media.py
+      - name: Check official recruiting detail missions at a considerate rate
+        run: python scripts/seed_dinnerqueen_detail_media.py
+      - name: Drop stale observations, validate and audit
+        run: |
+          python scripts/prune_live_snapshot.py
+          python scripts/validate_snapshot.py
+          python scripts/audit_snapshot.py
+      - name: Publish source-evidenced media after conflict-safe merge
+        run: |
+          cp public/data/campaigns.json "$RUNNER_TEMP/dq-media-verified.json"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3 4; do
+            git fetch origin main
+            git reset --hard origin/main
+            python scripts/merge_snapshot.py "$RUNNER_TEMP/dq-media-verified.json"
+            python scripts/validate_snapshot.py
+            python scripts/audit_snapshot.py
+            if git diff --quiet -- public/data/campaigns.json public/data/collection_status.json; then exit 0; fi
+            git add public/data/campaigns.json public/data/collection_status.json
+            git commit -m "chore(data): verify campaign-specific Dinnerqueen reviewer media"
+            if git push origin HEAD:main; then exit 0; fi
+            sleep 3
+          done
+          exit 1

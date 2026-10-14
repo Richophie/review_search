@@ -2133,6 +2133,20 @@ def main():
                 previous = stored.get(item["id"])
                 if previous:
                     item["first_seen_at"] = previous.get("first_seen_at", item["first_seen_at"])
+                    # A source detail mission can explicitly require a
+                    # particular medium even when the abbreviated listing
+                    # omits its badge. Preserve that proof only if this is
+                    # still the exact same campaign title and original URL.
+                    if (item.get("source_id") == "dinnerqueen"
+                            and not item.get("channels")
+                            and item.get("title") == previous.get("title")
+                            and item.get("original_url") == previous.get("original_url")
+                            and str(previous.get("media_evidence") or "").startswith("dinnerqueen_detail:")
+                            and previous.get("channels")):
+                        item["channels"] = list(previous["channels"])
+                        item["media_evidence"] = previous["media_evidence"]
+                        item["search_text"] = " ".join([item.get("search_text") or "",
+                                                        *item["channels"]]).strip().lower()
                     # Do not erase a previously captured photo if this run
                     # encounters a card with no publicly exposed image.
                     if not item.get("image_url") and previous.get("image_url"):
