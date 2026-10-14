@@ -79,6 +79,35 @@ class MergeMediaEvidenceTest(unittest.TestCase):
         observed=combined([stale,healthy],[],NOW)
         self.assertEqual([r["id"] for r in observed],[healthy["id"]])
 
+    def test_detail_verified_dinnerqueen_media_survives_newer_list_card(self):
+        now=NOW.isoformat()
+        original=row("detail",["블로그"],now)
+        original["id"]="dinnerqueen:101"
+        original["source_id"]="dinnerqueen"
+        original["original_url"]="https://dinnerqueen.net/taste/101"
+        original["title"]="블로그 제목 필수인 캠페인"
+        original["media_evidence"]="dinnerqueen_detail:mandatory_blog_mission"
+        later=dict(original)
+        later["last_seen_at"]=(NOW+timedelta(seconds=30)).isoformat()
+        later["channels"]=[]
+        later.pop("media_evidence")
+        merged=combined([original],[later],NOW)
+        self.assertEqual(merged[0]["channels"],["블로그"])
+        self.assertEqual(merged[0]["media_evidence"],original["media_evidence"])
+
+    def test_detail_evidence_not_carried_to_a_renamed_campaign(self):
+        original=row("detail",["블로그"],NOW.isoformat())
+        original.update({"id":"dinnerqueen:101","source_id":"dinnerqueen",
+                         "original_url":"https://dinnerqueen.net/taste/101",
+                         "media_evidence":"dinnerqueen_detail:mandatory_blog_mission"})
+        later=dict(original)
+        later["title"]="Different campaign title"
+        later["channels"]=[]
+        later["last_seen_at"]=(NOW+timedelta(seconds=30)).isoformat()
+        later.pop("media_evidence")
+        merged=combined([original],[later],NOW)
+        self.assertEqual(merged[0]["channels"],[])
+
     def test_future_deadline_only(self):
         t=NOW.isoformat()
         a=row("old",[],t)
