@@ -20,6 +20,20 @@ with sync_playwright() as p:
   })""")
   print("RENDER",response.status if response else None,data["page"],"TEXT",re.sub(r'\s+',' ',data["text"])[:2000],flush=True)
   print("LINK_COUNT",len(data["links"]),flush=True)
+  cards=page.evaluate("""() => {
+    const nodes=[...document.querySelectorAll('a[href], [role="link"], article, [class*="campaign"], [class*="Campaign"], [class*="card"], [class*="Card"]')];
+    return nodes.filter(n=>/D-\\d+|마감임박/.test(n.innerText||'') &&
+        n.getBoundingClientRect().width>135 && n.getBoundingClientRect().width<560 &&
+        n.getBoundingClientRect().height>100)
+      .slice(0,10).map(n=>({tag:n.tagName,class:n.className?.toString().slice(0,100),
+         href:n.getAttribute('href'),outer:n.outerHTML.slice(0,4200),
+         text:n.innerText.slice(0,390)}))
+  }""")
+  for item in cards:print("CARDDOM",json.dumps(item,ensure_ascii=False)[:4300],flush=True)
+  for item in data["links"]:
+    if re.search(r"/(?:campaign|review|detail|trial|product)/\\d+|/[0-9]{4,}$",item["url"]):
+      print("DETAIL_LINK",json.dumps(item,ensure_ascii=False)[:2200],flush=True)
+
   for x in data["links"][:26]:print("CARD_LINK",json.dumps(x,ensure_ascii=False)[:3200],flush=True)
  except Exception as e:print("ERROR",type(e).__name__,str(e)[:250],flush=True)
  b.close()
