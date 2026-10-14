@@ -1,0 +1,49 @@
+name: Prune expired public campaign observations
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "scripts/prune_live_snapshot.py"
+      - ".github/workflows/prune-live-snapshot.yml"
+  schedule:
+    - cron: "8 0,12 * * *"
+permissions:
+  contents: write
+concurrency:
+  group: prune-live-snapshot
+  cancel-in-progress: true
+jobs:
+  prune:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check expiration policy
+        run: |
+          python -m py_compile scripts/prune_live_snapshot.py scripts/merge_snapshot.py
+          python scripts/prune_live_snapshot.py
+          python scripts/validate_snapshot.py
+          python scripts/audit_snapshot.py
+      - name: Publish if stale records were removed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3 4; do
+            git fetch origin main
+            git reset --hard origin/main
+            python scripts/prune_live_snapshot.py
+            python scripts/validate_snapshot.py
+            python scripts/audit_snapshot.py
+            if git diff --quiet -- public/data/campaigns.json public/data/collection_status.json; then
+              echo "Snapshot already clean"
+              exit 0
+            fi
+            git add public/data/campaigns.json public/data/collection_status.json
+            git commit -m "chore(data): drop no-longer-verified expired campaign records"
+            if git push origin HEAD:main; then exit 0; fi
+            sleep 3
+          done
+          exit 1
