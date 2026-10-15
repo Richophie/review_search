@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { ArrowRight, BriefcaseBusiness, CheckCircle2, ClipboardList, LayoutDashboard, Megaphone, Search, ShieldCheck, Users, X } from "lucide-react";
+import { ArrowRight, BriefcaseBusiness, ClipboardList, LayoutDashboard, Megaphone, Search, ShieldCheck, Users } from "lucide-react";
 
 export const Route = createFileRoute("/partner/")({
   head: () => ({ meta: [
@@ -37,9 +37,10 @@ function PartnerHome() {
           <p className="mt-5 max-w-xl break-keep text-base leading-7 text-muted-foreground">광고주와 블로거를 직접 연결하는 무료 체험단 플랫폼을 만들고 있어요. 기존 통합검색 서비스는 그대로 이용할 수 있습니다.</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link to="/" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-bold text-primary-foreground hover:opacity-90">현재 모집 중인 체험단 찾기 <ArrowRight size={16}/></Link>
+            <Link to="/partner/signup" className="inline-flex min-h-11 items-center justify-center rounded-xl border border-border bg-card px-5 py-3 text-sm font-semibold hover:bg-muted">무료 회원가입</Link>
             <a href="#how-it-works" className="inline-flex min-h-11 items-center justify-center rounded-xl border border-border bg-card px-5 py-3 text-sm font-semibold hover:bg-muted">서비스 이용 방법</a>
           </div>
-          <p className="mt-3 text-xs text-muted-foreground">현재는 사전 안내 페이지이며, 회원가입과 자체 캠페인 신청은 개발 중입니다.</p>
+          <p className="mt-3 text-xs text-muted-foreground">회원가입 화면을 추가했으며, 자체 캠페인 등록과 신청 기능은 개발 중입니다.</p>
         </div>
       </section>
       <section className="grid gap-4 py-10 md:grid-cols-3" aria-label="서비스 주요 특징">
@@ -64,7 +65,7 @@ function PartnerHome() {
         <div className="rounded-2xl border border-border bg-card p-7"><Search className="text-primary" size={24}/><h2 className="mt-4 text-xl font-bold">블로그나 SNS를 운영한다면</h2><p className="mt-2 text-sm leading-6 text-muted-foreground">기존 체험단 통합검색에서 다양한 플랫폼의 공고를 지금 바로 찾아볼 수 있어요.</p><Link to="/" className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-primary">통합검색 이용하기 <ArrowRight size={16}/></Link></div>
       </section>
       <section className="mt-10 rounded-2xl border border-border bg-card p-6"><div className="flex items-start gap-3"><ShieldCheck className="mt-0.5 shrink-0 text-primary" size={22}/><div><h2 className="font-bold">솔직한 후기와 투명한 광고 표시</h2><p className="mt-1 text-sm leading-6 text-muted-foreground">체험 후기에는 경제적 이해관계를 명확히 표시해야 합니다. 좋은 평가나 특정 별점을 강요하지 않는 운영 원칙을 적용할 예정입니다.</p></div></div></section>
-      <p className="mt-8 text-center text-xs text-muted-foreground">이 페이지는 신규 서비스 소개용 첫 버전입니다. 가입·모집·신청·관리 기능은 아직 제공하지 않습니다.</p>
+      <p className="mt-8 text-center text-xs text-muted-foreground">신규 서비스 초기 개발 버전입니다. 캠페인 모집·신청·관리 기능은 아직 제공하지 않습니다.</p>
     </div>
   );
 }
