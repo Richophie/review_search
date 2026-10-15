@@ -49219,7 +49219,9 @@
 "region_text": "경북 경산",
 "category": "맛집",
 "campaign_type": "방문형",
-"channels": [],
+"channels": [
+"블로그"
+],
 "slots": 5,
 "applicants": 3,
 "apply_deadline": "2026-10-21",
@@ -49232,7 +49234,8 @@
 "competition_ratio": 0.6,
 "remaining_slots": 2,
 "dedupe_key": "경북경산다락",
-"search_text": "다락 식사권 5만원 제공 ( 아이랑 동반 불가 ) 경북 경산 맛집"
+"search_text": "다락 식사권 5만원 제공 ( 아이랑 동반 불가 ) 경북 경산 맛집 블로그",
+"media_evidence": "dinnerqueen_detail:mandatory_blog_mission"
 },
 {
 "id": "dinnerqueen:1579695",

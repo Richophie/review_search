@@ -19,7 +19,7 @@
   "source_observation_freshness": {
     "assaview": {
       "retained_records": 644,
-      "seen_last_24h": 606,
+      "seen_last_24h": 575,
       "seen_last_48h": 621,
       "not_reverified_last_48h": 23,
       "full_coverage_proven": false
@@ -40,7 +40,7 @@
     },
     "cherivu": {
       "retained_records": 128,
-      "seen_last_24h": 89,
+      "seen_last_24h": 72,
       "seen_last_48h": 128,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
@@ -54,7 +54,7 @@
     },
     "chvu": {
       "retained_records": 505,
-      "seen_last_24h": 504,
+      "seen_last_24h": 373,
       "seen_last_48h": 505,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
@@ -110,7 +110,7 @@
     },
     "modootogether": {
       "retained_records": 15,
-      "seen_last_24h": 15,
+      "seen_last_24h": 14,
       "seen_last_48h": 15,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
@@ -131,7 +131,7 @@
     },
     "ohmyblog": {
       "retained_records": 368,
-      "seen_last_24h": 367,
+      "seen_last_24h": 366,
       "seen_last_48h": 368,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
@@ -152,7 +152,7 @@
     },
     "popomon": {
       "retained_records": 29,
-      "seen_last_24h": 24,
+      "seen_last_24h": 18,
       "seen_last_48h": 29,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
@@ -180,7 +180,7 @@
     },
     "revu": {
       "retained_records": 101,
-      "seen_last_24h": 84,
+      "seen_last_24h": 57,
       "seen_last_48h": 101,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
@@ -238,13 +238,13 @@
   },
   "media_counts": {
     "네이버클립": 3400,
-    "블로그": 8487,
+    "블로그": 8488,
     "쇼츠": 17,
     "유튜브": 26,
     "인스타그램": 3245,
     "틱톡": 7
   },
-  "media_unknown": 3081,
+  "media_unknown": 3080,
   "deadline_unknown": 173,
   "images_present": 17094,
   "images_missing": 134,
@@ -258,7 +258,7 @@
     "bqueens": 65,
     "cherivu": 1,
     "chvu": 4,
-    "dinnerqueen": 2654,
+    "dinnerqueen": 2653,
     "fourblog": 2,
     "modan": 52,
     "odiya": 60,
@@ -327,7 +327,7 @@
       "records": 6889,
       "images_present": 6889,
       "images_missing": 0,
-      "media_unknown": 2654,
+      "media_unknown": 2653,
       "deadline_unknown": 0
     },
     "fourblog": {
