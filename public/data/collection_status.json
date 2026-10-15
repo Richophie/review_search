@@ -1,9 +1,9 @@
 {
   "as_of_date_kst": "2026-10-15",
-  "snapshot_records": 15542,
+  "snapshot_records": 15548,
   "target_records": 20000,
-  "records_to_target": 4458,
-  "target_progress_pct": 77.71,
+  "records_to_target": 4452,
+  "target_progress_pct": 77.74,
   "platforms_with_records": 27,
   "source_scan_status": {
     "gangnammat": {
@@ -18,9 +18,9 @@
   },
   "source_observation_freshness": {
     "assaview": {
-      "retained_records": 670,
-      "seen_last_24h": 567,
-      "seen_last_48h": 658,
+      "retained_records": 676,
+      "seen_last_24h": 575,
+      "seen_last_48h": 664,
       "not_reverified_last_48h": 12,
       "full_coverage_proven": false
     },
@@ -89,7 +89,7 @@
     },
     "gangnammat": {
       "retained_records": 1139,
-      "seen_last_24h": 329,
+      "seen_last_24h": 54,
       "seen_last_48h": 767,
       "not_reverified_last_48h": 372,
       "full_coverage_proven": false
@@ -208,7 +208,7 @@
     }
   },
   "source_last_observed": {
-    "assaview": "2026-10-15T13:25:02.493631+09:00",
+    "assaview": "2026-10-15T15:33:47.364679+09:00",
     "bloglab": "2026-10-15T13:53:34.068973+09:00",
     "bqueens": "2026-10-15T13:25:02.493631+09:00",
     "cherivu": "2026-10-15T15:28:02.687894+09:00",
@@ -238,15 +238,15 @@
   },
   "media_counts": {
     "네이버클립": 3135,
-    "블로그": 8053,
+    "블로그": 8060,
     "쇼츠": 17,
     "유튜브": 24,
     "인스타그램": 2471,
     "틱톡": 7
   },
-  "media_unknown": 2758,
+  "media_unknown": 2757,
   "deadline_unknown": 164,
-  "images_present": 15408,
+  "images_present": 15414,
   "images_missing": 134,
   "images_missing_sources": {
     "chvu": 33,
@@ -254,7 +254,7 @@
     "revu": 26
   },
   "media_unknown_sources": {
-    "assaview": 100,
+    "assaview": 99,
     "bqueens": 58,
     "chvu": 3,
     "dinnerqueen": 2403,
@@ -273,10 +273,10 @@
   "duplicate_id_or_original_url_count": 0,
   "sources": {
     "assaview": {
-      "records": 670,
-      "images_present": 670,
+      "records": 676,
+      "images_present": 676,
       "images_missing": 0,
-      "media_unknown": 100,
+      "media_unknown": 99,
       "deadline_unknown": 0
     },
     "bloglab": {
