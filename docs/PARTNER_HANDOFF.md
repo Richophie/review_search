@@ -36,3 +36,20 @@
 ## 코덱스 인계
 이 브랜치와 본 문서 및 GitHub PR diff를 읽고 계속 개발하면 된다.
 각 단계는 구현과 테스트를 별도로 보고하고, 실제 연결되지 않은 기능을 완료로 표시하지 않는다.
+
+
+## 2026-10-16 후속 작업
+
+새 파일:
+- `src/routes/partner/signup.tsx`: 이메일 가입 요청, 가입 유형 광고주/크리에이터 선택, 비밀번호 확인, 안내
+- `src/routes/partner/login.tsx`: Supabase Auth 이메일 로그인 및 로그인 성공 안내
+- `docs/partner_schema_review.sql`: **미적용** DB/RLS 설계 초안
+- `src/routes/partner/index.tsx`: 가입 페이지 링크 추가
+
+중요 현황:
+- GitHub 브랜치에 코드만 기록했고 빌드, DB migration, Auth 실사용, Vercel 배포를 검증하지 않았다.
+- signup은 Supabase auth.users에 signUp 요청하지만 신규 프로필 테이블은 아직 존재하지 않을 수 있다.
+- 회원가입 동의문은 임시 안내이므로 실제 서비스 오픈 전 유효한 이용약관 및 개인정보 수집 동의 흐름으로 교체해야 한다.
+- SQL은 프로덕션 DB에 바로 적용하지 않는다. 사용자 권한과 기존 auth.users 가입자 대상 trigger 영향, 정책 이름 충돌, 중복 트리거, SDK 타입 생성, 권한 부여를 점검 후 테스트 환경에 먼저 적용한다.
+- 신규 테이블의 외래키/RLS/업데이트 권한을 정밀 검토하고 선정/상태 변경은 별도 트랜잭션 RPC 또는 서버 전용 엔드포인트 구현 필요.
+- 기존 수집 시스템과 main 분리는 유지. Draft PR #1에서 검토한 후 병합.
