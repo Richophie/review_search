@@ -1,9 +1,9 @@
 {
   "as_of_date_kst": "2026-10-15",
-  "snapshot_records": 14687,
+  "snapshot_records": 14685,
   "target_records": 20000,
-  "records_to_target": 5313,
-  "target_progress_pct": 73.44,
+  "records_to_target": 5315,
+  "target_progress_pct": 73.42,
   "platforms_with_records": 27,
   "source_scan_status": {
     "gangnammat": {
@@ -19,14 +19,14 @@
   "source_observation_freshness": {
     "assaview": {
       "retained_records": 617,
-      "seen_last_24h": 481,
+      "seen_last_24h": 475,
       "seen_last_48h": 594,
       "not_reverified_last_48h": 23,
       "full_coverage_proven": false
     },
     "bloglab": {
       "retained_records": 40,
-      "seen_last_24h": 40,
+      "seen_last_24h": 39,
       "seen_last_48h": 40,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
@@ -61,35 +61,35 @@
     },
     "cometoplay": {
       "retained_records": 58,
-      "seen_last_24h": 27,
+      "seen_last_24h": 17,
       "seen_last_48h": 37,
       "not_reverified_last_48h": 21,
       "full_coverage_proven": false
     },
     "dinnerqueen": {
       "retained_records": 5493,
-      "seen_last_24h": 5465,
+      "seen_last_24h": 3250,
       "seen_last_48h": 5473,
       "not_reverified_last_48h": 20,
       "full_coverage_proven": false
     },
     "fourblog": {
       "retained_records": 231,
-      "seen_last_24h": 158,
+      "seen_last_24h": 139,
       "seen_last_48h": 171,
       "not_reverified_last_48h": 60,
       "full_coverage_proven": false
     },
     "gaboja": {
       "retained_records": 17,
-      "seen_last_24h": 15,
+      "seen_last_24h": 14,
       "seen_last_48h": 15,
       "not_reverified_last_48h": 2,
       "full_coverage_proven": false
     },
     "gangnammat": {
       "retained_records": 1113,
-      "seen_last_24h": 501,
+      "seen_last_24h": 477,
       "seen_last_48h": 741,
       "not_reverified_last_48h": 372,
       "full_coverage_proven": false
@@ -103,7 +103,7 @@
     },
     "modan": {
       "retained_records": 52,
-      "seen_last_24h": 51,
+      "seen_last_24h": 50,
       "seen_last_48h": 51,
       "not_reverified_last_48h": 1,
       "full_coverage_proven": false
@@ -117,7 +117,7 @@
     },
     "mrblog": {
       "retained_records": 18,
-      "seen_last_24h": 15,
+      "seen_last_24h": 14,
       "seen_last_48h": 18,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
@@ -152,42 +152,42 @@
     },
     "popomon": {
       "retained_records": 18,
-      "seen_last_24h": 18,
+      "seen_last_24h": 12,
       "seen_last_48h": 18,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
     },
     "realreview": {
-      "retained_records": 58,
+      "retained_records": 56,
       "seen_last_24h": 45,
       "seen_last_48h": 56,
-      "not_reverified_last_48h": 2,
+      "not_reverified_last_48h": 0,
       "full_coverage_proven": false
     },
     "reviewnote": {
       "retained_records": 5558,
-      "seen_last_24h": 1655,
+      "seen_last_24h": 1625,
       "seen_last_48h": 2736,
       "not_reverified_last_48h": 2822,
       "full_coverage_proven": false
     },
     "reviewplace": {
       "retained_records": 13,
-      "seen_last_24h": 12,
+      "seen_last_24h": 10,
       "seen_last_48h": 13,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
     },
     "revu": {
       "retained_records": 60,
-      "seen_last_24h": 60,
+      "seen_last_24h": 42,
       "seen_last_48h": 60,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
     },
     "ringble": {
       "retained_records": 78,
-      "seen_last_24h": 22,
+      "seen_last_24h": 21,
       "seen_last_48h": 40,
       "not_reverified_last_48h": 38,
       "full_coverage_proven": false
@@ -244,9 +244,9 @@
     "인스타그램": 2180,
     "틱톡": 6
   },
-  "media_unknown": 2658,
-  "deadline_unknown": 155,
-  "images_present": 14566,
+  "media_unknown": 2656,
+  "deadline_unknown": 153,
+  "images_present": 14564,
   "images_missing": 121,
   "images_missing_sources": {
     "chvu": 32,
@@ -264,7 +264,7 @@
     "openreview": 2,
     "pavlovu": 1,
     "popomon": 1,
-    "realreview": 47,
+    "realreview": 45,
     "reviewplace": 2,
     "ringble": 11,
     "tqueens": 41
@@ -413,11 +413,11 @@
       "deadline_unknown": 0
     },
     "realreview": {
-      "records": 58,
-      "images_present": 58,
+      "records": 56,
+      "images_present": 56,
       "images_missing": 0,
-      "media_unknown": 47,
-      "deadline_unknown": 58
+      "media_unknown": 45,
+      "deadline_unknown": 56
     },
     "reviewnote": {
       "records": 5558,
