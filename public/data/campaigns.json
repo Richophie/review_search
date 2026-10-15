@@ -52114,7 +52114,9 @@
 "region_text": "경기 평택",
 "category": "맛집",
 "campaign_type": "방문형",
-"channels": [],
+"channels": [
+"블로그"
+],
 "slots": 3,
 "applicants": 0,
 "apply_deadline": "2026-10-21",
@@ -52127,7 +52129,8 @@
 "competition_ratio": 0.0,
 "remaining_slots": 3,
 "dedupe_key": "경기평택코지하우스평택죽백점",
-"search_text": "코지하우스 평택죽백점 파스타 택 1 + 필라프 택 1 제공 ( 칼사바 메뉴 제외 ) 경기 평택 맛집"
+"search_text": "코지하우스 평택죽백점 파스타 택 1 + 필라프 택 1 제공 ( 칼사바 메뉴 제외 ) 경기 평택 맛집 블로그",
+"media_evidence": "dinnerqueen_detail:mandatory_blog_mission"
 },
 {
 "id": "dinnerqueen:1588994",
