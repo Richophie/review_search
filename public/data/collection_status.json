@@ -1,9 +1,9 @@
 {
   "as_of_date_kst": "2026-10-15",
-  "snapshot_records": 15342,
+  "snapshot_records": 15345,
   "target_records": 20000,
-  "records_to_target": 4658,
-  "target_progress_pct": 76.71,
+  "records_to_target": 4655,
+  "target_progress_pct": 76.72,
   "platforms_with_records": 27,
   "source_scan_status": {
     "gangnammat": {
@@ -25,9 +25,9 @@
       "full_coverage_proven": false
     },
     "bloglab": {
-      "retained_records": 40,
-      "seen_last_24h": 39,
-      "seen_last_48h": 40,
+      "retained_records": 43,
+      "seen_last_24h": 42,
+      "seen_last_48h": 43,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
     },
@@ -68,14 +68,14 @@
     },
     "dinnerqueen": {
       "retained_records": 5855,
-      "seen_last_24h": 3667,
+      "seen_last_24h": 3664,
       "seen_last_48h": 5835,
       "not_reverified_last_48h": 20,
       "full_coverage_proven": false
     },
     "fourblog": {
       "retained_records": 267,
-      "seen_last_24h": 175,
+      "seen_last_24h": 172,
       "seen_last_48h": 207,
       "not_reverified_last_48h": 60,
       "full_coverage_proven": false
@@ -89,7 +89,7 @@
     },
     "gangnammat": {
       "retained_records": 1139,
-      "seen_last_24h": 503,
+      "seen_last_24h": 484,
       "seen_last_48h": 767,
       "not_reverified_last_48h": 372,
       "full_coverage_proven": false
@@ -209,7 +209,7 @@
   },
   "source_last_observed": {
     "assaview": "2026-10-15T13:25:02.493631+09:00",
-    "bloglab": "2026-10-15T02:21:48.094618+09:00",
+    "bloglab": "2026-10-15T13:53:34.068973+09:00",
     "bqueens": "2026-10-15T13:25:02.493631+09:00",
     "cherivu": "2026-10-15T03:11:05.338858+09:00",
     "cherrycook": "2026-10-15T13:25:02.493631+09:00",
@@ -238,15 +238,15 @@
   },
   "media_counts": {
     "네이버클립": 3130,
-    "블로그": 7893,
+    "블로그": 7896,
     "쇼츠": 16,
     "유튜브": 24,
     "인스타그램": 2444,
     "틱톡": 7
   },
   "media_unknown": 2750,
-  "deadline_unknown": 150,
-  "images_present": 15221,
+  "deadline_unknown": 153,
+  "images_present": 15224,
   "images_missing": 121,
   "images_missing_sources": {
     "chvu": 32,
@@ -280,11 +280,11 @@
       "deadline_unknown": 0
     },
     "bloglab": {
-      "records": 40,
-      "images_present": 40,
+      "records": 43,
+      "images_present": 43,
       "images_missing": 0,
       "media_unknown": 0,
-      "deadline_unknown": 40
+      "deadline_unknown": 43
     },
     "bqueens": {
       "records": 119,
