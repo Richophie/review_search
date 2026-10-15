@@ -40,7 +40,7 @@
     },
     "cherivu": {
       "retained_records": 101,
-      "seen_last_24h": 71,
+      "seen_last_24h": 54,
       "seen_last_48h": 101,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
@@ -54,7 +54,7 @@
     },
     "chvu": {
       "retained_records": 370,
-      "seen_last_24h": 370,
+      "seen_last_24h": 368,
       "seen_last_48h": 370,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
@@ -68,14 +68,14 @@
     },
     "dinnerqueen": {
       "retained_records": 5855,
-      "seen_last_24h": 3664,
+      "seen_last_24h": 3656,
       "seen_last_48h": 5835,
       "not_reverified_last_48h": 20,
       "full_coverage_proven": false
     },
     "fourblog": {
       "retained_records": 267,
-      "seen_last_24h": 172,
+      "seen_last_24h": 169,
       "seen_last_48h": 207,
       "not_reverified_last_48h": 60,
       "full_coverage_proven": false
@@ -131,7 +131,7 @@
     },
     "ohmyblog": {
       "retained_records": 329,
-      "seen_last_24h": 329,
+      "seen_last_24h": 327,
       "seen_last_48h": 329,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
@@ -166,7 +166,7 @@
     },
     "reviewnote": {
       "retained_records": 5634,
-      "seen_last_24h": 1701,
+      "seen_last_24h": 1700,
       "seen_last_48h": 2812,
       "not_reverified_last_48h": 2822,
       "full_coverage_proven": false
@@ -228,7 +228,7 @@
     "openreview": "2026-10-15T13:25:02.493631+09:00",
     "pavlovu": "2026-10-15T13:25:02.493631+09:00",
     "popomon": "2026-10-15T03:03:49.601965+09:00",
-    "realreview": "2026-10-15T13:25:02.493631+09:00",
+    "realreview": "2026-10-15T14:06:06.823514+09:00",
     "reviewnote": "2026-10-15T13:25:02.493631+09:00",
     "reviewplace": "2026-10-15T13:25:02.493631+09:00",
     "revu": "2026-10-15T03:03:49.601965+09:00",
