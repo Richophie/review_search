@@ -90,8 +90,8 @@
     "gangnammat": {
       "retained_records": 1139,
       "seen_last_24h": 54,
-      "seen_last_48h": 753,
-      "not_reverified_last_48h": 386,
+      "seen_last_48h": 550,
+      "not_reverified_last_48h": 589,
       "full_coverage_proven": false
     },
     "huki": {
@@ -166,9 +166,9 @@
     },
     "reviewnote": {
       "retained_records": 6434,
-      "seen_last_24h": 2505,
-      "seen_last_48h": 3610,
-      "not_reverified_last_48h": 2824,
+      "seen_last_24h": 1713,
+      "seen_last_48h": 3577,
+      "not_reverified_last_48h": 2857,
       "full_coverage_proven": false
     },
     "reviewplace": {
