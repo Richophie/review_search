@@ -26,7 +26,7 @@
     },
     "bloglab": {
       "retained_records": 43,
-      "seen_last_24h": 43,
+      "seen_last_24h": 42,
       "seen_last_48h": 43,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
@@ -228,7 +228,7 @@
     "openreview": "2026-10-16T13:20:31.363534+09:00",
     "pavlovu": "2026-10-15T13:25:02.493631+09:00",
     "popomon": "2026-10-16T02:48:18.138282+09:00",
-    "realreview": "2026-10-16T13:20:31.363534+09:00",
+    "realreview": "2026-10-16T13:55:11.501204+09:00",
     "reviewnote": "2026-10-16T13:20:31.363534+09:00",
     "reviewplace": "2026-10-16T13:20:31.363534+09:00",
     "revu": "2026-10-16T02:48:18.138282+09:00",
