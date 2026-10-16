@@ -20,15 +20,15 @@
     "assaview": {
       "retained_records": 644,
       "seen_last_24h": 575,
-      "seen_last_48h": 621,
-      "not_reverified_last_48h": 23,
+      "seen_last_48h": 616,
+      "not_reverified_last_48h": 28,
       "full_coverage_proven": false
     },
     "bloglab": {
       "retained_records": 44,
       "seen_last_24h": 43,
-      "seen_last_48h": 44,
-      "not_reverified_last_48h": 0,
+      "seen_last_48h": 43,
+      "not_reverified_last_48h": 1,
       "full_coverage_proven": false
     },
     "bqueens": {
@@ -62,22 +62,22 @@
     "cometoplay": {
       "retained_records": 61,
       "seen_last_24h": 18,
-      "seen_last_48h": 40,
-      "not_reverified_last_48h": 21,
+      "seen_last_48h": 30,
+      "not_reverified_last_48h": 31,
       "full_coverage_proven": false
     },
     "dinnerqueen": {
       "retained_records": 6889,
       "seen_last_24h": 2561,
-      "seen_last_48h": 6862,
-      "not_reverified_last_48h": 27,
+      "seen_last_48h": 4703,
+      "not_reverified_last_48h": 2186,
       "full_coverage_proven": false
     },
     "fourblog": {
       "retained_records": 254,
       "seen_last_24h": 123,
-      "seen_last_48h": 187,
-      "not_reverified_last_48h": 67,
+      "seen_last_48h": 169,
+      "not_reverified_last_48h": 85,
       "full_coverage_proven": false
     },
     "gaboja": {
@@ -90,8 +90,8 @@
     "gangnammat": {
       "retained_records": 944,
       "seen_last_24h": 54,
-      "seen_last_48h": 553,
-      "not_reverified_last_48h": 391,
+      "seen_last_48h": 529,
+      "not_reverified_last_48h": 415,
       "full_coverage_proven": false
     },
     "huki": {
@@ -167,8 +167,8 @@
     "reviewnote": {
       "retained_records": 6459,
       "seen_last_24h": 1688,
-      "seen_last_48h": 2563,
-      "not_reverified_last_48h": 3896,
+      "seen_last_48h": 2533,
+      "not_reverified_last_48h": 3926,
       "full_coverage_proven": false
     },
     "reviewplace": {
@@ -188,8 +188,8 @@
     "ringble": {
       "retained_records": 104,
       "seen_last_24h": 38,
-      "seen_last_48h": 53,
-      "not_reverified_last_48h": 51,
+      "seen_last_48h": 52,
+      "not_reverified_last_48h": 52,
       "full_coverage_proven": false
     },
     "storyn": {
