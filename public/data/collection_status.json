@@ -41,8 +41,8 @@
     "cherivu": {
       "retained_records": 128,
       "seen_last_24h": 72,
-      "seen_last_48h": 99,
-      "not_reverified_last_48h": 29,
+      "seen_last_48h": 89,
+      "not_reverified_last_48h": 39,
       "full_coverage_proven": false
     },
     "cherrycook": {
@@ -55,8 +55,8 @@
     "chvu": {
       "retained_records": 505,
       "seen_last_24h": 373,
-      "seen_last_48h": 505,
-      "not_reverified_last_48h": 0,
+      "seen_last_48h": 504,
+      "not_reverified_last_48h": 1,
       "full_coverage_proven": false
     },
     "cometoplay": {
@@ -69,15 +69,15 @@
     "dinnerqueen": {
       "retained_records": 8165,
       "seen_last_24h": 3203,
-      "seen_last_48h": 6036,
-      "not_reverified_last_48h": 2129,
+      "seen_last_48h": 6028,
+      "not_reverified_last_48h": 2137,
       "full_coverage_proven": false
     },
     "fourblog": {
       "retained_records": 273,
       "seen_last_24h": 133,
-      "seen_last_48h": 186,
-      "not_reverified_last_48h": 87,
+      "seen_last_48h": 183,
+      "not_reverified_last_48h": 90,
       "full_coverage_proven": false
     },
     "gaboja": {
@@ -132,8 +132,8 @@
     "ohmyblog": {
       "retained_records": 368,
       "seen_last_24h": 366,
-      "seen_last_48h": 368,
-      "not_reverified_last_48h": 0,
+      "seen_last_48h": 367,
+      "not_reverified_last_48h": 1,
       "full_coverage_proven": false
     },
     "openreview": {
@@ -159,7 +159,7 @@
     },
     "realreview": {
       "retained_records": 60,
-      "seen_last_24h": 60,
+      "seen_last_24h": 59,
       "seen_last_48h": 60,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
@@ -167,8 +167,8 @@
     "reviewnote": {
       "retained_records": 6542,
       "seen_last_24h": 1770,
-      "seen_last_48h": 2616,
-      "not_reverified_last_48h": 3926,
+      "seen_last_48h": 2615,
+      "not_reverified_last_48h": 3927,
       "full_coverage_proven": false
     },
     "reviewplace": {
@@ -223,7 +223,7 @@
     "modan": "2026-10-16T13:20:31.363534+09:00",
     "modootogether": "2026-10-16T13:20:31.363534+09:00",
     "mrblog": "2026-10-16T13:20:31.363534+09:00",
-    "odiya": "2026-10-16T02:20:53.715934+09:00",
+    "odiya": "2026-10-16T13:58:23.840315+09:00",
     "ohmyblog": "2026-10-16T02:51:36.535046+09:00",
     "openreview": "2026-10-16T13:20:31.363534+09:00",
     "pavlovu": "2026-10-15T13:25:02.493631+09:00",
