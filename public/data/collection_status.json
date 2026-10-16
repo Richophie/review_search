@@ -1,9 +1,9 @@
 {
   "as_of_date_kst": "2026-10-16",
-  "snapshot_records": 17228,
+  "snapshot_records": 17212,
   "target_records": 20000,
-  "records_to_target": 2772,
-  "target_progress_pct": 86.14,
+  "records_to_target": 2788,
+  "target_progress_pct": 86.06,
   "platforms_with_records": 27,
   "source_scan_status": {
     "gangnammat": {
@@ -25,10 +25,10 @@
       "full_coverage_proven": false
     },
     "bloglab": {
-      "retained_records": 44,
+      "retained_records": 43,
       "seen_last_24h": 43,
       "seen_last_48h": 43,
-      "not_reverified_last_48h": 1,
+      "not_reverified_last_48h": 0,
       "full_coverage_proven": false
     },
     "bqueens": {
@@ -153,8 +153,8 @@
     "popomon": {
       "retained_records": 29,
       "seen_last_24h": 18,
-      "seen_last_48h": 29,
-      "not_reverified_last_48h": 0,
+      "seen_last_48h": 24,
+      "not_reverified_last_48h": 5,
       "full_coverage_proven": false
     },
     "realreview": {
@@ -179,10 +179,10 @@
       "full_coverage_proven": false
     },
     "revu": {
-      "retained_records": 101,
+      "retained_records": 86,
       "seen_last_24h": 57,
-      "seen_last_48h": 101,
-      "not_reverified_last_48h": 0,
+      "seen_last_48h": 84,
+      "not_reverified_last_48h": 2,
       "full_coverage_proven": false
     },
     "ringble": {
@@ -237,16 +237,16 @@
     "tqueens": "2026-10-15T23:07:22.133204+09:00"
   },
   "media_counts": {
-    "네이버클립": 3400,
-    "블로그": 8488,
+    "네이버클립": 3399,
+    "블로그": 8476,
     "쇼츠": 17,
     "유튜브": 26,
-    "인스타그램": 3245,
+    "인스타그램": 3242,
     "틱톡": 7
   },
   "media_unknown": 3080,
-  "deadline_unknown": 173,
-  "images_present": 17094,
+  "deadline_unknown": 157,
+  "images_present": 17078,
   "images_missing": 134,
   "images_missing_sources": {
     "chvu": 32,
@@ -282,11 +282,11 @@
       "deadline_unknown": 0
     },
     "bloglab": {
-      "records": 44,
-      "images_present": 44,
+      "records": 43,
+      "images_present": 43,
       "images_missing": 0,
       "media_unknown": 0,
-      "deadline_unknown": 44
+      "deadline_unknown": 43
     },
     "bqueens": {
       "records": 131,
@@ -436,11 +436,11 @@
       "deadline_unknown": 0
     },
     "revu": {
-      "records": 101,
-      "images_present": 74,
+      "records": 86,
+      "images_present": 59,
       "images_missing": 27,
       "media_unknown": 1,
-      "deadline_unknown": 64
+      "deadline_unknown": 49
     },
     "ringble": {
       "records": 104,
