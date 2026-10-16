@@ -1,8 +1,8 @@
 {
   "as_of_date_kst": "2026-10-16",
-  "snapshot_records": 19109,
+  "snapshot_records": 19110,
   "target_records": 20000,
-  "records_to_target": 891,
+  "records_to_target": 890,
   "target_progress_pct": 95.55,
   "platforms_with_records": 27,
   "source_scan_status": {
@@ -18,9 +18,9 @@
   },
   "source_observation_freshness": {
     "assaview": {
-      "retained_records": 654,
-      "seen_last_24h": 587,
-      "seen_last_48h": 625,
+      "retained_records": 655,
+      "seen_last_24h": 588,
+      "seen_last_48h": 626,
       "not_reverified_last_48h": 29,
       "full_coverage_proven": false
     },
@@ -40,7 +40,7 @@
     },
     "cherivu": {
       "retained_records": 135,
-      "seen_last_24h": 83,
+      "seen_last_24h": 67,
       "seen_last_48h": 97,
       "not_reverified_last_48h": 38,
       "full_coverage_proven": false
@@ -208,7 +208,7 @@
     }
   },
   "source_last_observed": {
-    "assaview": "2026-10-16T13:20:31.363534+09:00",
+    "assaview": "2026-10-16T15:27:51.727795+09:00",
     "bloglab": "2026-10-16T13:44:06.550862+09:00",
     "bqueens": "2026-10-16T13:20:31.363534+09:00",
     "cherivu": "2026-10-16T15:23:43.829905+09:00",
@@ -238,7 +238,7 @@
   },
   "media_counts": {
     "네이버클립": 3584,
-    "블로그": 8985,
+    "블로그": 8986,
     "쇼츠": 18,
     "유튜브": 26,
     "인스타그램": 4070,
@@ -246,7 +246,7 @@
   },
   "media_unknown": 3501,
   "deadline_unknown": 164,
-  "images_present": 18963,
+  "images_present": 18964,
   "images_missing": 146,
   "images_missing_sources": {
     "chvu": 32,
@@ -275,8 +275,8 @@
   "duplicate_id_or_original_url_count": 0,
   "sources": {
     "assaview": {
-      "records": 654,
-      "images_present": 654,
+      "records": 655,
+      "images_present": 655,
       "images_missing": 0,
       "media_unknown": 91,
       "deadline_unknown": 0
