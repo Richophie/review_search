@@ -1,9 +1,9 @@
 {
   "as_of_date_kst": "2026-10-16",
-  "snapshot_records": 19110,
+  "snapshot_records": 20001,
   "target_records": 20000,
-  "records_to_target": 890,
-  "target_progress_pct": 95.55,
+  "records_to_target": 0,
+  "target_progress_pct": 100.0,
   "platforms_with_records": 27,
   "source_scan_status": {
     "gangnammat": {
@@ -165,10 +165,10 @@
       "full_coverage_proven": false
     },
     "reviewnote": {
-      "retained_records": 6542,
-      "seen_last_24h": 1770,
-      "seen_last_48h": 2614,
-      "not_reverified_last_48h": 3928,
+      "retained_records": 7433,
+      "seen_last_24h": 2670,
+      "seen_last_48h": 3510,
+      "not_reverified_last_48h": 3923,
       "full_coverage_proven": false
     },
     "reviewplace": {
@@ -229,7 +229,7 @@
     "pavlovu": "2026-10-15T13:25:02.493631+09:00",
     "popomon": "2026-10-16T14:54:44.720267+09:00",
     "realreview": "2026-10-16T13:55:11.501204+09:00",
-    "reviewnote": "2026-10-16T13:20:31.363534+09:00",
+    "reviewnote": "2026-10-16T16:23:53.287364+09:00",
     "reviewplace": "2026-10-16T13:20:31.363534+09:00",
     "revu": "2026-10-16T14:54:44.720267+09:00",
     "ringble": "2026-10-16T13:20:31.363534+09:00",
@@ -237,16 +237,16 @@
     "tqueens": "2026-10-16T13:20:31.363534+09:00"
   },
   "media_counts": {
-    "네이버클립": 3584,
-    "블로그": 8986,
+    "네이버클립": 3702,
+    "블로그": 9763,
     "쇼츠": 18,
     "유튜브": 26,
-    "인스타그램": 4070,
+    "인스타그램": 4184,
     "틱톡": 7
   },
   "media_unknown": 3501,
   "deadline_unknown": 164,
-  "images_present": 18964,
+  "images_present": 19855,
   "images_missing": 146,
   "images_missing_sources": {
     "chvu": 32,
@@ -422,8 +422,8 @@
       "deadline_unknown": 60
     },
     "reviewnote": {
-      "records": 6542,
-      "images_present": 6467,
+      "records": 7433,
+      "images_present": 7358,
       "images_missing": 75,
       "media_unknown": 0,
       "deadline_unknown": 0
