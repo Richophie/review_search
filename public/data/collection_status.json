@@ -19,9 +19,9 @@
   "source_observation_freshness": {
     "assaview": {
       "retained_records": 655,
-      "seen_last_24h": 588,
-      "seen_last_48h": 626,
-      "not_reverified_last_48h": 29,
+      "seen_last_24h": 505,
+      "seen_last_48h": 625,
+      "not_reverified_last_48h": 30,
       "full_coverage_proven": false
     },
     "bloglab": {
@@ -90,8 +90,8 @@
     "gangnammat": {
       "retained_records": 1202,
       "seen_last_24h": 360,
-      "seen_last_48h": 613,
-      "not_reverified_last_48h": 589,
+      "seen_last_48h": 411,
+      "not_reverified_last_48h": 791,
       "full_coverage_proven": false
     },
     "huki": {
