@@ -152,7 +152,7 @@
     },
     "popomon": {
       "retained_records": 53,
-      "seen_last_24h": 24,
+      "seen_last_24h": 18,
       "seen_last_48h": 36,
       "not_reverified_last_48h": 17,
       "full_coverage_proven": false
@@ -180,7 +180,7 @@
     },
     "revu": {
       "retained_records": 99,
-      "seen_last_24h": 47,
+      "seen_last_24h": 46,
       "seen_last_48h": 86,
       "not_reverified_last_48h": 13,
       "full_coverage_proven": false
