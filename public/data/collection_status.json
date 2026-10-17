@@ -1,6 +1,6 @@
 {
   "as_of_date_kst": "2026-10-17",
-  "snapshot_records": 21464,
+  "snapshot_records": 21580,
   "target_records": 20000,
   "records_to_target": 0,
   "target_progress_pct": 100.0,
@@ -18,10 +18,10 @@
   },
   "source_observation_freshness": {
     "assaview": {
-      "retained_records": 660,
-      "seen_last_24h": 549,
-      "seen_last_48h": 633,
-      "not_reverified_last_48h": 27,
+      "retained_records": 674,
+      "seen_last_24h": 621,
+      "seen_last_48h": 649,
+      "not_reverified_last_48h": 25,
       "full_coverage_proven": false
     },
     "bloglab": {
@@ -67,16 +67,16 @@
       "full_coverage_proven": false
     },
     "dinnerqueen": {
-      "retained_records": 8939,
-      "seen_last_24h": 3227,
-      "seen_last_48h": 6030,
-      "not_reverified_last_48h": 2909,
+      "retained_records": 8941,
+      "seen_last_24h": 4667,
+      "seen_last_48h": 7470,
+      "not_reverified_last_48h": 1471,
       "full_coverage_proven": false
     },
     "fourblog": {
-      "retained_records": 261,
-      "seen_last_24h": 86,
-      "seen_last_48h": 129,
+      "retained_records": 271,
+      "seen_last_24h": 118,
+      "seen_last_48h": 139,
       "not_reverified_last_48h": 132,
       "full_coverage_proven": false
     },
@@ -103,7 +103,7 @@
     },
     "modan": {
       "retained_records": 57,
-      "seen_last_24h": 49,
+      "seen_last_24h": 53,
       "seen_last_48h": 56,
       "not_reverified_last_48h": 1,
       "full_coverage_proven": false
@@ -116,9 +116,9 @@
       "full_coverage_proven": false
     },
     "mrblog": {
-      "retained_records": 65,
-      "seen_last_24h": 46,
-      "seen_last_48h": 65,
+      "retained_records": 69,
+      "seen_last_24h": 55,
+      "seen_last_48h": 69,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
     },
@@ -165,16 +165,16 @@
       "full_coverage_proven": false
     },
     "reviewnote": {
-      "retained_records": 7764,
-      "seen_last_24h": 1769,
-      "seen_last_48h": 2259,
+      "retained_records": 7846,
+      "seen_last_24h": 1851,
+      "seen_last_48h": 2341,
       "not_reverified_last_48h": 5505,
       "full_coverage_proven": false
     },
     "reviewplace": {
-      "retained_records": 28,
-      "seen_last_24h": 23,
-      "seen_last_48h": 27,
+      "retained_records": 31,
+      "seen_last_24h": 26,
+      "seen_last_48h": 30,
       "not_reverified_last_48h": 1,
       "full_coverage_proven": false
     },
@@ -186,9 +186,9 @@
       "full_coverage_proven": false
     },
     "ringble": {
-      "retained_records": 127,
-      "seen_last_24h": 37,
-      "seen_last_48h": 57,
+      "retained_records": 128,
+      "seen_last_24h": 38,
+      "seen_last_48h": 58,
       "not_reverified_last_48h": 70,
       "full_coverage_proven": false
     },
@@ -208,45 +208,45 @@
     }
   },
   "source_last_observed": {
-    "assaview": "2026-10-17T15:16:41.532265+09:00",
+    "assaview": "2026-10-17T21:54:33.899676+09:00",
     "bloglab": "2026-10-17T13:41:53.950314+09:00",
-    "bqueens": "2026-10-17T13:12:26.278373+09:00",
+    "bqueens": "2026-10-17T21:54:33.899676+09:00",
     "cherivu": "2026-10-17T15:13:22.355499+09:00",
-    "cherrycook": "2026-10-17T13:12:26.278373+09:00",
+    "cherrycook": "2026-10-17T21:54:33.899676+09:00",
     "chvu": "2026-10-17T14:57:17.544740+09:00",
-    "cometoplay": "2026-10-17T13:12:26.278373+09:00",
-    "dinnerqueen": "2026-10-17T13:12:26.278373+09:00",
-    "fourblog": "2026-10-16T22:54:27.917267+09:00",
-    "gaboja": "2026-10-17T13:12:26.278373+09:00",
-    "gangnammat": "2026-10-17T14:55:02.297833+09:00",
-    "huki": "2026-10-17T13:12:26.278373+09:00",
-    "modan": "2026-10-17T14:04:05.397316+09:00",
-    "modootogether": "2026-10-17T15:08:31.380310+09:00",
-    "mrblog": "2026-10-17T13:12:26.278373+09:00",
+    "cometoplay": "2026-10-17T21:54:33.899676+09:00",
+    "dinnerqueen": "2026-10-17T21:54:33.899676+09:00",
+    "fourblog": "2026-10-17T21:54:33.899676+09:00",
+    "gaboja": "2026-10-17T21:54:33.899676+09:00",
+    "gangnammat": "2026-10-17T21:54:33.899676+09:00",
+    "huki": "2026-10-17T21:54:33.899676+09:00",
+    "modan": "2026-10-17T21:54:33.899676+09:00",
+    "modootogether": "2026-10-17T21:54:33.899676+09:00",
+    "mrblog": "2026-10-17T21:54:33.899676+09:00",
     "odiya": "2026-10-17T13:58:06.177511+09:00",
     "ohmyblog": "2026-10-17T14:57:17.544740+09:00",
-    "openreview": "2026-10-17T13:12:26.278373+09:00",
+    "openreview": "2026-10-17T21:54:33.899676+09:00",
     "pavlovu": "2026-10-15T13:25:02.493631+09:00",
     "popomon": "2026-10-17T14:38:38.383953+09:00",
-    "realreview": "2026-10-17T13:55:41.323421+09:00",
-    "reviewnote": "2026-10-17T16:06:08.017164+09:00",
-    "reviewplace": "2026-10-17T13:12:26.278373+09:00",
+    "realreview": "2026-10-17T21:54:33.899676+09:00",
+    "reviewnote": "2026-10-17T21:54:33.899676+09:00",
+    "reviewplace": "2026-10-17T21:54:33.899676+09:00",
     "revu": "2026-10-17T14:38:38.383953+09:00",
-    "ringble": "2026-10-17T13:12:26.278373+09:00",
-    "storyn": "2026-10-17T13:12:26.278373+09:00",
-    "tqueens": "2026-10-17T13:12:26.278373+09:00"
+    "ringble": "2026-10-17T21:54:33.899676+09:00",
+    "storyn": "2026-10-17T21:54:33.899676+09:00",
+    "tqueens": "2026-10-17T21:54:33.899676+09:00"
   },
   "media_counts": {
-    "네이버클립": 4026,
-    "블로그": 10369,
+    "네이버클립": 4038,
+    "블로그": 10463,
     "쇼츠": 19,
     "유튜브": 28,
-    "인스타그램": 4274,
+    "인스타그램": 4284,
     "틱톡": 7
   },
-  "media_unknown": 3982,
+  "media_unknown": 3993,
   "deadline_unknown": 138,
-  "images_present": 21317,
+  "images_present": 21433,
   "images_missing": 147,
   "images_missing_sources": {
     "chvu": 31,
@@ -255,19 +255,19 @@
     "revu": 40
   },
   "media_unknown_sources": {
-    "assaview": 82,
+    "assaview": 87,
     "bqueens": 70,
     "cherivu": 1,
     "chvu": 4,
-    "dinnerqueen": 3503,
+    "dinnerqueen": 3505,
     "fourblog": 1,
-    "modan": 55,
+    "modan": 56,
     "odiya": 70,
     "ohmyblog": 16,
     "openreview": 3,
     "popomon": 2,
     "realreview": 54,
-    "reviewplace": 14,
+    "reviewplace": 17,
     "revu": 1,
     "ringble": 13,
     "tqueens": 93
@@ -276,10 +276,10 @@
   "duplicate_id_or_original_url_count": 0,
   "sources": {
     "assaview": {
-      "records": 660,
-      "images_present": 660,
+      "records": 674,
+      "images_present": 674,
       "images_missing": 0,
-      "media_unknown": 82,
+      "media_unknown": 87,
       "deadline_unknown": 0
     },
     "bloglab": {
@@ -325,15 +325,15 @@
       "deadline_unknown": 0
     },
     "dinnerqueen": {
-      "records": 8939,
-      "images_present": 8939,
+      "records": 8941,
+      "images_present": 8941,
       "images_missing": 0,
-      "media_unknown": 3503,
+      "media_unknown": 3505,
       "deadline_unknown": 0
     },
     "fourblog": {
-      "records": 261,
-      "images_present": 261,
+      "records": 271,
+      "images_present": 271,
       "images_missing": 0,
       "media_unknown": 1,
       "deadline_unknown": 0
@@ -363,7 +363,7 @@
       "records": 57,
       "images_present": 57,
       "images_missing": 0,
-      "media_unknown": 55,
+      "media_unknown": 56,
       "deadline_unknown": 0
     },
     "modootogether": {
@@ -374,8 +374,8 @@
       "deadline_unknown": 4
     },
     "mrblog": {
-      "records": 65,
-      "images_present": 65,
+      "records": 69,
+      "images_present": 69,
       "images_missing": 0,
       "media_unknown": 0,
       "deadline_unknown": 0
@@ -423,17 +423,17 @@
       "deadline_unknown": 63
     },
     "reviewnote": {
-      "records": 7764,
-      "images_present": 7689,
+      "records": 7846,
+      "images_present": 7771,
       "images_missing": 75,
       "media_unknown": 0,
       "deadline_unknown": 0
     },
     "reviewplace": {
-      "records": 28,
-      "images_present": 28,
+      "records": 31,
+      "images_present": 31,
       "images_missing": 0,
-      "media_unknown": 14,
+      "media_unknown": 17,
       "deadline_unknown": 0
     },
     "revu": {
@@ -444,8 +444,8 @@
       "deadline_unknown": 28
     },
     "ringble": {
-      "records": 127,
-      "images_present": 127,
+      "records": 128,
+      "images_present": 128,
       "images_missing": 0,
       "media_unknown": 13,
       "deadline_unknown": 0
