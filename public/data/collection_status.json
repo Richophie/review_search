@@ -1,6 +1,6 @@
 {
   "as_of_date_kst": "2026-10-17",
-  "snapshot_records": 21179,
+  "snapshot_records": 21189,
   "target_records": 20000,
   "records_to_target": 0,
   "target_progress_pct": 100.0,
@@ -39,10 +39,10 @@
       "full_coverage_proven": false
     },
     "cherivu": {
-      "retained_records": 144,
-      "seen_last_24h": 68,
-      "seen_last_48h": 96,
-      "not_reverified_last_48h": 48,
+      "retained_records": 154,
+      "seen_last_24h": 83,
+      "seen_last_48h": 109,
+      "not_reverified_last_48h": 45,
       "full_coverage_proven": false
     },
     "cherrycook": {
@@ -54,7 +54,7 @@
     },
     "chvu": {
       "retained_records": 597,
-      "seen_last_24h": 408,
+      "seen_last_24h": 391,
       "seen_last_48h": 469,
       "not_reverified_last_48h": 128,
       "full_coverage_proven": false
@@ -89,7 +89,7 @@
     },
     "gangnammat": {
       "retained_records": 1349,
-      "seen_last_24h": 470,
+      "seen_last_24h": 308,
       "seen_last_48h": 507,
       "not_reverified_last_48h": 842,
       "full_coverage_proven": false
@@ -131,7 +131,7 @@
     },
     "ohmyblog": {
       "retained_records": 402,
-      "seen_last_24h": 398,
+      "seen_last_24h": 396,
       "seen_last_48h": 400,
       "not_reverified_last_48h": 2,
       "full_coverage_proven": false
@@ -211,7 +211,7 @@
     "assaview": "2026-10-17T13:12:26.278373+09:00",
     "bloglab": "2026-10-17T13:41:53.950314+09:00",
     "bqueens": "2026-10-17T13:12:26.278373+09:00",
-    "cherivu": "2026-10-17T02:42:02.087105+09:00",
+    "cherivu": "2026-10-17T15:13:22.355499+09:00",
     "cherrycook": "2026-10-17T13:12:26.278373+09:00",
     "chvu": "2026-10-17T14:57:17.544740+09:00",
     "cometoplay": "2026-10-17T13:12:26.278373+09:00",
@@ -238,7 +238,7 @@
   },
   "media_counts": {
     "네이버클립": 3993,
-    "블로그": 10117,
+    "블로그": 10127,
     "쇼츠": 19,
     "유튜브": 28,
     "인스타그램": 4240,
@@ -246,7 +246,7 @@
   },
   "media_unknown": 3983,
   "deadline_unknown": 138,
-  "images_present": 21032,
+  "images_present": 21042,
   "images_missing": 147,
   "images_missing_sources": {
     "chvu": 31,
@@ -297,8 +297,8 @@
       "deadline_unknown": 0
     },
     "cherivu": {
-      "records": 144,
-      "images_present": 144,
+      "records": 154,
+      "images_present": 154,
       "images_missing": 0,
       "media_unknown": 1,
       "deadline_unknown": 1
