@@ -63160,7 +63160,9 @@
 "region_text": "인천 검단",
 "category": "맛집",
 "campaign_type": "방문형",
-"channels": [],
+"channels": [
+"블로그"
+],
 "slots": 5,
 "applicants": 0,
 "apply_deadline": "2026-10-25",
@@ -63173,7 +63175,8 @@
 "competition_ratio": 0.0,
 "remaining_slots": 5,
 "dedupe_key": "인천검단양복점인천검단아라역점",
-"search_text": "양복점 인천검단아라역점 식사권 3만원 제공 인천 검단 맛집"
+"search_text": "양복점 인천검단아라역점 식사권 3만원 제공 인천 검단 맛집 블로그",
+"media_evidence": "dinnerqueen_detail:mandatory_blog_mission"
 },
 {
 "id": "dinnerqueen:1590230",
