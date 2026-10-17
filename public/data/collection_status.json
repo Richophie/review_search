@@ -1,14 +1,14 @@
 {
   "as_of_date_kst": "2026-10-17",
-  "snapshot_records": 21072,
+  "snapshot_records": 21193,
   "target_records": 20000,
   "records_to_target": 0,
   "target_progress_pct": 100.0,
   "platforms_with_records": 27,
   "source_scan_status": {
     "gangnammat": {
-      "last_scan_at": "2026-10-16T06:10:07.636225+00:00",
-      "verified_during_last_scan": 323,
+      "last_scan_at": "2026-10-17T05:55:47.902778+00:00",
+      "verified_during_last_scan": 308,
       "discovered_list_urls": 19,
       "scan_complete": false,
       "traversal_capped": false,
@@ -88,9 +88,9 @@
       "full_coverage_proven": false
     },
     "gangnammat": {
-      "retained_records": 1228,
-      "seen_last_24h": 349,
-      "seen_last_48h": 386,
+      "retained_records": 1349,
+      "seen_last_24h": 470,
+      "seen_last_48h": 507,
       "not_reverified_last_48h": 842,
       "full_coverage_proven": false
     },
@@ -152,7 +152,7 @@
     },
     "popomon": {
       "retained_records": 47,
-      "seen_last_24h": 24,
+      "seen_last_24h": 18,
       "seen_last_48h": 36,
       "not_reverified_last_48h": 11,
       "full_coverage_proven": false
@@ -180,7 +180,7 @@
     },
     "revu": {
       "retained_records": 110,
-      "seen_last_24h": 56,
+      "seen_last_24h": 43,
       "seen_last_48h": 98,
       "not_reverified_last_48h": 12,
       "full_coverage_proven": false
@@ -218,7 +218,7 @@
     "dinnerqueen": "2026-10-17T13:12:26.278373+09:00",
     "fourblog": "2026-10-16T22:54:27.917267+09:00",
     "gaboja": "2026-10-17T13:12:26.278373+09:00",
-    "gangnammat": "2026-10-17T13:12:26.278373+09:00",
+    "gangnammat": "2026-10-17T14:55:02.297833+09:00",
     "huki": "2026-10-17T13:12:26.278373+09:00",
     "modan": "2026-10-17T14:04:05.397316+09:00",
     "modootogether": "2026-10-17T13:12:26.278373+09:00",
@@ -237,8 +237,8 @@
     "tqueens": "2026-10-17T13:12:26.278373+09:00"
   },
   "media_counts": {
-    "네이버클립": 3990,
-    "블로그": 10008,
+    "네이버클립": 3993,
+    "블로그": 10126,
     "쇼츠": 19,
     "유튜브": 28,
     "인스타그램": 4245,
@@ -246,7 +246,7 @@
   },
   "media_unknown": 3983,
   "deadline_unknown": 152,
-  "images_present": 20925,
+  "images_present": 21046,
   "images_missing": 147,
   "images_missing_sources": {
     "chvu": 31,
@@ -346,8 +346,8 @@
       "deadline_unknown": 0
     },
     "gangnammat": {
-      "records": 1228,
-      "images_present": 1228,
+      "records": 1349,
+      "images_present": 1349,
       "images_missing": 0,
       "media_unknown": 0,
       "deadline_unknown": 0
