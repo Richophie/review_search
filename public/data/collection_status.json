@@ -55,8 +55,8 @@
     "chvu": {
       "retained_records": 597,
       "seen_last_24h": 391,
-      "seen_last_48h": 469,
-      "not_reverified_last_48h": 128,
+      "seen_last_48h": 467,
+      "not_reverified_last_48h": 130,
       "full_coverage_proven": false
     },
     "cometoplay": {
@@ -132,8 +132,8 @@
     "ohmyblog": {
       "retained_records": 402,
       "seen_last_24h": 396,
-      "seen_last_48h": 400,
-      "not_reverified_last_48h": 2,
+      "seen_last_48h": 399,
+      "not_reverified_last_48h": 3,
       "full_coverage_proven": false
     },
     "openreview": {
@@ -208,7 +208,7 @@
     }
   },
   "source_last_observed": {
-    "assaview": "2026-10-17T13:12:26.278373+09:00",
+    "assaview": "2026-10-17T15:16:41.532265+09:00",
     "bloglab": "2026-10-17T13:41:53.950314+09:00",
     "bqueens": "2026-10-17T13:12:26.278373+09:00",
     "cherivu": "2026-10-17T15:13:22.355499+09:00",
