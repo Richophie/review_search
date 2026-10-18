@@ -7,8 +7,8 @@
   "platforms_with_records": 27,
   "source_scan_status": {
     "gangnammat": {
-      "last_scan_at": "2026-10-17T05:55:47.902778+00:00",
-      "verified_during_last_scan": 308,
+      "last_scan_at": "2026-10-18T06:23:10.216988+00:00",
+      "verified_during_last_scan": 293,
       "discovered_list_urls": 19,
       "scan_complete": false,
       "traversal_capped": false,
@@ -19,7 +19,7 @@
   "source_observation_freshness": {
     "assaview": {
       "retained_records": 677,
-      "seen_last_24h": 586,
+      "seen_last_24h": 496,
       "seen_last_48h": 654,
       "not_reverified_last_48h": 23,
       "full_coverage_proven": false
@@ -40,7 +40,7 @@
     },
     "cherivu": {
       "retained_records": 162,
-      "seen_last_24h": 71,
+      "seen_last_24h": 55,
       "seen_last_48h": 95,
       "not_reverified_last_48h": 67,
       "full_coverage_proven": false
@@ -55,8 +55,8 @@
     "chvu": {
       "retained_records": 588,
       "seen_last_24h": 368,
-      "seen_last_48h": 406,
-      "not_reverified_last_48h": 182,
+      "seen_last_48h": 389,
+      "not_reverified_last_48h": 199,
       "full_coverage_proven": false
     },
     "cometoplay": {
@@ -89,9 +89,9 @@
     },
     "gangnammat": {
       "retained_records": 1349,
-      "seen_last_24h": 28,
-      "seen_last_48h": 470,
-      "not_reverified_last_48h": 879,
+      "seen_last_24h": 293,
+      "seen_last_48h": 308,
+      "not_reverified_last_48h": 1041,
       "full_coverage_proven": false
     },
     "huki": {
@@ -132,8 +132,8 @@
     "ohmyblog": {
       "retained_records": 402,
       "seen_last_24h": 396,
-      "seen_last_48h": 398,
-      "not_reverified_last_48h": 4,
+      "seen_last_48h": 396,
+      "not_reverified_last_48h": 6,
       "full_coverage_proven": false
     },
     "openreview": {
@@ -218,7 +218,7 @@
     "dinnerqueen": "2026-10-18T13:18:45.130848+09:00",
     "fourblog": "2026-10-18T13:18:45.130848+09:00",
     "gaboja": "2026-10-18T13:18:45.130848+09:00",
-    "gangnammat": "2026-10-18T13:18:45.130848+09:00",
+    "gangnammat": "2026-10-18T15:22:16.149457+09:00",
     "huki": "2026-10-18T13:18:45.130848+09:00",
     "modan": "2026-10-18T14:12:14.017304+09:00",
     "modootogether": "2026-10-18T13:18:45.130848+09:00",
