@@ -20,8 +20,8 @@
     "assaview": {
       "retained_records": 677,
       "seen_last_24h": 476,
-      "seen_last_48h": 643,
-      "not_reverified_last_48h": 34,
+      "seen_last_48h": 638,
+      "not_reverified_last_48h": 39,
       "full_coverage_proven": false
     },
     "bloglab": {
@@ -41,8 +41,8 @@
     "cherivu": {
       "retained_records": 183,
       "seen_last_24h": 71,
-      "seen_last_48h": 115,
-      "not_reverified_last_48h": 68,
+      "seen_last_48h": 100,
+      "not_reverified_last_48h": 83,
       "full_coverage_proven": false
     },
     "cherrycook": {
