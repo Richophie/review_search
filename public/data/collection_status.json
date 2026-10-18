@@ -1,6 +1,6 @@
 {
   "as_of_date_kst": "2026-10-18",
-  "snapshot_records": 21645,
+  "snapshot_records": 21636,
   "target_records": 20000,
   "records_to_target": 0,
   "target_progress_pct": 100.0,
@@ -125,8 +125,8 @@
     "odiya": {
       "retained_records": 290,
       "seen_last_24h": 180,
-      "seen_last_48h": 290,
-      "not_reverified_last_48h": 0,
+      "seen_last_48h": 180,
+      "not_reverified_last_48h": 110,
       "full_coverage_proven": false
     },
     "ohmyblog": {
@@ -158,9 +158,9 @@
       "full_coverage_proven": false
     },
     "realreview": {
-      "retained_records": 63,
+      "retained_records": 54,
       "seen_last_24h": 54,
-      "seen_last_48h": 63,
+      "seen_last_48h": 54,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
     },
@@ -228,7 +228,7 @@
     "openreview": "2026-10-18T13:18:45.130848+09:00",
     "pavlovu": "2026-10-15T13:25:02.493631+09:00",
     "popomon": "2026-10-18T01:28:42.828345+09:00",
-    "realreview": "2026-10-18T13:18:45.130848+09:00",
+    "realreview": "2026-10-18T14:03:32.885499+09:00",
     "reviewnote": "2026-10-18T13:18:45.130848+09:00",
     "reviewplace": "2026-10-18T13:18:45.130848+09:00",
     "revu": "2026-10-18T01:28:42.828345+09:00",
@@ -241,12 +241,12 @@
     "블로그": 10531,
     "쇼츠": 19,
     "유튜브": 28,
-    "인스타그램": 4282,
+    "인스타그램": 4279,
     "틱톡": 7
   },
-  "media_unknown": 3992,
-  "deadline_unknown": 157,
-  "images_present": 21498,
+  "media_unknown": 3986,
+  "deadline_unknown": 148,
+  "images_present": 21489,
   "images_missing": 147,
   "images_missing_sources": {
     "chvu": 31,
@@ -266,7 +266,7 @@
     "ohmyblog": 16,
     "openreview": 3,
     "popomon": 2,
-    "realreview": 54,
+    "realreview": 48,
     "reviewplace": 18,
     "revu": 1,
     "ringble": 13,
@@ -416,11 +416,11 @@
       "deadline_unknown": 0
     },
     "realreview": {
-      "records": 63,
-      "images_present": 63,
+      "records": 54,
+      "images_present": 54,
       "images_missing": 0,
-      "media_unknown": 54,
-      "deadline_unknown": 58
+      "media_unknown": 48,
+      "deadline_unknown": 49
     },
     "reviewnote": {
       "records": 7913,
