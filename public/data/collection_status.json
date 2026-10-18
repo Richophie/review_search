@@ -19,7 +19,7 @@
   "source_observation_freshness": {
     "assaview": {
       "retained_records": 676,
-      "seen_last_24h": 489,
+      "seen_last_24h": 414,
       "seen_last_48h": 642,
       "not_reverified_last_48h": 34,
       "full_coverage_proven": false
@@ -40,7 +40,7 @@
     },
     "cherivu": {
       "retained_records": 176,
-      "seen_last_24h": 72,
+      "seen_last_24h": 57,
       "seen_last_48h": 102,
       "not_reverified_last_48h": 74,
       "full_coverage_proven": false
@@ -213,7 +213,7 @@
     "bqueens": "2026-10-18T13:18:45.130848+09:00",
     "cherivu": "2026-10-18T15:36:40.085425+09:00",
     "cherrycook": "2026-10-18T13:18:45.130848+09:00",
-    "chvu": "2026-10-18T15:25:17.362619+09:00",
+    "chvu": "2026-10-19T01:43:45.189648+09:00",
     "cometoplay": "2026-10-18T13:18:45.130848+09:00",
     "dinnerqueen": "2026-10-18T13:18:45.130848+09:00",
     "fourblog": "2026-10-18T13:18:45.130848+09:00",
@@ -224,7 +224,7 @@
     "modootogether": "2026-10-18T15:34:13.206638+09:00",
     "mrblog": "2026-10-18T13:18:45.130848+09:00",
     "odiya": "2026-10-19T01:08:05.789620+09:00",
-    "ohmyblog": "2026-10-18T15:25:17.362619+09:00",
+    "ohmyblog": "2026-10-19T01:43:45.189648+09:00",
     "openreview": "2026-10-18T13:18:45.130848+09:00",
     "pavlovu": "2026-10-15T13:25:02.493631+09:00",
     "popomon": "2026-10-19T01:34:55.531054+09:00",
