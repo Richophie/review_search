@@ -1,6 +1,6 @@
 {
   "as_of_date_kst": "2026-10-19",
-  "snapshot_records": 21089,
+  "snapshot_records": 21097,
   "target_records": 20000,
   "records_to_target": 0,
   "target_progress_pct": 100.0,
@@ -151,9 +151,9 @@
       "full_coverage_proven": false
     },
     "popomon": {
-      "retained_records": 53,
-      "seen_last_24h": 13,
-      "seen_last_48h": 25,
+      "retained_records": 59,
+      "seen_last_24h": 18,
+      "seen_last_48h": 31,
       "not_reverified_last_48h": 28,
       "full_coverage_proven": false
     },
@@ -179,9 +179,9 @@
       "full_coverage_proven": false
     },
     "revu": {
-      "retained_records": 63,
-      "seen_last_24h": 42,
-      "seen_last_48h": 43,
+      "retained_records": 65,
+      "seen_last_24h": 44,
+      "seen_last_48h": 45,
       "not_reverified_last_48h": 20,
       "full_coverage_proven": false
     },
@@ -227,26 +227,26 @@
     "ohmyblog": "2026-10-18T15:25:17.362619+09:00",
     "openreview": "2026-10-18T13:18:45.130848+09:00",
     "pavlovu": "2026-10-15T13:25:02.493631+09:00",
-    "popomon": "2026-10-18T14:59:25.323850+09:00",
+    "popomon": "2026-10-19T01:34:55.531054+09:00",
     "realreview": "2026-10-19T01:06:04.915026+09:00",
     "reviewnote": "2026-10-18T16:22:08.782081+09:00",
     "reviewplace": "2026-10-18T13:18:45.130848+09:00",
-    "revu": "2026-10-18T14:59:25.323850+09:00",
+    "revu": "2026-10-19T01:34:55.531054+09:00",
     "ringble": "2026-10-18T13:18:45.130848+09:00",
     "storyn": "2026-10-18T13:18:45.130848+09:00",
     "tqueens": "2026-10-18T13:18:45.130848+09:00"
   },
   "media_counts": {
     "네이버클립": 3998,
-    "블로그": 10152,
+    "블로그": 10159,
     "쇼츠": 17,
     "유튜브": 28,
-    "인스타그램": 4228,
+    "인스타그램": 4229,
     "틱톡": 7
   },
   "media_unknown": 3889,
-  "deadline_unknown": 151,
-  "images_present": 20949,
+  "deadline_unknown": 159,
+  "images_present": 20957,
   "images_missing": 140,
   "images_missing_sources": {
     "chvu": 31,
@@ -410,8 +410,8 @@
       "deadline_unknown": 0
     },
     "popomon": {
-      "records": 53,
-      "images_present": 52,
+      "records": 59,
+      "images_present": 58,
       "images_missing": 1,
       "media_unknown": 2,
       "deadline_unknown": 0
@@ -438,11 +438,11 @@
       "deadline_unknown": 0
     },
     "revu": {
-      "records": 63,
-      "images_present": 31,
+      "records": 65,
+      "images_present": 33,
       "images_missing": 32,
       "media_unknown": 1,
-      "deadline_unknown": 30
+      "deadline_unknown": 38
     },
     "ringble": {
       "records": 86,
