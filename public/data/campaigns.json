@@ -56817,7 +56817,9 @@
 "region_text": "충북 청주",
 "category": "기타",
 "campaign_type": "방문형",
-"channels": [],
+"channels": [
+"블로그"
+],
 "slots": 5,
 "applicants": 3,
 "apply_deadline": "2026-10-19",
@@ -56830,7 +56832,8 @@
 "competition_ratio": 0.6,
 "remaining_slots": 2,
 "dedupe_key": "충북청주신광국물떡볶이복대직영점",
-"search_text": "신광국물떡볶이 복대직영점 한그릇떡볶이 (2인분) 충북 청주 기타"
+"search_text": "신광국물떡볶이 복대직영점 한그릇떡볶이 (2인분) 충북 청주 기타 블로그",
+"media_evidence": "dinnerqueen_detail:mandatory_blog_mission"
 },
 {
 "id": "dinnerqueen:1580719",
@@ -56845,7 +56848,9 @@
 "region_text": "전남 광주",
 "category": "맛집",
 "campaign_type": "방문형",
-"channels": [],
+"channels": [
+"블로그"
+],
 "slots": 3,
 "applicants": 6,
 "apply_deadline": "2026-10-19",
@@ -56858,7 +56863,8 @@
 "competition_ratio": 2.0,
 "remaining_slots": 0,
 "dedupe_key": "전남광주번개어시장1984첨단점",
-"search_text": "번개어시장 1984 첨단점 식사권 5만원 제공 전남 광주 맛집"
+"search_text": "번개어시장 1984 첨단점 식사권 5만원 제공 전남 광주 맛집 블로그",
+"media_evidence": "dinnerqueen_detail:mandatory_blog_mission"
 },
 {
 "id": "dinnerqueen:1580720",
@@ -56873,7 +56879,9 @@
 "region_text": "제주 제주시",
 "category": "숙박·여행",
 "campaign_type": "방문형",
-"channels": [],
+"channels": [
+"블로그"
+],
 "slots": 5,
 "applicants": 8,
 "apply_deadline": "2026-10-19",
@@ -56886,7 +56894,8 @@
 "competition_ratio": 1.6,
 "remaining_slots": 0,
 "dedupe_key": "제주제주시세화비치스테이",
-"search_text": "세화비치 스테이 세화비치 게스트하우스 2인 1실 1박 숙박 제공 제주 제주시 숙박·여행"
+"search_text": "세화비치 스테이 세화비치 게스트하우스 2인 1실 1박 숙박 제공 제주 제주시 숙박·여행 블로그",
+"media_evidence": "dinnerqueen_detail:mandatory_blog_mission"
 },
 {
 "id": "dinnerqueen:1580722",
