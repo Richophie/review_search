@@ -1,6 +1,6 @@
 {
   "as_of_date_kst": "2026-10-18",
-  "snapshot_records": 21636,
+  "snapshot_records": 21637,
   "target_records": 20000,
   "records_to_target": 0,
   "target_progress_pct": 100.0,
@@ -102,9 +102,9 @@
       "full_coverage_proven": false
     },
     "modan": {
-      "retained_records": 55,
-      "seen_last_24h": 40,
-      "seen_last_48h": 51,
+      "retained_records": 56,
+      "seen_last_24h": 48,
+      "seen_last_48h": 52,
       "not_reverified_last_48h": 4,
       "full_coverage_proven": false
     },
@@ -220,7 +220,7 @@
     "gaboja": "2026-10-18T13:18:45.130848+09:00",
     "gangnammat": "2026-10-18T13:18:45.130848+09:00",
     "huki": "2026-10-18T13:18:45.130848+09:00",
-    "modan": "2026-10-18T13:18:45.130848+09:00",
+    "modan": "2026-10-18T14:12:14.017304+09:00",
     "modootogether": "2026-10-18T13:18:45.130848+09:00",
     "mrblog": "2026-10-18T13:18:45.130848+09:00",
     "odiya": "2026-10-18T14:06:40.015200+09:00",
@@ -238,7 +238,7 @@
   },
   "media_counts": {
     "네이버클립": 4041,
-    "블로그": 10531,
+    "블로그": 10532,
     "쇼츠": 19,
     "유튜브": 28,
     "인스타그램": 4279,
@@ -246,7 +246,7 @@
   },
   "media_unknown": 3986,
   "deadline_unknown": 148,
-  "images_present": 21489,
+  "images_present": 21490,
   "images_missing": 147,
   "images_missing_sources": {
     "chvu": 31,
@@ -360,8 +360,8 @@
       "deadline_unknown": 11
     },
     "modan": {
-      "records": 55,
-      "images_present": 55,
+      "records": 56,
+      "images_present": 56,
       "images_missing": 0,
       "media_unknown": 54,
       "deadline_unknown": 0
