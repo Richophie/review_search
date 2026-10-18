@@ -153,8 +153,8 @@
     "popomon": {
       "retained_records": 59,
       "seen_last_24h": 18,
-      "seen_last_48h": 31,
-      "not_reverified_last_48h": 28,
+      "seen_last_48h": 25,
+      "not_reverified_last_48h": 34,
       "full_coverage_proven": false
     },
     "realreview": {
