@@ -1,9 +1,9 @@
 {
   "as_of_date_kst": "2026-10-20",
-  "snapshot_records": 19632,
+  "snapshot_records": 19629,
   "target_records": 20000,
-  "records_to_target": 368,
-  "target_progress_pct": 98.16,
+  "records_to_target": 371,
+  "target_progress_pct": 98.14,
   "platforms_with_records": 27,
   "source_scan_status": {
     "gangnammat": {
@@ -19,9 +19,9 @@
   "source_observation_freshness": {
     "assaview": {
       "retained_records": 663,
-      "seen_last_24h": 625,
-      "seen_last_48h": 636,
-      "not_reverified_last_48h": 27,
+      "seen_last_24h": 560,
+      "seen_last_48h": 630,
+      "not_reverified_last_48h": 33,
       "full_coverage_proven": false
     },
     "bloglab": {
@@ -39,10 +39,10 @@
       "full_coverage_proven": false
     },
     "cherivu": {
-      "retained_records": 161,
-      "seen_last_24h": 71,
-      "seen_last_48h": 100,
-      "not_reverified_last_48h": 61,
+      "retained_records": 158,
+      "seen_last_24h": 57,
+      "seen_last_48h": 87,
+      "not_reverified_last_48h": 71,
       "full_coverage_proven": false
     },
     "cherrycook": {
@@ -54,7 +54,7 @@
     },
     "chvu": {
       "retained_records": 685,
-      "seen_last_24h": 494,
+      "seen_last_24h": 270,
       "seen_last_48h": 504,
       "not_reverified_last_48h": 181,
       "full_coverage_proven": false
@@ -238,15 +238,15 @@
   },
   "media_counts": {
     "네이버클립": 3395,
-    "블로그": 10496,
+    "블로그": 10493,
     "쇼츠": 22,
     "유튜브": 32,
     "인스타그램": 3963,
     "틱톡": 7
   },
   "media_unknown": 3004,
-  "deadline_unknown": 197,
-  "images_present": 19484,
+  "deadline_unknown": 194,
+  "images_present": 19481,
   "images_missing": 148,
   "images_missing_sources": {
     "chvu": 31,
@@ -297,11 +297,11 @@
       "deadline_unknown": 0
     },
     "cherivu": {
-      "records": 161,
-      "images_present": 161,
+      "records": 158,
+      "images_present": 158,
       "images_missing": 0,
       "media_unknown": 1,
-      "deadline_unknown": 36
+      "deadline_unknown": 33
     },
     "cherrycook": {
       "records": 19,
