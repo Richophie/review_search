@@ -103,7 +103,7 @@
     },
     "modan": {
       "retained_records": 57,
-      "seen_last_24h": 36,
+      "seen_last_24h": 29,
       "seen_last_48h": 51,
       "not_reverified_last_48h": 6,
       "full_coverage_proven": false
@@ -124,7 +124,7 @@
     },
     "odiya": {
       "retained_records": 299,
-      "seen_last_24h": 199,
+      "seen_last_24h": 120,
       "seen_last_48h": 199,
       "not_reverified_last_48h": 100,
       "full_coverage_proven": false
@@ -159,7 +159,7 @@
     },
     "realreview": {
       "retained_records": 60,
-      "seen_last_24h": 60,
+      "seen_last_24h": 56,
       "seen_last_48h": 60,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
@@ -228,7 +228,7 @@
     "openreview": "2026-10-19T13:28:22.886276+09:00",
     "pavlovu": "2026-10-15T13:25:02.493631+09:00",
     "popomon": "2026-10-19T01:34:55.531054+09:00",
-    "realreview": "2026-10-19T13:28:22.886276+09:00",
+    "realreview": "2026-10-19T14:13:24.507005+09:00",
     "reviewnote": "2026-10-19T13:28:22.886276+09:00",
     "reviewplace": "2026-10-19T13:28:22.886276+09:00",
     "revu": "2026-10-19T01:34:55.531054+09:00",
