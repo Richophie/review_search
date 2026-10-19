@@ -1,14 +1,14 @@
 {
   "as_of_date_kst": "2026-10-19",
-  "snapshot_records": 21597,
+  "snapshot_records": 21763,
   "target_records": 20000,
   "records_to_target": 0,
   "target_progress_pct": 100.0,
   "platforms_with_records": 27,
   "source_scan_status": {
     "gangnammat": {
-      "last_scan_at": "2026-10-18T06:23:10.216988+00:00",
-      "verified_during_last_scan": 293,
+      "last_scan_at": "2026-10-19T06:34:57.658886+00:00",
+      "verified_during_last_scan": 269,
       "discovered_list_urls": 19,
       "scan_complete": false,
       "traversal_capped": false,
@@ -54,7 +54,7 @@
     },
     "chvu": {
       "retained_records": 575,
-      "seen_last_24h": 379,
+      "seen_last_24h": 366,
       "seen_last_48h": 379,
       "not_reverified_last_48h": 196,
       "full_coverage_proven": false
@@ -88,9 +88,9 @@
       "full_coverage_proven": false
     },
     "gangnammat": {
-      "retained_records": 1122,
-      "seen_last_24h": 319,
-      "seen_last_48h": 319,
+      "retained_records": 1288,
+      "seen_last_24h": 293,
+      "seen_last_48h": 485,
       "not_reverified_last_48h": 803,
       "full_coverage_proven": false
     },
@@ -218,7 +218,7 @@
     "dinnerqueen": "2026-10-19T13:28:22.886276+09:00",
     "fourblog": "2026-10-19T13:28:22.886276+09:00",
     "gaboja": "2026-10-19T13:28:22.886276+09:00",
-    "gangnammat": "2026-10-19T13:28:22.886276+09:00",
+    "gangnammat": "2026-10-19T15:34:11.289461+09:00",
     "huki": "2026-10-19T13:28:22.886276+09:00",
     "modan": "2026-10-19T14:24:15.236733+09:00",
     "modootogether": "2026-10-19T13:28:22.886276+09:00",
@@ -238,7 +238,7 @@
   },
   "media_counts": {
     "네이버클립": 4104,
-    "블로그": 10374,
+    "블로그": 10540,
     "쇼츠": 20,
     "유튜브": 29,
     "인스타그램": 4368,
@@ -246,7 +246,7 @@
   },
   "media_unknown": 3978,
   "deadline_unknown": 197,
-  "images_present": 21445,
+  "images_present": 21611,
   "images_missing": 152,
   "images_missing_sources": {
     "chvu": 31,
@@ -347,8 +347,8 @@
       "deadline_unknown": 0
     },
     "gangnammat": {
-      "records": 1122,
-      "images_present": 1122,
+      "records": 1288,
+      "images_present": 1288,
       "images_missing": 0,
       "media_unknown": 0,
       "deadline_unknown": 0
