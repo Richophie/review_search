@@ -64085,7 +64085,9 @@
 "region_text": "경남 양산",
 "category": "맛집",
 "campaign_type": "방문형",
-"channels": [],
+"channels": [
+"블로그"
+],
 "slots": 5,
 "applicants": 1,
 "apply_deadline": "2026-10-22",
@@ -64098,7 +64100,8 @@
 "competition_ratio": 0.2,
 "remaining_slots": 4,
 "dedupe_key": "경남양산와와수산",
-"search_text": "와와수산 식사권 5만원권 제공 경남 양산 맛집"
+"search_text": "와와수산 식사권 5만원권 제공 경남 양산 맛집 블로그",
+"media_evidence": "dinnerqueen_detail:mandatory_blog_mission"
 },
 {
 "id": "dinnerqueen:1590355",
@@ -64113,7 +64116,9 @@
 "region_text": "전남 여수",
 "category": "맛집",
 "campaign_type": "방문형",
-"channels": [],
+"channels": [
+"블로그"
+],
 "slots": 5,
 "applicants": 0,
 "apply_deadline": "2026-10-22",
@@ -64126,7 +64131,8 @@
 "competition_ratio": 0.0,
 "remaining_slots": 5,
 "dedupe_key": "전남여수뒷골목포차",
-"search_text": "뒷골목포차 식사권 3만원 제공 전남 여수 맛집"
+"search_text": "뒷골목포차 식사권 3만원 제공 전남 여수 맛집 블로그",
+"media_evidence": "dinnerqueen_detail:mandatory_blog_mission"
 },
 {
 "id": "dinnerqueen:1590356",
