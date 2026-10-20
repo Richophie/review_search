@@ -19,14 +19,14 @@
   "source_observation_freshness": {
     "assaview": {
       "retained_records": 607,
-      "seen_last_24h": 547,
+      "seen_last_24h": 491,
       "seen_last_48h": 581,
       "not_reverified_last_48h": 26,
       "full_coverage_proven": false
     },
     "bloglab": {
       "retained_records": 41,
-      "seen_last_24h": 41,
+      "seen_last_24h": 40,
       "seen_last_48h": 41,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
@@ -40,7 +40,7 @@
     },
     "cherivu": {
       "retained_records": 160,
-      "seen_last_24h": 85,
+      "seen_last_24h": 70,
       "seen_last_48h": 98,
       "not_reverified_last_48h": 62,
       "full_coverage_proven": false
@@ -54,7 +54,7 @@
     },
     "chvu": {
       "retained_records": 802,
-      "seen_last_24h": 528,
+      "seen_last_24h": 393,
       "seen_last_48h": 532,
       "not_reverified_last_48h": 270,
       "full_coverage_proven": false
@@ -124,14 +124,14 @@
     },
     "odiya": {
       "retained_records": 291,
-      "seen_last_24h": 123,
+      "seen_last_24h": 121,
       "seen_last_48h": 190,
       "not_reverified_last_48h": 101,
       "full_coverage_proven": false
     },
     "ohmyblog": {
       "retained_records": 290,
-      "seen_last_24h": 289,
+      "seen_last_24h": 287,
       "seen_last_48h": 289,
       "not_reverified_last_48h": 1,
       "full_coverage_proven": false
@@ -152,14 +152,14 @@
     },
     "popomon": {
       "retained_records": 82,
-      "seen_last_24h": 24,
+      "seen_last_24h": 18,
       "seen_last_48h": 30,
       "not_reverified_last_48h": 52,
       "full_coverage_proven": false
     },
     "realreview": {
       "retained_records": 45,
-      "seen_last_24h": 41,
+      "seen_last_24h": 39,
       "seen_last_48h": 45,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
@@ -180,7 +180,7 @@
     },
     "revu": {
       "retained_records": 99,
-      "seen_last_24h": 84,
+      "seen_last_24h": 52,
       "seen_last_48h": 93,
       "not_reverified_last_48h": 6,
       "full_coverage_proven": false
