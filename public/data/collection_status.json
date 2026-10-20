@@ -228,7 +228,7 @@
     "openreview": "2026-10-20T23:15:18.986468+09:00",
     "pavlovu": "2026-10-15T13:25:02.493631+09:00",
     "popomon": "2026-10-20T15:05:51.430979+09:00",
-    "realreview": "2026-10-20T23:15:18.986468+09:00",
+    "realreview": "2026-10-21T02:28:51.972467+09:00",
     "reviewnote": "2026-10-20T23:15:18.986468+09:00",
     "reviewplace": "2026-10-20T23:15:18.986468+09:00",
     "revu": "2026-10-20T15:05:51.430979+09:00",
@@ -246,7 +246,7 @@
     "틱톡": 5
   },
   "media_unknown": 990,
-  "deadline_unknown": 217,
+  "deadline_unknown": 210,
   "images_present": 14748,
   "images_missing": 77,
   "images_missing_sources": {
@@ -420,7 +420,7 @@
       "images_present": 45,
       "images_missing": 0,
       "media_unknown": 39,
-      "deadline_unknown": 45
+      "deadline_unknown": 38
     },
     "reviewnote": {
       "records": 8850,
