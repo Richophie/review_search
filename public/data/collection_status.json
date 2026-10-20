@@ -103,7 +103,7 @@
     },
     "modan": {
       "retained_records": 54,
-      "seen_last_24h": 36,
+      "seen_last_24h": 45,
       "seen_last_48h": 50,
       "not_reverified_last_48h": 4,
       "full_coverage_proven": false
@@ -220,7 +220,7 @@
     "gaboja": "2026-10-20T13:38:38.698081+09:00",
     "gangnammat": "2026-10-20T13:38:38.698081+09:00",
     "huki": "2026-10-20T13:38:38.698081+09:00",
-    "modan": "2026-10-20T13:38:38.698081+09:00",
+    "modan": "2026-10-20T14:25:21.165705+09:00",
     "modootogether": "2026-10-20T13:38:38.698081+09:00",
     "mrblog": "2026-10-20T13:38:38.698081+09:00",
     "odiya": "2026-10-20T14:15:15.696848+09:00",
@@ -238,14 +238,14 @@
   },
   "media_counts": {
     "네이버클립": 3432,
-    "블로그": 10706,
+    "블로그": 10708,
     "쇼츠": 28,
     "스레드": 1,
     "유튜브": 38,
     "인스타그램": 4061,
     "틱톡": 8
   },
-  "media_unknown": 3016,
+  "media_unknown": 3014,
   "deadline_unknown": 229,
   "images_present": 19831,
   "images_missing": 148,
@@ -263,7 +263,7 @@
     "chvu": 3,
     "dinnerqueen": 2638,
     "fourblog": 1,
-    "modan": 53,
+    "modan": 51,
     "ohmyblog": 10,
     "openreview": 3,
     "popomon": 4,
@@ -364,7 +364,7 @@
       "records": 54,
       "images_present": 54,
       "images_missing": 0,
-      "media_unknown": 53,
+      "media_unknown": 51,
       "deadline_unknown": 0
     },
     "modootogether": {
