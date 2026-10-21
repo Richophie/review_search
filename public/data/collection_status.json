@@ -125,8 +125,8 @@
     "odiya": {
       "retained_records": 291,
       "seen_last_24h": 121,
-      "seen_last_48h": 190,
-      "not_reverified_last_48h": 101,
+      "seen_last_48h": 124,
+      "not_reverified_last_48h": 167,
       "full_coverage_proven": false
     },
     "ohmyblog": {
@@ -223,7 +223,7 @@
     "modan": "2026-10-21T13:31:14.859055+09:00",
     "modootogether": "2026-10-21T13:31:14.859055+09:00",
     "mrblog": "2026-10-21T13:31:14.859055+09:00",
-    "odiya": "2026-10-21T02:30:55.738620+09:00",
+    "odiya": "2026-10-21T14:17:49.053798+09:00",
     "ohmyblog": "2026-10-21T03:04:39.334121+09:00",
     "openreview": "2026-10-21T13:31:14.859055+09:00",
     "pavlovu": "2026-10-15T13:25:02.493631+09:00",
