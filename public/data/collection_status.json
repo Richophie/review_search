@@ -1,9 +1,9 @@
 {
   "as_of_date_kst": "2026-10-21",
-  "snapshot_records": 16147,
+  "snapshot_records": 17259,
   "target_records": 20000,
-  "records_to_target": 3853,
-  "target_progress_pct": 80.73,
+  "records_to_target": 2741,
+  "target_progress_pct": 86.3,
   "platforms_with_records": 27,
   "source_scan_status": {
     "gangnammat": {
@@ -19,9 +19,9 @@
   "source_observation_freshness": {
     "assaview": {
       "retained_records": 670,
-      "seen_last_24h": 587,
-      "seen_last_48h": 647,
-      "not_reverified_last_48h": 23,
+      "seen_last_24h": 570,
+      "seen_last_48h": 645,
+      "not_reverified_last_48h": 25,
       "full_coverage_proven": false
     },
     "bloglab": {
@@ -39,10 +39,10 @@
       "full_coverage_proven": false
     },
     "cherivu": {
-      "retained_records": 183,
+      "retained_records": 175,
       "seen_last_24h": 87,
-      "seen_last_48h": 125,
-      "not_reverified_last_48h": 58,
+      "seen_last_48h": 114,
+      "not_reverified_last_48h": 61,
       "full_coverage_proven": false
     },
     "cherrycook": {
@@ -165,9 +165,9 @@
       "full_coverage_proven": false
     },
     "reviewnote": {
-      "retained_records": 8944,
-      "seen_last_24h": 1993,
-      "seen_last_48h": 3197,
+      "retained_records": 10064,
+      "seen_last_24h": 1612,
+      "seen_last_48h": 4317,
       "not_reverified_last_48h": 5747,
       "full_coverage_proven": false
     },
@@ -229,7 +229,7 @@
     "pavlovu": "2026-10-15T13:25:02.493631+09:00",
     "popomon": "2026-10-21T15:06:03.579395+09:00",
     "realreview": "2026-10-21T14:14:06.894064+09:00",
-    "reviewnote": "2026-10-21T13:31:14.859055+09:00",
+    "reviewnote": "2026-10-21T16:52:13.895523+09:00",
     "reviewplace": "2026-10-21T13:31:14.859055+09:00",
     "revu": "2026-10-21T15:06:03.579395+09:00",
     "ringble": "2026-10-21T13:31:14.859055+09:00",
@@ -237,17 +237,17 @@
     "tqueens": "2026-10-21T13:31:14.859055+09:00"
   },
   "media_counts": {
-    "네이버클립": 1924,
-    "블로그": 11630,
-    "쇼츠": 33,
+    "네이버클립": 2072,
+    "블로그": 12527,
+    "쇼츠": 34,
     "스레드": 1,
-    "유튜브": 44,
-    "인스타그램": 2880,
-    "틱톡": 6
+    "유튜브": 46,
+    "인스타그램": 3090,
+    "틱톡": 8
   },
   "media_unknown": 1051,
-  "deadline_unknown": 251,
-  "images_present": 16058,
+  "deadline_unknown": 243,
+  "images_present": 17170,
   "images_missing": 89,
   "images_missing_sources": {
     "chvu": 24,
@@ -297,11 +297,11 @@
       "deadline_unknown": 0
     },
     "cherivu": {
-      "records": 183,
-      "images_present": 183,
+      "records": 175,
+      "images_present": 175,
       "images_missing": 0,
       "media_unknown": 0,
-      "deadline_unknown": 90
+      "deadline_unknown": 82
     },
     "cherrycook": {
       "records": 17,
@@ -423,8 +423,8 @@
       "deadline_unknown": 34
     },
     "reviewnote": {
-      "records": 8944,
-      "images_present": 8923,
+      "records": 10064,
+      "images_present": 10043,
       "images_missing": 21,
       "media_unknown": 0,
       "deadline_unknown": 0
