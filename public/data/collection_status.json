@@ -1,5 +1,5 @@
 {
-  "as_of_date_kst": "2026-10-21",
+  "as_of_date_kst": "2026-10-22",
   "snapshot_records": 18807,
   "target_records": 20000,
   "records_to_target": 1193,
@@ -272,7 +272,7 @@
     "ringble": 9,
     "tqueens": 88
   },
-  "published_today_confirmed": 1,
+  "published_today_confirmed": 0,
   "duplicate_id_or_original_url_count": 0,
   "sources": {
     "assaview": {
