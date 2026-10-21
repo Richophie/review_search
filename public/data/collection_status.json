@@ -1,8 +1,8 @@
 {
   "as_of_date_kst": "2026-10-21",
-  "snapshot_records": 16146,
+  "snapshot_records": 16147,
   "target_records": 20000,
-  "records_to_target": 3854,
+  "records_to_target": 3853,
   "target_progress_pct": 80.73,
   "platforms_with_records": 27,
   "source_scan_status": {
@@ -18,9 +18,9 @@
   },
   "source_observation_freshness": {
     "assaview": {
-      "retained_records": 669,
-      "seen_last_24h": 584,
-      "seen_last_48h": 646,
+      "retained_records": 670,
+      "seen_last_24h": 587,
+      "seen_last_48h": 647,
       "not_reverified_last_48h": 23,
       "full_coverage_proven": false
     },
@@ -40,7 +40,7 @@
     },
     "cherivu": {
       "retained_records": 183,
-      "seen_last_24h": 101,
+      "seen_last_24h": 87,
       "seen_last_48h": 125,
       "not_reverified_last_48h": 58,
       "full_coverage_proven": false
@@ -55,8 +55,8 @@
     "chvu": {
       "retained_records": 958,
       "seen_last_24h": 548,
-      "seen_last_48h": 688,
-      "not_reverified_last_48h": 270,
+      "seen_last_48h": 684,
+      "not_reverified_last_48h": 274,
       "full_coverage_proven": false
     },
     "cometoplay": {
@@ -208,7 +208,7 @@
     }
   },
   "source_last_observed": {
-    "assaview": "2026-10-21T13:31:14.859055+09:00",
+    "assaview": "2026-10-21T15:39:13.736822+09:00",
     "bloglab": "2026-10-21T14:01:48.178390+09:00",
     "bqueens": "2026-10-21T13:31:14.859055+09:00",
     "cherivu": "2026-10-21T15:34:58.030852+09:00",
@@ -238,7 +238,7 @@
   },
   "media_counts": {
     "네이버클립": 1924,
-    "블로그": 11629,
+    "블로그": 11630,
     "쇼츠": 33,
     "스레드": 1,
     "유튜브": 44,
@@ -247,7 +247,7 @@
   },
   "media_unknown": 1051,
   "deadline_unknown": 251,
-  "images_present": 16057,
+  "images_present": 16058,
   "images_missing": 89,
   "images_missing_sources": {
     "chvu": 24,
@@ -276,8 +276,8 @@
   "duplicate_id_or_original_url_count": 0,
   "sources": {
     "assaview": {
-      "records": 669,
-      "images_present": 669,
+      "records": 670,
+      "images_present": 670,
       "images_missing": 0,
       "media_unknown": 75,
       "deadline_unknown": 0
