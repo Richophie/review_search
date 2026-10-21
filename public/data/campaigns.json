@@ -147255,36 +147255,6 @@
 "search_text": "[강남/논현] 장군한방삼계탕 ▶4만원 식사권 제공 ▶4만원 식사권 제공 맛집 블로그"
 },
 {
-"id": "huki:1086",
-"source_id": "huki",
-"original_url": "https://huki.co.kr/bbs/board.php?bo_table=campaign&sti=&wr_id=1086",
-"title": "[일산/파주] 몽슈포레",
-"description": "음료 2잔 , 디저트 1개, 애견동반 고객 멍푸치노 1잔 제공",
-"benefit": "음료 2잔 , 디저트 1개, 애견동반 고객 멍푸치노 1잔 제공",
-"image_url": "https://huki.co.kr/data/file/campaign/c02b8c9e460943ce7ce86a8d833f637a_Mhz2snfT_fd6209d4edf17bb7d822b95dc00a344a14e1c6e1.jpg",
-"country_code": "KR",
-"region_sido": null,
-"region_text": null,
-"category": "카페",
-"campaign_type": "방문형",
-"channels": [
-"블로그"
-],
-"slots": 5,
-"applicants": 1,
-"apply_deadline": null,
-"deadline_precision": "unknown",
-"open_verified": true,
-"first_seen_at": "2026-10-10T16:14:30.026871+09:00",
-"published_at": null,
-"last_seen_at": "2026-10-19T13:28:22.886276+09:00",
-"timezone": "Asia/Seoul",
-"competition_ratio": 0.2,
-"remaining_slots": 4,
-"dedupe_key": "일산파주몽슈포레",
-"search_text": "[일산/파주] 몽슈포레 음료 2잔 , 디저트 1개, 애견동반 고객 멍푸치노 1잔 제공 음료 2잔 , 디저트 1개, 애견동반 고객 멍푸치노 1잔 제공 카페 블로그"
-},
-{
 "id": "huki:1087",
 "source_id": "huki",
 "original_url": "https://huki.co.kr/bbs/board.php?bo_table=campaign&sti=&wr_id=1087",
@@ -147403,36 +147373,6 @@
 "remaining_slots": 4,
 "dedupe_key": "경기기타경기기타참치카야",
 "search_text": "[경기/기타] 참치카야 50,000원 식사권 제공 50,000원 식사권 제공 경기/기타 맛집 블로그"
-},
-{
-"id": "huki:1102",
-"source_id": "huki",
-"original_url": "https://huki.co.kr/bbs/board.php?bo_table=campaign&sti=&wr_id=1102",
-"title": "[홍대/마포] 오시 망원본점",
-"description": "2인기준 40,000원권 제공",
-"benefit": "2인기준 40,000원권 제공",
-"image_url": "https://huki.co.kr/data/file/campaign/c02b8c9e460943ce7ce86a8d833f637a_6JUpsrda_afb5e6e68f5087aaa1bf431e38a36abf74b8547d.jpg",
-"country_code": "KR",
-"region_sido": null,
-"region_text": null,
-"category": "기타",
-"campaign_type": "방문형",
-"channels": [
-"블로그"
-],
-"slots": 5,
-"applicants": 3,
-"apply_deadline": null,
-"deadline_precision": "unknown",
-"open_verified": true,
-"first_seen_at": "2026-10-10T16:14:30.026871+09:00",
-"published_at": null,
-"last_seen_at": "2026-10-19T13:28:22.886276+09:00",
-"timezone": "Asia/Seoul",
-"competition_ratio": 0.6,
-"remaining_slots": 2,
-"dedupe_key": "홍대마포오시망원본점",
-"search_text": "[홍대/마포] 오시 망원본점 2인기준 40,000원권 제공 2인기준 40,000원권 제공 기타 블로그"
 },
 {
 "id": "huki:1103",
