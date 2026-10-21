@@ -1,9 +1,9 @@
 {
   "as_of_date_kst": "2026-10-22",
-  "snapshot_records": 16295,
+  "snapshot_records": 16292,
   "target_records": 20000,
-  "records_to_target": 3705,
-  "target_progress_pct": 81.47,
+  "records_to_target": 3708,
+  "target_progress_pct": 81.46,
   "platforms_with_records": 27,
   "source_scan_status": {
     "gangnammat": {
@@ -25,9 +25,9 @@
       "full_coverage_proven": false
     },
     "bloglab": {
-      "retained_records": 42,
+      "retained_records": 41,
       "seen_last_24h": 40,
-      "seen_last_48h": 42,
+      "seen_last_48h": 41,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
     },
@@ -125,8 +125,8 @@
     "odiya": {
       "retained_records": 291,
       "seen_last_24h": 120,
-      "seen_last_48h": 124,
-      "not_reverified_last_48h": 167,
+      "seen_last_48h": 122,
+      "not_reverified_last_48h": 169,
       "full_coverage_proven": false
     },
     "ohmyblog": {
@@ -158,9 +158,9 @@
       "full_coverage_proven": false
     },
     "realreview": {
-      "retained_records": 34,
+      "retained_records": 32,
       "seen_last_24h": 26,
-      "seen_last_48h": 34,
+      "seen_last_48h": 32,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
     },
@@ -238,16 +238,16 @@
   },
   "media_counts": {
     "네이버클립": 1697,
-    "블로그": 11236,
+    "블로그": 11235,
     "쇼츠": 31,
     "스레드": 1,
     "유튜브": 45,
     "인스타그램": 3773,
     "틱톡": 7
   },
-  "media_unknown": 859,
-  "deadline_unknown": 257,
-  "images_present": 16253,
+  "media_unknown": 857,
+  "deadline_unknown": 254,
+  "images_present": 16250,
   "images_missing": 42,
   "images_missing_sources": {
     "chvu": 7,
@@ -264,7 +264,7 @@
     "ohmyblog": 8,
     "openreview": 4,
     "popomon": 4,
-    "realreview": 28,
+    "realreview": 26,
     "reviewplace": 1,
     "revu": 2,
     "ringble": 8,
@@ -281,11 +281,11 @@
       "deadline_unknown": 0
     },
     "bloglab": {
-      "records": 42,
-      "images_present": 42,
+      "records": 41,
+      "images_present": 41,
       "images_missing": 0,
       "media_unknown": 0,
-      "deadline_unknown": 42
+      "deadline_unknown": 41
     },
     "bqueens": {
       "records": 85,
@@ -414,11 +414,11 @@
       "deadline_unknown": 0
     },
     "realreview": {
-      "records": 34,
-      "images_present": 34,
+      "records": 32,
+      "images_present": 32,
       "images_missing": 0,
-      "media_unknown": 28,
-      "deadline_unknown": 34
+      "media_unknown": 26,
+      "deadline_unknown": 32
     },
     "reviewnote": {
       "records": 8948,
