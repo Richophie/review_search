@@ -1,9 +1,9 @@
 {
   "as_of_date_kst": "2026-10-21",
-  "snapshot_records": 15656,
+  "snapshot_records": 15687,
   "target_records": 20000,
-  "records_to_target": 4344,
-  "target_progress_pct": 78.28,
+  "records_to_target": 4313,
+  "target_progress_pct": 78.44,
   "platforms_with_records": 27,
   "source_scan_status": {
     "gangnammat": {
@@ -151,9 +151,9 @@
       "full_coverage_proven": false
     },
     "popomon": {
-      "retained_records": 82,
-      "seen_last_24h": 18,
-      "seen_last_48h": 30,
+      "retained_records": 87,
+      "seen_last_24h": 17,
+      "seen_last_48h": 35,
       "not_reverified_last_48h": 52,
       "full_coverage_proven": false
     },
@@ -179,9 +179,9 @@
       "full_coverage_proven": false
     },
     "revu": {
-      "retained_records": 99,
-      "seen_last_24h": 52,
-      "seen_last_48h": 93,
+      "retained_records": 125,
+      "seen_last_24h": 68,
+      "seen_last_48h": 119,
       "not_reverified_last_48h": 6,
       "full_coverage_proven": false
     },
@@ -227,34 +227,34 @@
     "ohmyblog": "2026-10-21T03:04:39.334121+09:00",
     "openreview": "2026-10-21T13:31:14.859055+09:00",
     "pavlovu": "2026-10-15T13:25:02.493631+09:00",
-    "popomon": "2026-10-21T03:00:36.979868+09:00",
+    "popomon": "2026-10-21T15:06:03.579395+09:00",
     "realreview": "2026-10-21T14:14:06.894064+09:00",
     "reviewnote": "2026-10-21T13:31:14.859055+09:00",
     "reviewplace": "2026-10-21T13:31:14.859055+09:00",
-    "revu": "2026-10-21T03:00:36.979868+09:00",
+    "revu": "2026-10-21T15:06:03.579395+09:00",
     "ringble": "2026-10-21T13:31:14.859055+09:00",
     "storyn": "2026-10-21T13:31:14.859055+09:00",
     "tqueens": "2026-10-21T13:31:14.859055+09:00"
   },
   "media_counts": {
-    "네이버클립": 1916,
-    "블로그": 11164,
+    "네이버클립": 1920,
+    "블로그": 11183,
     "쇼츠": 33,
     "스레드": 1,
     "유튜브": 44,
-    "인스타그램": 2867,
+    "인스타그램": 2875,
     "틱톡": 6
   },
   "media_unknown": 1047,
-  "deadline_unknown": 238,
-  "images_present": 15579,
-  "images_missing": 77,
+  "deadline_unknown": 251,
+  "images_present": 15598,
+  "images_missing": 89,
   "images_missing_sources": {
     "chvu": 24,
     "odiya": 1,
     "popomon": 1,
     "reviewnote": 21,
-    "revu": 30
+    "revu": 42
   },
   "media_unknown_sources": {
     "assaview": 75,
@@ -409,8 +409,8 @@
       "deadline_unknown": 0
     },
     "popomon": {
-      "records": 82,
-      "images_present": 81,
+      "records": 87,
+      "images_present": 86,
       "images_missing": 1,
       "media_unknown": 4,
       "deadline_unknown": 0
@@ -437,11 +437,11 @@
       "deadline_unknown": 0
     },
     "revu": {
-      "records": 99,
-      "images_present": 69,
-      "images_missing": 30,
+      "records": 125,
+      "images_present": 83,
+      "images_missing": 42,
       "media_unknown": 1,
-      "deadline_unknown": 73
+      "deadline_unknown": 86
     },
     "ringble": {
       "records": 102,
