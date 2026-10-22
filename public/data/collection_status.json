@@ -1,9 +1,9 @@
 {
   "as_of_date_kst": "2026-10-22",
-  "snapshot_records": 17555,
+  "snapshot_records": 17554,
   "target_records": 20000,
-  "records_to_target": 2445,
-  "target_progress_pct": 87.78,
+  "records_to_target": 2446,
+  "target_progress_pct": 87.77,
   "platforms_with_records": 27,
   "source_scan_status": {
     "gangnammat": {
@@ -18,9 +18,9 @@
   },
   "source_observation_freshness": {
     "assaview": {
-      "retained_records": 686,
-      "seen_last_24h": 593,
-      "seen_last_48h": 670,
+      "retained_records": 697,
+      "seen_last_24h": 519,
+      "seen_last_48h": 681,
       "not_reverified_last_48h": 16,
       "full_coverage_proven": false
     },
@@ -39,9 +39,9 @@
       "full_coverage_proven": false
     },
     "cherivu": {
-      "retained_records": 137,
+      "retained_records": 125,
       "seen_last_24h": 85,
-      "seen_last_48h": 137,
+      "seen_last_48h": 125,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
     },
@@ -208,7 +208,7 @@
     }
   },
   "source_last_observed": {
-    "assaview": "2026-10-22T13:30:06.651132+09:00",
+    "assaview": "2026-10-22T15:40:43.987551+09:00",
     "bloglab": "2026-10-22T14:04:08.926321+09:00",
     "bqueens": "2026-10-22T13:30:06.651132+09:00",
     "cherivu": "2026-10-22T15:36:05.169701+09:00",
@@ -238,7 +238,7 @@
   },
   "media_counts": {
     "네이버클립": 1736,
-    "블로그": 11872,
+    "블로그": 11871,
     "쇼츠": 36,
     "스레드": 1,
     "유튜브": 50,
@@ -246,8 +246,8 @@
     "틱톡": 7
   },
   "media_unknown": 1018,
-  "deadline_unknown": 228,
-  "images_present": 17387,
+  "deadline_unknown": 216,
+  "images_present": 17386,
   "images_missing": 168,
   "images_missing_sources": {
     "chvu": 121,
@@ -275,8 +275,8 @@
   "duplicate_id_or_original_url_count": 0,
   "sources": {
     "assaview": {
-      "records": 686,
-      "images_present": 686,
+      "records": 697,
+      "images_present": 697,
       "images_missing": 0,
       "media_unknown": 83,
       "deadline_unknown": 0
@@ -296,11 +296,11 @@
       "deadline_unknown": 0
     },
     "cherivu": {
-      "records": 137,
-      "images_present": 137,
+      "records": 125,
+      "images_present": 125,
       "images_missing": 0,
       "media_unknown": 0,
-      "deadline_unknown": 71
+      "deadline_unknown": 59
     },
     "cherrycook": {
       "records": 17,
