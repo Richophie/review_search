@@ -64989,7 +64989,9 @@
 "region_text": "대구 달서",
 "category": "맛집",
 "campaign_type": "방문형",
-"channels": [],
+"channels": [
+"블로그"
+],
 "slots": 5,
 "applicants": 25,
 "apply_deadline": "2026-10-27",
@@ -65002,7 +65004,8 @@
 "competition_ratio": 5.0,
 "remaining_slots": 0,
 "dedupe_key": "대구달서본동복어",
-"search_text": "본동복어 식사권 5만원 제공 대구 달서 맛집"
+"search_text": "본동복어 식사권 5만원 제공 대구 달서 맛집 블로그",
+"media_evidence": "dinnerqueen_detail:mandatory_blog_mission"
 },
 {
 "id": "dinnerqueen:1588982",
