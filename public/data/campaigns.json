@@ -68798,7 +68798,9 @@
 "region_text": "강원 강릉",
 "category": "기타",
 "campaign_type": "방문형",
-"channels": [],
+"channels": [
+"블로그"
+],
 "slots": 5,
 "applicants": 0,
 "apply_deadline": "2026-10-25",
@@ -68811,7 +68813,8 @@
 "competition_ratio": 0.0,
 "remaining_slots": 5,
 "dedupe_key": "강원강릉장미경양식강릉중앙시장점",
-"search_text": "장미경양식 강릉중앙시장점 ★ 치즈돈까스 1개 + 기본 돈까스 1개 ( 2인 기준 ) 강원 강릉 기타"
+"search_text": "장미경양식 강릉중앙시장점 ★ 치즈돈까스 1개 + 기본 돈까스 1개 ( 2인 기준 ) 강원 강릉 기타 블로그",
+"media_evidence": "dinnerqueen_detail:mandatory_blog_mission"
 },
 {
 "id": "dinnerqueen:1580815",
@@ -68856,7 +68859,9 @@
 "region_text": "서울 구로",
 "category": "식품",
 "campaign_type": "방문형",
-"channels": [],
+"channels": [
+"블로그"
+],
 "slots": 50,
 "applicants": 3,
 "apply_deadline": "2026-10-25",
@@ -68869,7 +68874,8 @@
 "competition_ratio": 0.06,
 "remaining_slots": 47,
 "dedupe_key": "서울구로부대찌개대사관구로디지털본점",
-"search_text": "부대찌개대사관 구로디지털본점 부대찌개2인 + 라면사리 + 음료 서울 구로 식품"
+"search_text": "부대찌개대사관 구로디지털본점 부대찌개2인 + 라면사리 + 음료 서울 구로 식품 블로그",
+"media_evidence": "dinnerqueen_detail:mandatory_blog_mission"
 },
 {
 "id": "dinnerqueen:1580824",
@@ -68884,7 +68890,9 @@
 "region_text": "부산 수영",
 "category": "기타",
 "campaign_type": "방문형",
-"channels": [],
+"channels": [
+"블로그"
+],
 "slots": 5,
 "applicants": 8,
 "apply_deadline": "2026-10-25",
@@ -68897,7 +68905,8 @@
 "competition_ratio": 1.6,
 "remaining_slots": 0,
 "dedupe_key": "부산수영부산댁광안리직영점",
-"search_text": "부산댁 광안리직영점 모듬 한판 (소) (550g) 부산 수영 기타"
+"search_text": "부산댁 광안리직영점 모듬 한판 (소) (550g) 부산 수영 기타 블로그",
+"media_evidence": "dinnerqueen_detail:mandatory_blog_mission"
 },
 {
 "id": "dinnerqueen:1580825",
@@ -73691,7 +73700,9 @@
 "region_text": "경기 화성",
 "category": "맛집",
 "campaign_type": "방문형",
-"channels": [],
+"channels": [
+"블로그"
+],
 "slots": 5,
 "applicants": 5,
 "apply_deadline": "2026-10-25",
@@ -73704,7 +73715,8 @@
 "competition_ratio": 1.0,
 "remaining_slots": 0,
 "dedupe_key": "경기화성미스터똥꼬",
-"search_text": "미스터똥꼬 식사권 3만원 제공 ★ 닭발, 똥집, 닭도리탕 중 메인 메뉴 필수 주문 경기 화성 맛집"
+"search_text": "미스터똥꼬 식사권 3만원 제공 ★ 닭발, 똥집, 닭도리탕 중 메인 메뉴 필수 주문 경기 화성 맛집 블로그",
+"media_evidence": "dinnerqueen_detail:mandatory_blog_mission"
 },
 {
 "id": "dinnerqueen:1590581",
@@ -73719,7 +73731,9 @@
 "region_text": "경남 창원",
 "category": "맛집",
 "campaign_type": "방문형",
-"channels": [],
+"channels": [
+"블로그"
+],
 "slots": 5,
 "applicants": 2,
 "apply_deadline": "2026-10-25",
@@ -73732,7 +73746,8 @@
 "competition_ratio": 0.4,
 "remaining_slots": 3,
 "dedupe_key": "경남창원마산경호강어탕",
-"search_text": "마산 경호강어탕 식사권 4만원 제공 경남 창원 맛집"
+"search_text": "마산 경호강어탕 식사권 4만원 제공 경남 창원 맛집 블로그",
+"media_evidence": "dinnerqueen_detail:mandatory_blog_mission"
 },
 {
 "id": "dinnerqueen:1590582",
@@ -73803,7 +73818,9 @@
 "region_text": "제주 제주시",
 "category": "맛집",
 "campaign_type": "방문형",
-"channels": [],
+"channels": [
+"블로그"
+],
 "slots": 5,
 "applicants": 2,
 "apply_deadline": "2026-10-25",
@@ -73816,7 +73833,8 @@
 "competition_ratio": 0.4,
 "remaining_slots": 3,
 "dedupe_key": "제주제주시유돈제원노형점",
-"search_text": "유돈 제원노형점 3만원 식사권 제주 제주시 맛집"
+"search_text": "유돈 제원노형점 3만원 식사권 제주 제주시 맛집 블로그",
+"media_evidence": "dinnerqueen_detail:mandatory_blog_mission"
 },
 {
 "id": "dinnerqueen:1590591",

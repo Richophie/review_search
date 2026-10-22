@@ -238,14 +238,14 @@
   },
   "media_counts": {
     "네이버클립": 1939,
-    "블로그": 12856,
+    "블로그": 12862,
     "쇼츠": 38,
     "스레드": 1,
     "유튜브": 52,
     "인스타그램": 4370,
     "틱톡": 7
   },
-  "media_unknown": 1018,
+  "media_unknown": 1012,
   "deadline_unknown": 216,
   "images_present": 18524,
   "images_missing": 168,
@@ -259,7 +259,7 @@
     "assaview": 83,
     "bqueens": 49,
     "chvu": 3,
-    "dinnerqueen": 696,
+    "dinnerqueen": 690,
     "fourblog": 1,
     "modan": 50,
     "ohmyblog": 13,
@@ -327,7 +327,7 @@
       "records": 3366,
       "images_present": 3366,
       "images_missing": 0,
-      "media_unknown": 696,
+      "media_unknown": 690,
       "deadline_unknown": 0
     },
     "fourblog": {
