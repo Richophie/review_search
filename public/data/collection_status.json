@@ -103,7 +103,7 @@
     },
     "modan": {
       "retained_records": 55,
-      "seen_last_24h": 37,
+      "seen_last_24h": 47,
       "seen_last_48h": 52,
       "not_reverified_last_48h": 3,
       "full_coverage_proven": false
@@ -125,8 +125,8 @@
     "odiya": {
       "retained_records": 291,
       "seen_last_24h": 0,
-      "seen_last_48h": 120,
-      "not_reverified_last_48h": 171,
+      "seen_last_48h": 0,
+      "not_reverified_last_48h": 291,
       "full_coverage_proven": false
     },
     "ohmyblog": {
@@ -152,7 +152,7 @@
     },
     "realreview": {
       "retained_records": 36,
-      "seen_last_24h": 36,
+      "seen_last_24h": 34,
       "seen_last_48h": 36,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
@@ -213,7 +213,7 @@
     "gaboja": "2026-10-23T13:35:20.891279+09:00",
     "gangnammat": "2026-10-23T13:35:20.891279+09:00",
     "huki": "2026-10-23T13:35:20.891279+09:00",
-    "modan": "2026-10-23T13:35:20.891279+09:00",
+    "modan": "2026-10-23T14:27:27.349124+09:00",
     "modootogether": "2026-10-23T13:35:20.891279+09:00",
     "mrblog": "2026-10-23T13:35:20.891279+09:00",
     "odiya": "2026-10-21T14:17:49.053798+09:00",
