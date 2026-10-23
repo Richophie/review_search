@@ -1,5 +1,5 @@
 {
-  "as_of_date_kst": "2026-10-23",
+  "as_of_date_kst": "2026-10-24",
   "snapshot_records": 21762,
   "target_records": 20000,
   "records_to_target": 0,
@@ -47,7 +47,7 @@
     },
     "cherrycook": {
       "retained_records": 29,
-      "seen_last_24h": 29,
+      "seen_last_24h": 20,
       "seen_last_48h": 29,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
@@ -61,23 +61,23 @@
     },
     "cometoplay": {
       "retained_records": 90,
-      "seen_last_24h": 41,
-      "seen_last_48h": 58,
-      "not_reverified_last_48h": 32,
+      "seen_last_24h": 31,
+      "seen_last_48h": 48,
+      "not_reverified_last_48h": 42,
       "full_coverage_proven": false
     },
     "dinnerqueen": {
       "retained_records": 6321,
-      "seen_last_24h": 4367,
-      "seen_last_48h": 6072,
-      "not_reverified_last_48h": 249,
+      "seen_last_24h": 3224,
+      "seen_last_48h": 5796,
+      "not_reverified_last_48h": 525,
       "full_coverage_proven": false
     },
     "fourblog": {
       "retained_records": 358,
-      "seen_last_24h": 176,
-      "seen_last_48h": 213,
-      "not_reverified_last_48h": 145,
+      "seen_last_24h": 129,
+      "seen_last_48h": 191,
+      "not_reverified_last_48h": 167,
       "full_coverage_proven": false
     },
     "gaboja": {
@@ -89,21 +89,21 @@
     },
     "gangnammat": {
       "retained_records": 1206,
-      "seen_last_24h": 378,
-      "seen_last_48h": 604,
-      "not_reverified_last_48h": 602,
+      "seen_last_24h": 352,
+      "seen_last_48h": 579,
+      "not_reverified_last_48h": 627,
       "full_coverage_proven": false
     },
     "huki": {
       "retained_records": 69,
-      "seen_last_24h": 69,
+      "seen_last_24h": 68,
       "seen_last_48h": 69,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
     },
     "modan": {
       "retained_records": 61,
-      "seen_last_24h": 53,
+      "seen_last_24h": 40,
       "seen_last_48h": 58,
       "not_reverified_last_48h": 3,
       "full_coverage_proven": false
@@ -117,9 +117,9 @@
     },
     "mrblog": {
       "retained_records": 54,
-      "seen_last_24h": 51,
-      "seen_last_48h": 54,
-      "not_reverified_last_48h": 0,
+      "seen_last_24h": 46,
+      "seen_last_48h": 53,
+      "not_reverified_last_48h": 1,
       "full_coverage_proven": false
     },
     "odiya": {
@@ -159,9 +159,9 @@
     },
     "reviewnote": {
       "retained_records": 10163,
-      "seen_last_24h": 1598,
-      "seen_last_48h": 2851,
-      "not_reverified_last_48h": 7312,
+      "seen_last_24h": 1550,
+      "seen_last_48h": 2767,
+      "not_reverified_last_48h": 7396,
       "full_coverage_proven": false
     },
     "reviewplace": {
@@ -180,14 +180,14 @@
     },
     "ringble": {
       "retained_records": 133,
-      "seen_last_24h": 64,
-      "seen_last_48h": 99,
-      "not_reverified_last_48h": 34,
+      "seen_last_24h": 46,
+      "seen_last_48h": 82,
+      "not_reverified_last_48h": 51,
       "full_coverage_proven": false
     },
     "storyn": {
       "retained_records": 28,
-      "seen_last_24h": 28,
+      "seen_last_24h": 14,
       "seen_last_48h": 28,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
@@ -263,7 +263,7 @@
     "ringble": 11,
     "tqueens": 74
   },
-  "published_today_confirmed": 5,
+  "published_today_confirmed": 0,
   "duplicate_id_or_original_url_count": 0,
   "sources": {
     "assaview": {
