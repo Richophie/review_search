@@ -19,9 +19,9 @@
   "source_observation_freshness": {
     "assaview": {
       "retained_records": 686,
-      "seen_last_24h": 593,
-      "seen_last_48h": 638,
-      "not_reverified_last_48h": 48,
+      "seen_last_24h": 504,
+      "seen_last_48h": 632,
+      "not_reverified_last_48h": 54,
       "full_coverage_proven": false
     },
     "bloglab": {
@@ -41,8 +41,8 @@
     "cherivu": {
       "retained_records": 141,
       "seen_last_24h": 58,
-      "seen_last_48h": 117,
-      "not_reverified_last_48h": 24,
+      "seen_last_48h": 101,
+      "not_reverified_last_48h": 40,
       "full_coverage_proven": false
     },
     "cherrycook": {
