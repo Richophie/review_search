@@ -1,6 +1,6 @@
 {
   "as_of_date_kst": "2026-10-24",
-  "snapshot_records": 21592,
+  "snapshot_records": 22006,
   "target_records": 20000,
   "records_to_target": 0,
   "target_progress_pct": 100.0,
@@ -39,10 +39,10 @@
       "full_coverage_proven": false
     },
     "cherivu": {
-      "retained_records": 141,
+      "retained_records": 130,
       "seen_last_24h": 58,
       "seen_last_48h": 101,
-      "not_reverified_last_48h": 40,
+      "not_reverified_last_48h": 29,
       "full_coverage_proven": false
     },
     "cherrycook": {
@@ -158,9 +158,9 @@
       "full_coverage_proven": false
     },
     "reviewnote": {
-      "retained_records": 9104,
-      "seen_last_24h": 1633,
-      "seen_last_48h": 2814,
+      "retained_records": 9529,
+      "seen_last_24h": 2065,
+      "seen_last_48h": 3239,
       "not_reverified_last_48h": 6290,
       "full_coverage_proven": false
     },
@@ -221,7 +221,7 @@
     "openreview": "2026-10-22T13:30:06.651132+09:00",
     "popomon": "2026-10-24T14:58:09.464185+09:00",
     "realreview": "2026-10-24T13:58:04.565647+09:00",
-    "reviewnote": "2026-10-24T13:25:07.753182+09:00",
+    "reviewnote": "2026-10-24T16:28:05.658920+09:00",
     "reviewplace": "2026-10-24T13:25:07.753182+09:00",
     "revu": "2026-10-24T14:58:09.464185+09:00",
     "ringble": "2026-10-24T13:25:07.753182+09:00",
@@ -229,17 +229,17 @@
     "tqueens": "2026-10-24T13:25:07.753182+09:00"
   },
   "media_counts": {
-    "네이버클립": 3581,
-    "블로그": 11920,
+    "네이버클립": 3637,
+    "블로그": 12272,
     "쇼츠": 48,
     "스레드": 1,
     "유튜브": 63,
-    "인스타그램": 4449,
+    "인스타그램": 4511,
     "틱톡": 7
   },
   "media_unknown": 3003,
-  "deadline_unknown": 129,
-  "images_present": 21541,
+  "deadline_unknown": 118,
+  "images_present": 21955,
   "images_missing": 51,
   "images_missing_sources": {
     "chvu": 3,
@@ -287,11 +287,11 @@
       "deadline_unknown": 0
     },
     "cherivu": {
-      "records": 141,
-      "images_present": 141,
+      "records": 130,
+      "images_present": 130,
       "images_missing": 0,
       "media_unknown": 0,
-      "deadline_unknown": 11
+      "deadline_unknown": 0
     },
     "cherrycook": {
       "records": 20,
@@ -406,8 +406,8 @@
       "deadline_unknown": 37
     },
     "reviewnote": {
-      "records": 9104,
-      "images_present": 9104,
+      "records": 9529,
+      "images_present": 9529,
       "images_missing": 0,
       "media_unknown": 0,
       "deadline_unknown": 0
