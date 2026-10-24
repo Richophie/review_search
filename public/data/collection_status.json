@@ -40,7 +40,7 @@
     },
     "cherivu": {
       "retained_records": 141,
-      "seen_last_24h": 74,
+      "seen_last_24h": 58,
       "seen_last_48h": 117,
       "not_reverified_last_48h": 24,
       "full_coverage_proven": false
@@ -201,7 +201,7 @@
     }
   },
   "source_last_observed": {
-    "assaview": "2026-10-24T13:25:07.753182+09:00",
+    "assaview": "2026-10-24T15:34:06.320280+09:00",
     "bloglab": "2026-10-24T13:48:50.511883+09:00",
     "bqueens": "2026-10-24T13:25:07.753182+09:00",
     "cherivu": "2026-10-24T15:28:42.917236+09:00",
