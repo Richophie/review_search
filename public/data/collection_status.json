@@ -19,7 +19,7 @@
   "source_observation_freshness": {
     "assaview": {
       "retained_records": 707,
-      "seen_last_24h": 556,
+      "seen_last_24h": 558,
       "seen_last_48h": 648,
       "not_reverified_last_48h": 59,
       "full_coverage_proven": false
@@ -201,7 +201,7 @@
     }
   },
   "source_last_observed": {
-    "assaview": "2026-10-25T13:29:07.359738+09:00",
+    "assaview": "2026-10-25T16:00:21.609083+09:00",
     "bloglab": "2026-10-25T13:57:22.408457+09:00",
     "bqueens": "2026-10-25T13:29:07.359738+09:00",
     "cherivu": "2026-10-25T15:53:42.812297+09:00",
