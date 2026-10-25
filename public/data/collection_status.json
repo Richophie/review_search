@@ -7,8 +7,8 @@
   "platforms_with_records": 26,
   "source_scan_status": {
     "gangnammat": {
-      "last_scan_at": "2026-10-24T06:15:28.777368+00:00",
-      "verified_during_last_scan": 304,
+      "last_scan_at": "2026-10-25T06:34:18.124077+00:00",
+      "verified_during_last_scan": 281,
       "discovered_list_urls": 19,
       "scan_complete": false,
       "traversal_capped": false,
@@ -19,7 +19,7 @@
   "source_observation_freshness": {
     "assaview": {
       "retained_records": 707,
-      "seen_last_24h": 573,
+      "seen_last_24h": 556,
       "seen_last_48h": 648,
       "not_reverified_last_48h": 59,
       "full_coverage_proven": false
@@ -40,9 +40,9 @@
     },
     "cherivu": {
       "retained_records": 142,
-      "seen_last_24h": 71,
-      "seen_last_48h": 87,
-      "not_reverified_last_48h": 55,
+      "seen_last_24h": 54,
+      "seen_last_48h": 71,
+      "not_reverified_last_48h": 71,
       "full_coverage_proven": false
     },
     "cherrycook": {
@@ -54,9 +54,9 @@
     },
     "chvu": {
       "retained_records": 979,
-      "seen_last_24h": 368,
-      "seen_last_48h": 370,
-      "not_reverified_last_48h": 609,
+      "seen_last_24h": 280,
+      "seen_last_48h": 368,
+      "not_reverified_last_48h": 611,
       "full_coverage_proven": false
     },
     "cometoplay": {
@@ -89,9 +89,9 @@
     },
     "gangnammat": {
       "retained_records": 1321,
-      "seen_last_24h": 304,
-      "seen_last_48h": 450,
-      "not_reverified_last_48h": 871,
+      "seen_last_24h": 282,
+      "seen_last_48h": 304,
+      "not_reverified_last_48h": 1017,
       "full_coverage_proven": false
     },
     "huki": {
@@ -132,8 +132,8 @@
     "ohmyblog": {
       "retained_records": 390,
       "seen_last_24h": 387,
-      "seen_last_48h": 388,
-      "not_reverified_last_48h": 2,
+      "seen_last_48h": 387,
+      "not_reverified_last_48h": 3,
       "full_coverage_proven": false
     },
     "openreview": {
@@ -211,7 +211,7 @@
     "dinnerqueen": "2026-10-25T13:29:07.359738+09:00",
     "fourblog": "2026-10-25T13:29:07.359738+09:00",
     "gaboja": "2026-10-25T13:29:07.359738+09:00",
-    "gangnammat": "2026-10-24T22:15:29.186243+09:00",
+    "gangnammat": "2026-10-25T15:33:31.933227+09:00",
     "huki": "2026-10-25T13:29:07.359738+09:00",
     "modan": "2026-10-25T14:23:27.366949+09:00",
     "modootogether": "2026-10-25T13:29:07.359738+09:00",
