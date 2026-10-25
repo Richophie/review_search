@@ -1,6 +1,6 @@
 {
   "as_of_date_kst": "2026-10-25",
-  "snapshot_records": 22520,
+  "snapshot_records": 22519,
   "target_records": 20000,
   "records_to_target": 0,
   "target_progress_pct": 100.0,
@@ -103,7 +103,7 @@
     },
     "modan": {
       "retained_records": 54,
-      "seen_last_24h": 37,
+      "seen_last_24h": 52,
       "seen_last_48h": 52,
       "not_reverified_last_48h": 2,
       "full_coverage_proven": false
@@ -151,9 +151,9 @@
       "full_coverage_proven": false
     },
     "realreview": {
-      "retained_records": 37,
+      "retained_records": 36,
       "seen_last_24h": 36,
-      "seen_last_48h": 37,
+      "seen_last_48h": 36,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
     },
@@ -213,7 +213,7 @@
     "gaboja": "2026-10-25T13:29:07.359738+09:00",
     "gangnammat": "2026-10-24T22:15:29.186243+09:00",
     "huki": "2026-10-25T13:29:07.359738+09:00",
-    "modan": "2026-10-25T13:29:07.359738+09:00",
+    "modan": "2026-10-25T14:23:27.366949+09:00",
     "modootogether": "2026-10-25T13:29:07.359738+09:00",
     "mrblog": "2026-10-25T13:29:07.359738+09:00",
     "odiya": "2026-10-21T14:17:49.053798+09:00",
@@ -230,16 +230,16 @@
   },
   "media_counts": {
     "네이버클립": 4062,
-    "블로그": 11501,
+    "블로그": 11503,
     "쇼츠": 45,
     "스레드": 1,
     "유튜브": 60,
-    "인스타그램": 4452,
+    "인스타그램": 4451,
     "틱톡": 7
   },
-  "media_unknown": 3787,
-  "deadline_unknown": 118,
-  "images_present": 22472,
+  "media_unknown": 3785,
+  "deadline_unknown": 117,
+  "images_present": 22471,
   "images_missing": 48,
   "images_missing_sources": {
     "chvu": 3,
@@ -252,7 +252,7 @@
     "chvu": 1,
     "dinnerqueen": 3436,
     "fourblog": 2,
-    "modan": 54,
+    "modan": 52,
     "ohmyblog": 13,
     "openreview": 1,
     "popomon": 4,
@@ -352,7 +352,7 @@
       "records": 54,
       "images_present": 54,
       "images_missing": 0,
-      "media_unknown": 54,
+      "media_unknown": 52,
       "deadline_unknown": 0
     },
     "modootogether": {
@@ -398,11 +398,11 @@
       "deadline_unknown": 0
     },
     "realreview": {
-      "records": 37,
-      "images_present": 37,
+      "records": 36,
+      "images_present": 36,
       "images_missing": 0,
       "media_unknown": 35,
-      "deadline_unknown": 28
+      "deadline_unknown": 27
     },
     "reviewnote": {
       "records": 8646,
