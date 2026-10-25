@@ -145,9 +145,9 @@
     },
     "popomon": {
       "retained_records": 81,
-      "seen_last_24h": 18,
-      "seen_last_48h": 27,
-      "not_reverified_last_48h": 54,
+      "seen_last_24h": 12,
+      "seen_last_48h": 21,
+      "not_reverified_last_48h": 60,
       "full_coverage_proven": false
     },
     "realreview": {
@@ -173,9 +173,9 @@
     },
     "revu": {
       "retained_records": 84,
-      "seen_last_24h": 43,
-      "seen_last_48h": 52,
-      "not_reverified_last_48h": 32,
+      "seen_last_24h": 42,
+      "seen_last_48h": 44,
+      "not_reverified_last_48h": 40,
       "full_coverage_proven": false
     },
     "ringble": {
