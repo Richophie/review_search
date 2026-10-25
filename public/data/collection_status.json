@@ -20,8 +20,8 @@
     "assaview": {
       "retained_records": 708,
       "seen_last_24h": 579,
-      "seen_last_48h": 654,
-      "not_reverified_last_48h": 54,
+      "seen_last_48h": 649,
+      "not_reverified_last_48h": 59,
       "full_coverage_proven": false
     },
     "bloglab": {
@@ -146,8 +146,8 @@
     "popomon": {
       "retained_records": 80,
       "seen_last_24h": 18,
-      "seen_last_48h": 28,
-      "not_reverified_last_48h": 52,
+      "seen_last_48h": 25,
+      "not_reverified_last_48h": 55,
       "full_coverage_proven": false
     },
     "realreview": {
@@ -174,8 +174,8 @@
     "revu": {
       "retained_records": 67,
       "seen_last_24h": 42,
-      "seen_last_48h": 44,
-      "not_reverified_last_48h": 23,
+      "seen_last_48h": 43,
+      "not_reverified_last_48h": 24,
       "full_coverage_proven": false
     },
     "ringble": {
