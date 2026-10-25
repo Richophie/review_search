@@ -68536,7 +68536,9 @@
 "region_text": "부산 진구",
 "category": "맛집",
 "campaign_type": "방문형",
-"channels": [],
+"channels": [
+"블로그"
+],
 "slots": 5,
 "applicants": 36,
 "apply_deadline": "2026-10-27",
@@ -68549,7 +68551,8 @@
 "competition_ratio": 7.2,
 "remaining_slots": 0,
 "dedupe_key": "부산진구수라반점서면점",
-"search_text": "수라반점 서면점 자유 식사권 35,000원 제공 부산 진구 맛집"
+"search_text": "수라반점 서면점 자유 식사권 35,000원 제공 부산 진구 맛집 블로그",
+"media_evidence": "dinnerqueen_detail:mandatory_blog_mission"
 },
 {
 "id": "dinnerqueen:1594201",
