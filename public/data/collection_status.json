@@ -1,6 +1,6 @@
 {
   "as_of_date_kst": "2026-10-27",
-  "snapshot_records": 20128,
+  "snapshot_records": 20143,
   "target_records": 20000,
   "records_to_target": 0,
   "target_progress_pct": 100.0,
@@ -144,9 +144,9 @@
       "full_coverage_proven": false
     },
     "popomon": {
-      "retained_records": 74,
-      "seen_last_24h": 12,
-      "seen_last_48h": 25,
+      "retained_records": 80,
+      "seen_last_24h": 18,
+      "seen_last_48h": 31,
       "not_reverified_last_48h": 49,
       "full_coverage_proven": false
     },
@@ -172,9 +172,9 @@
       "full_coverage_proven": false
     },
     "revu": {
-      "retained_records": 80,
-      "seen_last_24h": 41,
-      "seen_last_48h": 71,
+      "retained_records": 89,
+      "seen_last_24h": 50,
+      "seen_last_48h": 80,
       "not_reverified_last_48h": 9,
       "full_coverage_proven": false
     },
@@ -219,27 +219,27 @@
     "odiya": "2026-10-21T14:17:49.053798+09:00",
     "ohmyblog": "2026-10-26T15:46:12.166843+09:00",
     "openreview": "2026-10-22T13:30:06.651132+09:00",
-    "popomon": "2026-10-26T15:25:49.974508+09:00",
+    "popomon": "2026-10-27T04:22:50.911252+09:00",
     "realreview": "2026-10-27T03:50:33.816884+09:00",
     "reviewnote": "2026-10-27T01:03:53.482357+09:00",
     "reviewplace": "2026-10-27T01:03:53.482357+09:00",
-    "revu": "2026-10-26T15:25:49.974508+09:00",
+    "revu": "2026-10-27T04:22:50.911252+09:00",
     "ringble": "2026-10-27T01:03:53.482357+09:00",
     "storyn": "2026-10-27T01:03:53.482357+09:00",
     "tqueens": "2026-10-27T01:03:53.482357+09:00"
   },
   "media_counts": {
-    "네이버클립": 3463,
-    "블로그": 10406,
+    "네이버클립": 3464,
+    "블로그": 10414,
     "쇼츠": 46,
     "스레드": 1,
     "유튜브": 62,
-    "인스타그램": 4175,
+    "인스타그램": 4180,
     "틱톡": 6
   },
-  "media_unknown": 3202,
-  "deadline_unknown": 136,
-  "images_present": 20091,
+  "media_unknown": 3203,
+  "deadline_unknown": 148,
+  "images_present": 20106,
   "images_missing": 37,
   "images_missing_sources": {
     "chvu": 3,
@@ -254,7 +254,7 @@
     "fourblog": 2,
     "modan": 58,
     "ohmyblog": 10,
-    "popomon": 4,
+    "popomon": 5,
     "realreview": 33,
     "reviewplace": 9,
     "ringble": 9,
@@ -390,10 +390,10 @@
       "deadline_unknown": 0
     },
     "popomon": {
-      "records": 74,
-      "images_present": 74,
+      "records": 80,
+      "images_present": 80,
       "images_missing": 0,
-      "media_unknown": 4,
+      "media_unknown": 5,
       "deadline_unknown": 0
     },
     "realreview": {
@@ -418,11 +418,11 @@
       "deadline_unknown": 0
     },
     "revu": {
-      "records": 80,
-      "images_present": 47,
+      "records": 89,
+      "images_present": 56,
       "images_missing": 33,
       "media_unknown": 0,
-      "deadline_unknown": 47
+      "deadline_unknown": 59
     },
     "ringble": {
       "records": 128,
