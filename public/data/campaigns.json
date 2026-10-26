@@ -79267,7 +79267,9 @@
 "region_text": "서울 강동",
 "category": "맛집",
 "campaign_type": "방문형",
-"channels": [],
+"channels": [
+"블로그"
+],
 "slots": 5,
 "applicants": 19,
 "apply_deadline": "2026-10-29",
@@ -79280,7 +79282,8 @@
 "competition_ratio": 3.8,
 "remaining_slots": 0,
 "dedupe_key": "서울강동브루브루천호점",
-"search_text": "브루브루 천호점 2만 5천원 식사권 서울 강동 맛집"
+"search_text": "브루브루 천호점 2만 5천원 식사권 서울 강동 맛집 블로그",
+"media_evidence": "dinnerqueen_detail:mandatory_blog_mission"
 },
 {
 "id": "dinnerqueen:1601423",
