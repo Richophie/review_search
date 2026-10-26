@@ -90,8 +90,8 @@
     "gangnammat": {
       "retained_records": 1102,
       "seen_last_24h": 307,
-      "seen_last_48h": 330,
-      "not_reverified_last_48h": 772,
+      "seen_last_48h": 308,
+      "not_reverified_last_48h": 794,
       "full_coverage_proven": false
     },
     "huki": {
@@ -145,9 +145,9 @@
     },
     "popomon": {
       "retained_records": 80,
-      "seen_last_24h": 18,
-      "seen_last_48h": 25,
-      "not_reverified_last_48h": 55,
+      "seen_last_24h": 12,
+      "seen_last_48h": 19,
+      "not_reverified_last_48h": 61,
       "full_coverage_proven": false
     },
     "realreview": {
@@ -174,8 +174,8 @@
     "revu": {
       "retained_records": 67,
       "seen_last_24h": 42,
-      "seen_last_48h": 43,
-      "not_reverified_last_48h": 24,
+      "seen_last_48h": 42,
+      "not_reverified_last_48h": 25,
       "full_coverage_proven": false
     },
     "ringble": {
