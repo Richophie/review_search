@@ -216011,7 +216011,9 @@
 "region_text": "서울 성동",
 "category": "뷰티",
 "campaign_type": "방문형",
-"channels": [],
+"channels": [
+"블로그"
+],
 "slots": 10,
 "applicants": 103,
 "apply_deadline": "2026-10-28",
@@ -216024,7 +216026,8 @@
 "competition_ratio": 10.3,
 "remaining_slots": 0,
 "dedupe_key": "서울성동더고은스파앤마사지왕십리본점",
-"search_text": "더고은 스파앤마사지 왕십리본점 ★ 바디 또는 얼굴 60분 관리 -> 두 가지 관리 중 선택이 가능합니다. 서울 성동 뷰티"
+"search_text": "더고은 스파앤마사지 왕십리본점 ★ 바디 또는 얼굴 60분 관리 -> 두 가지 관리 중 선택이 가능합니다. 서울 성동 뷰티 블로그",
+"media_evidence": "dinnerqueen_detail:mandatory_blog_mission"
 },
 {
 "id": "dinnerqueen:1611025",
