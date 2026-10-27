@@ -152,7 +152,7 @@
     },
     "realreview": {
       "retained_records": 34,
-      "seen_last_24h": 33,
+      "seen_last_24h": 32,
       "seen_last_48h": 34,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
@@ -202,7 +202,7 @@
   },
   "source_last_observed": {
     "assaview": "2026-10-27T13:50:52.418988+09:00",
-    "bloglab": "2026-10-27T03:44:29.829445+09:00",
+    "bloglab": "2026-10-27T14:17:39.852756+09:00",
     "bqueens": "2026-10-27T13:50:52.418988+09:00",
     "cherivu": "2026-10-27T04:34:49.693833+09:00",
     "cherrycook": "2026-10-27T13:50:52.418988+09:00",
