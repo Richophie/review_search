@@ -54,7 +54,7 @@
     },
     "chvu": {
       "retained_records": 1225,
-      "seen_last_24h": 474,
+      "seen_last_24h": 473,
       "seen_last_48h": 713,
       "not_reverified_last_48h": 512,
       "full_coverage_proven": false
@@ -89,7 +89,7 @@
     },
     "gangnammat": {
       "retained_records": 1244,
-      "seen_last_24h": 507,
+      "seen_last_24h": 296,
       "seen_last_48h": 555,
       "not_reverified_last_48h": 689,
       "full_coverage_proven": false
@@ -214,7 +214,7 @@
     "gangnammat": "2026-10-27T15:37:12.764922+09:00",
     "huki": "2026-10-27T13:50:52.418988+09:00",
     "modan": "2026-10-27T14:42:59.120287+09:00",
-    "modootogether": "2026-10-27T13:50:52.418988+09:00",
+    "modootogether": "2026-10-27T15:48:22.580543+09:00",
     "mrblog": "2026-10-27T13:50:52.418988+09:00",
     "odiya": "2026-10-21T14:17:49.053798+09:00",
     "ohmyblog": "2026-10-27T15:39:41.889501+09:00",
