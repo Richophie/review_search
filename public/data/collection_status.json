@@ -19,7 +19,7 @@
   "source_observation_freshness": {
     "assaview": {
       "retained_records": 658,
-      "seen_last_24h": 594,
+      "seen_last_24h": 545,
       "seen_last_48h": 612,
       "not_reverified_last_48h": 46,
       "full_coverage_proven": false
@@ -40,7 +40,7 @@
     },
     "cherivu": {
       "retained_records": 191,
-      "seen_last_24h": 83,
+      "seen_last_24h": 69,
       "seen_last_48h": 94,
       "not_reverified_last_48h": 97,
       "full_coverage_proven": false
@@ -54,7 +54,7 @@
     },
     "chvu": {
       "retained_records": 1147,
-      "seen_last_24h": 503,
+      "seen_last_24h": 368,
       "seen_last_48h": 504,
       "not_reverified_last_48h": 643,
       "full_coverage_proven": false
@@ -145,7 +145,7 @@
     },
     "popomon": {
       "retained_records": 86,
-      "seen_last_24h": 24,
+      "seen_last_24h": 18,
       "seen_last_48h": 30,
       "not_reverified_last_48h": 56,
       "full_coverage_proven": false
@@ -173,7 +173,7 @@
     },
     "revu": {
       "retained_records": 89,
-      "seen_last_24h": 77,
+      "seen_last_24h": 49,
       "seen_last_48h": 84,
       "not_reverified_last_48h": 5,
       "full_coverage_proven": false
