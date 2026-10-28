@@ -1,14 +1,14 @@
 {
   "as_of_date_kst": "2026-10-28",
-  "snapshot_records": 18898,
+  "snapshot_records": 19099,
   "target_records": 20000,
-  "records_to_target": 1102,
-  "target_progress_pct": 94.49,
+  "records_to_target": 901,
+  "target_progress_pct": 95.5,
   "platforms_with_records": 26,
   "source_scan_status": {
     "gangnammat": {
-      "last_scan_at": "2026-10-27T06:38:10.938855+00:00",
-      "verified_during_last_scan": 255,
+      "last_scan_at": "2026-10-28T07:09:26.177450+00:00",
+      "verified_during_last_scan": 259,
       "discovered_list_urls": 19,
       "scan_complete": false,
       "traversal_capped": false,
@@ -20,8 +20,8 @@
     "assaview": {
       "retained_records": 665,
       "seen_last_24h": 504,
-      "seen_last_48h": 617,
-      "not_reverified_last_48h": 48,
+      "seen_last_48h": 614,
+      "not_reverified_last_48h": 51,
       "full_coverage_proven": false
     },
     "bloglab": {
@@ -41,8 +41,8 @@
     "cherivu": {
       "retained_records": 191,
       "seen_last_24h": 59,
-      "seen_last_48h": 94,
-      "not_reverified_last_48h": 97,
+      "seen_last_48h": 83,
+      "not_reverified_last_48h": 108,
       "full_coverage_proven": false
     },
     "cherrycook": {
@@ -88,9 +88,9 @@
       "full_coverage_proven": false
     },
     "gangnammat": {
-      "retained_records": 1031,
-      "seen_last_24h": 28,
-      "seen_last_48h": 322,
+      "retained_records": 1232,
+      "seen_last_24h": 282,
+      "seen_last_48h": 523,
       "not_reverified_last_48h": 709,
       "full_coverage_proven": false
     },
@@ -211,7 +211,7 @@
     "dinnerqueen": "2026-10-28T14:26:05.521985+09:00",
     "fourblog": "2026-10-28T14:26:05.521985+09:00",
     "gaboja": "2026-10-28T14:26:05.521985+09:00",
-    "gangnammat": "2026-10-28T14:26:05.521985+09:00",
+    "gangnammat": "2026-10-28T16:08:43.682996+09:00",
     "huki": "2026-10-28T14:26:05.521985+09:00",
     "modan": "2026-10-28T15:22:04.637744+09:00",
     "modootogether": "2026-10-28T14:26:05.521985+09:00",
@@ -229,8 +229,8 @@
     "tqueens": "2026-10-28T14:26:05.521985+09:00"
   },
   "media_counts": {
-    "네이버클립": 2979,
-    "블로그": 11187,
+    "네이버클립": 2983,
+    "블로그": 11384,
     "쇼츠": 49,
     "스레드": 2,
     "유튜브": 67,
@@ -239,7 +239,7 @@
   },
   "media_unknown": 2449,
   "deadline_unknown": 149,
-  "images_present": 18853,
+  "images_present": 19054,
   "images_missing": 45,
   "images_missing_sources": {
     "chvu": 2,
@@ -334,8 +334,8 @@
       "deadline_unknown": 0
     },
     "gangnammat": {
-      "records": 1031,
-      "images_present": 1031,
+      "records": 1232,
+      "images_present": 1232,
       "images_missing": 0,
       "media_unknown": 0,
       "deadline_unknown": 0
