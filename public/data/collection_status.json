@@ -1,9 +1,9 @@
 {
   "as_of_date_kst": "2026-10-29",
-  "snapshot_records": 18905,
+  "snapshot_records": 18889,
   "target_records": 20000,
-  "records_to_target": 1095,
-  "target_progress_pct": 94.53,
+  "records_to_target": 1111,
+  "target_progress_pct": 94.44,
   "platforms_with_records": 25,
   "source_scan_status": {
     "gangnammat": {
@@ -20,8 +20,8 @@
     "assaview": {
       "retained_records": 617,
       "seen_last_24h": 489,
-      "seen_last_48h": 601,
-      "not_reverified_last_48h": 16,
+      "seen_last_48h": 593,
+      "not_reverified_last_48h": 24,
       "full_coverage_proven": false
     },
     "bloglab": {
@@ -41,8 +41,8 @@
     "cherivu": {
       "retained_records": 207,
       "seen_last_24h": 79,
-      "seen_last_48h": 112,
-      "not_reverified_last_48h": 95,
+      "seen_last_48h": 101,
+      "not_reverified_last_48h": 106,
       "full_coverage_proven": false
     },
     "cherrycook": {
@@ -55,8 +55,8 @@
     "chvu": {
       "retained_records": 1212,
       "seen_last_24h": 384,
-      "seen_last_48h": 636,
-      "not_reverified_last_48h": 576,
+      "seen_last_48h": 502,
+      "not_reverified_last_48h": 710,
       "full_coverage_proven": false
     },
     "cometoplay": {
@@ -139,8 +139,8 @@
     "popomon": {
       "retained_records": 86,
       "seen_last_24h": 18,
-      "seen_last_48h": 35,
-      "not_reverified_last_48h": 51,
+      "seen_last_48h": 29,
+      "not_reverified_last_48h": 57,
       "full_coverage_proven": false
     },
     "realreview": {
@@ -165,10 +165,10 @@
       "full_coverage_proven": false
     },
     "revu": {
-      "retained_records": 116,
+      "retained_records": 100,
       "seen_last_24h": 49,
-      "seen_last_48h": 114,
-      "not_reverified_last_48h": 2,
+      "seen_last_48h": 91,
+      "not_reverified_last_48h": 9,
       "full_coverage_proven": false
     },
     "ringble": {
@@ -222,16 +222,16 @@
   },
   "media_counts": {
     "네이버클립": 2992,
-    "블로그": 11803,
+    "블로그": 11791,
     "쇼츠": 51,
     "스레드": 2,
     "유튜브": 68,
-    "인스타그램": 3319,
+    "인스타그램": 3315,
     "틱톡": 9
   },
   "media_unknown": 2197,
-  "deadline_unknown": 169,
-  "images_present": 18868,
+  "deadline_unknown": 153,
+  "images_present": 18852,
   "images_missing": 37,
   "images_missing_sources": {
     "chvu": 2,
@@ -404,11 +404,11 @@
       "deadline_unknown": 0
     },
     "revu": {
-      "records": 116,
-      "images_present": 83,
+      "records": 100,
+      "images_present": 67,
       "images_missing": 33,
       "media_unknown": 0,
-      "deadline_unknown": 83
+      "deadline_unknown": 67
     },
     "ringble": {
       "records": 130,
