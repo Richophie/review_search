@@ -1,9 +1,9 @@
 {
   "as_of_date_kst": "2026-10-29",
-  "snapshot_records": 19960,
+  "snapshot_records": 19952,
   "target_records": 20000,
-  "records_to_target": 40,
-  "target_progress_pct": 99.8,
+  "records_to_target": 48,
+  "target_progress_pct": 99.76,
   "platforms_with_records": 25,
   "source_scan_status": {
     "gangnammat": {
@@ -103,7 +103,7 @@
     },
     "modan": {
       "retained_records": 59,
-      "seen_last_24h": 40,
+      "seen_last_24h": 37,
       "seen_last_48h": 58,
       "not_reverified_last_48h": 1,
       "full_coverage_proven": false
@@ -139,13 +139,13 @@
     "popomon": {
       "retained_records": 86,
       "seen_last_24h": 18,
-      "seen_last_48h": 29,
-      "not_reverified_last_48h": 57,
+      "seen_last_48h": 24,
+      "not_reverified_last_48h": 62,
       "full_coverage_proven": false
     },
     "realreview": {
       "retained_records": 42,
-      "seen_last_24h": 42,
+      "seen_last_24h": 41,
       "seen_last_48h": 42,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
@@ -165,9 +165,9 @@
       "full_coverage_proven": false
     },
     "revu": {
-      "retained_records": 100,
+      "retained_records": 92,
       "seen_last_24h": 49,
-      "seen_last_48h": 91,
+      "seen_last_48h": 83,
       "not_reverified_last_48h": 9,
       "full_coverage_proven": false
     },
@@ -212,7 +212,7 @@
     "odiya": "2026-10-21T14:17:49.053798+09:00",
     "ohmyblog": "2026-10-29T03:59:43.690026+09:00",
     "popomon": "2026-10-29T03:53:06.416314+09:00",
-    "realreview": "2026-10-29T14:35:17.084878+09:00",
+    "realreview": "2026-10-29T15:22:57.145093+09:00",
     "reviewnote": "2026-10-29T14:35:17.084878+09:00",
     "reviewplace": "2026-10-29T14:35:17.084878+09:00",
     "revu": "2026-10-29T03:53:06.416314+09:00",
@@ -221,17 +221,17 @@
     "tqueens": "2026-10-29T14:35:17.084878+09:00"
   },
   "media_counts": {
-    "네이버클립": 3256,
-    "블로그": 11958,
+    "네이버클립": 3255,
+    "블로그": 11954,
     "쇼츠": 53,
     "스레드": 2,
     "유튜브": 70,
-    "인스타그램": 3747,
+    "인스타그램": 3744,
     "틱톡": 9
   },
   "media_unknown": 2432,
-  "deadline_unknown": 163,
-  "images_present": 19923,
+  "deadline_unknown": 155,
+  "images_present": 19915,
   "images_missing": 37,
   "images_missing_sources": {
     "chvu": 2,
@@ -404,11 +404,11 @@
       "deadline_unknown": 0
     },
     "revu": {
-      "records": 100,
-      "images_present": 67,
+      "records": 92,
+      "images_present": 59,
       "images_missing": 33,
       "media_unknown": 0,
-      "deadline_unknown": 67
+      "deadline_unknown": 59
     },
     "ringble": {
       "records": 148,
