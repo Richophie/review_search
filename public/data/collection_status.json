@@ -103,7 +103,7 @@
     },
     "modan": {
       "retained_records": 61,
-      "seen_last_24h": 53,
+      "seen_last_24h": 49,
       "seen_last_48h": 60,
       "not_reverified_last_48h": 1,
       "full_coverage_proven": false
@@ -188,7 +188,7 @@
   },
   "source_last_observed": {
     "assaview": "2026-10-30T01:00:41.209044+09:00",
-    "bloglab": "2026-10-29T15:01:59.105704+09:00",
+    "bloglab": "2026-10-30T03:33:25.661290+09:00",
     "bqueens": "2026-10-30T01:00:41.209044+09:00",
     "cherivu": "2026-10-29T16:40:18.308188+09:00",
     "cherrycook": "2026-10-30T01:00:41.209044+09:00",
