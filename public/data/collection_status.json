@@ -1,9 +1,9 @@
 {
   "as_of_date_kst": "2026-10-29",
-  "snapshot_records": 19954,
+  "snapshot_records": 19987,
   "target_records": 20000,
-  "records_to_target": 46,
-  "target_progress_pct": 99.77,
+  "records_to_target": 13,
+  "target_progress_pct": 99.94,
   "platforms_with_records": 25,
   "source_scan_status": {
     "gangnammat": {
@@ -20,8 +20,8 @@
     "assaview": {
       "retained_records": 675,
       "seen_last_24h": 580,
-      "seen_last_48h": 653,
-      "not_reverified_last_48h": 22,
+      "seen_last_48h": 648,
+      "not_reverified_last_48h": 27,
       "full_coverage_proven": false
     },
     "bloglab": {
@@ -41,8 +41,8 @@
     "cherivu": {
       "retained_records": 207,
       "seen_last_24h": 79,
-      "seen_last_48h": 101,
-      "not_reverified_last_48h": 106,
+      "seen_last_48h": 93,
+      "not_reverified_last_48h": 114,
       "full_coverage_proven": false
     },
     "cherrycook": {
@@ -55,8 +55,8 @@
     "chvu": {
       "retained_records": 1212,
       "seen_last_24h": 384,
-      "seen_last_48h": 502,
-      "not_reverified_last_48h": 710,
+      "seen_last_48h": 500,
+      "not_reverified_last_48h": 712,
       "full_coverage_proven": false
     },
     "cometoplay": {
@@ -89,9 +89,9 @@
     },
     "gangnammat": {
       "retained_records": 1013,
-      "seen_last_24h": 311,
-      "seen_last_48h": 534,
-      "not_reverified_last_48h": 479,
+      "seen_last_24h": 54,
+      "seen_last_48h": 334,
+      "not_reverified_last_48h": 679,
       "full_coverage_proven": false
     },
     "huki": {
@@ -137,9 +137,9 @@
       "full_coverage_proven": false
     },
     "popomon": {
-      "retained_records": 86,
+      "retained_records": 92,
       "seen_last_24h": 18,
-      "seen_last_48h": 24,
+      "seen_last_48h": 30,
       "not_reverified_last_48h": 62,
       "full_coverage_proven": false
     },
@@ -165,10 +165,10 @@
       "full_coverage_proven": false
     },
     "revu": {
-      "retained_records": 92,
-      "seen_last_24h": 49,
-      "seen_last_48h": 83,
-      "not_reverified_last_48h": 9,
+      "retained_records": 119,
+      "seen_last_24h": 69,
+      "seen_last_48h": 111,
+      "not_reverified_last_48h": 8,
       "full_coverage_proven": false
     },
     "ringble": {
@@ -211,33 +211,33 @@
     "mrblog": "2026-10-29T14:35:17.084878+09:00",
     "odiya": "2026-10-21T14:17:49.053798+09:00",
     "ohmyblog": "2026-10-29T03:59:43.690026+09:00",
-    "popomon": "2026-10-29T03:53:06.416314+09:00",
+    "popomon": "2026-10-29T16:10:58.099097+09:00",
     "realreview": "2026-10-29T15:22:57.145093+09:00",
     "reviewnote": "2026-10-29T14:35:17.084878+09:00",
     "reviewplace": "2026-10-29T14:35:17.084878+09:00",
-    "revu": "2026-10-29T03:53:06.416314+09:00",
+    "revu": "2026-10-29T16:10:58.099097+09:00",
     "ringble": "2026-10-29T14:35:17.084878+09:00",
     "storyn": "2026-10-29T14:35:17.084878+09:00",
     "tqueens": "2026-10-29T14:35:17.084878+09:00"
   },
   "media_counts": {
-    "네이버클립": 3255,
-    "블로그": 11954,
+    "네이버클립": 3260,
+    "블로그": 11971,
     "쇼츠": 53,
     "스레드": 2,
     "유튜브": 70,
-    "인스타그램": 3744,
+    "인스타그램": 3755,
     "틱톡": 9
   },
   "media_unknown": 2434,
-  "deadline_unknown": 155,
-  "images_present": 19917,
-  "images_missing": 37,
+  "deadline_unknown": 171,
+  "images_present": 19939,
+  "images_missing": 48,
   "images_missing_sources": {
     "chvu": 2,
     "odiya": 1,
     "popomon": 1,
-    "revu": 33
+    "revu": 44
   },
   "media_unknown_sources": {
     "assaview": 81,
@@ -376,8 +376,8 @@
       "deadline_unknown": 0
     },
     "popomon": {
-      "records": 86,
-      "images_present": 85,
+      "records": 92,
+      "images_present": 91,
       "images_missing": 1,
       "media_unknown": 7,
       "deadline_unknown": 0
@@ -404,11 +404,11 @@
       "deadline_unknown": 0
     },
     "revu": {
-      "records": 92,
-      "images_present": 59,
-      "images_missing": 33,
+      "records": 119,
+      "images_present": 75,
+      "images_missing": 44,
       "media_unknown": 0,
-      "deadline_unknown": 59
+      "deadline_unknown": 75
     },
     "ringble": {
       "records": 148,
