@@ -282131,36 +282131,6 @@
 "search_text": "[경기/기타] 평택 선새김 에스테틱 맞춤형피부관리(회당케어가격 19만원~ 33만원) 맞춤형피부관리(회당케어가격 19만원~ 33만원) 경기/기타 뷰티 블로그"
 },
 {
-"id": "huki:1054",
-"source_id": "huki",
-"original_url": "https://huki.co.kr/bbs/board.php?bo_table=campaign&sti=&wr_id=1054",
-"title": "[강서/목동] 마곡 벨로즈뷰티",
-"description": "속눈썹펌",
-"benefit": "속눈썹펌",
-"image_url": "https://huki.co.kr/data/file/campaign/9b50532abd92db223276dc8bfe47cd8a_FnHOBlLG_0e45fc87b90ade5e46f0bd43000671caed1fc6a5.png",
-"country_code": "KR",
-"region_sido": null,
-"region_text": null,
-"category": "뷰티",
-"campaign_type": "방문형",
-"channels": [
-"블로그"
-],
-"slots": 5,
-"applicants": 1,
-"apply_deadline": null,
-"deadline_precision": "unknown",
-"open_verified": true,
-"first_seen_at": "2026-10-10T16:14:30.026871+09:00",
-"published_at": null,
-"last_seen_at": "2026-10-28T14:26:05.521985+09:00",
-"timezone": "Asia/Seoul",
-"competition_ratio": 0.2,
-"remaining_slots": 4,
-"dedupe_key": "강서목동마곡벨로즈뷰티",
-"search_text": "[강서/목동] 마곡 벨로즈뷰티 속눈썹펌 속눈썹펌 뷰티 블로그"
-},
-{
 "id": "huki:1060",
 "source_id": "huki",
 "original_url": "https://huki.co.kr/bbs/board.php?bo_table=campaign&sti=&wr_id=1060",
