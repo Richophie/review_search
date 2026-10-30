@@ -61,21 +61,21 @@
     },
     "cometoplay": {
       "retained_records": 91,
-      "seen_last_24h": 45,
+      "seen_last_24h": 35,
       "seen_last_48h": 46,
       "not_reverified_last_48h": 45,
       "full_coverage_proven": false
     },
     "dinnerqueen": {
       "retained_records": 7303,
-      "seen_last_24h": 4133,
+      "seen_last_24h": 2778,
       "seen_last_48h": 4892,
       "not_reverified_last_48h": 2411,
       "full_coverage_proven": false
     },
     "fourblog": {
       "retained_records": 260,
-      "seen_last_24h": 116,
+      "seen_last_24h": 104,
       "seen_last_48h": 123,
       "not_reverified_last_48h": 137,
       "full_coverage_proven": false
@@ -89,7 +89,7 @@
     },
     "gangnammat": {
       "retained_records": 1161,
-      "seen_last_24h": 386,
+      "seen_last_24h": 363,
       "seen_last_48h": 578,
       "not_reverified_last_48h": 583,
       "full_coverage_proven": false
@@ -103,7 +103,7 @@
     },
     "modan": {
       "retained_records": 56,
-      "seen_last_24h": 54,
+      "seen_last_24h": 42,
       "seen_last_48h": 55,
       "not_reverified_last_48h": 1,
       "full_coverage_proven": false
@@ -117,7 +117,7 @@
     },
     "mrblog": {
       "retained_records": 56,
-      "seen_last_24h": 49,
+      "seen_last_24h": 42,
       "seen_last_48h": 52,
       "not_reverified_last_48h": 4,
       "full_coverage_proven": false
@@ -145,14 +145,14 @@
     },
     "reviewnote": {
       "retained_records": 9038,
-      "seen_last_24h": 1670,
+      "seen_last_24h": 1626,
       "seen_last_48h": 2450,
       "not_reverified_last_48h": 6588,
       "full_coverage_proven": false
     },
     "reviewplace": {
       "retained_records": 25,
-      "seen_last_24h": 24,
+      "seen_last_24h": 21,
       "seen_last_48h": 24,
       "not_reverified_last_48h": 1,
       "full_coverage_proven": false
@@ -166,7 +166,7 @@
     },
     "ringble": {
       "retained_records": 137,
-      "seen_last_24h": 56,
+      "seen_last_24h": 38,
       "seen_last_48h": 60,
       "not_reverified_last_48h": 77,
       "full_coverage_proven": false
