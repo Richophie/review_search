@@ -74789,7 +74789,9 @@
 "region_text": "부산 남구",
 "category": "기타",
 "campaign_type": "방문형",
-"channels": [],
+"channels": [
+"블로그"
+],
 "slots": 20,
 "applicants": 21,
 "apply_deadline": "2026-11-01",
@@ -74802,7 +74804,8 @@
 "competition_ratio": 1.05,
 "remaining_slots": 0,
 "dedupe_key": "부산남구이학수한옥집김치찜본점",
-"search_text": "이학수 한옥집김치찜 본점 김치찜 1인분 (밥 포함) + 김치찌개 1인분 (밥,사리 포함) + 계란말이 제공 (2인 기준) 부산 남구 기타"
+"search_text": "이학수 한옥집김치찜 본점 김치찜 1인분 (밥 포함) + 김치찌개 1인분 (밥,사리 포함) + 계란말이 제공 (2인 기준) 부산 남구 기타 블로그",
+"media_evidence": "dinnerqueen_detail:mandatory_blog_mission"
 },
 {
 "id": "dinnerqueen:1591960",
