@@ -1,6 +1,6 @@
 {
   "as_of_date_kst": "2026-10-31",
-  "snapshot_records": 21187,
+  "snapshot_records": 21169,
   "target_records": 20000,
   "records_to_target": 0,
   "target_progress_pct": 100.0,
@@ -132,8 +132,8 @@
     "popomon": {
       "retained_records": 84,
       "seen_last_24h": 18,
-      "seen_last_48h": 29,
-      "not_reverified_last_48h": 55,
+      "seen_last_48h": 23,
+      "not_reverified_last_48h": 61,
       "full_coverage_proven": false
     },
     "realreview": {
@@ -158,10 +158,10 @@
       "full_coverage_proven": false
     },
     "revu": {
-      "retained_records": 130,
+      "retained_records": 112,
       "seen_last_24h": 48,
-      "seen_last_48h": 114,
-      "not_reverified_last_48h": 16,
+      "seen_last_48h": 85,
+      "not_reverified_last_48h": 27,
       "full_coverage_proven": false
     },
     "ringble": {
@@ -187,7 +187,7 @@
     }
   },
   "source_last_observed": {
-    "assaview": "2026-10-31T00:49:33.655589+09:00",
+    "assaview": "2026-10-31T03:54:24.586380+09:00",
     "bloglab": "2026-10-31T03:06:01.668469+09:00",
     "bqueens": "2026-10-31T00:49:33.655589+09:00",
     "cherivu": "2026-10-31T03:52:28.120376+09:00",
@@ -214,21 +214,21 @@
   },
   "media_counts": {
     "네이버클립": 3943,
-    "블로그": 11556,
+    "블로그": 11543,
     "쇼츠": 50,
     "스레드": 2,
     "유튜브": 65,
-    "인스타그램": 3733,
+    "인스타그램": 3728,
     "틱톡": 9
   },
   "media_unknown": 3348,
-  "deadline_unknown": 150,
-  "images_present": 21132,
-  "images_missing": 55,
+  "deadline_unknown": 132,
+  "images_present": 21115,
+  "images_missing": 54,
   "images_missing_sources": {
     "chvu": 2,
     "popomon": 1,
-    "revu": 52
+    "revu": 51
   },
   "media_unknown_sources": {
     "assaview": 80,
@@ -390,11 +390,11 @@
       "deadline_unknown": 0
     },
     "revu": {
-      "records": 130,
-      "images_present": 78,
-      "images_missing": 52,
+      "records": 112,
+      "images_present": 61,
+      "images_missing": 51,
       "media_unknown": 1,
-      "deadline_unknown": 61
+      "deadline_unknown": 43
     },
     "ringble": {
       "records": 137,
