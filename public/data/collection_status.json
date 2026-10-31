@@ -54,9 +54,9 @@
     },
     "chvu": {
       "retained_records": 1127,
-      "seen_last_24h": 379,
-      "seen_last_48h": 548,
-      "not_reverified_last_48h": 579,
+      "seen_last_24h": 378,
+      "seen_last_48h": 468,
+      "not_reverified_last_48h": 659,
       "full_coverage_proven": false
     },
     "cometoplay": {
@@ -89,7 +89,7 @@
     },
     "gangnammat": {
       "retained_records": 1255,
-      "seen_last_24h": 435,
+      "seen_last_24h": 295,
       "seen_last_48h": 480,
       "not_reverified_last_48h": 775,
       "full_coverage_proven": false
@@ -187,7 +187,7 @@
     }
   },
   "source_last_observed": {
-    "assaview": "2026-10-31T14:22:57.946281+09:00",
+    "assaview": "2026-10-31T16:34:59.592191+09:00",
     "bloglab": "2026-10-31T14:57:48.167316+09:00",
     "bqueens": "2026-10-31T14:22:57.946281+09:00",
     "cherivu": "2026-10-31T16:30:36.569564+09:00",
