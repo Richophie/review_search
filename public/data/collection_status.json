@@ -19,9 +19,9 @@
   "source_observation_freshness": {
     "assaview": {
       "retained_records": 671,
-      "seen_last_24h": 620,
-      "seen_last_48h": 646,
-      "not_reverified_last_48h": 25,
+      "seen_last_24h": 569,
+      "seen_last_48h": 635,
+      "not_reverified_last_48h": 36,
       "full_coverage_proven": false
     },
     "bloglab": {
@@ -40,9 +40,9 @@
     },
     "cherivu": {
       "retained_records": 260,
-      "seen_last_24h": 87,
-      "seen_last_48h": 121,
-      "not_reverified_last_48h": 139,
+      "seen_last_24h": 74,
+      "seen_last_48h": 99,
+      "not_reverified_last_48h": 161,
       "full_coverage_proven": false
     },
     "cherrycook": {
@@ -55,8 +55,8 @@
     "chvu": {
       "retained_records": 999,
       "seen_last_24h": 384,
-      "seen_last_48h": 466,
-      "not_reverified_last_48h": 533,
+      "seen_last_48h": 387,
+      "not_reverified_last_48h": 612,
       "full_coverage_proven": false
     },
     "cometoplay": {
