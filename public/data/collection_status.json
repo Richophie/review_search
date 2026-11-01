@@ -54,7 +54,7 @@
     },
     "chvu": {
       "retained_records": 893,
-      "seen_last_24h": 387,
+      "seen_last_24h": 341,
       "seen_last_48h": 389,
       "not_reverified_last_48h": 504,
       "full_coverage_proven": false
@@ -103,7 +103,7 @@
     },
     "modan": {
       "retained_records": 54,
-      "seen_last_24h": 38,
+      "seen_last_24h": 37,
       "seen_last_48h": 52,
       "not_reverified_last_48h": 2,
       "full_coverage_proven": false
@@ -131,7 +131,7 @@
     },
     "popomon": {
       "retained_records": 76,
-      "seen_last_24h": 11,
+      "seen_last_24h": 10,
       "seen_last_48h": 18,
       "not_reverified_last_48h": 58,
       "full_coverage_proven": false
@@ -159,7 +159,7 @@
     },
     "revu": {
       "retained_records": 62,
-      "seen_last_24h": 41,
+      "seen_last_24h": 40,
       "seen_last_48h": 42,
       "not_reverified_last_48h": 20,
       "full_coverage_proven": false
