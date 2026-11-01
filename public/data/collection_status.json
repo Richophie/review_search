@@ -1,6 +1,6 @@
 {
   "as_of_date_kst": "2026-11-01",
-  "snapshot_records": 21980,
+  "snapshot_records": 22123,
   "target_records": 20000,
   "records_to_target": 0,
   "target_progress_pct": 100.0,
@@ -144,10 +144,10 @@
       "full_coverage_proven": false
     },
     "reviewnote": {
-      "retained_records": 8405,
-      "seen_last_24h": 1769,
-      "seen_last_48h": 2227,
-      "not_reverified_last_48h": 6178,
+      "retained_records": 8548,
+      "seen_last_24h": 1512,
+      "seen_last_48h": 1988,
+      "not_reverified_last_48h": 6560,
       "full_coverage_proven": false
     },
     "reviewplace": {
@@ -205,7 +205,7 @@
     "ohmyblog": "2026-11-01T16:55:28.516889+09:00",
     "popomon": "2026-11-01T16:37:14.227386+09:00",
     "realreview": "2026-11-01T15:45:56.509403+09:00",
-    "reviewnote": "2026-11-01T14:49:34.352707+09:00",
+    "reviewnote": "2026-11-01T18:26:46.674673+09:00",
     "reviewplace": "2026-11-01T14:49:34.352707+09:00",
     "revu": "2026-11-01T16:37:14.227386+09:00",
     "ringble": "2026-11-01T14:49:34.352707+09:00",
@@ -213,17 +213,17 @@
     "tqueens": "2026-11-01T14:49:34.352707+09:00"
   },
   "media_counts": {
-    "네이버클립": 4095,
-    "블로그": 11119,
-    "쇼츠": 44,
+    "네이버클립": 4102,
+    "블로그": 11245,
+    "쇼츠": 46,
     "스레드": 3,
-    "유튜브": 59,
-    "인스타그램": 4312,
+    "유튜브": 61,
+    "인스타그램": 4327,
     "틱톡": 7
   },
   "media_unknown": 3747,
   "deadline_unknown": 130,
-  "images_present": 21926,
+  "images_present": 22069,
   "images_missing": 54,
   "images_missing_sources": {
     "chvu": 2,
@@ -375,8 +375,8 @@
       "deadline_unknown": 37
     },
     "reviewnote": {
-      "records": 8405,
-      "images_present": 8405,
+      "records": 8548,
+      "images_present": 8548,
       "images_missing": 0,
       "media_unknown": 0,
       "deadline_unknown": 0
