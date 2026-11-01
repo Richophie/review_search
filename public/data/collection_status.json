@@ -104,8 +104,8 @@
     "modan": {
       "retained_records": 55,
       "seen_last_24h": 38,
-      "seen_last_48h": 54,
-      "not_reverified_last_48h": 1,
+      "seen_last_48h": 53,
+      "not_reverified_last_48h": 2,
       "full_coverage_proven": false
     },
     "modootogether": {
@@ -204,7 +204,7 @@
     "mrblog": "2026-11-01T14:49:34.352707+09:00",
     "ohmyblog": "2026-11-01T02:52:26.024151+09:00",
     "popomon": "2026-11-01T02:48:00.878049+09:00",
-    "realreview": "2026-11-01T14:49:34.352707+09:00",
+    "realreview": "2026-11-01T15:45:56.509403+09:00",
     "reviewnote": "2026-11-01T14:49:34.352707+09:00",
     "reviewplace": "2026-11-01T14:49:34.352707+09:00",
     "revu": "2026-11-01T02:48:00.878049+09:00",
