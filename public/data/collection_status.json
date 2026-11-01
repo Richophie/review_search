@@ -7,8 +7,8 @@
   "platforms_with_records": 24,
   "source_scan_status": {
     "gangnammat": {
-      "last_scan_at": "2026-10-31T07:21:20.114336+00:00",
-      "verified_during_last_scan": 295,
+      "last_scan_at": "2026-11-01T07:53:36.352099+00:00",
+      "verified_during_last_scan": 264,
       "discovered_list_urls": 19,
       "scan_complete": false,
       "traversal_capped": false,
@@ -20,8 +20,8 @@
     "assaview": {
       "retained_records": 671,
       "seen_last_24h": 485,
-      "seen_last_48h": 633,
-      "not_reverified_last_48h": 38,
+      "seen_last_48h": 630,
+      "not_reverified_last_48h": 41,
       "full_coverage_proven": false
     },
     "bloglab": {
@@ -41,8 +41,8 @@
     "cherivu": {
       "retained_records": 260,
       "seen_last_24h": 56,
-      "seen_last_48h": 99,
-      "not_reverified_last_48h": 161,
+      "seen_last_48h": 87,
+      "not_reverified_last_48h": 173,
       "full_coverage_proven": false
     },
     "cherrycook": {
@@ -89,7 +89,7 @@
     },
     "gangnammat": {
       "retained_records": 1255,
-      "seen_last_24h": 26,
+      "seen_last_24h": 264,
       "seen_last_48h": 295,
       "not_reverified_last_48h": 960,
       "full_coverage_proven": false
@@ -197,7 +197,7 @@
     "dinnerqueen": "2026-11-01T14:49:34.352707+09:00",
     "fourblog": "2026-11-01T00:15:21.961378+09:00",
     "gaboja": "2026-11-01T14:49:34.352707+09:00",
-    "gangnammat": "2026-11-01T14:49:34.352707+09:00",
+    "gangnammat": "2026-11-01T16:52:37.257304+09:00",
     "huki": "2026-11-01T14:49:34.352707+09:00",
     "modan": "2026-11-01T15:54:20.311599+09:00",
     "modootogether": "2026-11-01T14:49:34.352707+09:00",
