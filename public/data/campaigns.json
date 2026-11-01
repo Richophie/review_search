@@ -76704,7 +76704,9 @@
 "region_text": "서울 강동",
 "category": "맛집",
 "campaign_type": "방문형",
-"channels": [],
+"channels": [
+"블로그"
+],
 "slots": 5,
 "applicants": 33,
 "apply_deadline": "2026-11-08",
@@ -76717,7 +76719,8 @@
 "competition_ratio": 6.6,
 "remaining_slots": 0,
 "dedupe_key": "서울강동브루브루천호점",
-"search_text": "브루브루 천호점 2만 5천원 식사권 서울 강동 맛집"
+"search_text": "브루브루 천호점 2만 5천원 식사권 서울 강동 맛집 블로그",
+"media_evidence": "dinnerqueen_detail:mandatory_blog_mission"
 },
 {
 "id": "dinnerqueen:1614371",
@@ -77050,7 +77053,9 @@
 "region_text": "경기 평택",
 "category": "맛집",
 "campaign_type": "방문형",
-"channels": [],
+"channels": [
+"블로그"
+],
 "slots": 3,
 "applicants": 34,
 "apply_deadline": "2026-11-08",
@@ -77063,7 +77068,8 @@
 "competition_ratio": 11.333333333333334,
 "remaining_slots": 0,
 "dedupe_key": "경기평택코지하우스평택죽백점",
-"search_text": "코지하우스 평택죽백점 파스타 택 1 + 필라프 택 1 제공 ( 칼사바 메뉴 제외 ) 경기 평택 맛집"
+"search_text": "코지하우스 평택죽백점 파스타 택 1 + 필라프 택 1 제공 ( 칼사바 메뉴 제외 ) 경기 평택 맛집 블로그",
+"media_evidence": "dinnerqueen_detail:mandatory_blog_mission"
 },
 {
 "id": "dinnerqueen:1614383",

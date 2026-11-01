@@ -20,8 +20,8 @@
     "assaview": {
       "retained_records": 671,
       "seen_last_24h": 474,
-      "seen_last_48h": 630,
-      "not_reverified_last_48h": 41,
+      "seen_last_48h": 629,
+      "not_reverified_last_48h": 42,
       "full_coverage_proven": false
     },
     "bloglab": {
@@ -41,8 +41,8 @@
     "cherivu": {
       "retained_records": 266,
       "seen_last_24h": 67,
-      "seen_last_48h": 109,
-      "not_reverified_last_48h": 157,
+      "seen_last_48h": 96,
+      "not_reverified_last_48h": 170,
       "full_coverage_proven": false
     },
     "cherrycook": {
@@ -55,8 +55,8 @@
     "chvu": {
       "retained_records": 893,
       "seen_last_24h": 364,
-      "seen_last_48h": 389,
-      "not_reverified_last_48h": 504,
+      "seen_last_48h": 387,
+      "not_reverified_last_48h": 506,
       "full_coverage_proven": false
     },
     "cometoplay": {
@@ -132,8 +132,8 @@
     "popomon": {
       "retained_records": 83,
       "seen_last_24h": 18,
-      "seen_last_48h": 26,
-      "not_reverified_last_48h": 57,
+      "seen_last_48h": 25,
+      "not_reverified_last_48h": 58,
       "full_coverage_proven": false
     },
     "realreview": {
@@ -214,14 +214,14 @@
   },
   "media_counts": {
     "네이버클립": 3952,
-    "블로그": 9937,
+    "블로그": 9939,
     "쇼츠": 31,
     "스레드": 3,
     "유튜브": 44,
     "인스타그램": 4147,
     "틱톡": 7
   },
-  "media_unknown": 3737,
+  "media_unknown": 3735,
   "deadline_unknown": 151,
   "images_present": 20609,
   "images_missing": 33,
@@ -234,7 +234,7 @@
     "bqueens": 70,
     "cherivu": 1,
     "chvu": 2,
-    "dinnerqueen": 3407,
+    "dinnerqueen": 3405,
     "modan": 54,
     "ohmyblog": 11,
     "popomon": 6,
@@ -300,7 +300,7 @@
       "records": 8858,
       "images_present": 8858,
       "images_missing": 0,
-      "media_unknown": 3407,
+      "media_unknown": 3405,
       "deadline_unknown": 0
     },
     "fourblog": {
