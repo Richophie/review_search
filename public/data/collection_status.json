@@ -19,7 +19,7 @@
   "source_observation_freshness": {
     "assaview": {
       "retained_records": 668,
-      "seen_last_24h": 576,
+      "seen_last_24h": 496,
       "seen_last_48h": 639,
       "not_reverified_last_48h": 29,
       "full_coverage_proven": false
@@ -207,7 +207,7 @@
     "gangnammat": "2026-11-03T17:20:02.408950+09:00",
     "huki": "2026-11-03T15:32:19.946466+09:00",
     "modan": "2026-11-03T16:18:21.422066+09:00",
-    "modootogether": "2026-11-03T15:32:19.946466+09:00",
+    "modootogether": "2026-11-03T17:32:18.684811+09:00",
     "mrblog": "2026-11-03T15:32:19.946466+09:00",
     "ohmyblog": "2026-11-03T17:23:41.573968+09:00",
     "openreview": "2026-11-03T04:25:32.050736+09:00",
