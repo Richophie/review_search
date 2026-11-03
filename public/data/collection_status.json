@@ -1,14 +1,14 @@
 {
   "as_of_date_kst": "2026-11-03",
-  "snapshot_records": 20353,
+  "snapshot_records": 20558,
   "target_records": 20000,
   "records_to_target": 0,
   "target_progress_pct": 100.0,
   "platforms_with_records": 25,
   "source_scan_status": {
     "gangnammat": {
-      "last_scan_at": "2026-11-02T07:59:10.019275+00:00",
-      "verified_during_last_scan": 262,
+      "last_scan_at": "2026-11-03T08:21:06.889463+00:00",
+      "verified_during_last_scan": 271,
       "discovered_list_urls": 19,
       "scan_complete": false,
       "traversal_capped": false,
@@ -40,9 +40,9 @@
     },
     "cherivu": {
       "retained_records": 274,
-      "seen_last_24h": 71,
-      "seen_last_48h": 92,
-      "not_reverified_last_48h": 182,
+      "seen_last_24h": 55,
+      "seen_last_48h": 84,
+      "not_reverified_last_48h": 190,
       "full_coverage_proven": false
     },
     "cherrycook": {
@@ -88,9 +88,9 @@
       "full_coverage_proven": false
     },
     "gangnammat": {
-      "retained_records": 1069,
-      "seen_last_24h": 54,
-      "seen_last_48h": 360,
+      "retained_records": 1274,
+      "seen_last_24h": 317,
+      "seen_last_48h": 565,
       "not_reverified_last_48h": 709,
       "full_coverage_proven": false
     },
@@ -204,7 +204,7 @@
     "dinnerqueen": "2026-11-03T15:32:19.946466+09:00",
     "fourblog": "2026-11-03T15:32:19.946466+09:00",
     "gaboja": "2026-11-03T15:32:19.946466+09:00",
-    "gangnammat": "2026-11-03T15:32:19.946466+09:00",
+    "gangnammat": "2026-11-03T17:20:02.408950+09:00",
     "huki": "2026-11-03T15:32:19.946466+09:00",
     "modan": "2026-11-03T16:18:21.422066+09:00",
     "modootogether": "2026-11-03T15:32:19.946466+09:00",
@@ -221,8 +221,8 @@
     "tqueens": "2026-11-03T15:32:19.946466+09:00"
   },
   "media_counts": {
-    "네이버클립": 3790,
-    "블로그": 9877,
+    "네이버클립": 3791,
+    "블로그": 10081,
     "쇼츠": 30,
     "스레드": 1,
     "유튜브": 42,
@@ -231,7 +231,7 @@
   },
   "media_unknown": 3674,
   "deadline_unknown": 189,
-  "images_present": 20302,
+  "images_present": 20507,
   "images_missing": 51,
   "images_missing_sources": {
     "popomon": 1,
@@ -327,8 +327,8 @@
       "deadline_unknown": 0
     },
     "gangnammat": {
-      "records": 1069,
-      "images_present": 1069,
+      "records": 1274,
+      "images_present": 1274,
       "images_missing": 0,
       "media_unknown": 0,
       "deadline_unknown": 0
