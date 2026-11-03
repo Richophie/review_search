@@ -356295,36 +356295,6 @@
 "search_text": "[부산] 그라츠커피랩 경성대점 시그니처 음료 or 핸드드립 커피 中 택2 + 베이커리 종류(샌드위치류 제외) 택1 시그니처 음료 or 핸드드립 커피 中 택2 + 베이커리 종류(샌드위치류 제외) 택1 부산 카페 블로그"
 },
 {
-"id": "huki:1114",
-"source_id": "huki",
-"original_url": "https://huki.co.kr/bbs/board.php?bo_table=campaign&sti=&wr_id=1114",
-"title": "[원고형] HUKI - 사이트 소개",
-"description": "5,000P",
-"benefit": "5,000P",
-"image_url": "https://huki.co.kr/data/file/campaign/9b50532abd92db223276dc8bfe47cd8a_bFMypfdP_be9ac5c4d8db862aa4a96394f3f4e4ae2cd99fb0.png",
-"country_code": "KR",
-"region_sido": null,
-"region_text": null,
-"category": "기타",
-"campaign_type": "기자단",
-"channels": [
-"블로그"
-],
-"slots": 10,
-"applicants": 3,
-"apply_deadline": null,
-"deadline_precision": "unknown",
-"open_verified": true,
-"first_seen_at": "2026-10-19T13:28:22.886276+09:00",
-"published_at": null,
-"last_seen_at": "2026-11-01T14:49:34.352707+09:00",
-"timezone": "Asia/Seoul",
-"competition_ratio": 0.3,
-"remaining_slots": 7,
-"dedupe_key": "원고형huki사이트소개",
-"search_text": "[원고형] huki - 사이트 소개 5,000p 5,000p 기타 블로그"
-},
-{
 "id": "huki:1115",
 "source_id": "huki",
 "original_url": "https://huki.co.kr/bbs/board.php?bo_table=campaign&sti=&wr_id=1115",
@@ -357643,36 +357613,6 @@
 "remaining_slots": 0,
 "dedupe_key": "부산부산육회왕자연어공주반여점",
 "search_text": "[부산] 육회왕자연어공주 반여점 5만원권 제공(홀 불가- 배달, 포장) 5만원권 제공(홀 불가- 배달, 포장) 부산 기타 블로그"
-},
-{
-"id": "huki:951",
-"source_id": "huki",
-"original_url": "https://huki.co.kr/bbs/board.php?bo_table=campaign&sti=&wr_id=951",
-"title": "[경북] 늘해랑 풀빌라(11월로 연기)",
-"description": "기준 2인 숙박 제공",
-"benefit": "기준 2인 숙박 제공",
-"image_url": "https://huki.co.kr/data/file/campaign/1f51363d55f5d375eb393db4a97b9f44_EqAFISDv_554c83e2aa6b823adc39570ed59e6722bbaee55d.jpg",
-"country_code": "KR",
-"region_sido": "경북",
-"region_text": "경북",
-"category": "숙박·여행",
-"campaign_type": "방문형",
-"channels": [
-"블로그"
-],
-"slots": 4,
-"applicants": 70,
-"apply_deadline": null,
-"deadline_precision": "unknown",
-"open_verified": true,
-"first_seen_at": "2026-10-10T16:14:30.026871+09:00",
-"published_at": null,
-"last_seen_at": "2026-11-01T14:49:34.352707+09:00",
-"timezone": "Asia/Seoul",
-"competition_ratio": 17.5,
-"remaining_slots": 0,
-"dedupe_key": "경북경북늘해랑풀빌라11월로연기",
-"search_text": "[경북] 늘해랑 풀빌라(11월로 연기) 기준 2인 숙박 제공 기준 2인 숙박 제공 경북 숙박·여행 블로그"
 },
 {
 "id": "huki:974",
