@@ -1,6 +1,6 @@
 {
   "as_of_date_kst": "2026-11-03",
-  "snapshot_records": 20836,
+  "snapshot_records": 20845,
   "target_records": 20000,
   "records_to_target": 0,
   "target_progress_pct": 100.0,
@@ -18,9 +18,9 @@
   },
   "source_observation_freshness": {
     "assaview": {
-      "retained_records": 668,
-      "seen_last_24h": 496,
-      "seen_last_48h": 639,
+      "retained_records": 677,
+      "seen_last_24h": 505,
+      "seen_last_48h": 648,
       "not_reverified_last_48h": 29,
       "full_coverage_proven": false
     },
@@ -194,7 +194,7 @@
     }
   },
   "source_last_observed": {
-    "assaview": "2026-11-03T15:32:19.946466+09:00",
+    "assaview": "2026-11-03T17:40:34.664473+09:00",
     "bloglab": "2026-11-03T15:59:50.902297+09:00",
     "bqueens": "2026-11-03T15:32:19.946466+09:00",
     "cherivu": "2026-11-03T17:35:08.865755+09:00",
@@ -222,23 +222,23 @@
   },
   "media_counts": {
     "네이버클립": 3794,
-    "블로그": 10345,
+    "블로그": 10350,
     "쇼츠": 30,
     "스레드": 1,
     "유튜브": 42,
-    "인스타그램": 4078,
+    "인스타그램": 4079,
     "틱톡": 6
   },
-  "media_unknown": 3677,
+  "media_unknown": 3680,
   "deadline_unknown": 194,
-  "images_present": 20785,
+  "images_present": 20794,
   "images_missing": 51,
   "images_missing_sources": {
     "popomon": 1,
     "revu": 50
   },
   "media_unknown_sources": {
-    "assaview": 86,
+    "assaview": 89,
     "bqueens": 72,
     "cherivu": 1,
     "chvu": 2,
@@ -257,10 +257,10 @@
   "duplicate_id_or_original_url_count": 0,
   "sources": {
     "assaview": {
-      "records": 668,
-      "images_present": 668,
+      "records": 677,
+      "images_present": 677,
       "images_missing": 0,
-      "media_unknown": 86,
+      "media_unknown": 89,
       "deadline_unknown": 0
     },
     "bloglab": {
