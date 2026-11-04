@@ -72536,7 +72536,9 @@
 "region_text": "서울 성동",
 "category": "뷰티",
 "campaign_type": "방문형",
-"channels": [],
+"channels": [
+"블로그"
+],
 "slots": 10,
 "applicants": 80,
 "apply_deadline": "2026-11-05",
@@ -72549,7 +72551,8 @@
 "competition_ratio": 8.0,
 "remaining_slots": 0,
 "dedupe_key": "서울성동더고은스파앤마사지왕십리본점",
-"search_text": "더고은 스파앤마사지 왕십리본점 ★ 바디 60분 관리 서울 성동 뷰티"
+"search_text": "더고은 스파앤마사지 왕십리본점 ★ 바디 60분 관리 서울 성동 뷰티 블로그",
+"media_evidence": "dinnerqueen_detail:mandatory_blog_mission"
 },
 {
 "id": "dinnerqueen:1611041",
@@ -72974,7 +72977,9 @@
 "region_text": "서울 서초",
 "category": "맛집",
 "campaign_type": "방문형",
-"channels": [],
+"channels": [
+"블로그"
+],
 "slots": 2,
 "applicants": 6,
 "apply_deadline": "2026-11-05",
@@ -72987,7 +72992,8 @@
 "competition_ratio": 3.0,
 "remaining_slots": 0,
 "dedupe_key": "서울서초남오토코방배점",
-"search_text": "남오토코 방배점 ★ 식사권 4만원 제공 서울 서초 맛집"
+"search_text": "남오토코 방배점 ★ 식사권 4만원 제공 서울 서초 맛집 블로그",
+"media_evidence": "dinnerqueen_detail:mandatory_blog_mission"
 },
 {
 "id": "dinnerqueen:1612893",
