@@ -1,9 +1,9 @@
 {
   "as_of_date_kst": "2026-11-05",
-  "snapshot_records": 19241,
+  "snapshot_records": 19274,
   "target_records": 20000,
-  "records_to_target": 759,
-  "target_progress_pct": 96.2,
+  "records_to_target": 726,
+  "target_progress_pct": 96.37,
   "platforms_with_records": 25,
   "source_scan_status": {
     "gangnammat": {
@@ -53,9 +53,9 @@
       "full_coverage_proven": false
     },
     "chvu": {
-      "retained_records": 1116,
-      "seen_last_24h": 390,
-      "seen_last_48h": 642,
+      "retained_records": 1149,
+      "seen_last_24h": 423,
+      "seen_last_48h": 675,
       "not_reverified_last_48h": 474,
       "full_coverage_proven": false
     },
@@ -199,7 +199,7 @@
     "bqueens": "2026-11-05T02:05:36.653975+09:00",
     "cherivu": "2026-11-04T17:00:44.268714+09:00",
     "cherrycook": "2026-11-05T02:05:36.653975+09:00",
-    "chvu": "2026-11-04T16:51:32.278190+09:00",
+    "chvu": "2026-11-05T05:30:27.229859+09:00",
     "cometoplay": "2026-11-05T02:05:36.653975+09:00",
     "dinnerqueen": "2026-11-05T02:05:36.653975+09:00",
     "fourblog": "2026-11-05T02:05:36.653975+09:00",
@@ -209,7 +209,7 @@
     "modan": "2026-11-05T05:05:38.435104+09:00",
     "modootogether": "2026-11-05T02:05:36.653975+09:00",
     "mrblog": "2026-11-05T02:05:36.653975+09:00",
-    "ohmyblog": "2026-11-04T16:51:32.278190+09:00",
+    "ohmyblog": "2026-11-05T05:30:27.229859+09:00",
     "openreview": "2026-11-05T02:05:36.653975+09:00",
     "popomon": "2026-11-05T05:27:11.689654+09:00",
     "realreview": "2026-11-05T04:59:08.819284+09:00",
@@ -222,15 +222,15 @@
   },
   "media_counts": {
     "네이버클립": 3323,
-    "블로그": 11607,
+    "블로그": 11636,
     "쇼츠": 42,
     "유튜브": 57,
-    "인스타그램": 3296,
+    "인스타그램": 3300,
     "틱톡": 8
   },
   "media_unknown": 2469,
   "deadline_unknown": 212,
-  "images_present": 19198,
+  "images_present": 19231,
   "images_missing": 43,
   "images_missing_sources": {
     "revu": 43
@@ -288,8 +288,8 @@
       "deadline_unknown": 0
     },
     "chvu": {
-      "records": 1116,
-      "images_present": 1116,
+      "records": 1149,
+      "images_present": 1149,
       "images_missing": 0,
       "media_unknown": 3,
       "deadline_unknown": 0
