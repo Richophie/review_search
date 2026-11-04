@@ -90,8 +90,8 @@
     "gangnammat": {
       "retained_records": 1287,
       "seen_last_24h": 526,
-      "seen_last_48h": 774,
-      "not_reverified_last_48h": 513,
+      "seen_last_48h": 572,
+      "not_reverified_last_48h": 715,
       "full_coverage_proven": false
     },
     "huki": {
@@ -138,7 +138,7 @@
     },
     "popomon": {
       "retained_records": 88,
-      "seen_last_24h": 24,
+      "seen_last_24h": 18,
       "seen_last_48h": 30,
       "not_reverified_last_48h": 58,
       "full_coverage_proven": false
@@ -166,7 +166,7 @@
     },
     "revu": {
       "retained_records": 120,
-      "seen_last_24h": 81,
+      "seen_last_24h": 70,
       "seen_last_48h": 109,
       "not_reverified_last_48h": 11,
       "full_coverage_proven": false
@@ -207,7 +207,7 @@
     "gangnammat": "2026-11-04T16:49:22.197228+09:00",
     "huki": "2026-11-04T15:02:00.966570+09:00",
     "modan": "2026-11-04T16:00:18.625961+09:00",
-    "modootogether": "2026-11-04T15:02:00.966570+09:00",
+    "modootogether": "2026-11-04T16:58:38.065365+09:00",
     "mrblog": "2026-11-04T15:02:00.966570+09:00",
     "ohmyblog": "2026-11-04T16:51:32.278190+09:00",
     "openreview": "2026-11-03T04:25:32.050736+09:00",
