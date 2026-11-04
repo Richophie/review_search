@@ -1,13 +1,13 @@
 {
   "as_of_date_kst": "2026-11-04",
-  "snapshot_records": 18915,
+  "snapshot_records": 19108,
   "target_records": 20000,
-  "records_to_target": 1085,
-  "target_progress_pct": 94.58,
+  "records_to_target": 892,
+  "target_progress_pct": 95.54,
   "platforms_with_records": 25,
   "source_scan_status": {
     "gangnammat": {
-      "last_scan_at": "2026-11-03T08:21:06.889463+00:00",
+      "last_scan_at": "2026-11-04T07:50:05.100394+00:00",
       "verified_during_last_scan": 271,
       "discovered_list_urls": 19,
       "scan_complete": false,
@@ -88,9 +88,9 @@
       "full_coverage_proven": false
     },
     "gangnammat": {
-      "retained_records": 1084,
-      "seen_last_24h": 323,
-      "seen_last_48h": 571,
+      "retained_records": 1287,
+      "seen_last_24h": 526,
+      "seen_last_48h": 774,
       "not_reverified_last_48h": 513,
       "full_coverage_proven": false
     },
@@ -139,8 +139,8 @@
     "popomon": {
       "retained_records": 88,
       "seen_last_24h": 24,
-      "seen_last_48h": 36,
-      "not_reverified_last_48h": 52,
+      "seen_last_48h": 30,
+      "not_reverified_last_48h": 58,
       "full_coverage_proven": false
     },
     "realreview": {
@@ -165,9 +165,9 @@
       "full_coverage_proven": false
     },
     "revu": {
-      "retained_records": 130,
+      "retained_records": 120,
       "seen_last_24h": 81,
-      "seen_last_48h": 119,
+      "seen_last_48h": 109,
       "not_reverified_last_48h": 11,
       "full_coverage_proven": false
     },
@@ -204,7 +204,7 @@
     "dinnerqueen": "2026-11-04T15:02:00.966570+09:00",
     "fourblog": "2026-11-04T15:02:00.966570+09:00",
     "gaboja": "2026-11-04T15:02:00.966570+09:00",
-    "gangnammat": "2026-11-04T15:02:00.966570+09:00",
+    "gangnammat": "2026-11-04T16:49:22.197228+09:00",
     "huki": "2026-11-04T15:02:00.966570+09:00",
     "modan": "2026-11-04T16:00:18.625961+09:00",
     "modootogether": "2026-11-04T15:02:00.966570+09:00",
@@ -221,17 +221,17 @@
     "tqueens": "2026-11-04T15:02:00.966570+09:00"
   },
   "media_counts": {
-    "네이버클립": 3370,
-    "블로그": 10743,
+    "네이버클립": 3371,
+    "블로그": 10937,
     "쇼츠": 41,
     "스레드": 1,
     "유튜브": 55,
-    "인스타그램": 3320,
+    "인스타그램": 3318,
     "틱톡": 8
   },
   "media_unknown": 2748,
-  "deadline_unknown": 205,
-  "images_present": 18866,
+  "deadline_unknown": 195,
+  "images_present": 19059,
   "images_missing": 49,
   "images_missing_sources": {
     "popomon": 1,
@@ -326,8 +326,8 @@
       "deadline_unknown": 0
     },
     "gangnammat": {
-      "records": 1084,
-      "images_present": 1084,
+      "records": 1287,
+      "images_present": 1287,
       "images_missing": 0,
       "media_unknown": 0,
       "deadline_unknown": 0
@@ -403,11 +403,11 @@
       "deadline_unknown": 0
     },
     "revu": {
-      "records": 130,
-      "images_present": 82,
+      "records": 120,
+      "images_present": 72,
       "images_missing": 48,
       "media_unknown": 0,
-      "deadline_unknown": 83
+      "deadline_unknown": 73
     },
     "ringble": {
       "records": 129,
