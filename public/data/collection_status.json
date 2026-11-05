@@ -1,6 +1,6 @@
 {
   "as_of_date_kst": "2026-11-05",
-  "snapshot_records": 20037,
+  "snapshot_records": 20035,
   "target_records": 20000,
   "records_to_target": 0,
   "target_progress_pct": 100.0,
@@ -18,9 +18,9 @@
   },
   "source_observation_freshness": {
     "assaview": {
-      "retained_records": 664,
-      "seen_last_24h": 498,
-      "seen_last_48h": 643,
+      "retained_records": 666,
+      "seen_last_24h": 500,
+      "seen_last_48h": 645,
       "not_reverified_last_48h": 21,
       "full_coverage_proven": false
     },
@@ -39,10 +39,10 @@
       "full_coverage_proven": false
     },
     "cherivu": {
-      "retained_records": 226,
+      "retained_records": 222,
       "seen_last_24h": 79,
-      "seen_last_48h": 126,
-      "not_reverified_last_48h": 100,
+      "seen_last_48h": 115,
+      "not_reverified_last_48h": 107,
       "full_coverage_proven": false
     },
     "cherrycook": {
@@ -194,7 +194,7 @@
     }
   },
   "source_last_observed": {
-    "assaview": "2026-11-05T15:29:49.044845+09:00",
+    "assaview": "2026-11-05T17:36:12.881573+09:00",
     "bloglab": "2026-11-05T04:54:17.446579+09:00",
     "bqueens": "2026-11-05T15:29:49.044845+09:00",
     "cherivu": "2026-11-05T17:30:31.721712+09:00",
@@ -222,15 +222,15 @@
   },
   "media_counts": {
     "네이버클립": 3360,
-    "블로그": 12203,
+    "블로그": 12200,
     "쇼츠": 46,
     "유튜브": 59,
-    "인스타그램": 3433,
+    "인스타그램": 3434,
     "틱톡": 8
   },
   "media_unknown": 2516,
-  "deadline_unknown": 204,
-  "images_present": 19983,
+  "deadline_unknown": 200,
+  "images_present": 19981,
   "images_missing": 54,
   "images_missing_sources": {
     "popomon": 1,
@@ -254,8 +254,8 @@
   "duplicate_id_or_original_url_count": 0,
   "sources": {
     "assaview": {
-      "records": 664,
-      "images_present": 664,
+      "records": 666,
+      "images_present": 666,
       "images_missing": 0,
       "media_unknown": 87,
       "deadline_unknown": 0
@@ -275,11 +275,11 @@
       "deadline_unknown": 0
     },
     "cherivu": {
-      "records": 226,
-      "images_present": 226,
+      "records": 222,
+      "images_present": 222,
       "images_missing": 0,
       "media_unknown": 0,
-      "deadline_unknown": 39
+      "deadline_unknown": 35
     },
     "cherrycook": {
       "records": 30,
