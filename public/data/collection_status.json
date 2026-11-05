@@ -1,6 +1,6 @@
 {
   "as_of_date_kst": "2026-11-05",
-  "snapshot_records": 20035,
+  "snapshot_records": 21062,
   "target_records": 20000,
   "records_to_target": 0,
   "target_progress_pct": 100.0,
@@ -20,8 +20,8 @@
     "assaview": {
       "retained_records": 666,
       "seen_last_24h": 500,
-      "seen_last_48h": 645,
-      "not_reverified_last_48h": 21,
+      "seen_last_48h": 641,
+      "not_reverified_last_48h": 25,
       "full_coverage_proven": false
     },
     "bloglab": {
@@ -151,9 +151,9 @@
       "full_coverage_proven": false
     },
     "reviewnote": {
-      "retained_records": 9290,
-      "seen_last_24h": 2079,
-      "seen_last_48h": 3035,
+      "retained_records": 10317,
+      "seen_last_24h": 1688,
+      "seen_last_48h": 4062,
       "not_reverified_last_48h": 6255,
       "full_coverage_proven": false
     },
@@ -213,7 +213,7 @@
     "openreview": "2026-11-05T02:05:36.653975+09:00",
     "popomon": "2026-11-05T16:57:07.641478+09:00",
     "realreview": "2026-11-05T16:18:22.092140+09:00",
-    "reviewnote": "2026-11-05T15:29:49.044845+09:00",
+    "reviewnote": "2026-11-05T18:41:22.026702+09:00",
     "reviewplace": "2026-11-05T15:29:49.044845+09:00",
     "revu": "2026-11-05T16:57:07.641478+09:00",
     "ringble": "2026-11-05T15:29:49.044845+09:00",
@@ -221,16 +221,16 @@
     "tqueens": "2026-11-05T15:29:49.044845+09:00"
   },
   "media_counts": {
-    "네이버클립": 3360,
-    "블로그": 12200,
-    "쇼츠": 46,
-    "유튜브": 59,
-    "인스타그램": 3434,
-    "틱톡": 8
+    "네이버클립": 3504,
+    "블로그": 13071,
+    "쇼츠": 48,
+    "유튜브": 61,
+    "인스타그램": 3586,
+    "틱톡": 9
   },
   "media_unknown": 2516,
   "deadline_unknown": 200,
-  "images_present": 19981,
+  "images_present": 21008,
   "images_missing": 54,
   "images_missing_sources": {
     "popomon": 1,
@@ -387,8 +387,8 @@
       "deadline_unknown": 44
     },
     "reviewnote": {
-      "records": 9290,
-      "images_present": 9290,
+      "records": 10317,
+      "images_present": 10317,
       "images_missing": 0,
       "media_unknown": 0,
       "deadline_unknown": 0
