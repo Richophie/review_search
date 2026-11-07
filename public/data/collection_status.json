@@ -145,9 +145,9 @@
     },
     "reviewnote": {
       "retained_records": 9660,
-      "seen_last_24h": 1924,
-      "seen_last_48h": 2920,
-      "not_reverified_last_48h": 6740,
+      "seen_last_24h": 1688,
+      "seen_last_48h": 1972,
+      "not_reverified_last_48h": 7688,
       "full_coverage_proven": false
     },
     "reviewplace": {
