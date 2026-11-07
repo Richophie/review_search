@@ -96,9 +96,9 @@
     },
     "modan": {
       "retained_records": 64,
-      "seen_last_24h": 45,
-      "seen_last_48h": 59,
-      "not_reverified_last_48h": 5,
+      "seen_last_24h": 56,
+      "seen_last_48h": 60,
+      "not_reverified_last_48h": 4,
       "full_coverage_proven": false
     },
     "modootogether": {
@@ -198,7 +198,7 @@
     "gaboja": "2026-11-07T14:47:34.695062+09:00",
     "gangnammat": "2026-11-07T14:47:34.695062+09:00",
     "huki": "2026-11-07T14:47:34.695062+09:00",
-    "modan": "2026-11-07T14:47:34.695062+09:00",
+    "modan": "2026-11-07T15:38:56.936216+09:00",
     "modootogether": "2026-11-07T14:47:34.695062+09:00",
     "mrblog": "2026-11-07T14:47:34.695062+09:00",
     "ohmyblog": "2026-11-07T05:02:07.954928+09:00",
