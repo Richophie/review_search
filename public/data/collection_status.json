@@ -41,8 +41,8 @@
     "cherrycook": {
       "retained_records": 29,
       "seen_last_24h": 27,
-      "seen_last_48h": 29,
-      "not_reverified_last_48h": 0,
+      "seen_last_48h": 27,
+      "not_reverified_last_48h": 2,
       "full_coverage_proven": false
     },
     "chvu": {
@@ -62,29 +62,29 @@
     "dinnerqueen": {
       "retained_records": 7949,
       "seen_last_24h": 3169,
-      "seen_last_48h": 6108,
-      "not_reverified_last_48h": 1841,
+      "seen_last_48h": 4609,
+      "not_reverified_last_48h": 3340,
       "full_coverage_proven": false
     },
     "fourblog": {
       "retained_records": 289,
       "seen_last_24h": 108,
-      "seen_last_48h": 132,
-      "not_reverified_last_48h": 157,
+      "seen_last_48h": 117,
+      "not_reverified_last_48h": 172,
       "full_coverage_proven": false
     },
     "gaboja": {
       "retained_records": 18,
       "seen_last_24h": 6,
-      "seen_last_48h": 18,
-      "not_reverified_last_48h": 0,
+      "seen_last_48h": 17,
+      "not_reverified_last_48h": 1,
       "full_coverage_proven": false
     },
     "gangnammat": {
       "retained_records": 1295,
       "seen_last_24h": 286,
-      "seen_last_48h": 425,
-      "not_reverified_last_48h": 870,
+      "seen_last_48h": 406,
+      "not_reverified_last_48h": 889,
       "full_coverage_proven": false
     },
     "huki": {
@@ -111,8 +111,8 @@
     "mrblog": {
       "retained_records": 66,
       "seen_last_24h": 12,
-      "seen_last_48h": 57,
-      "not_reverified_last_48h": 9,
+      "seen_last_48h": 48,
+      "not_reverified_last_48h": 18,
       "full_coverage_proven": false
     },
     "ohmyblog": {
@@ -153,8 +153,8 @@
     "reviewplace": {
       "retained_records": 28,
       "seen_last_24h": 22,
-      "seen_last_48h": 25,
-      "not_reverified_last_48h": 3,
+      "seen_last_48h": 24,
+      "not_reverified_last_48h": 4,
       "full_coverage_proven": false
     },
     "revu": {
@@ -167,8 +167,8 @@
     "ringble": {
       "retained_records": 133,
       "seen_last_24h": 30,
-      "seen_last_48h": 39,
-      "not_reverified_last_48h": 94,
+      "seen_last_48h": 37,
+      "not_reverified_last_48h": 96,
       "full_coverage_proven": false
     },
     "storyn": {
@@ -204,7 +204,7 @@
     "ohmyblog": "2026-11-08T03:11:47.827807+09:00",
     "openreview": "2026-11-08T14:50:18.180417+09:00",
     "popomon": "2026-11-08T03:04:08.999961+09:00",
-    "realreview": "2026-11-08T14:50:18.180417+09:00",
+    "realreview": "2026-11-08T15:37:59.002188+09:00",
     "reviewnote": "2026-11-08T14:50:18.180417+09:00",
     "reviewplace": "2026-11-08T14:50:18.180417+09:00",
     "revu": "2026-11-08T03:04:08.999961+09:00",
