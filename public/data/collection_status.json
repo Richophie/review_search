@@ -1,6 +1,6 @@
 {
   "as_of_date_kst": "2026-11-09",
-  "snapshot_records": 20477,
+  "snapshot_records": 20476,
   "target_records": 20000,
   "records_to_target": 0,
   "target_progress_pct": 100.0,
@@ -46,10 +46,10 @@
       "full_coverage_proven": false
     },
     "chvu": {
-      "retained_records": 963,
+      "retained_records": 962,
       "seen_last_24h": 389,
       "seen_last_48h": 396,
-      "not_reverified_last_48h": 567,
+      "not_reverified_last_48h": 566,
       "full_coverage_proven": false
     },
     "cometoplay": {
@@ -69,8 +69,8 @@
     "fourblog": {
       "retained_records": 286,
       "seen_last_24h": 104,
-      "seen_last_48h": 117,
-      "not_reverified_last_48h": 169,
+      "seen_last_48h": 112,
+      "not_reverified_last_48h": 174,
       "full_coverage_proven": false
     },
     "gaboja": {
@@ -96,7 +96,7 @@
     },
     "modan": {
       "retained_records": 56,
-      "seen_last_24h": 41,
+      "seen_last_24h": 38,
       "seen_last_48h": 56,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
@@ -111,8 +111,8 @@
     "mrblog": {
       "retained_records": 24,
       "seen_last_24h": 11,
-      "seen_last_48h": 20,
-      "not_reverified_last_48h": 4,
+      "seen_last_48h": 18,
+      "not_reverified_last_48h": 6,
       "full_coverage_proven": false
     },
     "ohmyblog": {
@@ -146,8 +146,8 @@
     "reviewnote": {
       "retained_records": 7986,
       "seen_last_24h": 1671,
-      "seen_last_48h": 1979,
-      "not_reverified_last_48h": 6007,
+      "seen_last_48h": 1943,
+      "not_reverified_last_48h": 6043,
       "full_coverage_proven": false
     },
     "reviewplace": {
@@ -218,12 +218,12 @@
     "쇼츠": 38,
     "스레드": 1,
     "유튜브": 50,
-    "인스타그램": 4305,
+    "인스타그램": 4304,
     "틱톡": 6
   },
   "media_unknown": 3110,
   "deadline_unknown": 125,
-  "images_present": 20448,
+  "images_present": 20447,
   "images_missing": 29,
   "images_missing_sources": {
     "popomon": 1,
@@ -277,8 +277,8 @@
       "deadline_unknown": 0
     },
     "chvu": {
-      "records": 963,
-      "images_present": 963,
+      "records": 962,
+      "images_present": 962,
       "images_missing": 0,
       "media_unknown": 2,
       "deadline_unknown": 0

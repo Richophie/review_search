@@ -31497,37 +31497,6 @@
 "search_text": "[ 서울 ] 신당동 / 연해장 20,000 캐시  서울  기타 블로그"
 },
 {
-"id": "chvu:200595",
-"source_id": "chvu",
-"original_url": "https://chvu.co.kr/campaign/200595",
-"title": "[인천/부평]그날의온도",
-"description": "초당옥수수커피+액설런트라떼",
-"benefit": "초당옥수수커피+액설런트라떼",
-"image_url": "https://api.media.smiledragon.co.kr/media/download/01a13aae-919d-75bc-8a66-1ca3d0ca3f70",
-"country_code": "KR",
-"region_sido": "인천",
-"region_text": "인천 부평",
-"category": "카페",
-"campaign_type": "방문형",
-"channels": [
-"인스타그램"
-],
-"slots": 97,
-"applicants": 1,
-"apply_deadline": "2026-11-15",
-"deadline_precision": "days_left",
-"open_verified": false,
-"first_seen_at": "2026-10-15T15:16:08.864943+09:00",
-"published_at": null,
-"last_seen_at": "2026-10-19T01:43:45.189648+09:00",
-"timezone": "Asia/Seoul",
-"competition_ratio": 0.010309278350515464,
-"remaining_slots": 96,
-"dedupe_key": "인천부평인천부평그날의온도",
-"search_text": "[인천/부평]그날의온도 초당옥수수커피+액설런트라떼 초당옥수수커피+액설런트라떼 인천 부평 카페 인스타그램",
-"media_evidence": "chvu:public_card_badge"
-},
-{
 "id": "chvu:200706",
 "source_id": "chvu",
 "original_url": "https://chvu.co.kr/campaign/200706",
