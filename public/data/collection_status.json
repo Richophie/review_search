@@ -7,8 +7,8 @@
   "platforms_with_records": 24,
   "source_scan_status": {
     "gangnammat": {
-      "last_scan_at": "2026-11-07T07:35:41.151889+00:00",
-      "verified_during_last_scan": 286,
+      "last_scan_at": "2026-11-08T07:45:13.792785+00:00",
+      "verified_during_last_scan": 260,
       "discovered_list_urls": 19,
       "scan_complete": false,
       "traversal_capped": false,
@@ -47,7 +47,7 @@
     },
     "chvu": {
       "retained_records": 1057,
-      "seen_last_24h": 391,
+      "seen_last_24h": 390,
       "seen_last_48h": 397,
       "not_reverified_last_48h": 660,
       "full_coverage_proven": false
@@ -82,7 +82,7 @@
     },
     "gangnammat": {
       "retained_records": 1295,
-      "seen_last_24h": 286,
+      "seen_last_24h": 260,
       "seen_last_48h": 406,
       "not_reverified_last_48h": 889,
       "full_coverage_proven": false
@@ -196,7 +196,7 @@
     "dinnerqueen": "2026-11-08T14:50:18.180417+09:00",
     "fourblog": "2026-11-08T14:50:18.180417+09:00",
     "gaboja": "2026-11-08T14:50:18.180417+09:00",
-    "gangnammat": "2026-11-08T14:50:18.180417+09:00",
+    "gangnammat": "2026-11-08T16:44:30.400456+09:00",
     "huki": "2026-11-08T14:50:18.180417+09:00",
     "modan": "2026-11-08T15:45:29.710609+09:00",
     "modootogether": "2026-11-08T14:50:18.180417+09:00",
