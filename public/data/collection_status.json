@@ -1,5 +1,5 @@
 {
-  "as_of_date_kst": "2026-11-08",
+  "as_of_date_kst": "2026-11-09",
   "snapshot_records": 21840,
   "target_records": 20000,
   "records_to_target": 0,
@@ -146,8 +146,8 @@
     "reviewnote": {
       "retained_records": 8896,
       "seen_last_24h": 1626,
-      "seen_last_48h": 2143,
-      "not_reverified_last_48h": 6753,
+      "seen_last_48h": 1922,
+      "not_reverified_last_48h": 6974,
       "full_coverage_proven": false
     },
     "reviewplace": {
@@ -245,7 +245,7 @@
     "storyn": 2,
     "tqueens": 93
   },
-  "published_today_confirmed": 1,
+  "published_today_confirmed": 0,
   "duplicate_id_or_original_url_count": 0,
   "sources": {
     "assaview": {
