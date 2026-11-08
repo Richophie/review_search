@@ -1,6 +1,6 @@
 {
   "as_of_date_kst": "2026-11-08",
-  "snapshot_records": 21720,
+  "snapshot_records": 21840,
   "target_records": 20000,
   "records_to_target": 0,
   "target_progress_pct": 100.0,
@@ -20,8 +20,8 @@
     "assaview": {
       "retained_records": 681,
       "seen_last_24h": 539,
-      "seen_last_48h": 632,
-      "not_reverified_last_48h": 49,
+      "seen_last_48h": 627,
+      "not_reverified_last_48h": 54,
       "full_coverage_proven": false
     },
     "bqueens": {
@@ -34,8 +34,8 @@
     "cherivu": {
       "retained_records": 255,
       "seen_last_24h": 73,
-      "seen_last_48h": 113,
-      "not_reverified_last_48h": 142,
+      "seen_last_48h": 98,
+      "not_reverified_last_48h": 157,
       "full_coverage_proven": false
     },
     "cherrycook": {
@@ -83,8 +83,8 @@
     "gangnammat": {
       "retained_records": 1295,
       "seen_last_24h": 260,
-      "seen_last_48h": 406,
-      "not_reverified_last_48h": 889,
+      "seen_last_48h": 286,
+      "not_reverified_last_48h": 1009,
       "full_coverage_proven": false
     },
     "huki": {
@@ -144,9 +144,9 @@
       "full_coverage_proven": false
     },
     "reviewnote": {
-      "retained_records": 8776,
-      "seen_last_24h": 1755,
-      "seen_last_48h": 2023,
+      "retained_records": 8896,
+      "seen_last_24h": 1626,
+      "seen_last_48h": 2143,
       "not_reverified_last_48h": 6753,
       "full_coverage_proven": false
     },
@@ -205,7 +205,7 @@
     "openreview": "2026-11-08T14:50:18.180417+09:00",
     "popomon": "2026-11-08T16:26:46.983652+09:00",
     "realreview": "2026-11-08T15:37:59.002188+09:00",
-    "reviewnote": "2026-11-08T14:50:18.180417+09:00",
+    "reviewnote": "2026-11-08T18:12:33.422331+09:00",
     "reviewplace": "2026-11-08T14:50:18.180417+09:00",
     "revu": "2026-11-08T16:26:46.983652+09:00",
     "ringble": "2026-11-08T14:50:18.180417+09:00",
@@ -213,17 +213,17 @@
     "tqueens": "2026-11-08T14:50:18.180417+09:00"
   },
   "media_counts": {
-    "네이버클립": 3947,
-    "블로그": 11542,
+    "네이버클립": 3953,
+    "블로그": 11651,
     "쇼츠": 44,
     "스레드": 1,
     "유튜브": 57,
-    "인스타그램": 4422,
+    "인스타그램": 4433,
     "틱톡": 7
   },
   "media_unknown": 3156,
   "deadline_unknown": 127,
-  "images_present": 21674,
+  "images_present": 21794,
   "images_missing": 46,
   "images_missing_sources": {
     "popomon": 1,
@@ -375,8 +375,8 @@
       "deadline_unknown": 64
     },
     "reviewnote": {
-      "records": 8776,
-      "images_present": 8776,
+      "records": 8896,
+      "images_present": 8896,
       "images_missing": 0,
       "media_unknown": 0,
       "deadline_unknown": 0
