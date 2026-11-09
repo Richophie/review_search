@@ -1,14 +1,14 @@
 {
   "as_of_date_kst": "2026-11-09",
-  "snapshot_records": 20864,
+  "snapshot_records": 21026,
   "target_records": 20000,
   "records_to_target": 0,
   "target_progress_pct": 100.0,
   "platforms_with_records": 24,
   "source_scan_status": {
     "gangnammat": {
-      "last_scan_at": "2026-11-08T07:45:13.792785+00:00",
-      "verified_during_last_scan": 260,
+      "last_scan_at": "2026-11-09T08:28:16.140181+00:00",
+      "verified_during_last_scan": 239,
       "discovered_list_urls": 19,
       "scan_complete": false,
       "traversal_capped": false,
@@ -19,7 +19,7 @@
   "source_observation_freshness": {
     "assaview": {
       "retained_records": 700,
-      "seen_last_24h": 581,
+      "seen_last_24h": 490,
       "seen_last_48h": 637,
       "not_reverified_last_48h": 63,
       "full_coverage_proven": false
@@ -81,9 +81,9 @@
       "full_coverage_proven": false
     },
     "gangnammat": {
-      "retained_records": 1080,
-      "seen_last_24h": 54,
-      "seen_last_48h": 286,
+      "retained_records": 1242,
+      "seen_last_24h": 286,
+      "seen_last_48h": 448,
       "not_reverified_last_48h": 794,
       "full_coverage_proven": false
     },
@@ -196,7 +196,7 @@
     "dinnerqueen": "2026-11-09T15:03:31.680890+09:00",
     "fourblog": "2026-11-09T15:03:31.680890+09:00",
     "gaboja": "2026-11-09T15:03:31.680890+09:00",
-    "gangnammat": "2026-11-09T15:03:31.680890+09:00",
+    "gangnammat": "2026-11-09T17:27:24.744062+09:00",
     "huki": "2026-11-09T15:03:31.680890+09:00",
     "modan": "2026-11-09T16:16:09.876949+09:00",
     "modootogether": "2026-11-09T15:03:31.680890+09:00",
@@ -213,8 +213,8 @@
     "tqueens": "2026-11-09T15:03:31.680890+09:00"
   },
   "media_counts": {
-    "네이버클립": 3978,
-    "블로그": 10577,
+    "네이버클립": 3980,
+    "블로그": 10737,
     "쇼츠": 42,
     "스레드": 1,
     "유튜브": 54,
@@ -223,7 +223,7 @@
   },
   "media_unknown": 3172,
   "deadline_unknown": 158,
-  "images_present": 20823,
+  "images_present": 20985,
   "images_missing": 41,
   "images_missing_sources": {
     "popomon": 1,
@@ -312,8 +312,8 @@
       "deadline_unknown": 0
     },
     "gangnammat": {
-      "records": 1080,
-      "images_present": 1080,
+      "records": 1242,
+      "images_present": 1242,
       "images_missing": 0,
       "media_unknown": 0,
       "deadline_unknown": 0
