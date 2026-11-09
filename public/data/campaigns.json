@@ -29542,37 +29542,6 @@
 "media_evidence": "cherivu_public_media_icon"
 },
 {
-"id": "cherivu:551",
-"source_id": "cherivu",
-"original_url": "https://cherivu.co.kr/campaigns/551",
-"title": "[문정역] The SKY",
-"description": "the sky bar 매장 이용권 (5만원)",
-"benefit": "the sky bar 매장 이용권 (5만원)",
-"image_url": "https://d6ctpjljlg7e8.cloudfront.net/2343/blob",
-"country_code": "KR",
-"region_sido": null,
-"region_text": "문정역",
-"category": "기타",
-"campaign_type": "방문형",
-"channels": [
-"블로그"
-],
-"slots": null,
-"applicants": null,
-"apply_deadline": null,
-"deadline_precision": "unknown",
-"open_verified": true,
-"first_seen_at": "2026-11-06T05:50:13.473412+09:00",
-"published_at": null,
-"last_seen_at": "2026-11-07T05:06:05.112692+09:00",
-"timezone": "Asia/Seoul",
-"competition_ratio": null,
-"remaining_slots": null,
-"dedupe_key": "문정역문정역thesky",
-"search_text": "[문정역] the sky the sky bar 매장 이용권 (5만원) the sky bar 매장 이용권 (5만원) 문정역 기타 블로그",
-"media_evidence": "cherivu_public_media_icon"
-},
-{
 "id": "cherivu:553",
 "source_id": "cherivu",
 "original_url": "https://cherivu.co.kr/campaigns/553",
