@@ -1,6 +1,6 @@
 {
   "as_of_date_kst": "2026-11-09",
-  "snapshot_records": 20830,
+  "snapshot_records": 20829,
   "target_records": 20000,
   "records_to_target": 0,
   "target_progress_pct": 100.0,
@@ -96,9 +96,9 @@
     },
     "modan": {
       "retained_records": 58,
-      "seen_last_24h": 44,
-      "seen_last_48h": 58,
-      "not_reverified_last_48h": 0,
+      "seen_last_24h": 40,
+      "seen_last_48h": 57,
+      "not_reverified_last_48h": 1,
       "full_coverage_proven": false
     },
     "modootogether": {
@@ -130,10 +130,10 @@
       "full_coverage_proven": false
     },
     "popomon": {
-      "retained_records": 89,
+      "retained_records": 88,
       "seen_last_24h": 18,
       "seen_last_48h": 25,
-      "not_reverified_last_48h": 64,
+      "not_reverified_last_48h": 63,
       "full_coverage_proven": false
     },
     "realreview": {
@@ -204,7 +204,7 @@
     "ohmyblog": "2026-11-09T03:26:23.219930+09:00",
     "openreview": "2026-11-09T15:03:31.680890+09:00",
     "popomon": "2026-11-09T03:23:19.386402+09:00",
-    "realreview": "2026-11-09T15:03:31.680890+09:00",
+    "realreview": "2026-11-09T16:06:08.334351+09:00",
     "reviewnote": "2026-11-09T15:03:31.680890+09:00",
     "reviewplace": "2026-11-09T15:03:31.680890+09:00",
     "revu": "2026-11-09T03:23:19.386402+09:00",
@@ -218,12 +218,12 @@
     "쇼츠": 42,
     "스레드": 1,
     "유튜브": 54,
-    "인스타그램": 4386,
+    "인스타그램": 4385,
     "틱톡": 6
   },
   "media_unknown": 3173,
   "deadline_unknown": 143,
-  "images_present": 20801,
+  "images_present": 20800,
   "images_missing": 29,
   "images_missing_sources": {
     "popomon": 1,
@@ -361,8 +361,8 @@
       "deadline_unknown": 0
     },
     "popomon": {
-      "records": 89,
-      "images_present": 88,
+      "records": 88,
+      "images_present": 87,
       "images_missing": 1,
       "media_unknown": 6,
       "deadline_unknown": 0
