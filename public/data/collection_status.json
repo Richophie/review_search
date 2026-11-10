@@ -19,9 +19,9 @@
   "source_observation_freshness": {
     "assaview": {
       "retained_records": 634,
-      "seen_last_24h": 583,
-      "seen_last_48h": 602,
-      "not_reverified_last_48h": 32,
+      "seen_last_24h": 584,
+      "seen_last_48h": 603,
+      "not_reverified_last_48h": 31,
       "full_coverage_proven": false
     },
     "bqueens": {
@@ -180,7 +180,7 @@
     }
   },
   "source_last_observed": {
-    "assaview": "2026-11-11T01:58:06.762904+09:00",
+    "assaview": "2026-11-11T05:37:45.961112+09:00",
     "bqueens": "2026-11-11T01:58:06.762904+09:00",
     "cherivu": "2026-11-11T05:36:59.128168+09:00",
     "cherrycook": "2026-11-11T01:58:06.762904+09:00",
