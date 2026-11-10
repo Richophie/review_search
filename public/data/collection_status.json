@@ -19,7 +19,7 @@
   "source_observation_freshness": {
     "assaview": {
       "retained_records": 634,
-      "seen_last_24h": 584,
+      "seen_last_24h": 528,
       "seen_last_48h": 603,
       "not_reverified_last_48h": 31,
       "full_coverage_proven": false
@@ -33,7 +33,7 @@
     },
     "cherivu": {
       "retained_records": 169,
-      "seen_last_24h": 107,
+      "seen_last_24h": 70,
       "seen_last_48h": 120,
       "not_reverified_last_48h": 49,
       "full_coverage_proven": false
@@ -47,7 +47,7 @@
     },
     "chvu": {
       "retained_records": 1086,
-      "seen_last_24h": 601,
+      "seen_last_24h": 407,
       "seen_last_48h": 605,
       "not_reverified_last_48h": 481,
       "full_coverage_proven": false
@@ -117,21 +117,21 @@
     },
     "ohmyblog": {
       "retained_records": 278,
-      "seen_last_24h": 277,
+      "seen_last_24h": 276,
       "seen_last_48h": 277,
       "not_reverified_last_48h": 1,
       "full_coverage_proven": false
     },
     "popomon": {
       "retained_records": 95,
-      "seen_last_24h": 25,
+      "seen_last_24h": 18,
       "seen_last_48h": 30,
       "not_reverified_last_48h": 65,
       "full_coverage_proven": false
     },
     "realreview": {
       "retained_records": 87,
-      "seen_last_24h": 82,
+      "seen_last_24h": 70,
       "seen_last_48h": 87,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
@@ -152,7 +152,7 @@
     },
     "revu": {
       "retained_records": 91,
-      "seen_last_24h": 81,
+      "seen_last_24h": 50,
       "seen_last_48h": 86,
       "not_reverified_last_48h": 5,
       "full_coverage_proven": false
