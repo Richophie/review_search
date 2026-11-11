@@ -1,9 +1,9 @@
 {
   "as_of_date_kst": "2026-11-11",
-  "snapshot_records": 17119,
+  "snapshot_records": 17135,
   "target_records": 20000,
-  "records_to_target": 2881,
-  "target_progress_pct": 85.59,
+  "records_to_target": 2865,
+  "target_progress_pct": 85.67,
   "platforms_with_records": 23,
   "source_scan_status": {
     "gangnammat": {
@@ -18,9 +18,9 @@
   },
   "source_observation_freshness": {
     "assaview": {
-      "retained_records": 640,
-      "seen_last_24h": 544,
-      "seen_last_48h": 606,
+      "retained_records": 656,
+      "seen_last_24h": 560,
+      "seen_last_48h": 622,
       "not_reverified_last_48h": 34,
       "full_coverage_proven": false
     },
@@ -83,8 +83,8 @@
     "gangnammat": {
       "retained_records": 1216,
       "seen_last_24h": 490,
-      "seen_last_48h": 725,
-      "not_reverified_last_48h": 491,
+      "seen_last_48h": 537,
+      "not_reverified_last_48h": 679,
       "full_coverage_proven": false
     },
     "huki": {
@@ -124,7 +124,7 @@
     },
     "popomon": {
       "retained_records": 101,
-      "seen_last_24h": 25,
+      "seen_last_24h": 19,
       "seen_last_48h": 31,
       "not_reverified_last_48h": 70,
       "full_coverage_proven": false
@@ -152,7 +152,7 @@
     },
     "revu": {
       "retained_records": 120,
-      "seen_last_24h": 84,
+      "seen_last_24h": 77,
       "seen_last_48h": 115,
       "not_reverified_last_48h": 5,
       "full_coverage_proven": false
@@ -180,7 +180,7 @@
     }
   },
   "source_last_observed": {
-    "assaview": "2026-11-11T14:57:09.455994+09:00",
+    "assaview": "2026-11-11T17:28:09.482038+09:00",
     "bqueens": "2026-11-11T14:57:09.455994+09:00",
     "cherivu": "2026-11-11T17:23:52.501295+09:00",
     "cherrycook": "2026-11-11T14:57:09.455994+09:00",
@@ -206,16 +206,16 @@
   },
   "media_counts": {
     "네이버클립": 2326,
-    "블로그": 11636,
+    "블로그": 11640,
     "쇼츠": 48,
-    "스레드": 2,
+    "스레드": 3,
     "유튜브": 60,
-    "인스타그램": 3178,
+    "인스타그램": 3181,
     "틱톡": 7
   },
-  "media_unknown": 1339,
+  "media_unknown": 1348,
   "deadline_unknown": 204,
-  "images_present": 17076,
+  "images_present": 17092,
   "images_missing": 43,
   "images_missing_sources": {
     "chvu": 1,
@@ -223,7 +223,7 @@
     "revu": 41
   },
   "media_unknown_sources": {
-    "assaview": 82,
+    "assaview": 91,
     "bqueens": 58,
     "cherivu": 1,
     "chvu": 2,
@@ -243,10 +243,10 @@
   "duplicate_id_or_original_url_count": 0,
   "sources": {
     "assaview": {
-      "records": 640,
-      "images_present": 640,
+      "records": 656,
+      "images_present": 656,
       "images_missing": 0,
-      "media_unknown": 82,
+      "media_unknown": 91,
       "deadline_unknown": 0
     },
     "bqueens": {
