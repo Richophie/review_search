@@ -55,22 +55,22 @@
     "cometoplay": {
       "retained_records": 72,
       "seen_last_24h": 33,
-      "seen_last_48h": 53,
-      "not_reverified_last_48h": 19,
+      "seen_last_48h": 43,
+      "not_reverified_last_48h": 29,
       "full_coverage_proven": false
     },
     "dinnerqueen": {
       "retained_records": 3746,
       "seen_last_24h": 2098,
-      "seen_last_48h": 3717,
-      "not_reverified_last_48h": 29,
+      "seen_last_48h": 3680,
+      "not_reverified_last_48h": 66,
       "full_coverage_proven": false
     },
     "fourblog": {
       "retained_records": 278,
       "seen_last_24h": 97,
-      "seen_last_48h": 155,
-      "not_reverified_last_48h": 123,
+      "seen_last_48h": 129,
+      "not_reverified_last_48h": 149,
       "full_coverage_proven": false
     },
     "gaboja": {
@@ -83,8 +83,8 @@
     "gangnammat": {
       "retained_records": 1004,
       "seen_last_24h": 297,
-      "seen_last_48h": 563,
-      "not_reverified_last_48h": 441,
+      "seen_last_48h": 538,
+      "not_reverified_last_48h": 466,
       "full_coverage_proven": false
     },
     "huki": {
@@ -111,8 +111,8 @@
     "mrblog": {
       "retained_records": 15,
       "seen_last_24h": 11,
-      "seen_last_48h": 15,
-      "not_reverified_last_48h": 0,
+      "seen_last_48h": 13,
+      "not_reverified_last_48h": 2,
       "full_coverage_proven": false
     },
     "ohmyblog": {
@@ -139,8 +139,8 @@
     "reviewnote": {
       "retained_records": 9798,
       "seen_last_24h": 1750,
-      "seen_last_48h": 2815,
-      "not_reverified_last_48h": 6983,
+      "seen_last_48h": 2759,
+      "not_reverified_last_48h": 7039,
       "full_coverage_proven": false
     },
     "reviewplace": {
@@ -160,8 +160,8 @@
     "ringble": {
       "retained_records": 115,
       "seen_last_24h": 53,
-      "seen_last_48h": 88,
-      "not_reverified_last_48h": 27,
+      "seen_last_48h": 78,
+      "not_reverified_last_48h": 37,
       "full_coverage_proven": false
     },
     "storyn": {
@@ -196,7 +196,7 @@
     "mrblog": "2026-11-12T02:02:36.500134+09:00",
     "ohmyblog": "2026-11-11T17:06:52.334654+09:00",
     "popomon": "2026-11-11T16:46:39.581467+09:00",
-    "realreview": "2026-11-12T02:02:36.500134+09:00",
+    "realreview": "2026-11-12T04:49:40.323634+09:00",
     "reviewnote": "2026-11-12T02:02:36.500134+09:00",
     "reviewplace": "2026-11-12T02:02:36.500134+09:00",
     "revu": "2026-11-11T16:46:39.581467+09:00",
