@@ -1,5 +1,5 @@
 {
-  "as_of_date_kst": "2026-11-11",
+  "as_of_date_kst": "2026-11-12",
   "snapshot_records": 18216,
   "target_records": 20000,
   "records_to_target": 1784,
@@ -138,9 +138,9 @@
     },
     "reviewnote": {
       "retained_records": 10082,
-      "seen_last_24h": 2752,
-      "seen_last_48h": 4159,
-      "not_reverified_last_48h": 5923,
+      "seen_last_24h": 1807,
+      "seen_last_48h": 2810,
+      "not_reverified_last_48h": 7272,
       "full_coverage_proven": false
     },
     "reviewplace": {
