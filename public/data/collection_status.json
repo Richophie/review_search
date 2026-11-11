@@ -1,9 +1,9 @@
 {
   "as_of_date_kst": "2026-11-11",
-  "snapshot_records": 16664,
+  "snapshot_records": 16663,
   "target_records": 20000,
-  "records_to_target": 3336,
-  "target_progress_pct": 83.32,
+  "records_to_target": 3337,
+  "target_progress_pct": 83.31,
   "platforms_with_records": 23,
   "source_scan_status": {
     "gangnammat": {
@@ -46,10 +46,10 @@
       "full_coverage_proven": false
     },
     "chvu": {
-      "retained_records": 1086,
+      "retained_records": 1085,
       "seen_last_24h": 407,
       "seen_last_48h": 605,
-      "not_reverified_last_48h": 481,
+      "not_reverified_last_48h": 480,
       "full_coverage_proven": false
     },
     "cometoplay": {
@@ -196,7 +196,7 @@
     "mrblog": "2026-11-11T14:57:09.455994+09:00",
     "ohmyblog": "2026-11-11T05:33:49.570430+09:00",
     "popomon": "2026-11-11T05:29:21.744267+09:00",
-    "realreview": "2026-11-11T14:57:09.455994+09:00",
+    "realreview": "2026-11-11T16:00:12.331268+09:00",
     "reviewnote": "2026-11-11T14:57:09.455994+09:00",
     "reviewplace": "2026-11-11T14:57:09.455994+09:00",
     "revu": "2026-11-11T05:29:21.744267+09:00",
@@ -206,7 +206,7 @@
   },
   "media_counts": {
     "네이버클립": 2317,
-    "블로그": 11201,
+    "블로그": 11200,
     "쇼츠": 48,
     "스레드": 2,
     "유튜브": 60,
@@ -215,7 +215,7 @@
   },
   "media_unknown": 1339,
   "deadline_unknown": 198,
-  "images_present": 16634,
+  "images_present": 16633,
   "images_missing": 30,
   "images_missing_sources": {
     "popomon": 1,
@@ -269,8 +269,8 @@
       "deadline_unknown": 0
     },
     "chvu": {
-      "records": 1086,
-      "images_present": 1086,
+      "records": 1085,
+      "images_present": 1085,
       "images_missing": 0,
       "media_unknown": 0,
       "deadline_unknown": 0
