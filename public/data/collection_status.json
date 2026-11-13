@@ -54,35 +54,35 @@
     },
     "cometoplay": {
       "retained_records": 85,
-      "seen_last_24h": 46,
+      "seen_last_24h": 36,
       "seen_last_48h": 46,
       "not_reverified_last_48h": 39,
       "full_coverage_proven": false
     },
     "dinnerqueen": {
       "retained_records": 7955,
-      "seen_last_24h": 4684,
+      "seen_last_24h": 3264,
       "seen_last_48h": 6106,
       "not_reverified_last_48h": 1849,
       "full_coverage_proven": false
     },
     "fourblog": {
       "retained_records": 282,
-      "seen_last_24h": 144,
+      "seen_last_24h": 117,
       "seen_last_48h": 149,
       "not_reverified_last_48h": 133,
       "full_coverage_proven": false
     },
     "gaboja": {
       "retained_records": 18,
-      "seen_last_24h": 18,
+      "seen_last_24h": 16,
       "seen_last_48h": 18,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
     },
     "gangnammat": {
       "retained_records": 1198,
-      "seen_last_24h": 370,
+      "seen_last_24h": 344,
       "seen_last_48h": 570,
       "not_reverified_last_48h": 628,
       "full_coverage_proven": false
@@ -96,7 +96,7 @@
     },
     "modan": {
       "retained_records": 56,
-      "seen_last_24h": 54,
+      "seen_last_24h": 44,
       "seen_last_48h": 55,
       "not_reverified_last_48h": 1,
       "full_coverage_proven": false
@@ -110,7 +110,7 @@
     },
     "mrblog": {
       "retained_records": 61,
-      "seen_last_24h": 57,
+      "seen_last_24h": 44,
       "seen_last_48h": 60,
       "not_reverified_last_48h": 1,
       "full_coverage_proven": false
@@ -138,14 +138,14 @@
     },
     "reviewnote": {
       "retained_records": 9781,
-      "seen_last_24h": 1747,
+      "seen_last_24h": 1680,
       "seen_last_48h": 2534,
       "not_reverified_last_48h": 7247,
       "full_coverage_proven": false
     },
     "reviewplace": {
       "retained_records": 23,
-      "seen_last_24h": 23,
+      "seen_last_24h": 22,
       "seen_last_48h": 23,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
@@ -159,7 +159,7 @@
     },
     "ringble": {
       "retained_records": 122,
-      "seen_last_24h": 41,
+      "seen_last_24h": 37,
       "seen_last_48h": 59,
       "not_reverified_last_48h": 63,
       "full_coverage_proven": false
