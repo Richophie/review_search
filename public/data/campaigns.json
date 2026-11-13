@@ -78651,7 +78651,9 @@
 "region_text": "전남 여수",
 "category": "맛집",
 "campaign_type": "방문형",
-"channels": [],
+"channels": [
+"블로그"
+],
 "slots": 5,
 "applicants": 2,
 "apply_deadline": "2026-11-17",
@@ -78664,7 +78666,8 @@
 "competition_ratio": 0.4,
 "remaining_slots": 3,
 "dedupe_key": "전남여수뒷골목포차",
-"search_text": "뒷골목포차 식사권 3만원 제공 전남 여수 맛집"
+"search_text": "뒷골목포차 식사권 3만원 제공 전남 여수 맛집 블로그",
+"media_evidence": "dinnerqueen_detail:mandatory_blog_mission"
 },
 {
 "id": "dinnerqueen:1628847",
@@ -78797,7 +78800,9 @@
 "region_text": "경남 양산",
 "category": "맛집",
 "campaign_type": "방문형",
-"channels": [],
+"channels": [
+"블로그"
+],
 "slots": 5,
 "applicants": 4,
 "apply_deadline": "2026-11-17",
@@ -78810,7 +78815,8 @@
 "competition_ratio": 0.8,
 "remaining_slots": 1,
 "dedupe_key": "경남양산와와수산",
-"search_text": "와와수산 식사권 5만원권 제공 경남 양산 맛집"
+"search_text": "와와수산 식사권 5만원권 제공 경남 양산 맛집 블로그",
+"media_evidence": "dinnerqueen_detail:mandatory_blog_mission"
 },
 {
 "id": "dinnerqueen:1628862",
@@ -154865,7 +154871,9 @@
 "region_text": "서울 마포",
 "category": "기타",
 "campaign_type": "방문형",
-"channels": [],
+"channels": [
+"블로그"
+],
 "slots": 1,
 "applicants": 3,
 "apply_deadline": "2026-11-17",
@@ -154878,7 +154886,8 @@
 "competition_ratio": 3.0,
 "remaining_slots": 0,
 "dedupe_key": "서울마포이엘스튜디오",
-"search_text": "이엘스튜디오 취업/프로필/여권/증명사진/승무원/사원증 中 택 1 체험권 서울 마포 기타"
+"search_text": "이엘스튜디오 취업/프로필/여권/증명사진/승무원/사원증 中 택 1 체험권 서울 마포 기타 블로그",
+"media_evidence": "dinnerqueen_detail:mandatory_blog_mission"
 },
 {
 "id": "dinnerqueen:1641832",
