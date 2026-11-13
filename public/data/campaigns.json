@@ -240705,36 +240705,6 @@
 "search_text": "[서울 서초] 강남 이가식당 삼겹살 신논현 5만원 식사권 [2인 기준] 5만원 식사권 [2인 기준] 서울 서초 맛집 블로그"
 },
 {
-"id": "gangnammat:2336633",
-"source_id": "gangnammat",
-"original_url": "https://gangnam-review.net/cp/?id=2336633",
-"title": "[경북 칠곡] 왜관 하이스트 글램핑장",
-"description": null,
-"benefit": "1회 숙박 체험권 (2인 기준)",
-"image_url": "https://gangnam-review.net/data/file/cmp/2026/10/21/thumb-cmp_2336633-bada4edf49429008eb0ecd9145a2181859a81f1f_300x300.jpg",
-"country_code": "KR",
-"region_sido": "경북",
-"region_text": "경북 칠곡",
-"category": "숙박·여행",
-"campaign_type": "방문형",
-"channels": [
-"블로그"
-],
-"slots": 10,
-"applicants": 5,
-"apply_deadline": "2026-11-19",
-"deadline_precision": "days_left",
-"open_verified": false,
-"first_seen_at": "2026-10-23T15:18:17.050450+09:00",
-"published_at": null,
-"last_seen_at": "2026-10-23T15:18:17.050450+09:00",
-"timezone": "Asia/Seoul",
-"competition_ratio": 0.5,
-"remaining_slots": 5,
-"dedupe_key": "경북칠곡경북칠곡왜관하이스트글램핑장",
-"search_text": "[경북 칠곡] 왜관 하이스트 글램핑장 1회 숙박 체험권 (2인 기준) 경북 칠곡 숙박·여행 블로그"
-},
-{
 "id": "gangnammat:2345893",
 "source_id": "gangnammat",
 "original_url": "https://gangnam-review.net/cp/?id=2345893",

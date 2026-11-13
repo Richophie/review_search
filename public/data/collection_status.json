@@ -1,6 +1,6 @@
 {
   "as_of_date_kst": "2026-11-13",
-  "snapshot_records": 20087,
+  "snapshot_records": 20086,
   "target_records": 20000,
   "records_to_target": 0,
   "target_progress_pct": 100.0,
@@ -20,8 +20,8 @@
     "assaview": {
       "retained_records": 649,
       "seen_last_24h": 556,
-      "seen_last_48h": 624,
-      "not_reverified_last_48h": 25,
+      "seen_last_48h": 620,
+      "not_reverified_last_48h": 29,
       "full_coverage_proven": false
     },
     "bqueens": {
@@ -69,8 +69,8 @@
     "fourblog": {
       "retained_records": 299,
       "seen_last_24h": 120,
-      "seen_last_48h": 145,
-      "not_reverified_last_48h": 154,
+      "seen_last_48h": 120,
+      "not_reverified_last_48h": 179,
       "full_coverage_proven": false
     },
     "gaboja": {
@@ -81,10 +81,10 @@
       "full_coverage_proven": false
     },
     "gangnammat": {
-      "retained_records": 951,
+      "retained_records": 950,
       "seen_last_24h": 322,
-      "seen_last_48h": 546,
-      "not_reverified_last_48h": 405,
+      "seen_last_48h": 524,
+      "not_reverified_last_48h": 426,
       "full_coverage_proven": false
     },
     "huki": {
@@ -139,8 +139,8 @@
     "reviewnote": {
       "retained_records": 10008,
       "seen_last_24h": 1353,
-      "seen_last_48h": 2726,
-      "not_reverified_last_48h": 7282,
+      "seen_last_48h": 2725,
+      "not_reverified_last_48h": 7283,
       "full_coverage_proven": false
     },
     "reviewplace": {
@@ -160,8 +160,8 @@
     "ringble": {
       "retained_records": 117,
       "seen_last_24h": 54,
-      "seen_last_48h": 76,
-      "not_reverified_last_48h": 41,
+      "seen_last_48h": 59,
+      "not_reverified_last_48h": 58,
       "full_coverage_proven": false
     },
     "storyn": {
@@ -206,7 +206,7 @@
   },
   "media_counts": {
     "네이버클립": 3178,
-    "블로그": 12043,
+    "블로그": 12042,
     "쇼츠": 49,
     "스레드": 3,
     "유튜브": 66,
@@ -215,7 +215,7 @@
   },
   "media_unknown": 2301,
   "deadline_unknown": 160,
-  "images_present": 20050,
+  "images_present": 20049,
   "images_missing": 37,
   "images_missing_sources": {
     "chvu": 1,
@@ -303,8 +303,8 @@
       "deadline_unknown": 0
     },
     "gangnammat": {
-      "records": 951,
-      "images_present": 951,
+      "records": 950,
+      "images_present": 950,
       "images_missing": 0,
       "media_unknown": 0,
       "deadline_unknown": 0
