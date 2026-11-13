@@ -1,6 +1,6 @@
 {
   "as_of_date_kst": "2026-11-13",
-  "snapshot_records": 21738,
+  "snapshot_records": 22753,
   "target_records": 20000,
   "records_to_target": 0,
   "target_progress_pct": 100.0,
@@ -19,7 +19,7 @@
   "source_observation_freshness": {
     "assaview": {
       "retained_records": 662,
-      "seen_last_24h": 569,
+      "seen_last_24h": 480,
       "seen_last_48h": 631,
       "not_reverified_last_48h": 31,
       "full_coverage_proven": false
@@ -33,7 +33,7 @@
     },
     "cherivu": {
       "retained_records": 205,
-      "seen_last_24h": 87,
+      "seen_last_24h": 66,
       "seen_last_48h": 87,
       "not_reverified_last_48h": 118,
       "full_coverage_proven": false
@@ -137,10 +137,10 @@
       "full_coverage_proven": false
     },
     "reviewnote": {
-      "retained_records": 10103,
-      "seen_last_24h": 1445,
-      "seen_last_48h": 2820,
-      "not_reverified_last_48h": 7283,
+      "retained_records": 11118,
+      "seen_last_24h": 2463,
+      "seen_last_48h": 2547,
+      "not_reverified_last_48h": 8571,
       "full_coverage_proven": false
     },
     "reviewplace": {
@@ -197,7 +197,7 @@
     "ohmyblog": "2026-11-13T17:34:44.602457+09:00",
     "popomon": "2026-11-13T17:04:07.593835+09:00",
     "realreview": "2026-11-13T16:10:20.224136+09:00",
-    "reviewnote": "2026-11-13T15:26:07.414202+09:00",
+    "reviewnote": "2026-11-13T18:44:18.539822+09:00",
     "reviewplace": "2026-11-13T15:26:07.414202+09:00",
     "revu": "2026-11-13T17:04:07.593835+09:00",
     "ringble": "2026-11-13T15:26:07.414202+09:00",
@@ -205,17 +205,17 @@
     "tqueens": "2026-11-13T15:26:07.414202+09:00"
   },
   "media_counts": {
-    "네이버클립": 3704,
-    "블로그": 12534,
-    "쇼츠": 53,
+    "네이버클립": 3852,
+    "블로그": 13382,
+    "쇼츠": 55,
     "스레드": 3,
-    "유튜브": 68,
-    "인스타그램": 4576,
-    "틱톡": 7
+    "유튜브": 70,
+    "인스타그램": 4740,
+    "틱톡": 8
   },
   "media_unknown": 2538,
   "deadline_unknown": 147,
-  "images_present": 21689,
+  "images_present": 22704,
   "images_missing": 49,
   "images_missing_sources": {
     "chvu": 1,
@@ -359,8 +359,8 @@
       "deadline_unknown": 76
     },
     "reviewnote": {
-      "records": 10103,
-      "images_present": 10103,
+      "records": 11118,
+      "images_present": 11118,
       "images_missing": 0,
       "media_unknown": 0,
       "deadline_unknown": 0
