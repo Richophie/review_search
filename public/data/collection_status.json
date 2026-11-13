@@ -96,7 +96,7 @@
     },
     "modan": {
       "retained_records": 59,
-      "seen_last_24h": 53,
+      "seen_last_24h": 51,
       "seen_last_48h": 58,
       "not_reverified_last_48h": 1,
       "full_coverage_proven": false
@@ -125,13 +125,13 @@
     "popomon": {
       "retained_records": 95,
       "seen_last_24h": 18,
-      "seen_last_48h": 30,
-      "not_reverified_last_48h": 65,
+      "seen_last_48h": 24,
+      "not_reverified_last_48h": 71,
       "full_coverage_proven": false
     },
     "realreview": {
       "retained_records": 76,
-      "seen_last_24h": 76,
+      "seen_last_24h": 65,
       "seen_last_48h": 76,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
@@ -153,8 +153,8 @@
     "revu": {
       "retained_records": 98,
       "seen_last_24h": 50,
-      "seen_last_48h": 86,
-      "not_reverified_last_48h": 12,
+      "seen_last_48h": 85,
+      "not_reverified_last_48h": 13,
       "full_coverage_proven": false
     },
     "ringble": {
