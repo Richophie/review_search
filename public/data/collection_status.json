@@ -19,9 +19,9 @@
   "source_observation_freshness": {
     "assaview": {
       "retained_records": 673,
-      "seen_last_24h": 608,
-      "seen_last_48h": 633,
-      "not_reverified_last_48h": 40,
+      "seen_last_24h": 549,
+      "seen_last_48h": 627,
+      "not_reverified_last_48h": 46,
       "full_coverage_proven": false
     },
     "bqueens": {
@@ -33,9 +33,9 @@
     },
     "cherivu": {
       "retained_records": 221,
-      "seen_last_24h": 81,
-      "seen_last_48h": 104,
-      "not_reverified_last_48h": 117,
+      "seen_last_24h": 67,
+      "seen_last_48h": 94,
+      "not_reverified_last_48h": 127,
       "full_coverage_proven": false
     },
     "cherrycook": {
@@ -47,9 +47,9 @@
     },
     "chvu": {
       "retained_records": 1042,
-      "seen_last_24h": 396,
-      "seen_last_48h": 493,
-      "not_reverified_last_48h": 549,
+      "seen_last_24h": 380,
+      "seen_last_48h": 398,
+      "not_reverified_last_48h": 644,
       "full_coverage_proven": false
     },
     "cometoplay": {
@@ -124,16 +124,16 @@
     },
     "popomon": {
       "retained_records": 90,
-      "seen_last_24h": 19,
-      "seen_last_48h": 31,
-      "not_reverified_last_48h": 59,
+      "seen_last_24h": 12,
+      "seen_last_48h": 25,
+      "not_reverified_last_48h": 65,
       "full_coverage_proven": false
     },
     "realreview": {
       "retained_records": 65,
       "seen_last_24h": 57,
-      "seen_last_48h": 65,
-      "not_reverified_last_48h": 0,
+      "seen_last_48h": 59,
+      "not_reverified_last_48h": 6,
       "full_coverage_proven": false
     },
     "reviewnote": {
@@ -152,9 +152,9 @@
     },
     "revu": {
       "retained_records": 105,
-      "seen_last_24h": 44,
-      "seen_last_48h": 82,
-      "not_reverified_last_48h": 23,
+      "seen_last_24h": 42,
+      "seen_last_48h": 47,
+      "not_reverified_last_48h": 58,
       "full_coverage_proven": false
     },
     "ringble": {
