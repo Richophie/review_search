@@ -96,7 +96,7 @@
     },
     "modan": {
       "retained_records": 52,
-      "seen_last_24h": 43,
+      "seen_last_24h": 39,
       "seen_last_48h": 50,
       "not_reverified_last_48h": 2,
       "full_coverage_proven": false
@@ -152,7 +152,7 @@
     },
     "revu": {
       "retained_records": 62,
-      "seen_last_24h": 45,
+      "seen_last_24h": 42,
       "seen_last_48h": 45,
       "not_reverified_last_48h": 17,
       "full_coverage_proven": false
