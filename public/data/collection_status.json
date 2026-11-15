@@ -62,15 +62,15 @@
     "dinnerqueen": {
       "retained_records": 8462,
       "seen_last_24h": 2702,
-      "seen_last_48h": 6041,
-      "not_reverified_last_48h": 2421,
+      "seen_last_48h": 4601,
+      "not_reverified_last_48h": 3861,
       "full_coverage_proven": false
     },
     "fourblog": {
       "retained_records": 283,
       "seen_last_24h": 96,
-      "seen_last_48h": 120,
-      "not_reverified_last_48h": 163,
+      "seen_last_48h": 108,
+      "not_reverified_last_48h": 175,
       "full_coverage_proven": false
     },
     "gaboja": {
@@ -111,8 +111,8 @@
     "mrblog": {
       "retained_records": 27,
       "seen_last_24h": 16,
-      "seen_last_48h": 24,
-      "not_reverified_last_48h": 3,
+      "seen_last_48h": 22,
+      "not_reverified_last_48h": 5,
       "full_coverage_proven": false
     },
     "ohmyblog": {
