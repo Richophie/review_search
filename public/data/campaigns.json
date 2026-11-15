@@ -65024,7 +65024,9 @@
 "region_text": "경기 오산",
 "category": "맛집",
 "campaign_type": "방문형",
-"channels": [],
+"channels": [
+"블로그"
+],
 "slots": 5,
 "applicants": 14,
 "apply_deadline": "2026-11-17",
@@ -65037,7 +65039,8 @@
 "competition_ratio": 2.8,
 "remaining_slots": 0,
 "dedupe_key": "경기오산노포연탄집오산고현점",
-"search_text": "노포연탄집 오산고현점 식사권 4만원 제공 경기 오산 맛집"
+"search_text": "노포연탄집 오산고현점 식사권 4만원 제공 경기 오산 맛집 블로그",
+"media_evidence": "dinnerqueen_detail:mandatory_blog_mission"
 },
 {
 "id": "dinnerqueen:1594051",
