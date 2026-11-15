@@ -7,8 +7,8 @@
   "platforms_with_records": 23,
   "source_scan_status": {
     "gangnammat": {
-      "last_scan_at": "2026-11-14T07:52:28.132884+00:00",
-      "verified_during_last_scan": 282,
+      "last_scan_at": "2026-11-15T08:13:21.945519+00:00",
+      "verified_during_last_scan": 267,
       "discovered_list_urls": 19,
       "scan_complete": false,
       "traversal_capped": false,
@@ -19,7 +19,7 @@
   "source_observation_freshness": {
     "assaview": {
       "retained_records": 673,
-      "seen_last_24h": 553,
+      "seen_last_24h": 464,
       "seen_last_48h": 627,
       "not_reverified_last_48h": 46,
       "full_coverage_proven": false
@@ -33,7 +33,7 @@
     },
     "cherivu": {
       "retained_records": 221,
-      "seen_last_24h": 67,
+      "seen_last_24h": 53,
       "seen_last_48h": 94,
       "not_reverified_last_48h": 127,
       "full_coverage_proven": false
@@ -82,7 +82,7 @@
     },
     "gangnammat": {
       "retained_records": 1271,
-      "seen_last_24h": 28,
+      "seen_last_24h": 267,
       "seen_last_48h": 396,
       "not_reverified_last_48h": 875,
       "full_coverage_proven": false
@@ -125,8 +125,8 @@
     "popomon": {
       "retained_records": 90,
       "seen_last_24h": 12,
-      "seen_last_48h": 25,
-      "not_reverified_last_48h": 65,
+      "seen_last_48h": 19,
+      "not_reverified_last_48h": 71,
       "full_coverage_proven": false
     },
     "realreview": {
@@ -153,8 +153,8 @@
     "revu": {
       "retained_records": 84,
       "seen_last_24h": 45,
-      "seen_last_48h": 50,
-      "not_reverified_last_48h": 34,
+      "seen_last_48h": 47,
+      "not_reverified_last_48h": 37,
       "full_coverage_proven": false
     },
     "ringble": {
@@ -189,7 +189,7 @@
     "dinnerqueen": "2026-11-15T15:12:19.402119+09:00",
     "fourblog": "2026-11-15T15:12:19.402119+09:00",
     "gaboja": "2026-11-15T15:12:19.402119+09:00",
-    "gangnammat": "2026-11-15T15:12:19.402119+09:00",
+    "gangnammat": "2026-11-15T17:12:27.660356+09:00",
     "huki": "2026-11-15T15:12:19.402119+09:00",
     "modan": "2026-11-15T16:16:20.794152+09:00",
     "modootogether": "2026-11-15T15:12:19.402119+09:00",
