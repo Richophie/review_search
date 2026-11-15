@@ -139,8 +139,8 @@
     "reviewnote": {
       "retained_records": 9094,
       "seen_last_24h": 1569,
-      "seen_last_48h": 2286,
-      "not_reverified_last_48h": 6808,
+      "seen_last_48h": 1808,
+      "not_reverified_last_48h": 7286,
       "full_coverage_proven": false
     },
     "reviewplace": {
@@ -206,14 +206,14 @@
   },
   "media_counts": {
     "네이버클립": 3967,
-    "블로그": 11675,
+    "블로그": 11677,
     "쇼츠": 39,
     "스레드": 2,
     "유튜브": 52,
     "인스타그램": 4321,
     "틱톡": 6
   },
-  "media_unknown": 3490,
+  "media_unknown": 3488,
   "deadline_unknown": 102,
   "images_present": 22059,
   "images_missing": 46,
@@ -226,7 +226,7 @@
     "bqueens": 56,
     "cherivu": 1,
     "chvu": 2,
-    "dinnerqueen": 3146,
+    "dinnerqueen": 3144,
     "modan": 55,
     "ohmyblog": 8,
     "popomon": 8,
@@ -284,7 +284,7 @@
       "records": 8179,
       "images_present": 8179,
       "images_missing": 0,
-      "media_unknown": 3146,
+      "media_unknown": 3144,
       "deadline_unknown": 0
     },
     "fourblog": {
