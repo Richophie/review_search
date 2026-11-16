@@ -19,7 +19,7 @@
   "source_observation_freshness": {
     "assaview": {
       "retained_records": 687,
-      "seen_last_24h": 551,
+      "seen_last_24h": 543,
       "seen_last_48h": 623,
       "not_reverified_last_48h": 64,
       "full_coverage_proven": false
@@ -33,7 +33,7 @@
     },
     "cherivu": {
       "retained_records": 234,
-      "seen_last_24h": 66,
+      "seen_last_24h": 49,
       "seen_last_48h": 81,
       "not_reverified_last_48h": 153,
       "full_coverage_proven": false
@@ -192,7 +192,7 @@
     "gangnammat": "2026-11-16T17:19:57.590576+09:00",
     "huki": "2026-11-16T15:10:32.638142+09:00",
     "modan": "2026-11-16T16:22:28.196772+09:00",
-    "modootogether": "2026-11-16T15:10:32.638142+09:00",
+    "modootogether": "2026-11-16T17:33:40.724267+09:00",
     "mrblog": "2026-11-16T15:10:32.638142+09:00",
     "ohmyblog": "2026-11-16T17:23:43.403469+09:00",
     "popomon": "2026-11-16T17:02:05.574307+09:00",
