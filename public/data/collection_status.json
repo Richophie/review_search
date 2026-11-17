@@ -1,14 +1,14 @@
 {
   "as_of_date_kst": "2026-11-17",
-  "snapshot_records": 18791,
+  "snapshot_records": 18983,
   "target_records": 20000,
-  "records_to_target": 1209,
-  "target_progress_pct": 93.95,
+  "records_to_target": 1017,
+  "target_progress_pct": 94.92,
   "platforms_with_records": 23,
   "source_scan_status": {
     "gangnammat": {
-      "last_scan_at": "2026-11-16T08:20:36.685076+00:00",
-      "verified_during_last_scan": 258,
+      "last_scan_at": "2026-11-17T09:35:09.893888+00:00",
+      "verified_during_last_scan": 255,
       "discovered_list_urls": 19,
       "scan_complete": false,
       "traversal_capped": false,
@@ -81,9 +81,9 @@
       "full_coverage_proven": false
     },
     "gangnammat": {
-      "retained_records": 1072,
-      "seen_last_24h": 54,
-      "seen_last_48h": 354,
+      "retained_records": 1264,
+      "seen_last_24h": 304,
+      "seen_last_48h": 546,
       "not_reverified_last_48h": 718,
       "full_coverage_proven": false
     },
@@ -189,7 +189,7 @@
     "dinnerqueen": "2026-11-17T16:44:52.383567+09:00",
     "fourblog": "2026-11-17T16:44:52.383567+09:00",
     "gaboja": "2026-11-17T16:44:52.383567+09:00",
-    "gangnammat": "2026-11-17T16:44:52.383567+09:00",
+    "gangnammat": "2026-11-17T18:34:24.195385+09:00",
     "huki": "2026-11-17T16:44:52.383567+09:00",
     "modan": "2026-11-17T17:33:52.641069+09:00",
     "modootogether": "2026-11-17T16:44:52.383567+09:00",
@@ -205,8 +205,8 @@
     "tqueens": "2026-11-17T16:44:52.383567+09:00"
   },
   "media_counts": {
-    "네이버클립": 3043,
-    "블로그": 10296,
+    "네이버클립": 3049,
+    "블로그": 10482,
     "쇼츠": 38,
     "스레드": 2,
     "유튜브": 52,
@@ -215,7 +215,7 @@
   },
   "media_unknown": 2529,
   "deadline_unknown": 206,
-  "images_present": 18743,
+  "images_present": 18935,
   "images_missing": 48,
   "images_missing_sources": {
     "chvu": 1,
@@ -304,8 +304,8 @@
       "deadline_unknown": 0
     },
     "gangnammat": {
-      "records": 1072,
-      "images_present": 1072,
+      "records": 1264,
+      "images_present": 1264,
       "images_missing": 0,
       "media_unknown": 0,
       "deadline_unknown": 0
