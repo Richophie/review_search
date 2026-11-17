@@ -131,7 +131,7 @@
     },
     "realreview": {
       "retained_records": 93,
-      "seen_last_24h": 92,
+      "seen_last_24h": 73,
       "seen_last_48h": 93,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
@@ -206,14 +206,14 @@
   },
   "media_counts": {
     "네이버클립": 1945,
-    "블로그": 10762,
+    "블로그": 10765,
     "쇼츠": 37,
     "스레드": 1,
     "유튜브": 53,
     "인스타그램": 4252,
     "틱톡": 6
   },
-  "media_unknown": 1201,
+  "media_unknown": 1198,
   "deadline_unknown": 193,
   "images_present": 16817,
   "images_missing": 31,
@@ -227,7 +227,7 @@
     "bqueens": 43,
     "cherivu": 1,
     "chvu": 2,
-    "dinnerqueen": 880,
+    "dinnerqueen": 877,
     "fourblog": 1,
     "modan": 47,
     "ohmyblog": 7,
@@ -286,7 +286,7 @@
       "records": 3762,
       "images_present": 3762,
       "images_missing": 0,
-      "media_unknown": 880,
+      "media_unknown": 877,
       "deadline_unknown": 0
     },
     "fourblog": {

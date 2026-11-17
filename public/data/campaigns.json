@@ -66387,7 +66387,9 @@
 "region_text": "전남 광주",
 "category": "기타",
 "campaign_type": "방문형",
-"channels": [],
+"channels": [
+"블로그"
+],
 "slots": 5,
 "applicants": 12,
 "apply_deadline": "2026-11-19",
@@ -66400,7 +66402,8 @@
 "competition_ratio": 2.4,
 "remaining_slots": 0,
 "dedupe_key": "전남광주번개어시장1984첨단점",
-"search_text": "번개어시장 1984 첨단점 1. 산더미조개전골 (45000원) 2. 방어회 (48,000원) ★ 위의 두 가지 옵션 중 희망하는 제공내역으로 참여 가능합니다. ( 택 1 ) 전남 광주 기타"
+"search_text": "번개어시장 1984 첨단점 1. 산더미조개전골 (45000원) 2. 방어회 (48,000원) ★ 위의 두 가지 옵션 중 희망하는 제공내역으로 참여 가능합니다. ( 택 1 ) 전남 광주 기타 블로그",
+"media_evidence": "dinnerqueen_detail:mandatory_blog_mission"
 },
 {
 "id": "dinnerqueen:1635769",
@@ -67365,7 +67368,9 @@
 "region_text": "충북 청주",
 "category": "기타",
 "campaign_type": "방문형",
-"channels": [],
+"channels": [
+"블로그"
+],
 "slots": 5,
 "applicants": 7,
 "apply_deadline": "2026-11-22",
@@ -67378,7 +67383,8 @@
 "competition_ratio": 1.4,
 "remaining_slots": 0,
 "dedupe_key": "충북청주신광국물떡볶이복대직영점",
-"search_text": "신광국물떡볶이 복대직영점 한그릇떡볶이 (2인분) 충북 청주 기타"
+"search_text": "신광국물떡볶이 복대직영점 한그릇떡볶이 (2인분) 충북 청주 기타 블로그",
+"media_evidence": "dinnerqueen_detail:mandatory_blog_mission"
 },
 {
 "id": "dinnerqueen:1637511",
@@ -67393,7 +67399,9 @@
 "region_text": "부산 진구",
 "category": "맛집",
 "campaign_type": "방문형",
-"channels": [],
+"channels": [
+"블로그"
+],
 "slots": 5,
 "applicants": 31,
 "apply_deadline": "2026-11-22",
@@ -67406,7 +67414,8 @@
 "competition_ratio": 6.2,
 "remaining_slots": 0,
 "dedupe_key": "부산진구수라반점서면점",
-"search_text": "수라반점 서면점 자유 식사권 35,000원 제공 부산 진구 맛집"
+"search_text": "수라반점 서면점 자유 식사권 35,000원 제공 부산 진구 맛집 블로그",
+"media_evidence": "dinnerqueen_detail:mandatory_blog_mission"
 },
 {
 "id": "dinnerqueen:1637512",
