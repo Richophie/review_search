@@ -1,9 +1,9 @@
 {
   "as_of_date_kst": "2026-11-18",
-  "snapshot_records": 18519,
+  "snapshot_records": 18520,
   "target_records": 20000,
-  "records_to_target": 1481,
-  "target_progress_pct": 92.59,
+  "records_to_target": 1480,
+  "target_progress_pct": 92.6,
   "platforms_with_records": 23,
   "source_scan_status": {
     "gangnammat": {
@@ -95,9 +95,9 @@
       "full_coverage_proven": false
     },
     "modan": {
-      "retained_records": 49,
-      "seen_last_24h": 34,
-      "seen_last_48h": 47,
+      "retained_records": 50,
+      "seen_last_24h": 45,
+      "seen_last_48h": 48,
       "not_reverified_last_48h": 2,
       "full_coverage_proven": false
     },
@@ -191,7 +191,7 @@
     "gaboja": "2026-11-18T16:10:42.350777+09:00",
     "gangnammat": "2026-11-18T16:10:42.350777+09:00",
     "huki": "2026-11-18T16:10:42.350777+09:00",
-    "modan": "2026-11-18T16:10:42.350777+09:00",
+    "modan": "2026-11-18T16:59:07.837895+09:00",
     "modootogether": "2026-11-18T16:10:42.350777+09:00",
     "mrblog": "2026-11-18T16:10:42.350777+09:00",
     "ohmyblog": "2026-11-18T06:51:58.693850+09:00",
@@ -213,9 +213,9 @@
     "인스타그램": 4316,
     "틱톡": 7
   },
-  "media_unknown": 2018,
+  "media_unknown": 2019,
   "deadline_unknown": 201,
-  "images_present": 18488,
+  "images_present": 18489,
   "images_missing": 31,
   "images_missing_sources": {
     "chvu": 1,
@@ -229,7 +229,7 @@
     "chvu": 2,
     "dinnerqueen": 1617,
     "fourblog": 1,
-    "modan": 49,
+    "modan": 50,
     "ohmyblog": 7,
     "popomon": 12,
     "realreview": 101,
@@ -318,10 +318,10 @@
       "deadline_unknown": 3
     },
     "modan": {
-      "records": 49,
-      "images_present": 49,
+      "records": 50,
+      "images_present": 50,
       "images_missing": 0,
-      "media_unknown": 49,
+      "media_unknown": 50,
       "deadline_unknown": 0
     },
     "modootogether": {
