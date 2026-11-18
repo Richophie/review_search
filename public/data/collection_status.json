@@ -1,8 +1,8 @@
 {
   "as_of_date_kst": "2026-11-18",
-  "snapshot_records": 19015,
+  "snapshot_records": 19016,
   "target_records": 20000,
-  "records_to_target": 985,
+  "records_to_target": 984,
   "target_progress_pct": 95.08,
   "platforms_with_records": 23,
   "source_scan_status": {
@@ -102,9 +102,9 @@
       "full_coverage_proven": false
     },
     "modootogether": {
-      "retained_records": 14,
-      "seen_last_24h": 14,
-      "seen_last_48h": 14,
+      "retained_records": 15,
+      "seen_last_24h": 15,
+      "seen_last_48h": 15,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
     },
@@ -192,7 +192,7 @@
     "gangnammat": "2026-11-18T17:53:43.938683+09:00",
     "huki": "2026-11-18T16:10:42.350777+09:00",
     "modan": "2026-11-18T16:59:07.837895+09:00",
-    "modootogether": "2026-11-18T16:10:42.350777+09:00",
+    "modootogether": "2026-11-18T18:04:15.515672+09:00",
     "mrblog": "2026-11-18T16:10:42.350777+09:00",
     "ohmyblog": "2026-11-18T17:56:36.768841+09:00",
     "popomon": "2026-11-18T17:39:09.727064+09:00",
@@ -210,12 +210,12 @@
     "쇼츠": 37,
     "스레드": 2,
     "유튜브": 54,
-    "인스타그램": 4341,
+    "인스타그램": 4342,
     "틱톡": 7
   },
   "media_unknown": 2022,
   "deadline_unknown": 214,
-  "images_present": 18973,
+  "images_present": 18974,
   "images_missing": 42,
   "images_missing_sources": {
     "chvu": 1,
@@ -325,8 +325,8 @@
       "deadline_unknown": 0
     },
     "modootogether": {
-      "records": 14,
-      "images_present": 14,
+      "records": 15,
+      "images_present": 15,
       "images_missing": 0,
       "media_unknown": 0,
       "deadline_unknown": 4
