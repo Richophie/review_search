@@ -28167,37 +28167,6 @@
 "media_evidence": "chvu:public_card_badge"
 },
 {
-"id": "chvu:201729",
-"source_id": "chvu",
-"original_url": "https://chvu.co.kr/campaign/201729",
-"title": "메디힐 PDRN 버블세럼 마스크",
-"description": "메디힐 PDRN 버블세럼 마스크",
-"benefit": "메디힐 PDRN 버블세럼 마스크",
-"image_url": "https://api.media.smiledragon.co.kr/media/download/01a166a3-fd3e-727d-985a-6a205206225d",
-"country_code": "KR",
-"region_sido": null,
-"region_text": null,
-"category": "기타",
-"campaign_type": "배송형",
-"channels": [
-"블로그"
-],
-"slots": 10,
-"applicants": 356,
-"apply_deadline": "2026-11-27",
-"deadline_precision": "days_left",
-"open_verified": false,
-"first_seen_at": "2026-10-23T15:21:51.774124+09:00",
-"published_at": null,
-"last_seen_at": "2026-10-29T03:59:43.690026+09:00",
-"timezone": "Asia/Seoul",
-"competition_ratio": 35.6,
-"remaining_slots": 0,
-"dedupe_key": "메디힐pdrn버블세럼마스크",
-"search_text": "메디힐 pdrn 버블세럼 마스크 메디힐 pdrn 버블세럼 마스크 메디힐 pdrn 버블세럼 마스크 기타 블로그",
-"media_evidence": "chvu:public_card_badge"
-},
-{
 "id": "chvu:202369",
 "source_id": "chvu",
 "original_url": "https://chvu.co.kr/campaign/202369",

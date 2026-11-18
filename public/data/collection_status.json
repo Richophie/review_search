@@ -1,8 +1,8 @@
 {
   "as_of_date_kst": "2026-11-19",
-  "snapshot_records": 19347,
+  "snapshot_records": 19346,
   "target_records": 20000,
-  "records_to_target": 653,
+  "records_to_target": 654,
   "target_progress_pct": 96.73,
   "platforms_with_records": 23,
   "source_scan_status": {
@@ -19,7 +19,7 @@
   "source_observation_freshness": {
     "assaview": {
       "retained_records": 639,
-      "seen_last_24h": 596,
+      "seen_last_24h": 595,
       "seen_last_48h": 621,
       "not_reverified_last_48h": 18,
       "full_coverage_proven": false
@@ -40,51 +40,51 @@
     },
     "cherrycook": {
       "retained_records": 23,
-      "seen_last_24h": 22,
+      "seen_last_24h": 21,
       "seen_last_48h": 23,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
     },
     "chvu": {
-      "retained_records": 1109,
+      "retained_records": 1108,
       "seen_last_24h": 586,
       "seen_last_48h": 678,
-      "not_reverified_last_48h": 431,
+      "not_reverified_last_48h": 430,
       "full_coverage_proven": false
     },
     "cometoplay": {
       "retained_records": 70,
-      "seen_last_24h": 42,
-      "seen_last_48h": 52,
-      "not_reverified_last_48h": 18,
+      "seen_last_24h": 32,
+      "seen_last_48h": 42,
+      "not_reverified_last_48h": 28,
       "full_coverage_proven": false
     },
     "dinnerqueen": {
       "retained_records": 5353,
-      "seen_last_24h": 4109,
-      "seen_last_48h": 4476,
-      "not_reverified_last_48h": 877,
+      "seen_last_24h": 2747,
+      "seen_last_48h": 4464,
+      "not_reverified_last_48h": 889,
       "full_coverage_proven": false
     },
     "fourblog": {
       "retained_records": 261,
       "seen_last_24h": 94,
-      "seen_last_48h": 128,
-      "not_reverified_last_48h": 133,
+      "seen_last_48h": 108,
+      "not_reverified_last_48h": 153,
       "full_coverage_proven": false
     },
     "gaboja": {
       "retained_records": 16,
-      "seen_last_24h": 16,
+      "seen_last_24h": 14,
       "seen_last_48h": 16,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
     },
     "gangnammat": {
       "retained_records": 1027,
-      "seen_last_24h": 317,
-      "seen_last_48h": 564,
-      "not_reverified_last_48h": 463,
+      "seen_last_24h": 292,
+      "seen_last_48h": 538,
+      "not_reverified_last_48h": 489,
       "full_coverage_proven": false
     },
     "huki": {
@@ -96,9 +96,9 @@
     },
     "modan": {
       "retained_records": 50,
-      "seen_last_24h": 46,
-      "seen_last_48h": 48,
-      "not_reverified_last_48h": 2,
+      "seen_last_24h": 38,
+      "seen_last_48h": 46,
+      "not_reverified_last_48h": 4,
       "full_coverage_proven": false
     },
     "modootogether": {
@@ -110,9 +110,9 @@
     },
     "mrblog": {
       "retained_records": 19,
-      "seen_last_24h": 15,
-      "seen_last_48h": 19,
-      "not_reverified_last_48h": 0,
+      "seen_last_24h": 11,
+      "seen_last_48h": 17,
+      "not_reverified_last_48h": 2,
       "full_coverage_proven": false
     },
     "ohmyblog": {
@@ -138,9 +138,9 @@
     },
     "reviewnote": {
       "retained_records": 9548,
-      "seen_last_24h": 1609,
-      "seen_last_48h": 2430,
-      "not_reverified_last_48h": 7118,
+      "seen_last_24h": 1584,
+      "seen_last_48h": 2385,
+      "not_reverified_last_48h": 7163,
       "full_coverage_proven": false
     },
     "reviewplace": {
@@ -159,14 +159,14 @@
     },
     "ringble": {
       "retained_records": 123,
-      "seen_last_24h": 51,
-      "seen_last_48h": 82,
-      "not_reverified_last_48h": 41,
+      "seen_last_24h": 48,
+      "seen_last_48h": 68,
+      "not_reverified_last_48h": 55,
       "full_coverage_proven": false
     },
     "storyn": {
       "retained_records": 28,
-      "seen_last_24h": 28,
+      "seen_last_24h": 14,
       "seen_last_48h": 28,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
@@ -206,7 +206,7 @@
   },
   "media_counts": {
     "네이버클립": 2882,
-    "블로그": 11432,
+    "블로그": 11431,
     "쇼츠": 39,
     "스레드": 1,
     "유튜브": 57,
@@ -215,7 +215,7 @@
   },
   "media_unknown": 2110,
   "deadline_unknown": 226,
-  "images_present": 19312,
+  "images_present": 19311,
   "images_missing": 35,
   "images_missing_sources": {
     "chvu": 1,
@@ -269,8 +269,8 @@
       "deadline_unknown": 0
     },
     "chvu": {
-      "records": 1109,
-      "images_present": 1108,
+      "records": 1108,
+      "images_present": 1107,
       "images_missing": 1,
       "media_unknown": 2,
       "deadline_unknown": 0
