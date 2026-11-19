@@ -1,6 +1,6 @@
 {
   "as_of_date_kst": "2026-11-20",
-  "snapshot_records": 21171,
+  "snapshot_records": 21172,
   "target_records": 20000,
   "records_to_target": 0,
   "target_progress_pct": 100.0,
@@ -46,9 +46,9 @@
       "full_coverage_proven": false
     },
     "chvu": {
-      "retained_records": 1122,
-      "seen_last_24h": 230,
-      "seen_last_48h": 669,
+      "retained_records": 1123,
+      "seen_last_24h": 362,
+      "seen_last_48h": 670,
       "not_reverified_last_48h": 453,
       "full_coverage_proven": false
     },
@@ -191,7 +191,7 @@
     "bqueens": "2026-11-20T03:10:03.319280+09:00",
     "cherivu": "2026-11-19T18:31:06.496817+09:00",
     "cherrycook": "2026-11-20T03:10:03.319280+09:00",
-    "chvu": "2026-11-19T18:15:36.309556+09:00",
+    "chvu": "2026-11-20T06:43:23.537178+09:00",
     "cometoplay": "2026-11-20T03:10:03.319280+09:00",
     "dinnerqueen": "2026-11-20T03:10:03.319280+09:00",
     "fourblog": "2026-11-20T03:10:03.319280+09:00",
@@ -201,7 +201,7 @@
     "modan": "2026-11-20T06:01:23.851829+09:00",
     "modootogether": "2026-11-20T03:10:03.319280+09:00",
     "mrblog": "2026-11-20T03:10:03.319280+09:00",
-    "ohmyblog": "2026-11-19T18:15:36.309556+09:00",
+    "ohmyblog": "2026-11-20T06:43:23.537178+09:00",
     "openreview": "2026-11-20T03:10:03.319280+09:00",
     "popomon": "2026-11-20T06:38:51.770800+09:00",
     "realreview": "2026-11-20T05:55:56.035992+09:00",
@@ -221,12 +221,12 @@
     "인스타그램": 4758,
     "틱톡": 6
   },
-  "media_unknown": 2943,
+  "media_unknown": 2944,
   "deadline_unknown": 199,
-  "images_present": 21098,
-  "images_missing": 73,
+  "images_present": 21131,
+  "images_missing": 41,
   "images_missing_sources": {
-    "chvu": 33,
+    "chvu": 1,
     "popomon": 1,
     "revu": 39
   },
@@ -234,7 +234,7 @@
     "assaview": 74,
     "bqueens": 49,
     "cherivu": 1,
-    "chvu": 2,
+    "chvu": 3,
     "dinnerqueen": 2601,
     "fourblog": 1,
     "modan": 49,
@@ -278,10 +278,10 @@
       "deadline_unknown": 0
     },
     "chvu": {
-      "records": 1122,
-      "images_present": 1089,
-      "images_missing": 33,
-      "media_unknown": 2,
+      "records": 1123,
+      "images_present": 1122,
+      "images_missing": 1,
+      "media_unknown": 3,
       "deadline_unknown": 0
     },
     "cometoplay": {
