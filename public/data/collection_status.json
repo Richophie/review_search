@@ -33,7 +33,7 @@
     },
     "cherivu": {
       "retained_records": 174,
-      "seen_last_24h": 67,
+      "seen_last_24h": 52,
       "seen_last_48h": 95,
       "not_reverified_last_48h": 79,
       "full_coverage_proven": false
@@ -47,7 +47,7 @@
     },
     "chvu": {
       "retained_records": 1122,
-      "seen_last_24h": 463,
+      "seen_last_24h": 230,
       "seen_last_48h": 669,
       "not_reverified_last_48h": 453,
       "full_coverage_proven": false
@@ -103,7 +103,7 @@
     },
     "modootogether": {
       "retained_records": 15,
-      "seen_last_24h": 15,
+      "seen_last_24h": 14,
       "seen_last_48h": 15,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
@@ -117,7 +117,7 @@
     },
     "ohmyblog": {
       "retained_records": 357,
-      "seen_last_24h": 355,
+      "seen_last_24h": 354,
       "seen_last_48h": 357,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
@@ -131,7 +131,7 @@
     },
     "popomon": {
       "retained_records": 85,
-      "seen_last_24h": 18,
+      "seen_last_24h": 12,
       "seen_last_48h": 30,
       "not_reverified_last_48h": 55,
       "full_coverage_proven": false
@@ -139,8 +139,8 @@
     "realreview": {
       "retained_records": 86,
       "seen_last_24h": 57,
-      "seen_last_48h": 86,
-      "not_reverified_last_48h": 0,
+      "seen_last_48h": 80,
+      "not_reverified_last_48h": 6,
       "full_coverage_proven": false
     },
     "reviewnote": {
@@ -159,7 +159,7 @@
     },
     "revu": {
       "retained_records": 119,
-      "seen_last_24h": 75,
+      "seen_last_24h": 41,
       "seen_last_48h": 114,
       "not_reverified_last_48h": 5,
       "full_coverage_proven": false
