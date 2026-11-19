@@ -1,6 +1,6 @@
 {
   "as_of_date_kst": "2026-11-19",
-  "snapshot_records": 20832,
+  "snapshot_records": 20845,
   "target_records": 20000,
   "records_to_target": 0,
   "target_progress_pct": 100.0,
@@ -18,9 +18,9 @@
   },
   "source_observation_freshness": {
     "assaview": {
-      "retained_records": 645,
-      "seen_last_24h": 462,
-      "seen_last_48h": 618,
+      "retained_records": 658,
+      "seen_last_24h": 475,
+      "seen_last_48h": 631,
       "not_reverified_last_48h": 27,
       "full_coverage_proven": false
     },
@@ -83,8 +83,8 @@
     "gangnammat": {
       "retained_records": 1245,
       "seen_last_24h": 324,
-      "seen_last_48h": 733,
-      "not_reverified_last_48h": 512,
+      "seen_last_48h": 535,
+      "not_reverified_last_48h": 710,
       "full_coverage_proven": false
     },
     "huki": {
@@ -180,7 +180,7 @@
     }
   },
   "source_last_observed": {
-    "assaview": "2026-11-19T16:12:12.156131+09:00",
+    "assaview": "2026-11-19T18:32:55.686005+09:00",
     "bqueens": "2026-11-19T16:12:12.156131+09:00",
     "cherivu": "2026-11-19T18:31:06.496817+09:00",
     "cherrycook": "2026-11-19T16:12:12.156131+09:00",
@@ -206,16 +206,16 @@
   },
   "media_counts": {
     "네이버클립": 3273,
-    "블로그": 11929,
+    "블로그": 11939,
     "쇼츠": 39,
     "스레드": 1,
     "유튜브": 57,
-    "인스타그램": 4853,
+    "인스타그램": 4854,
     "틱톡": 8
   },
-  "media_unknown": 2317,
+  "media_unknown": 2319,
   "deadline_unknown": 204,
-  "images_present": 20752,
+  "images_present": 20765,
   "images_missing": 80,
   "images_missing_sources": {
     "chvu": 33,
@@ -223,7 +223,7 @@
     "revu": 46
   },
   "media_unknown_sources": {
-    "assaview": 79,
+    "assaview": 81,
     "bqueens": 51,
     "cherivu": 1,
     "chvu": 2,
@@ -242,10 +242,10 @@
   "duplicate_id_or_original_url_count": 0,
   "sources": {
     "assaview": {
-      "records": 645,
-      "images_present": 645,
+      "records": 658,
+      "images_present": 658,
       "images_missing": 0,
-      "media_unknown": 79,
+      "media_unknown": 81,
       "deadline_unknown": 0
     },
     "bqueens": {
