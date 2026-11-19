@@ -55,15 +55,15 @@
     "cometoplay": {
       "retained_records": 58,
       "seen_last_24h": 32,
-      "seen_last_48h": 49,
-      "not_reverified_last_48h": 9,
+      "seen_last_48h": 42,
+      "not_reverified_last_48h": 16,
       "full_coverage_proven": false
     },
     "dinnerqueen": {
       "retained_records": 7329,
       "seen_last_24h": 3298,
-      "seen_last_48h": 6891,
-      "not_reverified_last_48h": 438,
+      "seen_last_48h": 5529,
+      "not_reverified_last_48h": 1800,
       "full_coverage_proven": false
     },
     "fourblog": {
@@ -83,8 +83,8 @@
     "gangnammat": {
       "retained_records": 951,
       "seen_last_24h": 324,
-      "seen_last_48h": 560,
-      "not_reverified_last_48h": 391,
+      "seen_last_48h": 535,
+      "not_reverified_last_48h": 416,
       "full_coverage_proven": false
     },
     "huki": {
@@ -146,8 +146,8 @@
     "reviewnote": {
       "retained_records": 9442,
       "seen_last_24h": 1397,
-      "seen_last_48h": 2646,
-      "not_reverified_last_48h": 6796,
+      "seen_last_48h": 2621,
+      "not_reverified_last_48h": 6821,
       "full_coverage_proven": false
     },
     "reviewplace": {
@@ -167,8 +167,8 @@
     "ringble": {
       "retained_records": 128,
       "seen_last_24h": 54,
-      "seen_last_48h": 82,
-      "not_reverified_last_48h": 46,
+      "seen_last_48h": 81,
+      "not_reverified_last_48h": 47,
       "full_coverage_proven": false
     },
     "storyn": {
