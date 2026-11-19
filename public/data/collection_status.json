@@ -1,6 +1,6 @@
 {
   "as_of_date_kst": "2026-11-19",
-  "snapshot_records": 20821,
+  "snapshot_records": 20832,
   "target_records": 20000,
   "records_to_target": 0,
   "target_progress_pct": 100.0,
@@ -32,10 +32,10 @@
       "full_coverage_proven": false
     },
     "cherivu": {
-      "retained_records": 170,
-      "seen_last_24h": 50,
-      "seen_last_48h": 94,
-      "not_reverified_last_48h": 76,
+      "retained_records": 181,
+      "seen_last_24h": 67,
+      "seen_last_48h": 107,
+      "not_reverified_last_48h": 74,
       "full_coverage_proven": false
     },
     "cherrycook": {
@@ -182,7 +182,7 @@
   "source_last_observed": {
     "assaview": "2026-11-19T16:12:12.156131+09:00",
     "bqueens": "2026-11-19T16:12:12.156131+09:00",
-    "cherivu": "2026-11-19T06:36:28.624867+09:00",
+    "cherivu": "2026-11-19T18:31:06.496817+09:00",
     "cherrycook": "2026-11-19T16:12:12.156131+09:00",
     "chvu": "2026-11-19T18:15:36.309556+09:00",
     "cometoplay": "2026-11-19T16:12:12.156131+09:00",
@@ -206,7 +206,7 @@
   },
   "media_counts": {
     "네이버클립": 3273,
-    "블로그": 11918,
+    "블로그": 11929,
     "쇼츠": 39,
     "스레드": 1,
     "유튜브": 57,
@@ -214,8 +214,8 @@
     "틱톡": 8
   },
   "media_unknown": 2317,
-  "deadline_unknown": 196,
-  "images_present": 20741,
+  "deadline_unknown": 204,
+  "images_present": 20752,
   "images_missing": 80,
   "images_missing_sources": {
     "chvu": 33,
@@ -256,11 +256,11 @@
       "deadline_unknown": 0
     },
     "cherivu": {
-      "records": 170,
-      "images_present": 170,
+      "records": 181,
+      "images_present": 181,
       "images_missing": 0,
       "media_unknown": 1,
-      "deadline_unknown": 31
+      "deadline_unknown": 39
     },
     "cherrycook": {
       "records": 23,
