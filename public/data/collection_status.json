@@ -1,6 +1,6 @@
 {
   "as_of_date_kst": "2026-11-21",
-  "snapshot_records": 22628,
+  "snapshot_records": 22660,
   "target_records": 20000,
   "records_to_target": 0,
   "target_progress_pct": 100.0,
@@ -46,9 +46,9 @@
       "full_coverage_proven": false
     },
     "chvu": {
-      "retained_records": 1072,
-      "seen_last_24h": 452,
-      "seen_last_48h": 548,
+      "retained_records": 1073,
+      "seen_last_24h": 453,
+      "seen_last_48h": 549,
       "not_reverified_last_48h": 524,
       "full_coverage_proven": false
     },
@@ -116,9 +116,9 @@
       "full_coverage_proven": false
     },
     "ohmyblog": {
-      "retained_records": 360,
-      "seen_last_24h": 357,
-      "seen_last_48h": 358,
+      "retained_records": 391,
+      "seen_last_24h": 388,
+      "seen_last_48h": 389,
       "not_reverified_last_48h": 2,
       "full_coverage_proven": false
     },
@@ -191,7 +191,7 @@
     "bqueens": "2026-11-21T02:42:58.574733+09:00",
     "cherivu": "2026-11-20T18:11:50.855758+09:00",
     "cherrycook": "2026-11-21T02:42:58.574733+09:00",
-    "chvu": "2026-11-20T17:56:41.287977+09:00",
+    "chvu": "2026-11-21T06:26:04.504294+09:00",
     "cometoplay": "2026-11-21T02:42:58.574733+09:00",
     "dinnerqueen": "2026-11-21T02:42:58.574733+09:00",
     "fourblog": "2026-11-21T02:42:58.574733+09:00",
@@ -201,7 +201,7 @@
     "modan": "2026-11-21T05:47:49.945161+09:00",
     "modootogether": "2026-11-21T02:42:58.574733+09:00",
     "mrblog": "2026-11-21T02:42:58.574733+09:00",
-    "ohmyblog": "2026-11-20T17:56:41.287977+09:00",
+    "ohmyblog": "2026-11-21T06:26:04.504294+09:00",
     "openreview": "2026-11-21T02:42:58.574733+09:00",
     "popomon": "2026-11-21T06:11:55.243897+09:00",
     "realreview": "2026-11-21T05:41:05.552326+09:00",
@@ -214,7 +214,7 @@
   },
   "media_counts": {
     "네이버클립": 4295,
-    "블로그": 11257,
+    "블로그": 11289,
     "쇼츠": 34,
     "스레드": 1,
     "유튜브": 52,
@@ -223,7 +223,7 @@
   },
   "media_unknown": 3670,
   "deadline_unknown": 133,
-  "images_present": 22579,
+  "images_present": 22611,
   "images_missing": 49,
   "images_missing_sources": {
     "chvu": 1,
@@ -277,8 +277,8 @@
       "deadline_unknown": 0
     },
     "chvu": {
-      "records": 1072,
-      "images_present": 1071,
+      "records": 1073,
+      "images_present": 1072,
       "images_missing": 1,
       "media_unknown": 3,
       "deadline_unknown": 0
@@ -347,8 +347,8 @@
       "deadline_unknown": 0
     },
     "ohmyblog": {
-      "records": 360,
-      "images_present": 360,
+      "records": 391,
+      "images_present": 391,
       "images_missing": 0,
       "media_unknown": 12,
       "deadline_unknown": 0
