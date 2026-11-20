@@ -1,6 +1,6 @@
 {
   "as_of_date_kst": "2026-11-21",
-  "snapshot_records": 22645,
+  "snapshot_records": 22641,
   "target_records": 20000,
   "records_to_target": 0,
   "target_progress_pct": 100.0,
@@ -19,9 +19,9 @@
   "source_observation_freshness": {
     "assaview": {
       "retained_records": 628,
-      "seen_last_24h": 591,
-      "seen_last_48h": 617,
-      "not_reverified_last_48h": 11,
+      "seen_last_24h": 524,
+      "seen_last_48h": 603,
+      "not_reverified_last_48h": 25,
       "full_coverage_proven": false
     },
     "bqueens": {
@@ -32,10 +32,10 @@
       "full_coverage_proven": false
     },
     "cherivu": {
-      "retained_records": 203,
-      "seen_last_24h": 90,
-      "seen_last_48h": 122,
-      "not_reverified_last_48h": 81,
+      "retained_records": 199,
+      "seen_last_24h": 68,
+      "seen_last_48h": 109,
+      "not_reverified_last_48h": 90,
       "full_coverage_proven": false
     },
     "cherrycook": {
@@ -47,7 +47,7 @@
     },
     "chvu": {
       "retained_records": 1073,
-      "seen_last_24h": 453,
+      "seen_last_24h": 361,
       "seen_last_48h": 453,
       "not_reverified_last_48h": 620,
       "full_coverage_proven": false
@@ -103,7 +103,7 @@
     },
     "modootogether": {
       "retained_records": 15,
-      "seen_last_24h": 15,
+      "seen_last_24h": 14,
       "seen_last_48h": 15,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
@@ -131,7 +131,7 @@
     },
     "popomon": {
       "retained_records": 90,
-      "seen_last_24h": 24,
+      "seen_last_24h": 18,
       "seen_last_48h": 30,
       "not_reverified_last_48h": 60,
       "full_coverage_proven": false
@@ -159,7 +159,7 @@
     },
     "revu": {
       "retained_records": 101,
-      "seen_last_24h": 77,
+      "seen_last_24h": 48,
       "seen_last_48h": 81,
       "not_reverified_last_48h": 20,
       "full_coverage_proven": false
@@ -214,16 +214,16 @@
   },
   "media_counts": {
     "네이버클립": 4295,
-    "블로그": 11278,
+    "블로그": 11275,
     "쇼츠": 34,
     "스레드": 1,
     "유튜브": 52,
     "인스타그램": 4826,
     "틱톡": 6
   },
-  "media_unknown": 3670,
-  "deadline_unknown": 109,
-  "images_present": 22600,
+  "media_unknown": 3669,
+  "deadline_unknown": 105,
+  "images_present": 22596,
   "images_missing": 45,
   "images_missing_sources": {
     "chvu": 1,
@@ -234,7 +234,7 @@
     "assaview": 81,
     "bqueens": 54,
     "chvu": 3,
-    "dinnerqueen": 3316,
+    "dinnerqueen": 3315,
     "fourblog": 1,
     "modan": 49,
     "ohmyblog": 12,
@@ -263,11 +263,11 @@
       "deadline_unknown": 0
     },
     "cherivu": {
-      "records": 203,
-      "images_present": 203,
+      "records": 199,
+      "images_present": 199,
       "images_missing": 0,
       "media_unknown": 0,
-      "deadline_unknown": 18
+      "deadline_unknown": 14
     },
     "cherrycook": {
       "records": 21,
@@ -294,7 +294,7 @@
       "records": 8839,
       "images_present": 8839,
       "images_missing": 0,
-      "media_unknown": 3316,
+      "media_unknown": 3315,
       "deadline_unknown": 0
     },
     "fourblog": {
