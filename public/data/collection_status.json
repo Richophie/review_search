@@ -1,6 +1,6 @@
 {
   "as_of_date_kst": "2026-11-21",
-  "snapshot_records": 22669,
+  "snapshot_records": 22645,
   "target_records": 20000,
   "records_to_target": 0,
   "target_progress_pct": 100.0,
@@ -132,8 +132,8 @@
     "popomon": {
       "retained_records": 90,
       "seen_last_24h": 24,
-      "seen_last_48h": 34,
-      "not_reverified_last_48h": 56,
+      "seen_last_48h": 30,
+      "not_reverified_last_48h": 60,
       "full_coverage_proven": false
     },
     "realreview": {
@@ -158,10 +158,10 @@
       "full_coverage_proven": false
     },
     "revu": {
-      "retained_records": 125,
+      "retained_records": 101,
       "seen_last_24h": 77,
-      "seen_last_48h": 113,
-      "not_reverified_last_48h": 12,
+      "seen_last_48h": 81,
+      "not_reverified_last_48h": 20,
       "full_coverage_proven": false
     },
     "ringble": {
@@ -187,7 +187,7 @@
     }
   },
   "source_last_observed": {
-    "assaview": "2026-11-21T02:42:58.574733+09:00",
+    "assaview": "2026-11-21T06:34:14.766613+09:00",
     "bqueens": "2026-11-21T02:42:58.574733+09:00",
     "cherivu": "2026-11-21T06:32:10.610684+09:00",
     "cherrycook": "2026-11-21T02:42:58.574733+09:00",
@@ -214,21 +214,21 @@
   },
   "media_counts": {
     "네이버클립": 4295,
-    "블로그": 11298,
+    "블로그": 11278,
     "쇼츠": 34,
     "스레드": 1,
     "유튜브": 52,
-    "인스타그램": 4830,
+    "인스타그램": 4826,
     "틱톡": 6
   },
   "media_unknown": 3670,
-  "deadline_unknown": 133,
-  "images_present": 22620,
-  "images_missing": 49,
+  "deadline_unknown": 109,
+  "images_present": 22600,
+  "images_missing": 45,
   "images_missing_sources": {
     "chvu": 1,
     "popomon": 1,
-    "revu": 47
+    "revu": 43
   },
   "media_unknown_sources": {
     "assaview": 81,
@@ -389,11 +389,11 @@
       "deadline_unknown": 0
     },
     "revu": {
-      "records": 125,
-      "images_present": 78,
-      "images_missing": 47,
+      "records": 101,
+      "images_present": 58,
+      "images_missing": 43,
       "media_unknown": 3,
-      "deadline_unknown": 53
+      "deadline_unknown": 29
     },
     "ringble": {
       "records": 144,
