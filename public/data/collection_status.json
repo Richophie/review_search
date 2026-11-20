@@ -96,7 +96,7 @@
     },
     "modan": {
       "retained_records": 52,
-      "seen_last_24h": 45,
+      "seen_last_24h": 44,
       "seen_last_48h": 49,
       "not_reverified_last_48h": 3,
       "full_coverage_proven": false
@@ -138,9 +138,9 @@
     },
     "realreview": {
       "retained_records": 68,
-      "seen_last_24h": 58,
-      "seen_last_48h": 68,
-      "not_reverified_last_48h": 0,
+      "seen_last_24h": 45,
+      "seen_last_48h": 58,
+      "not_reverified_last_48h": 10,
       "full_coverage_proven": false
     },
     "reviewnote": {
