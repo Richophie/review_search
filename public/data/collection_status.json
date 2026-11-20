@@ -1,6 +1,6 @@
 {
   "as_of_date_kst": "2026-11-20",
-  "snapshot_records": 22637,
+  "snapshot_records": 23403,
   "target_records": 20000,
   "records_to_target": 0,
   "target_progress_pct": 100.0,
@@ -19,7 +19,7 @@
   "source_observation_freshness": {
     "assaview": {
       "retained_records": 648,
-      "seen_last_24h": 549,
+      "seen_last_24h": 536,
       "seen_last_48h": 617,
       "not_reverified_last_48h": 31,
       "full_coverage_proven": false
@@ -33,7 +33,7 @@
     },
     "cherivu": {
       "retained_records": 194,
-      "seen_last_24h": 98,
+      "seen_last_24h": 78,
       "seen_last_48h": 111,
       "not_reverified_last_48h": 83,
       "full_coverage_proven": false
@@ -144,9 +144,9 @@
       "full_coverage_proven": false
     },
     "reviewnote": {
-      "retained_records": 9522,
-      "seen_last_24h": 1474,
-      "seen_last_48h": 2701,
+      "retained_records": 10288,
+      "seen_last_24h": 2240,
+      "seen_last_48h": 3467,
       "not_reverified_last_48h": 6821,
       "full_coverage_proven": false
     },
@@ -205,7 +205,7 @@
     "openreview": "2026-11-20T15:59:28.637387+09:00",
     "popomon": "2026-11-20T17:38:02.814840+09:00",
     "realreview": "2026-11-20T16:41:14.702137+09:00",
-    "reviewnote": "2026-11-20T15:59:28.637387+09:00",
+    "reviewnote": "2026-11-20T19:12:08.512045+09:00",
     "reviewplace": "2026-11-20T15:59:28.637387+09:00",
     "revu": "2026-11-20T17:38:02.814840+09:00",
     "ringble": "2026-11-20T15:59:28.637387+09:00",
@@ -213,17 +213,17 @@
     "tqueens": "2026-11-20T15:59:28.637387+09:00"
   },
   "media_counts": {
-    "네이버클립": 4154,
-    "블로그": 11733,
-    "쇼츠": 36,
+    "네이버클립": 4257,
+    "블로그": 12352,
+    "쇼츠": 39,
     "스레드": 1,
-    "유튜브": 55,
-    "인스타그램": 4882,
+    "유튜브": 59,
+    "인스타그램": 5025,
     "틱톡": 6
   },
   "media_unknown": 3372,
   "deadline_unknown": 143,
-  "images_present": 22588,
+  "images_present": 23354,
   "images_missing": 49,
   "images_missing_sources": {
     "chvu": 1,
@@ -375,8 +375,8 @@
       "deadline_unknown": 68
     },
     "reviewnote": {
-      "records": 9522,
-      "images_present": 9522,
+      "records": 10288,
+      "images_present": 10288,
       "images_missing": 0,
       "media_unknown": 0,
       "deadline_unknown": 0
