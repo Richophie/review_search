@@ -1,6 +1,6 @@
 {
   "as_of_date_kst": "2026-11-22",
-  "snapshot_records": 21949,
+  "snapshot_records": 21950,
   "target_records": 20000,
   "records_to_target": 0,
   "target_progress_pct": 100.0,
@@ -46,9 +46,9 @@
       "full_coverage_proven": false
     },
     "chvu": {
-      "retained_records": 878,
-      "seen_last_24h": 382,
-      "seen_last_48h": 455,
+      "retained_records": 879,
+      "seen_last_24h": 383,
+      "seen_last_48h": 456,
       "not_reverified_last_48h": 423,
       "full_coverage_proven": false
     },
@@ -191,7 +191,7 @@
     "bqueens": "2026-11-22T01:43:35.133250+09:00",
     "cherivu": "2026-11-21T06:32:10.610684+09:00",
     "cherrycook": "2026-11-22T01:43:35.133250+09:00",
-    "chvu": "2026-11-21T17:38:41.119696+09:00",
+    "chvu": "2026-11-22T05:12:17.622268+09:00",
     "cometoplay": "2026-11-22T01:43:35.133250+09:00",
     "dinnerqueen": "2026-11-22T01:43:35.133250+09:00",
     "fourblog": "2026-11-22T01:43:35.133250+09:00",
@@ -201,7 +201,7 @@
     "modan": "2026-11-22T04:50:48.943780+09:00",
     "modootogether": "2026-11-22T01:43:35.133250+09:00",
     "mrblog": "2026-11-22T01:43:35.133250+09:00",
-    "ohmyblog": "2026-11-21T17:38:41.119696+09:00",
+    "ohmyblog": "2026-11-22T05:12:17.622268+09:00",
     "openreview": "2026-11-22T01:43:35.133250+09:00",
     "popomon": "2026-11-22T05:08:25.892174+09:00",
     "realreview": "2026-11-22T04:43:24.390193+09:00",
@@ -214,7 +214,7 @@
   },
   "media_counts": {
     "네이버클립": 4143,
-    "블로그": 10451,
+    "블로그": 10452,
     "쇼츠": 27,
     "스레드": 1,
     "유튜브": 42,
@@ -223,7 +223,7 @@
   },
   "media_unknown": 3913,
   "deadline_unknown": 114,
-  "images_present": 21904,
+  "images_present": 21905,
   "images_missing": 45,
   "images_missing_sources": {
     "chvu": 1,
@@ -277,8 +277,8 @@
       "deadline_unknown": 0
     },
     "chvu": {
-      "records": 878,
-      "images_present": 877,
+      "records": 879,
+      "images_present": 878,
       "images_missing": 1,
       "media_unknown": 2,
       "deadline_unknown": 0
