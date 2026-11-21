@@ -64431,7 +64431,9 @@
 "region_text": "서울 서초",
 "category": "맛집",
 "campaign_type": "방문형",
-"channels": [],
+"channels": [
+"블로그"
+],
 "slots": 2,
 "applicants": 8,
 "apply_deadline": "2026-11-23",
@@ -64444,7 +64446,8 @@
 "competition_ratio": 4.0,
 "remaining_slots": 0,
 "dedupe_key": "서울서초남오토코방배점",
-"search_text": "남오토코 방배점 ★ 식사권 4만원 제공 서울 서초 맛집"
+"search_text": "남오토코 방배점 ★ 식사권 4만원 제공 서울 서초 맛집 블로그",
+"media_evidence": "dinnerqueen_detail:mandatory_blog_mission"
 },
 {
 "id": "dinnerqueen:1637576",
