@@ -19,9 +19,9 @@
   "source_observation_freshness": {
     "assaview": {
       "retained_records": 650,
-      "seen_last_24h": 537,
-      "seen_last_48h": 623,
-      "not_reverified_last_48h": 27,
+      "seen_last_24h": 464,
+      "seen_last_48h": 615,
+      "not_reverified_last_48h": 35,
       "full_coverage_proven": false
     },
     "bqueens": {
@@ -33,9 +33,9 @@
     },
     "cherivu": {
       "retained_records": 195,
-      "seen_last_24h": 70,
-      "seen_last_48h": 102,
-      "not_reverified_last_48h": 93,
+      "seen_last_24h": 53,
+      "seen_last_48h": 82,
+      "not_reverified_last_48h": 113,
       "full_coverage_proven": false
     },
     "cherrycook": {
@@ -48,8 +48,8 @@
     "chvu": {
       "retained_records": 879,
       "seen_last_24h": 383,
-      "seen_last_48h": 456,
-      "not_reverified_last_48h": 423,
+      "seen_last_48h": 383,
+      "not_reverified_last_48h": 496,
       "full_coverage_proven": false
     },
     "cometoplay": {
@@ -97,15 +97,15 @@
     "modan": {
       "retained_records": 46,
       "seen_last_24h": 42,
-      "seen_last_48h": 44,
-      "not_reverified_last_48h": 2,
+      "seen_last_48h": 43,
+      "not_reverified_last_48h": 3,
       "full_coverage_proven": false
     },
     "modootogether": {
       "retained_records": 15,
       "seen_last_24h": 14,
-      "seen_last_48h": 15,
-      "not_reverified_last_48h": 0,
+      "seen_last_48h": 14,
+      "not_reverified_last_48h": 1,
       "full_coverage_proven": false
     },
     "mrblog": {
@@ -131,16 +131,16 @@
     },
     "popomon": {
       "retained_records": 96,
-      "seen_last_24h": 23,
-      "seen_last_48h": 35,
-      "not_reverified_last_48h": 61,
+      "seen_last_24h": 18,
+      "seen_last_48h": 29,
+      "not_reverified_last_48h": 67,
       "full_coverage_proven": false
     },
     "realreview": {
       "retained_records": 59,
       "seen_last_24h": 46,
-      "seen_last_48h": 59,
-      "not_reverified_last_48h": 0,
+      "seen_last_48h": 46,
+      "not_reverified_last_48h": 13,
       "full_coverage_proven": false
     },
     "reviewnote": {
@@ -159,9 +159,9 @@
     },
     "revu": {
       "retained_records": 103,
-      "seen_last_24h": 46,
-      "seen_last_48h": 83,
-      "not_reverified_last_48h": 20,
+      "seen_last_24h": 44,
+      "seen_last_48h": 54,
+      "not_reverified_last_48h": 49,
       "full_coverage_proven": false
     },
     "ringble": {
