@@ -1,14 +1,14 @@
 {
   "as_of_date_kst": "2026-11-21",
-  "snapshot_records": 22876,
+  "snapshot_records": 22943,
   "target_records": 20000,
   "records_to_target": 0,
   "target_progress_pct": 100.0,
   "platforms_with_records": 24,
   "source_scan_status": {
     "gangnammat": {
-      "last_scan_at": "2026-11-20T08:55:02.513834+00:00",
-      "verified_during_last_scan": 304,
+      "last_scan_at": "2026-11-21T08:37:27.156197+00:00",
+      "verified_during_last_scan": 284,
       "discovered_list_urls": 19,
       "scan_complete": false,
       "traversal_capped": false,
@@ -81,9 +81,9 @@
       "full_coverage_proven": false
     },
     "gangnammat": {
-      "retained_records": 1183,
-      "seen_last_24h": 332,
-      "seen_last_48h": 536,
+      "retained_records": 1250,
+      "seen_last_24h": 399,
+      "seen_last_48h": 603,
       "not_reverified_last_48h": 647,
       "full_coverage_proven": false
     },
@@ -196,7 +196,7 @@
     "dinnerqueen": "2026-11-21T15:54:57.717854+09:00",
     "fourblog": "2026-11-21T02:42:58.574733+09:00",
     "gaboja": "2026-11-21T02:42:58.574733+09:00",
-    "gangnammat": "2026-11-21T15:54:57.717854+09:00",
+    "gangnammat": "2026-11-21T17:36:31.537768+09:00",
     "huki": "2026-11-21T15:54:57.717854+09:00",
     "modan": "2026-11-21T16:45:47.138204+09:00",
     "modootogether": "2026-11-21T15:54:57.717854+09:00",
@@ -213,8 +213,8 @@
     "tqueens": "2026-11-21T15:54:57.717854+09:00"
   },
   "media_counts": {
-    "네이버클립": 4304,
-    "블로그": 11369,
+    "네이버클립": 4305,
+    "블로그": 11435,
     "쇼츠": 34,
     "스레드": 1,
     "유튜브": 52,
@@ -223,7 +223,7 @@
   },
   "media_unknown": 3760,
   "deadline_unknown": 106,
-  "images_present": 22831,
+  "images_present": 22898,
   "images_missing": 45,
   "images_missing_sources": {
     "chvu": 1,
@@ -312,8 +312,8 @@
       "deadline_unknown": 0
     },
     "gangnammat": {
-      "records": 1183,
-      "images_present": 1183,
+      "records": 1250,
+      "images_present": 1250,
       "images_missing": 0,
       "media_unknown": 0,
       "deadline_unknown": 0
