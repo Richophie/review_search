@@ -1,6 +1,6 @@
 {
   "as_of_date_kst": "2026-11-22",
-  "snapshot_records": 22042,
+  "snapshot_records": 22043,
   "target_records": 20000,
   "records_to_target": 0,
   "target_progress_pct": 100.0,
@@ -46,9 +46,9 @@
       "full_coverage_proven": false
     },
     "chvu": {
-      "retained_records": 879,
-      "seen_last_24h": 383,
-      "seen_last_48h": 383,
+      "retained_records": 880,
+      "seen_last_24h": 384,
+      "seen_last_48h": 384,
       "not_reverified_last_48h": 496,
       "full_coverage_proven": false
     },
@@ -82,7 +82,7 @@
     },
     "gangnammat": {
       "retained_records": 1250,
-      "seen_last_24h": 284,
+      "seen_last_24h": 262,
       "seen_last_48h": 399,
       "not_reverified_last_48h": 851,
       "full_coverage_proven": false
@@ -191,7 +191,7 @@
     "bqueens": "2026-11-22T15:31:39.252577+09:00",
     "cherivu": "2026-11-22T05:15:16.062133+09:00",
     "cherrycook": "2026-11-22T15:31:39.252577+09:00",
-    "chvu": "2026-11-22T05:12:17.622268+09:00",
+    "chvu": "2026-11-22T17:35:16.017696+09:00",
     "cometoplay": "2026-11-22T15:31:39.252577+09:00",
     "dinnerqueen": "2026-11-22T15:31:39.252577+09:00",
     "fourblog": "2026-11-22T15:31:39.252577+09:00",
@@ -201,7 +201,7 @@
     "modan": "2026-11-22T16:32:24.126570+09:00",
     "modootogether": "2026-11-22T15:31:39.252577+09:00",
     "mrblog": "2026-11-22T15:31:39.252577+09:00",
-    "ohmyblog": "2026-11-22T05:12:17.622268+09:00",
+    "ohmyblog": "2026-11-22T17:35:16.017696+09:00",
     "openreview": "2026-11-22T15:31:39.252577+09:00",
     "popomon": "2026-11-22T17:03:46.954437+09:00",
     "realreview": "2026-11-22T16:22:27.003947+09:00",
@@ -218,12 +218,12 @@
     "쇼츠": 27,
     "스레드": 1,
     "유튜브": 42,
-    "인스타그램": 4680,
+    "인스타그램": 4681,
     "틱톡": 6
   },
   "media_unknown": 3906,
   "deadline_unknown": 99,
-  "images_present": 21998,
+  "images_present": 21999,
   "images_missing": 44,
   "images_missing_sources": {
     "chvu": 1,
@@ -277,8 +277,8 @@
       "deadline_unknown": 0
     },
     "chvu": {
-      "records": 879,
-      "images_present": 878,
+      "records": 880,
+      "images_present": 879,
       "images_missing": 1,
       "media_unknown": 2,
       "deadline_unknown": 0
