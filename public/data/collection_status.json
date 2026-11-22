@@ -20,15 +20,15 @@
     "assaview": {
       "retained_records": 657,
       "seen_last_24h": 542,
-      "seen_last_48h": 624,
-      "not_reverified_last_48h": 33,
+      "seen_last_48h": 621,
+      "not_reverified_last_48h": 36,
       "full_coverage_proven": false
     },
     "bqueens": {
       "retained_records": 100,
-      "seen_last_24h": 99,
-      "seen_last_48h": 100,
-      "not_reverified_last_48h": 0,
+      "seen_last_24h": 98,
+      "seen_last_48h": 99,
+      "not_reverified_last_48h": 1,
       "full_coverage_proven": false
     },
     "cherivu": {
@@ -54,37 +54,37 @@
     },
     "cometoplay": {
       "retained_records": 71,
-      "seen_last_24h": 34,
-      "seen_last_48h": 36,
-      "not_reverified_last_48h": 35,
+      "seen_last_24h": 33,
+      "seen_last_48h": 34,
+      "not_reverified_last_48h": 37,
       "full_coverage_proven": false
     },
     "dinnerqueen": {
       "retained_records": 9173,
-      "seen_last_24h": 4678,
-      "seen_last_48h": 7517,
-      "not_reverified_last_48h": 1656,
+      "seen_last_24h": 3240,
+      "seen_last_48h": 6107,
+      "not_reverified_last_48h": 3066,
       "full_coverage_proven": false
     },
     "fourblog": {
       "retained_records": 299,
       "seen_last_24h": 137,
-      "seen_last_48h": 154,
-      "not_reverified_last_48h": 145,
+      "seen_last_48h": 147,
+      "not_reverified_last_48h": 152,
       "full_coverage_proven": false
     },
     "gaboja": {
       "retained_records": 16,
       "seen_last_24h": 0,
-      "seen_last_48h": 16,
-      "not_reverified_last_48h": 0,
+      "seen_last_48h": 15,
+      "not_reverified_last_48h": 1,
       "full_coverage_proven": false
     },
     "gangnammat": {
       "retained_records": 1250,
       "seen_last_24h": 284,
-      "seen_last_48h": 415,
-      "not_reverified_last_48h": 835,
+      "seen_last_48h": 399,
+      "not_reverified_last_48h": 851,
       "full_coverage_proven": false
     },
     "huki": {
@@ -96,9 +96,9 @@
     },
     "modan": {
       "retained_records": 47,
-      "seen_last_24h": 43,
-      "seen_last_48h": 44,
-      "not_reverified_last_48h": 3,
+      "seen_last_24h": 29,
+      "seen_last_48h": 43,
+      "not_reverified_last_48h": 4,
       "full_coverage_proven": false
     },
     "modootogether": {
@@ -110,9 +110,9 @@
     },
     "mrblog": {
       "retained_records": 73,
-      "seen_last_24h": 40,
-      "seen_last_48h": 63,
-      "not_reverified_last_48h": 10,
+      "seen_last_24h": 15,
+      "seen_last_48h": 58,
+      "not_reverified_last_48h": 15,
       "full_coverage_proven": false
     },
     "ohmyblog": {
@@ -146,15 +146,15 @@
     "reviewnote": {
       "retained_records": 8248,
       "seen_last_24h": 1317,
-      "seen_last_48h": 1576,
-      "not_reverified_last_48h": 6672,
+      "seen_last_48h": 1573,
+      "not_reverified_last_48h": 6675,
       "full_coverage_proven": false
     },
     "reviewplace": {
       "retained_records": 30,
-      "seen_last_24h": 23,
-      "seen_last_48h": 27,
-      "not_reverified_last_48h": 3,
+      "seen_last_24h": 21,
+      "seen_last_48h": 25,
+      "not_reverified_last_48h": 5,
       "full_coverage_proven": false
     },
     "revu": {
@@ -166,9 +166,9 @@
     },
     "ringble": {
       "retained_records": 144,
-      "seen_last_24h": 37,
-      "seen_last_48h": 46,
-      "not_reverified_last_48h": 98,
+      "seen_last_24h": 35,
+      "seen_last_48h": 37,
+      "not_reverified_last_48h": 107,
       "full_coverage_proven": false
     },
     "storyn": {
@@ -180,7 +180,7 @@
     },
     "tqueens": {
       "retained_records": 111,
-      "seen_last_24h": 110,
+      "seen_last_24h": 104,
       "seen_last_48h": 110,
       "not_reverified_last_48h": 1,
       "full_coverage_proven": false
@@ -204,7 +204,7 @@
     "ohmyblog": "2026-11-22T05:12:17.622268+09:00",
     "openreview": "2026-11-22T15:31:39.252577+09:00",
     "popomon": "2026-11-22T05:08:25.892174+09:00",
-    "realreview": "2026-11-22T15:31:39.252577+09:00",
+    "realreview": "2026-11-22T16:22:27.003947+09:00",
     "reviewnote": "2026-11-22T15:31:39.252577+09:00",
     "reviewplace": "2026-11-22T15:31:39.252577+09:00",
     "revu": "2026-11-22T05:08:25.892174+09:00",
