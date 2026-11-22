@@ -1,6 +1,6 @@
 {
   "as_of_date_kst": "2026-11-22",
-  "snapshot_records": 22043,
+  "snapshot_records": 22037,
   "target_records": 20000,
   "records_to_target": 0,
   "target_progress_pct": 100.0,
@@ -47,7 +47,7 @@
     },
     "chvu": {
       "retained_records": 880,
-      "seen_last_24h": 384,
+      "seen_last_24h": 383,
       "seen_last_48h": 384,
       "not_reverified_last_48h": 496,
       "full_coverage_proven": false
@@ -132,8 +132,8 @@
     "popomon": {
       "retained_records": 100,
       "seen_last_24h": 16,
-      "seen_last_48h": 33,
-      "not_reverified_last_48h": 67,
+      "seen_last_48h": 27,
+      "not_reverified_last_48h": 73,
       "full_coverage_proven": false
     },
     "realreview": {
@@ -158,10 +158,10 @@
       "full_coverage_proven": false
     },
     "revu": {
-      "retained_records": 88,
+      "retained_records": 82,
       "seen_last_24h": 42,
-      "seen_last_48h": 55,
-      "not_reverified_last_48h": 33,
+      "seen_last_48h": 47,
+      "not_reverified_last_48h": 35,
       "full_coverage_proven": false
     },
     "ringble": {
@@ -199,7 +199,7 @@
     "gangnammat": "2026-11-22T17:31:52.263274+09:00",
     "huki": "2026-11-22T15:31:39.252577+09:00",
     "modan": "2026-11-22T16:32:24.126570+09:00",
-    "modootogether": "2026-11-22T15:31:39.252577+09:00",
+    "modootogether": "2026-11-22T17:47:35.450289+09:00",
     "mrblog": "2026-11-22T15:31:39.252577+09:00",
     "ohmyblog": "2026-11-22T17:35:16.017696+09:00",
     "openreview": "2026-11-22T15:31:39.252577+09:00",
@@ -214,16 +214,16 @@
   },
   "media_counts": {
     "네이버클립": 4152,
-    "블로그": 10553,
+    "블로그": 10551,
     "쇼츠": 27,
     "스레드": 1,
     "유튜브": 42,
-    "인스타그램": 4681,
+    "인스타그램": 4677,
     "틱톡": 6
   },
   "media_unknown": 3906,
-  "deadline_unknown": 99,
-  "images_present": 21999,
+  "deadline_unknown": 93,
+  "images_present": 21993,
   "images_missing": 44,
   "images_missing_sources": {
     "chvu": 1,
@@ -389,11 +389,11 @@
       "deadline_unknown": 0
     },
     "revu": {
-      "records": 88,
-      "images_present": 46,
+      "records": 82,
+      "images_present": 40,
       "images_missing": 42,
       "media_unknown": 2,
-      "deadline_unknown": 38
+      "deadline_unknown": 32
     },
     "ringble": {
       "records": 144,
