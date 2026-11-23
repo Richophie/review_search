@@ -24553,37 +24553,6 @@
 "media_evidence": "cherivu_public_media_icon"
 },
 {
-"id": "cherivu:1238",
-"source_id": "cherivu",
-"original_url": "https://cherivu.co.kr/campaigns/1238",
-"title": "[기프트인포] 다즐 포켓트립 여행용 파우치 8종 세트",
-"description": "다즐 포켓트립 여행용 파우치 8종 세트 (고급선물케이스포함)",
-"benefit": "다즐 포켓트립 여행용 파우치 8종 세트 (고급선물케이스포함)",
-"image_url": "https://d6ctpjljlg7e8.cloudfront.net/5799/blob",
-"country_code": "KR",
-"region_sido": null,
-"region_text": null,
-"category": "숙박·여행",
-"campaign_type": null,
-"channels": [
-"블로그"
-],
-"slots": null,
-"applicants": null,
-"apply_deadline": null,
-"deadline_precision": "unknown",
-"open_verified": true,
-"first_seen_at": "2026-11-21T06:32:10.610684+09:00",
-"published_at": null,
-"last_seen_at": "2026-11-21T06:32:10.610684+09:00",
-"timezone": "Asia/Seoul",
-"competition_ratio": null,
-"remaining_slots": null,
-"dedupe_key": "기프트인포다즐포켓트립여행용파우치8종세트",
-"search_text": "[기프트인포] 다즐 포켓트립 여행용 파우치 8종 세트 다즐 포켓트립 여행용 파우치 8종 세트 (고급선물케이스포함) 다즐 포켓트립 여행용 파우치 8종 세트 (고급선물케이스포함) 숙박·여행 블로그",
-"media_evidence": "cherivu_public_media_icon"
-},
-{
 "id": "cherivu:1248",
 "source_id": "cherivu",
 "original_url": "https://cherivu.co.kr/campaigns/1248",
