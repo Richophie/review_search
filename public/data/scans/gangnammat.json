@@ -1,11 +1,11 @@
 {
   "source_id": "gangnammat",
-  "scanned_at": "2026-11-23T09:31:08.240639+00:00",
+  "scanned_at": "2026-11-24T11:26:37.806408+00:00",
   "discovered_list_urls": 19,
   "discovery_pages_attempted": 19,
   "failed_discovery_urls": [],
   "failed_collection_urls": [],
-  "unique_verified": 256,
+  "unique_verified": 258,
   "traversal_capped": false,
   "complete": false,
   "reason": "Bounded traversal and empty/blocked responses not yet independently verified"
