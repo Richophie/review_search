@@ -1,6 +1,6 @@
 {
   "as_of_date_kst": "2026-11-24",
-  "snapshot_records": 20672,
+  "snapshot_records": 20684,
   "target_records": 20000,
   "records_to_target": 0,
   "target_progress_pct": 100.0,
@@ -19,7 +19,7 @@
   "source_observation_freshness": {
     "assaview": {
       "retained_records": 643,
-      "seen_last_24h": 543,
+      "seen_last_24h": 529,
       "seen_last_48h": 613,
       "not_reverified_last_48h": 30,
       "full_coverage_proven": false
@@ -33,7 +33,7 @@
     },
     "cherivu": {
       "retained_records": 171,
-      "seen_last_24h": 85,
+      "seen_last_24h": 53,
       "seen_last_48h": 100,
       "not_reverified_last_48h": 71,
       "full_coverage_proven": false
@@ -137,17 +137,17 @@
       "full_coverage_proven": false
     },
     "realreview": {
-      "retained_records": 89,
-      "seen_last_24h": 77,
-      "seen_last_48h": 89,
+      "retained_records": 101,
+      "seen_last_24h": 89,
+      "seen_last_48h": 101,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
     },
     "reviewnote": {
       "retained_records": 7402,
       "seen_last_24h": 1618,
-      "seen_last_48h": 2352,
-      "not_reverified_last_48h": 5050,
+      "seen_last_48h": 1689,
+      "not_reverified_last_48h": 5713,
       "full_coverage_proven": false
     },
     "reviewplace": {
@@ -204,7 +204,7 @@
     "ohmyblog": "2026-11-24T10:12:57.427980+09:00",
     "openreview": "2026-11-24T18:42:02.726698+09:00",
     "popomon": "2026-11-24T09:57:38.621192+09:00",
-    "realreview": "2026-11-24T18:42:02.726698+09:00",
+    "realreview": "2026-11-24T19:21:16.138987+09:00",
     "reviewnote": "2026-11-24T18:42:02.726698+09:00",
     "reviewplace": "2026-11-24T18:42:02.726698+09:00",
     "revu": "2026-11-24T09:57:38.621192+09:00",
@@ -221,9 +221,9 @@
     "인스타그램": 4453,
     "틱톡": 10
   },
-  "media_unknown": 3821,
-  "deadline_unknown": 209,
-  "images_present": 20631,
+  "media_unknown": 3833,
+  "deadline_unknown": 221,
+  "images_present": 20643,
   "images_missing": 41,
   "images_missing_sources": {
     "chvu": 1,
@@ -241,7 +241,7 @@
     "ohmyblog": 9,
     "openreview": 3,
     "popomon": 6,
-    "realreview": 88,
+    "realreview": 100,
     "reviewplace": 6,
     "revu": 2,
     "tqueens": 88
@@ -369,11 +369,11 @@
       "deadline_unknown": 0
     },
     "realreview": {
-      "records": 89,
-      "images_present": 89,
+      "records": 101,
+      "images_present": 101,
       "images_missing": 0,
-      "media_unknown": 88,
-      "deadline_unknown": 76
+      "media_unknown": 100,
+      "deadline_unknown": 88
     },
     "reviewnote": {
       "records": 7402,
