@@ -19,7 +19,7 @@
   "source_observation_freshness": {
     "assaview": {
       "retained_records": 614,
-      "seen_last_24h": 546,
+      "seen_last_24h": 481,
       "seen_last_48h": 596,
       "not_reverified_last_48h": 18,
       "full_coverage_proven": false
@@ -33,7 +33,7 @@
     },
     "cherivu": {
       "retained_records": 154,
-      "seen_last_24h": 105,
+      "seen_last_24h": 91,
       "seen_last_48h": 114,
       "not_reverified_last_48h": 40,
       "full_coverage_proven": false
