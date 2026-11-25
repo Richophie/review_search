@@ -1,9 +1,9 @@
 {
   "as_of_date_kst": "2026-11-25",
-  "snapshot_records": 17720,
+  "snapshot_records": 17721,
   "target_records": 20000,
-  "records_to_target": 2280,
-  "target_progress_pct": 88.6,
+  "records_to_target": 2279,
+  "target_progress_pct": 88.61,
   "platforms_with_records": 24,
   "source_scan_status": {
     "gangnammat": {
@@ -102,9 +102,9 @@
       "full_coverage_proven": false
     },
     "modootogether": {
-      "retained_records": 15,
-      "seen_last_24h": 13,
-      "seen_last_48h": 14,
+      "retained_records": 16,
+      "seen_last_24h": 14,
+      "seen_last_48h": 15,
       "not_reverified_last_48h": 1,
       "full_coverage_proven": false
     },
@@ -138,7 +138,7 @@
     },
     "realreview": {
       "retained_records": 106,
-      "seen_last_24h": 78,
+      "seen_last_24h": 76,
       "seen_last_48h": 106,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
@@ -199,7 +199,7 @@
     "gangnammat": "2026-11-25T19:10:56.411971+09:00",
     "huki": "2026-11-25T17:16:33.742257+09:00",
     "modan": "2026-11-25T18:16:16.626713+09:00",
-    "modootogether": "2026-11-25T17:16:33.742257+09:00",
+    "modootogether": "2026-11-25T19:26:39.860130+09:00",
     "mrblog": "2026-11-25T17:16:33.742257+09:00",
     "ohmyblog": "2026-11-25T19:14:23.268027+09:00",
     "openreview": "2026-11-25T17:16:33.742257+09:00",
@@ -214,7 +214,7 @@
   },
   "media_counts": {
     "네이버클립": 2707,
-    "블로그": 10492,
+    "블로그": 10493,
     "쇼츠": 28,
     "유튜브": 43,
     "인스타그램": 3594,
@@ -222,7 +222,7 @@
   },
   "media_unknown": 2121,
   "deadline_unknown": 231,
-  "images_present": 17674,
+  "images_present": 17675,
   "images_missing": 46,
   "images_missing_sources": {
     "ohmyblog": 1,
@@ -331,8 +331,8 @@
       "deadline_unknown": 0
     },
     "modootogether": {
-      "records": 15,
-      "images_present": 15,
+      "records": 16,
+      "images_present": 16,
       "images_missing": 0,
       "media_unknown": 0,
       "deadline_unknown": 4
