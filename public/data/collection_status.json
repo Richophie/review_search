@@ -1,5 +1,5 @@
 {
-  "as_of_date_kst": "2026-11-26",
+  "as_of_date_kst": "2026-11-27",
   "snapshot_records": 19475,
   "target_records": 20000,
   "records_to_target": 525,
@@ -20,8 +20,8 @@
     "assaview": {
       "retained_records": 648,
       "seen_last_24h": 530,
-      "seen_last_48h": 630,
-      "not_reverified_last_48h": 18,
+      "seen_last_48h": 629,
+      "not_reverified_last_48h": 19,
       "full_coverage_proven": false
     },
     "bqueens": {
@@ -34,8 +34,8 @@
     "cherivu": {
       "retained_records": 177,
       "seen_last_24h": 79,
-      "seen_last_48h": 136,
-      "not_reverified_last_48h": 41,
+      "seen_last_48h": 124,
+      "not_reverified_last_48h": 53,
       "full_coverage_proven": false
     },
     "cherrycook": {
@@ -145,9 +145,9 @@
     },
     "reviewnote": {
       "retained_records": 10170,
-      "seen_last_24h": 2712,
-      "seen_last_48h": 4114,
-      "not_reverified_last_48h": 6056,
+      "seen_last_24h": 1726,
+      "seen_last_48h": 2713,
+      "not_reverified_last_48h": 7457,
       "full_coverage_proven": false
     },
     "reviewplace": {
@@ -243,7 +243,7 @@
     "revu": 4,
     "tqueens": 68
   },
-  "published_today_confirmed": 4,
+  "published_today_confirmed": 0,
   "duplicate_id_or_original_url_count": 0,
   "sources": {
     "assaview": {
