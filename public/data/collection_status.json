@@ -1,9 +1,9 @@
 {
   "as_of_date_kst": "2026-11-26",
-  "snapshot_records": 18385,
+  "snapshot_records": 18386,
   "target_records": 20000,
-  "records_to_target": 1615,
-  "target_progress_pct": 91.92,
+  "records_to_target": 1614,
+  "target_progress_pct": 91.93,
   "platforms_with_records": 24,
   "source_scan_status": {
     "gangnammat": {
@@ -18,9 +18,9 @@
   },
   "source_observation_freshness": {
     "assaview": {
-      "retained_records": 647,
-      "seen_last_24h": 553,
-      "seen_last_48h": 629,
+      "retained_records": 648,
+      "seen_last_24h": 554,
+      "seen_last_48h": 630,
       "not_reverified_last_48h": 18,
       "full_coverage_proven": false
     },
@@ -187,7 +187,7 @@
     }
   },
   "source_last_observed": {
-    "assaview": "2026-11-26T17:01:54.545534+09:00",
+    "assaview": "2026-11-26T19:05:32.452278+09:00",
     "bqueens": "2026-11-26T17:01:54.545534+09:00",
     "cherivu": "2026-11-26T19:02:42.347615+09:00",
     "cherrycook": "2026-11-26T17:01:54.545534+09:00",
@@ -220,16 +220,16 @@
     "인스타그램": 3790,
     "틱톡": 11
   },
-  "media_unknown": 1923,
+  "media_unknown": 1924,
   "deadline_unknown": 184,
-  "images_present": 18334,
+  "images_present": 18335,
   "images_missing": 51,
   "images_missing_sources": {
     "ohmyblog": 1,
     "revu": 50
   },
   "media_unknown_sources": {
-    "assaview": 74,
+    "assaview": 75,
     "bqueens": 61,
     "chvu": 3,
     "dinnerqueen": 1542,
@@ -247,10 +247,10 @@
   "duplicate_id_or_original_url_count": 0,
   "sources": {
     "assaview": {
-      "records": 647,
-      "images_present": 647,
+      "records": 648,
+      "images_present": 648,
       "images_missing": 0,
-      "media_unknown": 74,
+      "media_unknown": 75,
       "deadline_unknown": 0
     },
     "bqueens": {
