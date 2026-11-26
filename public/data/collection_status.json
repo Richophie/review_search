@@ -19,14 +19,14 @@
   "source_observation_freshness": {
     "assaview": {
       "retained_records": 647,
-      "seen_last_24h": 563,
+      "seen_last_24h": 553,
       "seen_last_48h": 629,
       "not_reverified_last_48h": 18,
       "full_coverage_proven": false
     },
     "bqueens": {
       "retained_records": 124,
-      "seen_last_24h": 120,
+      "seen_last_24h": 113,
       "seen_last_48h": 122,
       "not_reverified_last_48h": 2,
       "full_coverage_proven": false
@@ -61,28 +61,28 @@
     },
     "dinnerqueen": {
       "retained_records": 4467,
-      "seen_last_24h": 3883,
+      "seen_last_24h": 2758,
       "seen_last_48h": 4209,
       "not_reverified_last_48h": 258,
       "full_coverage_proven": false
     },
     "fourblog": {
       "retained_records": 319,
-      "seen_last_24h": 138,
+      "seen_last_24h": 117,
       "seen_last_48h": 160,
       "not_reverified_last_48h": 159,
       "full_coverage_proven": false
     },
     "gaboja": {
       "retained_records": 12,
-      "seen_last_24h": 12,
+      "seen_last_24h": 6,
       "seen_last_48h": 12,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
     },
     "gangnammat": {
       "retained_records": 992,
-      "seen_last_24h": 314,
+      "seen_last_24h": 289,
       "seen_last_48h": 527,
       "not_reverified_last_48h": 465,
       "full_coverage_proven": false
@@ -96,7 +96,7 @@
     },
     "modan": {
       "retained_records": 53,
-      "seen_last_24h": 51,
+      "seen_last_24h": 42,
       "seen_last_48h": 52,
       "not_reverified_last_48h": 1,
       "full_coverage_proven": false
@@ -110,7 +110,7 @@
     },
     "mrblog": {
       "retained_records": 25,
-      "seen_last_24h": 17,
+      "seen_last_24h": 13,
       "seen_last_48h": 18,
       "not_reverified_last_48h": 7,
       "full_coverage_proven": false
@@ -145,7 +145,7 @@
     },
     "reviewnote": {
       "retained_records": 9079,
-      "seen_last_24h": 1608,
+      "seen_last_24h": 1607,
       "seen_last_48h": 3024,
       "not_reverified_last_48h": 6055,
       "full_coverage_proven": false
@@ -166,7 +166,7 @@
     },
     "ringble": {
       "retained_records": 122,
-      "seen_last_24h": 57,
+      "seen_last_24h": 36,
       "seen_last_48h": 71,
       "not_reverified_last_48h": 51,
       "full_coverage_proven": false
@@ -180,7 +180,7 @@
     },
     "tqueens": {
       "retained_records": 98,
-      "seen_last_24h": 96,
+      "seen_last_24h": 71,
       "seen_last_48h": 98,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
