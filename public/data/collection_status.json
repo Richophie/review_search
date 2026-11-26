@@ -48,8 +48,8 @@
     "chvu": {
       "retained_records": 1144,
       "seen_last_24h": 475,
-      "seen_last_48h": 648,
-      "not_reverified_last_48h": 496,
+      "seen_last_48h": 640,
+      "not_reverified_last_48h": 504,
       "full_coverage_proven": false
     },
     "cometoplay": {
@@ -83,8 +83,8 @@
     "gangnammat": {
       "retained_records": 1174,
       "seen_last_24h": 330,
-      "seen_last_48h": 691,
-      "not_reverified_last_48h": 483,
+      "seen_last_48h": 496,
+      "not_reverified_last_48h": 678,
       "full_coverage_proven": false
     },
     "huki": {
