@@ -20,8 +20,8 @@
     "assaview": {
       "retained_records": 619,
       "seen_last_24h": 491,
-      "seen_last_48h": 605,
-      "not_reverified_last_48h": 14,
+      "seen_last_48h": 591,
+      "not_reverified_last_48h": 28,
       "full_coverage_proven": false
     },
     "bqueens": {
