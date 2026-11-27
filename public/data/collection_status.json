@@ -131,7 +131,7 @@
     },
     "popomon": {
       "retained_records": 89,
-      "seen_last_24h": 24,
+      "seen_last_24h": 18,
       "seen_last_48h": 36,
       "not_reverified_last_48h": 53,
       "full_coverage_proven": false
@@ -159,7 +159,7 @@
     },
     "revu": {
       "retained_records": 113,
-      "seen_last_24h": 70,
+      "seen_last_24h": 44,
       "seen_last_48h": 106,
       "not_reverified_last_48h": 7,
       "full_coverage_proven": false
@@ -187,7 +187,7 @@
     }
   },
   "source_last_observed": {
-    "assaview": "2026-11-28T03:50:47.066044+09:00",
+    "assaview": "2026-11-28T07:23:04.908156+09:00",
     "bqueens": "2026-11-28T03:50:47.066044+09:00",
     "cherivu": "2026-11-28T07:20:32.426120+09:00",
     "cherrycook": "2026-11-28T03:50:47.066044+09:00",
