@@ -96,7 +96,7 @@
     },
     "modan": {
       "retained_records": 52,
-      "seen_last_24h": 35,
+      "seen_last_24h": 33,
       "seen_last_48h": 50,
       "not_reverified_last_48h": 2,
       "full_coverage_proven": false
@@ -138,7 +138,7 @@
     },
     "realreview": {
       "retained_records": 83,
-      "seen_last_24h": 49,
+      "seen_last_24h": 48,
       "seen_last_48h": 83,
       "not_reverified_last_48h": 0,
       "full_coverage_proven": false
@@ -204,7 +204,7 @@
     "ohmyblog": "2026-11-27T07:30:21.008814+09:00",
     "openreview": "2026-11-27T17:07:59.294492+09:00",
     "popomon": "2026-11-27T07:23:57.984322+09:00",
-    "realreview": "2026-11-27T17:07:59.294492+09:00",
+    "realreview": "2026-11-27T17:59:28.251058+09:00",
     "reviewnote": "2026-11-27T17:07:59.294492+09:00",
     "reviewplace": "2026-11-27T17:07:59.294492+09:00",
     "revu": "2026-11-27T07:23:57.984322+09:00",
