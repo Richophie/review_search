@@ -66592,7 +66592,9 @@
 "region_text": "인천 검단",
 "category": "맛집",
 "campaign_type": "방문형",
-"channels": [],
+"channels": [
+"블로그"
+],
 "slots": 3,
 "applicants": 8,
 "apply_deadline": "2026-11-30",
@@ -66605,7 +66607,8 @@
 "competition_ratio": 2.6666666666666665,
 "remaining_slots": 0,
 "dedupe_key": "인천검단양복점인천검단아라역점",
-"search_text": "양복점 인천검단아라역점 식사권 3만원 제공 인천 검단 맛집"
+"search_text": "양복점 인천검단아라역점 식사권 3만원 제공 인천 검단 맛집 블로그",
+"media_evidence": "dinnerqueen_detail:mandatory_blog_mission"
 },
 {
 "id": "dinnerqueen:1641480",
@@ -68970,7 +68973,9 @@
 "region_text": "충북 청주",
 "category": "기타",
 "campaign_type": "방문형",
-"channels": [],
+"channels": [
+"블로그"
+],
 "slots": 5,
 "applicants": 5,
 "apply_deadline": "2026-11-30",
@@ -68983,7 +68988,8 @@
 "competition_ratio": 1.0,
 "remaining_slots": 0,
 "dedupe_key": "충북청주신광국물떡볶이복대직영점",
-"search_text": "신광국물떡볶이 복대직영점 한그릇떡볶이 (2인분) 충북 청주 기타"
+"search_text": "신광국물떡볶이 복대직영점 한그릇떡볶이 (2인분) 충북 청주 기타 블로그",
+"media_evidence": "dinnerqueen_detail:mandatory_blog_mission"
 },
 {
 "id": "dinnerqueen:1648716",
